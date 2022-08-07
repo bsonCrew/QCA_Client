@@ -1,0 +1,1601 @@
+{
+  "websites": [
+    {
+      "label": "",
+      "homepage": ""
+    },
+
+    {
+      "label": "청와대",
+      "homepage": "http://www.president.go.kr/"
+    },
+    {
+      "label": "국회",
+      "homepage": "https://www.assembly.go.kr/"
+    },
+    {
+      "label": "대법원",
+      "homepage": "http://www.scourt.go.kr/"
+    },
+    {
+      "label": "경찰청",
+      "homepage": "https://www.police.go.kr/"
+    },
+    {
+      "label": "도로교통공단",
+      "homepage": "https://www.koroad.or.kr"
+    },
+    {
+      "label": "고용노동부",
+      "homepage": "http://www.moel.go.kr/"
+    },
+    {
+      "label": "건설근로자공제회",
+      "homepage": "www.cwma.or.kr"
+    },
+    {
+      "label": "근로복지공단",
+      "homepage": "www.kcomwel.or.kr"
+    },
+    {
+      "label": "노사발전재단",
+      "homepage": "www.nosa.or.kr"
+    },
+    {
+      "label": "학교법인한국폴리텍",
+      "homepage": "www.kopo.ac.kr"
+    },
+    {
+      "label": "한국고용정보원",
+      "homepage": "www.keis.or.kr"
+    },
+    {
+      "label": "한국기술교육대학교",
+      "homepage": "www.koreatech.ac.kr"
+    },
+    {
+      "label": "한국사회적기업진흥원",
+      "homepage": "www.socialenterprise.or.kr"
+    },
+    {
+      "label": "한국산업안전보건공단",
+      "homepage": "https://www.kosha.or.kr"
+    },
+    {
+      "label": "한국산업인력공단",
+      "homepage": "hrdkorea.or.kr"
+    },
+    {
+      "label": "한국잡월드",
+      "homepage": "www.koreajobworld.or.kr"
+    },
+    {
+      "label": "한국장애인고용공단",
+      "homepage": "https://www.kead.or.kr"
+    },
+    {
+      "label": "공정거래위원회",
+      "homepage": "https://www.ftc.go.kr/"
+    },
+    {
+      "label": "한국공정거래조정원",
+      "homepage": "www.kofair.or.kr"
+    },
+    {
+      "label": "한국소비자원",
+      "homepage": "https://www.kca.go.kr"
+    },
+    {
+      "label": "과학기술정보통신부",
+      "homepage": "https://www.msit.go.kr/"
+    },
+    {
+      "label": "(재)우체국금융개발원",
+      "homepage": "www.posid.or.kr"
+    },
+    {
+      "label": "(재)우체국물류지원단",
+      "homepage": "www.pola.or.kr"
+    },
+    {
+      "label": "(재)우체국시설관리단",
+      "homepage": "www.poma.or.kr"
+    },
+    {
+      "label": "(재)한국우편사업진흥원",
+      "homepage": "www.posa.or.kr"
+    },
+    {
+      "label": "과학기술일자리진흥원",
+      "homepage": "https://www.compa.re.kr"
+    },
+    {
+      "label": "광주과학기술원",
+      "homepage": "www.gist.ac.kr"
+    },
+    {
+      "label": "국가과학기술연구회",
+      "homepage": "https://www.nst.re.kr"
+    },
+    {
+      "label": "국립광주과학관",
+      "homepage": "www.sciencecenter.or.kr"
+    },
+    {
+      "label": "국립대구과학관",
+      "homepage": "www.dnsm.or.kr"
+    },
+    {
+      "label": "국립부산과학관",
+      "homepage": "www.sciport.or.kr"
+    },
+    {
+      "label": "기초과학연구원",
+      "homepage": "www.ibs.re.kr"
+    },
+    {
+      "label": "# 국가수리과학연구소",
+      "homepage": "www.nims.re.kr"
+    },
+    {
+      "label": "대구경북과학기술원",
+      "homepage": "www.dgist.ac.kr"
+    },
+    {
+      "label": "# 한국뇌연구원",
+      "homepage": "www.kbri.re.kr"
+    },
+    {
+      "label": "연구개발특구진흥재단",
+      "homepage": "https://www.innopolis.or.kr"
+    },
+    {
+      "label": "울산과학기술원",
+      "homepage": "www.unist.ac.kr"
+    },
+    {
+      "label": "재단법인 한국여성과학기술인지원센터",
+      "homepage": "https://www.wiset.or.kr"
+    },
+    {
+      "label": "정보통신산업진흥원",
+      "homepage": "www.nipa.kr"
+    },
+    {
+      "label": "# 소프트웨어정책연구소",
+      "homepage": "www.spri.kr"
+    },
+    {
+      "label": "한국건설기술연구원",
+      "homepage": "www.kict.re.kr/"
+    },
+    {
+      "label": "한국과학기술기획평가원",
+      "homepage": "https://www.kistep.re.kr"
+    },
+    {
+      "label": "# 국가과학기술인력개발원",
+      "homepage": "www.kird.re.kr"
+    },
+    {
+      "label": "한국과학기술연구원",
+      "homepage": "www.kist.re.kr"
+    },
+    {
+      "label": "# 녹색기술센터",
+      "homepage": "www.gtck.re.kr"
+    },
+    {
+      "label": "한국과학기술원",
+      "homepage": "www.kaist.ac.kr"
+    },
+    {
+      "label": "# 고등과학원",
+      "homepage": "www.kias.re.kr"
+    },
+    {
+      "label": "# 나노종합기술원",
+      "homepage": "www.nnfc.re.kr"
+    },
+    {
+      "label": "# 한국과학영재학교",
+      "homepage": "www.ksa.hs.kr"
+    },
+    {
+      "label": "한국과학기술정보연구원",
+      "homepage": "www.kisti.re.kr"
+    },
+    {
+      "label": "한국과학창의재단",
+      "homepage": "www.kofac.re.kr"
+    },
+    {
+      "label": "한국기계연구원",
+      "homepage": "www.kimm.re.kr"
+    },
+    {
+      "label": "한국기초과학지원연구원",
+      "homepage": "www.kbsi.re.kr"
+    },
+    {
+      "label": "한국나노기술원",
+      "homepage": "https://www.kanc.re.kr"
+    },
+    {
+      "label": "한국데이터산업진흥원",
+      "homepage": "www.kdata.or.kr"
+    },
+    {
+      "label": "한국방송통신전파진흥원",
+      "homepage": "www.kca.kr"
+    },
+    {
+      "label": "한국생명공학연구원",
+      "homepage": "www.kribb.re.kr"
+    },
+    {
+      "label": "한국생산기술연구원",
+      "homepage": "www.kitech.re.kr"
+    },
+    {
+      "label": "한국식품연구원",
+      "homepage": "www.kfri.re.kr"
+    },
+    {
+      "label": "# 세계김치연구소",
+      "homepage": "www.wikim.re.kr"
+    },
+    {
+      "label": "한국에너지기술연구원",
+      "homepage": "www.kier.re.kr"
+    },
+    {
+      "label": "한국연구재단",
+      "homepage": "www.nrf.re.kr"
+    },
+    {
+      "label": "# 정보통신기획평가원",
+      "homepage": "www.iitp.kr"
+    },
+    {
+      "label": "한국원자력연구원",
+      "homepage": "www.kaeri.re.kr"
+    },
+    {
+      "label": "한국원자력의학원",
+      "homepage": "www.kirams.re.kr"
+    },
+    {
+      "label": "# 동남권원자력의학원",
+      "homepage": "www.dirams.re.kr"
+    },
+    {
+      "label": "한국인터넷진흥원",
+      "homepage": "www.kisa.or.kr"
+    },
+    {
+      "label": "한국전기연구원",
+      "homepage": "www.keri.re.kr"
+    },
+    {
+      "label": "한국전자통신연구원",
+      "homepage": "www.etri.re.kr"
+    },
+    {
+      "label": "한국정보화진흥원",
+      "homepage": "www.nia.or.kr"
+    },
+    {
+      "label": "한국지질자원연구원",
+      "homepage": "www.kigam.re.kr"
+    },
+    {
+      "label": "한국천문연구원",
+      "homepage": "www.kasi.re.kr"
+    },
+    {
+      "label": "한국철도기술연구원",
+      "homepage": "www.krri.re.kr"
+    },
+    {
+      "label": "한국표준과학연구원",
+      "homepage": "www.kriss.re.kr"
+    },
+    {
+      "label": "한국한의학연구원",
+      "homepage": "www.kiom.re.kr"
+    },
+    {
+      "label": "한국항공우주연구원",
+      "homepage": "www.kari.re.kr"
+    },
+    {
+      "label": "한국화학연구원",
+      "homepage": "www.krict.re.kr"
+    },
+    {
+      "label": "# 안전성평가연구소",
+      "homepage": "www.kitox.re.kr"
+    },
+    {
+      "label": "관세청",
+      "homepage": "http://www.customs.go.kr"
+    },
+    {
+      "label": "(재)국제원산지정보원",
+      "homepage": "www.origin.or.kr"
+    },
+    {
+      "label": "교육부",
+      "homepage": "https://www.moe.go.kr/"
+    },
+    {
+      "label": "강릉원주대학교치과병원",
+      "homepage": "www.gwnudh.or.kr/"
+    },
+    {
+      "label": "강원대학교병원",
+      "homepage": "www.knuh.or.kr"
+    },
+    {
+      "label": "경북대학교병원",
+      "homepage": "knuh.kr"
+    },
+    {
+      "label": "경북대학교치과병원",
+      "homepage": "www.knudh.kr"
+    },
+    {
+      "label": "경상대학교병원",
+      "homepage": "www.gnuh.co.kr/"
+    },
+    {
+      "label": "국가평생교육진흥원",
+      "homepage": "www.nile.or.kr"
+    },
+    {
+      "label": "동북아역사재단",
+      "homepage": "www.nahf.or.kr"
+    },
+    {
+      "label": "부산대학교병원",
+      "homepage": "www.pnuh.or.kr"
+    },
+    {
+      "label": "부산대학교치과병원",
+      "homepage": "www.pnudh.co.kr"
+    },
+    {
+      "label": "사립학교교직원연금공단",
+      "homepage": "www.tp.or.kr/"
+    },
+    {
+      "label": "서울대학교병원",
+      "homepage": "snuh.org"
+    },
+    {
+      "label": "# 분당서울대학교병원",
+      "homepage": "www.snubh.org"
+    },
+    {
+      "label": "서울대학교치과병원",
+      "homepage": "www.snudh.org"
+    },
+    {
+      "label": "전남대학교병원",
+      "homepage": "www.cnuh.com"
+    },
+    {
+      "label": "전북대학교병원",
+      "homepage": "www.jbuh.co.kr"
+    },
+    {
+      "label": "제주대학교병원",
+      "homepage": "www.jejunuh.co.kr/index.do"
+    },
+    {
+      "label": "충남대학교병원",
+      "homepage": "www.cnuh.co.kr"
+    },
+    {
+      "label": "충북대학교병원",
+      "homepage": "www.cbnuh.or.kr"
+    },
+    {
+      "label": "한국고전번역원",
+      "homepage": "www.itkc.or.kr"
+    },
+    {
+      "label": "한국교육학술정보원",
+      "homepage": "www.keris.or.kr"
+    },
+    {
+      "label": "한국사학진흥재단",
+      "homepage": "www.kasfo.or.kr"
+    },
+    {
+      "label": "한국장학재단",
+      "homepage": "www.kosaf.go.kr"
+    },
+    {
+      "label": "한국학중앙연구원",
+      "homepage": "www.aks.ac.kr"
+    },
+    {
+      "label": "국가보훈처",
+      "homepage": "https://www.mpva.go.kr/"
+    },
+    {
+      "label": "88관광개발(주)",
+      "homepage": "https://www.88countryclub.co.kr/"
+    },
+    {
+      "label": "독립기념관",
+      "homepage": "www.i815.or.kr"
+    },
+    {
+      "label": "한국보훈복지의료공단",
+      "homepage": "www.bohun.or.kr"
+    },
+    {
+      "label": "국무조정실",
+      "homepage": "https://www.opm.go.kr/"
+    },
+    {
+      "label": "경제인문사회연구회",
+      "homepage": "www.nrc.re.kr"
+    },
+    {
+      "label": "# 육아정책연구소",
+      "homepage": "www.kicce.re.kr"
+    },
+    {
+      "label": "과학기술정책연구원",
+      "homepage": "www.stepi.re.kr"
+    },
+    {
+      "label": "국토연구원",
+      "homepage": "www.krihs.re.kr"
+    },
+    {
+      "label": "대외경제정책연구원",
+      "homepage": "www.kiep.go.kr"
+    },
+    {
+      "label": "산업연구원",
+      "homepage": "www.kiet.re.kr"
+    },
+    {
+      "label": "에너지경제연구원",
+      "homepage": "www.keei.re.kr"
+    },
+    {
+      "label": "정보통신정책연구원",
+      "homepage": "www.kisdi.re.kr"
+    },
+    {
+      "label": "통일연구원",
+      "homepage": "www.kinu.or.kr"
+    },
+    {
+      "label": "한국개발연구원",
+      "homepage": "www.kdi.re.kr"
+    },
+    {
+      "label": "# KDI국제정책대학원",
+      "homepage": "www.kdischool.ac.kr"
+    },
+    {
+      "label": "한국교육개발원",
+      "homepage": "www.kedi.re.kr"
+    },
+    {
+      "label": "한국교육과정평가원",
+      "homepage": "www.kice.re.kr"
+    },
+    {
+      "label": "한국교통연구원",
+      "homepage": "https://www.koti.re.kr"
+    },
+    {
+      "label": "한국노동연구원",
+      "homepage": "www.kli.re.kr"
+    },
+    {
+      "label": "한국농촌경제연구원",
+      "homepage": "www.krei.re.kr"
+    },
+    {
+      "label": "한국법제연구원",
+      "homepage": "www.klri.re.kr"
+    },
+    {
+      "label": "한국보건사회연구원",
+      "homepage": "www.kihasa.re.kr"
+    },
+    {
+      "label": "한국여성정책연구원",
+      "homepage": "www.kwdi.re.kr"
+    },
+    {
+      "label": "한국조세재정연구원",
+      "homepage": "www.kipf.re.kr"
+    },
+    {
+      "label": "한국직업능력개발원",
+      "homepage": "www.krivet.re.kr"
+    },
+    {
+      "label": "한국청소년정책연구원",
+      "homepage": "www.nypi.re.kr"
+    },
+    {
+      "label": "한국해양수산개발원",
+      "homepage": "www.kmi.re.kr"
+    },
+    {
+      "label": "한국행정연구원",
+      "homepage": "www.kipa.re.kr"
+    },
+    {
+      "label": "한국형사정책연구원",
+      "homepage": "www.kic.re.kr"
+    },
+    {
+      "label": "한국환경정책평가연구원",
+      "homepage": "www.kei.re.kr"
+    },
+    {
+      "label": "국방부",
+      "homepage": "https://www.mnd.go.kr/"
+    },
+    {
+      "label": "국방전직교육원",
+      "homepage": "www.moti.or.kr"
+    },
+    {
+      "label": "전쟁기념사업회",
+      "homepage": "www.warmemo.or.kr"
+    },
+    {
+      "label": "한국국방연구원",
+      "homepage": "www.kida.re.kr"
+    },
+    {
+      "label": "국토교통부",
+      "homepage": "https://www.molit.go.kr/"
+    },
+    {
+      "label": "(주)한국건설관리공사",
+      "homepage": "www.korcm.co.kr"
+    },
+    {
+      "label": "국가철도공단",
+      "homepage": "www.kr.or.kr"
+    },
+    {
+      "label": "국토교통과학기술진흥원",
+      "homepage": "www.kaia.re.kr"
+    },
+    {
+      "label": "국토안전관리원",
+      "homepage": "www.kistec.or.kr"
+    },
+    {
+      "label": "새만금개발공사",
+      "homepage": "sdco.or.kr/"
+    },
+    {
+      "label": "인천국제공항공사",
+      "homepage": "www.airport.kr"
+    },
+    {
+      "label": "재단법인 대한건설기계안전관리원",
+      "homepage": "www.kcesi.or.kr/"
+    },
+    {
+      "label": "제주국제자유도시개발센터",
+      "homepage": "www.jdcenter.com"
+    },
+    {
+      "label": "주식회사 에스알",
+      "homepage": "www.srail.or.kr"
+    },
+    {
+      "label": "주택관리공단(주)",
+      "homepage": "www.kohom.or.kr"
+    },
+    {
+      "label": "주택도시보증공사",
+      "homepage": "www.khug.or.kr"
+    },
+    {
+      "label": "코레일관광개발(주)",
+      "homepage": "www.korailtravel.com"
+    },
+    {
+      "label": "코레일네트웍스(주)",
+      "homepage": "www.korailnetworks.com"
+    },
+    {
+      "label": "코레일로지스(주)",
+      "homepage": "koraillogis.com"
+    },
+    {
+      "label": "코레일유통(주)",
+      "homepage": "www.korailretail.com"
+    },
+    {
+      "label": "코레일테크(주)",
+      "homepage": "www.korailtech.kr"
+    },
+    {
+      "label": "한국공항공사",
+      "homepage": "www.airport.co.kr"
+    },
+    {
+      "label": "한국교통안전공단",
+      "homepage": "www.kotsa.or.kr"
+    },
+    {
+      "label": "한국국토정보공사",
+      "homepage": "www.lx.or.kr"
+    },
+    {
+      "label": "한국도로공사",
+      "homepage": "www.ex.co.kr"
+    },
+    {
+      "label": "한국부동산원",
+      "homepage": "www.kab.co.kr"
+    },
+    {
+      "label": "한국철도공사",
+      "homepage": "www.korail.com"
+    },
+    {
+      "label": "한국토지주택공사",
+      "homepage": "www.lh.or.kr"
+    },
+    {
+      "label": "한국해외인프라도시개발지원공사",
+      "homepage": "www.kindkorea.or.kr"
+    },
+    {
+      "label": "항공안전기술원",
+      "homepage": "www.kiast.or.kr"
+    },
+    {
+      "label": "금융위원회",
+      "homepage": "https://www.fsc.go.kr/"
+    },
+    {
+      "label": "서민금융진흥원",
+      "homepage": "www.kinfa.or.kr"
+    },
+    {
+      "label": "신용보증기금",
+      "homepage": "www.kodit.co.kr"
+    },
+    {
+      "label": "예금보험공사",
+      "homepage": "www.kdic.or.kr"
+    },
+    {
+      "label": "중소기업은행",
+      "homepage": "www.ibk.co.kr"
+    },
+    {
+      "label": "한국산업은행",
+      "homepage": "www.kdb.co.kr"
+    },
+    {
+      "label": "한국예탁결제원",
+      "homepage": "www.ksd.or.kr"
+    },
+    {
+      "label": "한국자산관리공사",
+      "homepage": "kamco.or.kr"
+    },
+    {
+      "label": "한국주택금융공사",
+      "homepage": "www.hf.go.kr"
+    },
+    {
+      "label": "기상청",
+      "homepage": "https://www.weather.go.kr/"
+    },
+    {
+      "label": "(재)APEC기후센터",
+      "homepage": "www.apcc21.org"
+    },
+    {
+      "label": "한국기상산업기술원",
+      "homepage": "https://www.kmiti.or.kr"
+    },
+    {
+      "label": "기획재정부",
+      "homepage": "https://www.moef.go.kr/"
+    },
+    {
+      "label": "한국수출입은행",
+      "homepage": "www.koreaexim.go.kr"
+    },
+    {
+      "label": "한국재정정보원",
+      "homepage": "www.kpfis.or.kr"
+    },
+    {
+      "label": "한국조폐공사",
+      "homepage": "www.komsco.com"
+    },
+    {
+      "label": "한국투자공사",
+      "homepage": "www.kic.kr"
+    },
+    {
+      "label": "농림축산식품부",
+      "homepage": "https://www.mafra.go.kr/"
+    },
+    {
+      "label": "(재)축산환경관리원",
+      "homepage": "www.ilem.or.kr"
+    },
+    {
+      "label": "(재)한식진흥원",
+      "homepage": "www.hansik.or.kr"
+    },
+    {
+      "label": "가축위생방역지원본부",
+      "homepage": "www.lhca.or.kr"
+    },
+    {
+      "label": "국제식물검역인증원",
+      "homepage": "www.ipab.or.kr"
+    },
+    {
+      "label": "농림수산식품교육문화정보원",
+      "homepage": "www.epis.or.kr"
+    },
+    {
+      "label": "농림식품기술기획평가원",
+      "homepage": "www.ipet.re.kr"
+    },
+    {
+      "label": "농업정책보험금융원",
+      "homepage": "www.apfs.kr"
+    },
+    {
+      "label": "축산물품질평가원",
+      "homepage": "www.ekape.or.kr"
+    },
+    {
+      "label": "한국농수산식품유통공사",
+      "homepage": "www.at.or.kr"
+    },
+    {
+      "label": "한국농어촌공사",
+      "homepage": "www.ekr.or.kr"
+    },
+    {
+      "label": "한국마사회",
+      "homepage": "www.kra.co.kr"
+    },
+    {
+      "label": "한국식품산업클러스터진흥원",
+      "homepage": "www.foodpolis.kr"
+    },
+    {
+      "label": "농촌진흥청",
+      "homepage": "www.rda.go.kr"
+    },
+    {
+      "label": "농업기술실용화재단",
+      "homepage": "https://www.fact.or.kr/"
+    },
+    {
+      "label": "문화재청",
+      "homepage": "http://www.cha.go.kr/main.html"
+    },
+    {
+      "label": "한국문화재재단",
+      "homepage": "www.chf.or.kr"
+    },
+    {
+      "label": "문화체육관광부",
+      "homepage": "https://www.mcst.go.kr/"
+    },
+    {
+      "label": "(재)예술경영지원센터",
+      "homepage": "www.gokams.or.kr"
+    },
+    {
+      "label": "게임물관리위원회",
+      "homepage": "www.grac.or.kr"
+    },
+    {
+      "label": "국립박물관문화재단",
+      "homepage": "www.cfnmk.or.kr"
+    },
+    {
+      "label": "국제방송교류재단",
+      "homepage": "www.arirang.com"
+    },
+    {
+      "label": "그랜드코리아레저(주)",
+      "homepage": "www.grandkorea.com"
+    },
+    {
+      "label": "대한장애인체육회",
+      "homepage": "www.koreanpc.kr"
+    },
+    {
+      "label": "대한체육회",
+      "homepage": "www.sports.or.kr"
+    },
+    {
+      "label": "서울올림픽기념국민체육진흥공단",
+      "homepage": "www.kspo.or.kr"
+    },
+    {
+      "label": "세종학당재단",
+      "homepage": "www.ksif.or.kr"
+    },
+    {
+      "label": "아시아문화원",
+      "homepage": "www.aci-k.kr"
+    },
+    {
+      "label": "영상물등급위원회",
+      "homepage": "www.kmrb.or.kr"
+    },
+    {
+      "label": "영화진흥위원회",
+      "homepage": "www.kofic.kr"
+    },
+    {
+      "label": "예술의전당",
+      "homepage": "www.sac.or.kr"
+    },
+    {
+      "label": "재단법인 국악방송",
+      "homepage": "www.igbf.kr"
+    },
+    {
+      "label": "태권도진흥재단",
+      "homepage": "https://www.tpf.or.kr"
+    },
+    {
+      "label": "한국공예디자인문화진흥원",
+      "homepage": "www.kcdf.kr"
+    },
+    {
+      "label": "한국관광공사",
+      "homepage": "kto.visitkorea.or.kr"
+    },
+    {
+      "label": "한국도박문제관리센터",
+      "homepage": "www.kcgp.or.kr"
+    },
+    {
+      "label": "한국문학번역원",
+      "homepage": "https://www.ltikorea.or.kr/"
+    },
+    {
+      "label": "한국문화관광연구원",
+      "homepage": "www.kcti.re.kr"
+    },
+    {
+      "label": "한국문화예술교육진흥원",
+      "homepage": "www.arte.or.kr"
+    },
+    {
+      "label": "한국문화예술위원회",
+      "homepage": "www.arko.or.kr"
+    },
+    {
+      "label": "한국문화정보원",
+      "homepage": "www.kcisa.kr"
+    },
+    {
+      "label": "한국문화진흥주식회사",
+      "homepage": "www.newseoulgolf.co.kr"
+    },
+    {
+      "label": "한국언론진흥재단",
+      "homepage": "www.kpf.or.kr"
+    },
+    {
+      "label": "한국영상자료원",
+      "homepage": "www.koreafilm.or.kr"
+    },
+    {
+      "label": "한국예술인복지재단",
+      "homepage": "www.kawf.kr"
+    },
+    {
+      "label": "한국저작권보호원",
+      "homepage": "www.kcopa.or.kr"
+    },
+    {
+      "label": "한국저작권위원회",
+      "homepage": "www.copyright.or.kr"
+    },
+    {
+      "label": "한국체육산업개발(주)",
+      "homepage": "www.ksponco.or.kr/"
+    },
+    {
+      "label": "한국출판문화산업진흥원",
+      "homepage": "www.kpipa.or.kr"
+    },
+    {
+      "label": "한국콘텐츠진흥원",
+      "homepage": "www.kocca.kr"
+    },
+    {
+      "label": "방송통신위원회",
+      "homepage": "https://kcc.go.kr/"
+    },
+    {
+      "label": "시청자미디어재단",
+      "homepage": "www.kcmf.or.kr"
+    },
+    {
+      "label": "한국방송광고진흥공사",
+      "homepage": "www.kobaco.co.kr"
+    },
+    {
+      "label": "방위사업청",
+      "homepage": "https://www.dapa.go.kr"
+    },
+    {
+      "label": "국방과학연구소",
+      "homepage": "www.add.re.kr"
+    },
+    {
+      "label": "국방기술품질원",
+      "homepage": "www.dtaq.re.kr"
+    },
+    {
+      "label": "법무부",
+      "homepage": "https://www.moj.go.kr/"
+    },
+    {
+      "label": "대한법률구조공단",
+      "homepage": "https://www.klac.or.kr"
+    },
+    {
+      "label": "정부법무공단",
+      "homepage": "www.kgls.or.kr"
+    },
+    {
+      "label": "한국법무보호복지공단",
+      "homepage": "https://koreha.or.kr/"
+    },
+    {
+      "label": "보건복지부",
+      "homepage": "http://www.mohw.go.kr/"
+    },
+    {
+      "label": "건강보험심사평가원",
+      "homepage": "www.hira.or.kr"
+    },
+    {
+      "label": "국가생명윤리정책원",
+      "homepage": "https://www.nibp.kr"
+    },
+    {
+      "label": "국립암센터",
+      "homepage": "www.ncc.re.kr"
+    },
+    {
+      "label": "국립중앙의료원",
+      "homepage": "www.nmc.or.kr"
+    },
+    {
+      "label": "국민건강보험공단",
+      "homepage": "www.nhis.or.kr"
+    },
+    {
+      "label": "# 국민건강보험공단 일산병원",
+      "homepage": "www.nhimc.or.kr"
+    },
+    {
+      "label": "# 서울요양원",
+      "homepage": "www.서울요양원.kr"
+    },
+    {
+      "label": "국민연금공단",
+      "homepage": "www.nps.or.kr"
+    },
+    {
+      "label": "대구경북첨단의료산업진흥재단",
+      "homepage": "www.dgmif.re.kr"
+    },
+    {
+      "label": "대한적십자사",
+      "homepage": "www.redcross.or.kr"
+    },
+    {
+      "label": "아동권리보장원",
+      "homepage": "www.ncrc.or.kr"
+    },
+    {
+      "label": "오송첨단의료산업진흥재단",
+      "homepage": "www.kbiohealth.kr"
+    },
+    {
+      "label": "의료기관평가인증원",
+      "homepage": "www.koiha.or.kr"
+    },
+    {
+      "label": "재단법인 한국공공조직은행",
+      "homepage": "kptb.kr"
+    },
+    {
+      "label": "재단법인 한국자활복지개발원",
+      "homepage": "www.kdissw.or.kr"
+    },
+    {
+      "label": "재단법인 한국장기조직기증원",
+      "homepage": "www.koda1458.kr"
+    },
+    {
+      "label": "한국건강증진개발원",
+      "homepage": "www.khealth.or.kr"
+    },
+    {
+      "label": "한국국제보건의료재단",
+      "homepage": "www.kofih.org"
+    },
+    {
+      "label": "한국노인인력개발원",
+      "homepage": "kordi.or.kr"
+    },
+    {
+      "label": "한국보건복지인력개발원",
+      "homepage": "www.kohi.or.kr"
+    },
+    {
+      "label": "한국보건산업진흥원",
+      "homepage": "https://www.khidi.or.kr"
+    },
+    {
+      "label": "한국보건의료연구원",
+      "homepage": "www.neca.re.kr"
+    },
+    {
+      "label": "한국보건의료인국가시험원",
+      "homepage": "www.kuksiwon.or.kr/"
+    },
+    {
+      "label": "한국보육진흥원",
+      "homepage": "https://www.kcpi.or.kr"
+    },
+    {
+      "label": "한국사회보장정보원",
+      "homepage": "www.ssis.or.kr"
+    },
+    {
+      "label": "한국사회복지협의회",
+      "homepage": "www.bokji.net"
+    },
+    {
+      "label": "한국의료분쟁조정중재원",
+      "homepage": "https://www.k-medi.or.kr"
+    },
+    {
+      "label": "한국장애인개발원",
+      "homepage": "www.koddi.or.kr"
+    },
+    {
+      "label": "한국한의약진흥원",
+      "homepage": "www.nikom.or.kr"
+    },
+    {
+      "label": "산림청",
+      "homepage": "https://www.forest.go.kr/"
+    },
+    {
+      "label": "한국등산·트레킹지원센터",
+      "homepage": "www.komount.kr"
+    },
+    {
+      "label": "한국산림복지진흥원",
+      "homepage": "fowi.or.kr"
+    },
+    {
+      "label": "한국수목원관리원",
+      "homepage": "www.kiam.or.kr"
+    },
+    {
+      "label": "한국임업진흥원",
+      "homepage": "www.kofpi.or.kr"
+    },
+    {
+      "label": "산업통상자원부",
+      "homepage": "https://www.motie.go.kr/"
+    },
+    {
+      "label": "(재)한국스마트그리드사업단",
+      "homepage": "www.smartgrid.or.kr"
+    },
+    {
+      "label": "(주)강원랜드",
+      "homepage": "https://kangwonland.high1.com"
+    },
+    {
+      "label": "(주)한국가스기술공사",
+      "homepage": "www.kogas-tech.co.kr"
+    },
+    {
+      "label": "대한무역투자진흥공사",
+      "homepage": "www.kotra.or.kr"
+    },
+    {
+      "label": "대한석탄공사",
+      "homepage": "www.kocoal.or.kr"
+    },
+    {
+      "label": "재단법인 한국에너지재단",
+      "homepage": "www.koref.or.kr/"
+    },
+    {
+      "label": "전략물자관리원",
+      "homepage": "www.kosti.or.kr"
+    },
+    {
+      "label": "한국가스공사",
+      "homepage": "www.kogas.or.kr"
+    },
+    {
+      "label": "한국가스안전공사",
+      "homepage": "www.kgs.or.kr"
+    },
+    {
+      "label": "한국광물자원공사",
+      "homepage": "www.kores.or.kr"
+    },
+    {
+      "label": "한국광해관리공단",
+      "homepage": "www.mireco.or.kr"
+    },
+    {
+      "label": "한국남동발전(주)",
+      "homepage": "www.koenergy.kr"
+    },
+    {
+      "label": "한국남부발전(주)",
+      "homepage": "www.kospo.co.kr"
+    },
+    {
+      "label": "한국동서발전(주)",
+      "homepage": "www.ewp.co.kr"
+    },
+    {
+      "label": "한국디자인진흥원",
+      "homepage": "www.kidp.or.kr"
+    },
+    {
+      "label": "한국로봇산업진흥원",
+      "homepage": "www.kiria.org"
+    },
+    {
+      "label": "한국무역보험공사",
+      "homepage": "https://www.ksure.or.kr"
+    },
+    {
+      "label": "한국산업기술시험원",
+      "homepage": "www.ktl.re.kr"
+    },
+    {
+      "label": "한국산업기술진흥원",
+      "homepage": "www.kiat.or.kr"
+    },
+    {
+      "label": "한국산업기술평가관리원",
+      "homepage": "www.keit.re.kr"
+    },
+    {
+      "label": "한국산업단지공단",
+      "homepage": "www.kicox.or.kr"
+    },
+    {
+      "label": "한국서부발전(주)",
+      "homepage": "www.iwest.co.kr"
+    },
+    {
+      "label": "한국석유공사",
+      "homepage": "www.knoc.co.kr"
+    },
+    {
+      "label": "한국석유관리원",
+      "homepage": "www.kpetro.or.kr"
+    },
+    {
+      "label": "한국세라믹기술원",
+      "homepage": "www.kicet.re.kr"
+    },
+    {
+      "label": "한국수력원자력(주)",
+      "homepage": "www.khnp.co.kr"
+    },
+    {
+      "label": "한국에너지공단",
+      "homepage": "www.energy.or.kr"
+    },
+    {
+      "label": "한국에너지기술평가원",
+      "homepage": "www.ketep.re.kr"
+    },
+    {
+      "label": "한국에너지정보문화재단",
+      "homepage": "www.keia.or.kr"
+    },
+    {
+      "label": "한국원자력환경공단",
+      "homepage": "www.korad.or.kr"
+    },
+    {
+      "label": "한국전기안전공사",
+      "homepage": "www.kesco.or.kr"
+    },
+    {
+      "label": "한국전력거래소",
+      "homepage": "www.kpx.or.kr/"
+    },
+    {
+      "label": "한국전력공사",
+      "homepage": "www.kepco.co.kr"
+    },
+    {
+      "label": "한국전력국제원자력대학원대학교",
+      "homepage": "www.kings.ac.kr"
+    },
+    {
+      "label": "한국전력기술주식회사",
+      "homepage": "www.kepco-enc.com"
+    },
+    {
+      "label": "한국중부발전(주)",
+      "homepage": "www.komipo.co.kr"
+    },
+    {
+      "label": "한국지역난방공사",
+      "homepage": "www.kdhc.co.kr"
+    },
+    {
+      "label": "한전KDN",
+      "homepage": "www.kdn.com"
+    },
+    {
+      "label": "한전KPS(주)",
+      "homepage": "www.kps.co.kr"
+    },
+    {
+      "label": "한전원자력연료주식회사",
+      "homepage": "www.knfc.co.kr"
+    },
+    {
+      "label": "소방청",
+      "homepage": "https://www.nfa.go.kr/"
+    },
+    {
+      "label": "한국소방산업기술원",
+      "homepage": "www.kfi.or.kr"
+    },
+    {
+      "label": "식품의약품안전처",
+      "homepage": "https://www.mcst.go.kr/"
+    },
+    {
+      "label": "식품안전정보원",
+      "homepage": "www.foodinfo.or.kr/"
+    },
+    {
+      "label": "한국식품안전관리인증원",
+      "homepage": "www.haccp.or.kr"
+    },
+    {
+      "label": "한국의료기기안전정보원",
+      "homepage": "www.nids.or.kr/"
+    },
+    {
+      "label": "한국의약품안전관리원",
+      "homepage": "www.drugsafe.or.kr"
+    },
+    {
+      "label": "여성가족부",
+      "homepage": "www.mogef.go.kr"
+    },
+    {
+      "label": "한국건강가정진흥원",
+      "homepage": "www.kihf.or.kr"
+    },
+    {
+      "label": "한국양성평등교육진흥원",
+      "homepage": "www.kigepe.or.kr/"
+    },
+    {
+      "label": "한국여성인권진흥원",
+      "homepage": "https://www.stop.or.kr"
+    },
+    {
+      "label": "한국청소년상담복지개발원",
+      "homepage": "www.kyci.or.kr"
+    },
+    {
+      "label": "한국청소년활동진흥원",
+      "homepage": "www.kywa.or.kr"
+    },
+    {
+      "label": "외교부",
+      "homepage": "https://www.mofa.go.kr/"
+    },
+    {
+      "label": "재외동포재단",
+      "homepage": "www.okf.or.kr"
+    },
+    {
+      "label": "한국국제교류재단",
+      "homepage": "www.kf.or.kr"
+    },
+    {
+      "label": "한국국제협력단",
+      "homepage": "www.koica.go.kr"
+    },
+    {
+      "label": "원자력안전위원회",
+      "homepage": "https://www.nssc.go.kr/"
+    },
+    {
+      "label": "한국원자력안전기술원",
+      "homepage": "www.kins.re.kr"
+    },
+    {
+      "label": "한국원자력안전재단",
+      "homepage": "www.kofons.or.kr"
+    },
+    {
+      "label": "한국원자력통제기술원",
+      "homepage": "www.kinac.re.kr"
+    },
+    {
+      "label": "인사혁신처",
+      "homepage": "http://www.mpm.go.kr/"
+    },
+    {
+      "label": "공무원연금공단",
+      "homepage": "www.geps.or.kr"
+    },
+    {
+      "label": "중소벤처기업부",
+      "homepage": "https://www.mss.go.kr/"
+    },
+    {
+      "label": "(재)중소기업연구원",
+      "homepage": "www.kosbi.re.kr"
+    },
+    {
+      "label": "(주)공영홈쇼핑",
+      "homepage": "www.gongyoung.kr"
+    },
+    {
+      "label": "기술보증기금",
+      "homepage": "www.kibo.or.kr"
+    },
+    {
+      "label": "소상공인시장진흥공단",
+      "homepage": "www.semas.or.kr"
+    },
+    {
+      "label": "신용보증재단중앙회",
+      "homepage": "www.koreg.or.kr"
+    },
+    {
+      "label": "재단법인 장애인기업종합지원센터",
+      "homepage": "www.debc.or.kr"
+    },
+    {
+      "label": "중소기업기술정보진흥원",
+      "homepage": "www.tipa.or.kr"
+    },
+    {
+      "label": "중소기업유통센터",
+      "homepage": "www.sbdc.or.kr"
+    },
+    {
+      "label": "중소벤처기업진흥공단",
+      "homepage": "www.kosmes.or.kr"
+    },
+    {
+      "label": "창업진흥원",
+      "homepage": "www.kised.or.kr"
+    },
+    {
+      "label": "한국벤처투자",
+      "homepage": "www.k-vic.co.kr"
+    },
+    {
+      "label": "통일부",
+      "homepage": "https://www.unikorea.go.kr/"
+    },
+    {
+      "label": "(사)남북교류협력지원협회",
+      "homepage": "www.sonosa.or.kr"
+    },
+    {
+      "label": "북한이탈주민지원재단",
+      "homepage": "www.koreahana.or.kr"
+    },
+    {
+      "label": "특허청",
+      "homepage": "https://www.kipo.go.kr/"
+    },
+    {
+      "label": "한국발명진흥회",
+      "homepage": "www.kipa.org"
+    },
+    {
+      "label": "한국지식재산보호원",
+      "homepage": "www.koipa.re.kr"
+    },
+    {
+      "label": "한국지식재산연구원",
+      "homepage": "www.kiip.re.kr"
+    },
+    {
+      "label": "한국특허전략개발원",
+      "homepage": "www.kista.re.kr"
+    },
+    {
+      "label": "한국특허정보원",
+      "homepage": "www.kipi.or.kr"
+    },
+    {
+      "label": "# 특허정보진흥센터",
+      "homepage": "www.pipc.or.kr"
+    },
+    {
+      "label": "해양수산부",
+      "homepage": "https://www.mof.go.kr/"
+    },
+    {
+      "label": "국립해양박물관",
+      "homepage": "www.knmm.or.kr"
+    },
+    {
+      "label": "국립해양생물자원관",
+      "homepage": "www.mabik.re.kr"
+    },
+    {
+      "label": "부산항만공사",
+      "homepage": "www.busanpa.com"
+    },
+    {
+      "label": "여수광양항만공사",
+      "homepage": "www.ygpa.or.kr"
+    },
+    {
+      "label": "울산항만공사",
+      "homepage": "www.upa.or.kr"
+    },
+    {
+      "label": "인천항만공사",
+      "homepage": "www.icpa.or.kr"
+    },
+    {
+      "label": "한국수산자원공단",
+      "homepage": "www.fira.or.kr"
+    },
+    {
+      "label": "한국어촌어항공단",
+      "homepage": "www.fipa.or.kr"
+    },
+    {
+      "label": "한국항로표지기술원",
+      "homepage": "www.katon.or.kr"
+    },
+    {
+      "label": "한국해양과학기술원",
+      "homepage": "www.kiost.ac.kr"
+    },
+    {
+      "label": "# 극지연구소",
+      "homepage": "www.kopri.re.kr"
+    },
+    {
+      "label": "# 선박해양플랜트연구소",
+      "homepage": "www.kriso.re.kr"
+    },
+    {
+      "label": "한국해양교통안전공단",
+      "homepage": "https://www.komsa.or.kr/"
+    },
+    {
+      "label": "한국해양수산연수원",
+      "homepage": "www.seaman.or.kr"
+    },
+    {
+      "label": "한국해양조사협회",
+      "homepage": "www.khra.kr"
+    },
+    {
+      "label": "한국해양진흥공사",
+      "homepage": "www.kobc.or.kr"
+    },
+    {
+      "label": "해양수산과학기술진흥원",
+      "homepage": "www.kimst.re.kr"
+    },
+    {
+      "label": "해양환경공단",
+      "homepage": "www.koem.or.kr"
+    },
+    {
+      "label": "(재)일제강제동원피해자지원재단",
+      "homepage": "www.ilje.or.kr"
+    },
+    {
+      "label": "행정안전부",
+      "homepage": "https://www.mois.go.kr/"
+    },
+    {
+      "label": "민주화운동기념사업회",
+      "homepage": "www.kdemo.or.kr/"
+    },
+    {
+      "label": "한국승강기안전공단",
+      "homepage": "www.koelsa.or.kr"
+    },
+    {
+      "label": "환경부",
+      "homepage": "https://me.go.kr/"
+    },
+    {
+      "label": "(주)워터웨이플러스",
+      "homepage": "https://www.waterway.or.kr"
+    },
+    {
+      "label": "국립공원공단",
+      "homepage": "www.knps.or.kr"
+    },
+    {
+      "label": "국립낙동강생물자원관",
+      "homepage": "https://www.nnibr.re.kr"
+    },
+    {
+      "label": "국립생태원",
+      "homepage": "www.nie.re.kr"
+    },
+    {
+      "label": "수도권매립지관리공사",
+      "homepage": "www.slc.or.kr"
+    },
+    {
+      "label": "한국상하수도협회",
+      "homepage": "www.kwwa.or.kr"
+    },
+    {
+      "label": "한국수자원공사",
+      "homepage": "www.kwater.or.kr"
+    },
+    {
+      "label": "한국수자원조사기술원",
+      "homepage": "www.kihs.re.kr"
+    },
+    {
+      "label": "한국환경공단",
+      "homepage": "www.keco.or.kr"
+    },
+    {
+      "label": "한국환경산업기술원",
+      "homepage": "keiti.re.kr"
+    },
+    {
+      "label": "환경보전협회",
+      "homepage": "www.epa.or.kr"
+    }
+  ]
+}

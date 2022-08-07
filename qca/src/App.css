@@ -1,0 +1,13 @@
+.App {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+}
+
+#developer-link {
+	margin-top: 4vh;
+	margin-bottom: 4vh;
+}
