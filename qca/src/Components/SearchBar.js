@@ -1,9 +1,11 @@
 import * as React from "react";
+import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import data from "../file.json";
+import { useSpring, animated } from "react-spring";
 
-export default function ComboBox() {
+export default function SearchBar() {
 	React.useEffect(() => {
 		document.addEventListener("keydown", keyDownHandler);
 		return () => {
@@ -42,11 +44,25 @@ export default function ComboBox() {
 			}}
 			disablePortal
 			autoHighlight
-			id="combo-box-demo"
+			id="search-bar"
 			options={websites}
-			sx={{ width: "max(40vw,20rem)", backgroundColor: "white" }}
+			className="w-[max(40vw,20rem)] mt-4"
 			groupBy={option => option.firstLetter}
-			renderInput={params => <TextField {...params} autoFocus label="기관명" />}
+			renderOption={(props, option) => (
+				<Box className="mr-2 flex-shrink" component="li" {...props}>
+					{option.label}
+				</Box>
+			)}
+			renderInput={params => (
+				<TextField
+					{...params}
+					label="기관명"
+					inputProps={{
+						...params.inputProps,
+						autoComplete: "new-password", // disable autocomplete and autofill
+					}}
+				/>
+			)}
 		/>
 	);
 }

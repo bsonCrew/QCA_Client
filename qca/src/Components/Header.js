@@ -1,19 +1,20 @@
-import "../App.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+	const navigate = useNavigate();
+
+	const onLogoClick = () => {
+		navigate("/");
+	};
+
 	return (
-		<header className="App-header">
-			<h1>This is Header Area</h1>
-			<div id="developer-link">
-				<a
-					className="App-link"
-					href="https://pinkishincoloragain.me"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Who made this website?
-				</a>
+		<div className="h-16 mb-12 mt-48 flex flex-row space-x-4 drop-shadow-md">
+			<div
+				onClick={onLogoClick}
+				className="text-7xl font-semibold h-12 hover:cursor-pointer"
+			>
+				QCA
 			</div>
-		</header>
+		</div>
 	);
 }
