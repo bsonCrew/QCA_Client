@@ -4,7 +4,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "./Views/Landing";
 import NotFound from "./Views/NotFound";
-import Header from "./Components/Header";
+import Dashboard from "./Views/Dashboard";
 
 function App() {
 	return (
@@ -12,6 +12,7 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route path="/" element={<Landing />} />
+					<Route path="/dashboard" element={<Dashboard />} />
 					<Route path="/*" element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>
