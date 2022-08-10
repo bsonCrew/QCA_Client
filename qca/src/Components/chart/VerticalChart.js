@@ -27,7 +27,7 @@ export const options = {
 		},
 		title: {
 			display: true,
-			text: "Chart.js Bar Chart",
+			text: "진단 위험",
 		},
 	},
 };
