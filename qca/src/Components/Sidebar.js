@@ -8,10 +8,17 @@ import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import InboxIcon from "@mui/icons-material/Inbox";
 import DraftsIcon from "@mui/icons-material/Drafts";
+import { Typography } from "@mui/material";
 
 export default function SideBar() {
 	return (
-		<Box className="w-2/12 h-full">
+		<Box className="w-12/12 h-full">
+			<div className="h-40 flex">
+				<Box className="ml-2 mt-28 font-bold">
+					<Typography variant="h5">www.qca.com</Typography>
+				</Box>
+			</div>
+			<Divider />
 			<nav aria-label="main mailbox folders">
 				<List>
 					<ListItem disablePadding>

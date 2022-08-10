@@ -12,11 +12,8 @@ export default function Stat() {
 		rowLength: 100,
 	});
 
-	let cardData = Array(4).fill(0);
-
 	return (
-		<div className="w-12/12 h-[40vh]">
-			<StatCards cardData={cardData} />
+		<div className="w-full h-[50vh]">
 			<DataGrid {...data} components={{ Toolbar: GridToolbar }} />
 		</div>
 	);

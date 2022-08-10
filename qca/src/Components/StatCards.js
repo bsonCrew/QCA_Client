@@ -20,15 +20,13 @@ const icons = [
 
 const StatCard = ({ data, index }) => {
 	return (
-		<Box key={index} className="w-3/12 h-full ">
-			<Card>
-				<CardContent className="flex flex-col text-center item-center justify-center">
+		<Box key={index} className="flex flex-wrap w-full mx-6">
+			<Card className="w-full min-w-fit h-40">
+				<CardContent className="flex flex-col text-center item-center justify-center min-w-[10rem]">
 					<div className="flex align-middle justify-center my-4">
 						{icons[index]}
 					</div>
-					<Typography variant="h6" component="h2">
-						{index}
-					</Typography>
+					<Typography variant="h6">{index}</Typography>
 					<Typography gutterBottom variant="h6" component="div">
 						{catchPhrase[index]}
 					</Typography>
@@ -41,11 +39,11 @@ const StatCard = ({ data, index }) => {
 const catchPhrase = config.catchPhrase;
 
 export default function StatCards(props) {
-	console.log(catchPhrase);
+	let cardData = Array(4).fill(0);
 	return (
-		<div className="flex flex-row">
-			{props.cardData.map((data, index) => {
-				return <StatCard data={data} index={index} />;
+		<div className="flex flex-row mt-4">
+			{cardData.map((data, index) => {
+				return <StatCard key={index} data={data} index={index} />;
 			})}
 		</div>
 	);
