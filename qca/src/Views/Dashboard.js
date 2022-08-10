@@ -6,17 +6,16 @@ import PolarChart from "../Components/chart/PolarChart";
 import VeticalChart from "../Components/chart/VerticalChart";
 import StatCards from "../Components/StatCards";
 import Divider from "@mui/material/Divider";
+import MiniDrawer from "../Components/Drawer";
 
 const VISIBLE_FIELDS = ["name", "rating", "country", "dateCreated", "isAdmin"];
 
 export default function Dashboard() {
 	return (
 		<div className="flex flex-row flex-wrap h-screen w-screen">
-			<div className="flex-2 mx-2">
-				<SideBar />
-			</div>
-			<Divider orientation="vertical" />
-			<div className="flex-10 flex-col flex-wrap">
+			<MiniDrawer />
+			<Divider orientation="vertical" className="h-screen" />
+			<div className="flex-12 flex-col flex-wrap pt-16">
 				<div className="flex flex-row">
 					<div className="flex-7">
 						<StatCards />
@@ -25,11 +24,11 @@ export default function Dashboard() {
 						<Score />
 					</div>
 				</div>
-				<div className="flex flex-wrap ml-4 justify-between">
+				<div className="px-6 flex flex-wrap justify-between">
 					<PolarChart />
 					<VeticalChart />
 				</div>
-				<div className="flex ml-6 w-full">
+				<div className="px-6 flex w-full">
 					<Stat />
 				</div>
 			</div>

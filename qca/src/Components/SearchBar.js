@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import data from "../file.json";
-import { useSpring, animated } from "react-spring";
 
 export default function SearchBar() {
 	React.useEffect(() => {
