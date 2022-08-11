@@ -7,16 +7,17 @@ import {
 	Legend,
 } from "chart.js";
 import { PolarArea } from "react-chartjs-2";
+import result from "../../result.json";
+import config from "../../config.json";
 
 export default function PolarChart() {
 	const options = {
 		plugins: {
 			datalabels: {
 				display: true,
-				backgroundColor: "#ccc",
-				borderRadius: 3,
+				backgroundColor: "#ffffff",
+				borderRadius: 10,
 				font: {
-					color: "red",
 					weight: "bold",
 				},
 			},
@@ -30,7 +31,7 @@ export default function PolarChart() {
 					{
 						text: "550",
 						font: {
-							size: 20,
+							size: 28,
 							weight: "bold",
 						},
 					},
@@ -44,18 +45,17 @@ export default function PolarChart() {
 
 	ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 	const data = {
-		labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+		labels: config.info,
 		datasets: [
 			{
-				label: "# of Votes",
-				data: [12, 19, 3, 5, 2, 3],
+				label: "전체 점수",
+				data: result.sampleData,
 				backgroundColor: [
-					"rgba(255, 99, 132, 0.5)",
-					"rgba(54, 162, 235, 0.5)",
-					"rgba(255, 206, 86, 0.5)",
-					"rgba(75, 192, 192, 0.5)",
-					"rgba(153, 102, 255, 0.5)",
-					"rgba(255, 159, 64, 0.5)",
+					config.colors.blue,
+					config.colors.red,
+					config.colors.green,
+					config.colors.yellow,
+					config.colors.purple,
 				],
 				borderWidth: 1,
 			},

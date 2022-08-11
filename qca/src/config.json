@@ -1,3 +1,20 @@
 {
-	"catchPhrase": ["잘했어요", "위험해요", "경고합니다", "개선해봐요"]
+	"catchPhrase": ["잘했어요", "위험해요", "경고합니다", "개선해봐요"],
+	"colors": {
+		"blue": "#1fb6ff",
+		"red": "#ff4949",
+		"green": "#13ce66",
+		"yellow": "#ffc82c",
+		"purple": "#7e5bef",
+		"pink": "#ff49db",
+		"orange": "#ff7849",
+		"gray-dark": "#273444",
+		"gray": "#8492a6",
+		"gray-light": "#d3dce6"
+	},
+	"info": ["호환성", "접근성", "개방성", "접속성", "편의성"],
+	"helperInfo": ["전체", "홈 화면", "결과 내보내기", "도움말"],
+	"sampleData": [15, 19, 13, 6, 12],
+	"sampleLargeData": [40, 19, 59, 71, 40],
+	"sampleLargeData2": [90, 12, 30, 60, 35]
 }

@@ -10,8 +10,9 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ListItemIcon from "@mui/material/ListItemIcon";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import HomeIcon from "@mui/icons-material/Home";
+import PrintIcon from "@mui/icons-material/Print";
+import HelpIcon from "@mui/icons-material/Help";
 import SummarizeIcon from "@mui/icons-material/Summarize";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -21,26 +22,32 @@ import red from "../assets/red.png";
 import green from "../assets/green.png";
 import yellow from "../assets/yellow.png";
 import purple from "../assets/purple.png";
+import config from "../config.json";
 import { Typography } from "@mui/material";
 
 const drawerWidth = 240;
 
-const openedMixin = theme => ({
+const openedMixin = (theme, lock) => ({
 	width: drawerWidth,
 	transition: theme.transitions.create("width", {
 		easing: theme.transitions.easing.sharp,
 		duration: "0.1s",
 	}),
+	borderRight: lock ? "solid 1px #bfbfbf" : "none",
+	boxShadow: lock ? "none" : "0px 0px 10px rgba(0, 0, 0, 0.3)",
+
 	overflowX: "hidden",
 });
 
-const closedMixin = theme => ({
+const closedMixin = (theme, lock) => ({
 	transition: theme.transitions.create("width", {
 		easing: theme.transitions.easing.sharp,
 		duration: "0.1s",
 	}),
 	overflowX: "hidden",
 	width: `calc(${theme.spacing(7)} + 1px)`,
+	borderRight: lock ? "none" : "solid 1px #bfbfbf",
+
 	[theme.breakpoints.up("sm")]: {
 		width: `calc(${theme.spacing(8)} + 1px)`,
 	},
@@ -81,32 +88,50 @@ const AppBar = styled(MuiAppBar, {
 
 const Drawer = styled(MuiDrawer, {
 	shouldForwardProp: prop => prop !== "open",
-})(({ theme, open }) => ({
+})(({ theme, open, lock }) => ({
 	width: drawerWidth,
 	flexShrink: 0,
 	whiteSpace: "nowrap",
 	boxSizing: "border-box",
 	...(open && {
-		...openedMixin(theme),
-		"& .MuiDrawer-paper": openedMixin(theme),
+		...openedMixin(theme, lock),
+		"& .MuiDrawer-paper": openedMixin(theme, lock),
 	}),
 	...(!open && {
-		...closedMixin(theme),
-		"& .MuiDrawer-paper": closedMixin(theme),
+		...closedMixin(theme, lock),
+		"& .MuiDrawer-paper": closedMixin(theme, lock),
 	}),
 }));
 
 const icons = [blue, red, green, yellow, purple];
-const iconInfo = ["호환성", "접근성", "개방성", "접속성", "편의성"];
-const helperInfo = ["결과 내보내기", "도움말", "홈 화면"];
+const iconInfo = config.info;
+const helperInfo = config.helperInfo;
+const helperIcon = [
+	<SummarizeIcon />,
+	<HomeIcon />,
+	<PrintIcon />,
+	<HelpIcon />,
+];
 
 // const
 
 export default function SideBar() {
 	const [open, setOpen] = React.useState(false);
+	const [lock, setLock] = React.useState(false);
 
 	const handleDrawer = () => {
-		setOpen(!open);
+		setOpen(open);
+		setLock(!lock);
+	};
+
+	const closeDrawer = () => {
+		if (!lock && open) setOpen(false);
+	};
+
+	const openDrawer = () => {
+		if (!lock) {
+			setOpen(true);
+		}
 	};
 
 	const SideBarItem = props => {
@@ -114,13 +139,41 @@ export default function SideBar() {
 			<ListItem disablePadding>
 				<ListItemButton>
 					<img
-						className="w-8 justify-center"
-						src={icons[props.idx]}
-						alt={iconInfo[props.idx]}
+						className="w-8 p-1 justify-center"
+						src={icons[props.index]}
+						alt={iconInfo[props.index]}
 					/>
 					{open ? (
-						<ListItemText className="ml-4" primary={iconInfo[props.idx]} />
+						<ListItemText className="ml-4" primary={iconInfo[props.index]} />
 					) : null}
+				</ListItemButton>
+			</ListItem>
+		);
+	};
+
+	const IconBarItem = props => {
+		return (
+			<ListItem disablePadding sx={{ display: "block" }}>
+				<ListItemButton
+					sx={{
+						minHeight: 48,
+						justifyContent: open ? "initial" : "center",
+						px: 2.5,
+					}}
+				>
+					<ListItemIcon
+						sx={{
+							minWidth: 0,
+							mr: open ? 3 : "auto",
+							justifyContent: "center",
+						}}
+					>
+						{helperIcon[props.index]}
+					</ListItemIcon>
+					<ListItemText
+						primary={helperInfo[props.index]}
+						sx={{ opacity: open ? 1 : 0 }}
+					/>
 				</ListItemButton>
 			</ListItem>
 		);
@@ -141,46 +194,35 @@ export default function SideBar() {
 					</div>
 				</Toolbar>
 			</AppBar>
-			<Drawer variant="permanent" open={open}>
+			<Drawer
+				variant="permanent"
+				open={open}
+				lock={lock.toString()}
+				onMouseOver={openDrawer}
+				onMouseOut={closeDrawer}
+			>
 				<DrawerHeader className="flex align-middle justify-center">
 					<IconButton className="flex" onClick={handleDrawer}>
 						<MenuIcon />
 					</IconButton>
 				</DrawerHeader>
-				{/* <Divider />s */}
 				<List>
-					<SideBarItem idx={0} />
-					<SideBarItem idx={1} />
-					<SideBarItem idx={2} />
-					<SideBarItem idx={3} />
-					<SideBarItem idx={4} />
+					<IconBarItem index={0} />
+					<SideBarItem index={0} />
+					<SideBarItem index={1} />
+					<SideBarItem index={2} />
+					<SideBarItem index={3} />
+					<SideBarItem index={4} />
 				</List>
 				<Divider />
+
 				<List>
-					{helperInfo.map((text, index) => (
-						<ListItem key={text} disablePadding sx={{ display: "block" }}>
-							<ListItemButton
-								sx={{
-									minHeight: 48,
-									justifyContent: open ? "initial" : "center",
-									px: 2.5,
-								}}
-							>
-								<ListItemIcon
-									sx={{
-										minWidth: 0,
-										mr: open ? 3 : "auto",
-										justifyContent: "center",
-									}}
-								>
-									{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-								</ListItemIcon>
-								<ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-							</ListItemButton>
-						</ListItem>
-					))}
+					<IconBarItem index={1} />
+					<IconBarItem index={2} />
+					<IconBarItem index={3} />
 				</List>
 			</Drawer>
+			{/* <Divider orientation="vertical" className="h-screen" /> */}
 		</Box>
 	);
 }

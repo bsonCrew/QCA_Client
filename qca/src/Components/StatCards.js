@@ -14,19 +14,18 @@ const icons = [
 	<DangerousIcon fontSize="large" />,
 	<AnnouncementIcon fontSize="large" />,
 	<ConstructionIcon fontSize="large" />,
-
-	/* <div className="bg-blue"></div>
-	<div className="bg-red"></div>
-	<div className="bg-green"></div>
-	<div className="bg-yellow"></div>
-	<div className="bg-gray"></div> */
 ];
 
+const colors = ["bg-green", "bg-red", "bg-yellow", "bg-blue", "bg-gray"];
+
 const StatCard = ({ data, index }) => {
+	const cardColor =
+		"flex flex-col text-center item-center justify-center min-w-[10rem] " +
+		colors[index];
 	return (
 		<Box key={index} className="flex flex-wrap w-full mx-6">
 			<Card className="w-full min-w-fit h-40">
-				<CardContent className="flex flex-col text-center item-center justify-center min-w-[10rem]">
+				<CardContent className={cardColor}>
 					<div className="flex align-middle justify-center my-4">
 						{icons[index]}
 					</div>

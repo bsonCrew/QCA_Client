@@ -30,5 +30,5 @@ const card = (
 );
 
 export default function Score() {
-	return <Box className="w-12/12 mr-4">{card}</Box>;
+	return <Box className="w-12/12 mr-6">{card}</Box>;
 }

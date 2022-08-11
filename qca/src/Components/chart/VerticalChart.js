@@ -10,6 +10,9 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
+import result from "../../result.json";
+import config from "../../config.json";
+
 ChartJS.register(
 	CategoryScale,
 	LinearScale,
@@ -32,20 +35,20 @@ export const options = {
 	},
 };
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
+const labels = config.info;
 
 export const data = {
 	labels,
 	datasets: [
 		{
-			label: "Dataset 1",
-			data: [12, 19, 3, 5, 2, 3],
-			backgroundColor: "rgba(255, 99, 132, 0.5)",
+			label: "비교군",
+			data: result.sampleLargeData,
+			backgroundColor: config.colors.blue,
 		},
 		{
-			label: "Dataset 2",
-			data: [12, 19, 3, 5, 2, 3],
-			backgroundColor: "rgba(53, 162, 235, 0.5)",
+			label: result.target,
+			data: result.sampleLargeData2,
+			backgroundColor: config.colors.red,
 		},
 	],
 };
