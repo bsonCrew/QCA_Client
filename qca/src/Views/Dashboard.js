@@ -1,6 +1,6 @@
 import * as React from "react";
 import Stat from "../Components/Stat";
-import SideBar from "../Components/SideBar";
+import SideBar from "../Components/Sidebar";
 import Score from "../Components/Score";
 import PolarChart from "../Components/chart/PolarChart";
 import VeticalChart from "../Components/chart/VerticalChart";
