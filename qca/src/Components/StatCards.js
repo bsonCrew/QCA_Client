@@ -1,52 +1,60 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
+import config from "../config.json";
+import Avatar from "@mui/material/Avatar";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DangerousIcon from "@mui/icons-material/Dangerous";
 import AnnouncementIcon from "@mui/icons-material/Announcement";
 import ConstructionIcon from "@mui/icons-material/Construction";
-import { NewCard } from "../Themes/NewCard";
-import config from "../config.json";
 
-const icons = [
-	<ThumbUpAltIcon fontSize="large" />,
-	<DangerousIcon fontSize="large" />,
-	<AnnouncementIcon fontSize="large" />,
-	<ConstructionIcon fontSize="large" />,
-];
-
-const colors = ["bg-green", "bg-red", "bg-yellow", "bg-blue", "bg-gray"];
-
-const StatCard = ({ data, index }) => {
-	const cardColor =
-		"min-w-[10rem] h-full flex flex-row text-center item-center justify-center " +
-		colors[index];
+export function StatCard(props) {
 	return (
-		<Box key={index} className="flex flex-wrap w-full mx-4">
-			<NewCard className="w-full min-w-fit h-32">
-				<CardContent className={cardColor}>
-					<span className="text-7xl font-light">{index}</span>
-					<div className="flex align-middle justify-center">{icons[index]}</div>
-					<Typography gutterBottom variant="h6" component="div">
-						{catchPhrase[index]}
-					</Typography>
-				</CardContent>
-			</NewCard>
-		</Box>
+		<>
+			<Avatar
+				sx={{ width: 36, height: 36, bgcolor: props.bgcolor }}
+				className="-ml-5 z-2 -mb-6"
+			>
+				{props.icon}
+			</Avatar>
+			<div
+				role="button"
+				className="h-24 rounded-lg shadow-lg hover:shadow-2xl text-center flex justify-center flex-col p-4 px-8"
+			>
+				<span className="text-xl">{props.title}</span>
+				<span className="text-sm font-bold text-gray">{props.subheader}</span>
+			</div>
+		</>
 	);
-};
-
-const catchPhrase = config.catchPhrase;
+}
 
 export default function StatCards(props) {
 	let cardData = Array(4).fill(0);
+	const icons = [
+		<ThumbUpAltIcon fontSize="medium" />,
+		<DangerousIcon fontSize="small" />,
+		<AnnouncementIcon fontSize="small" />,
+		<ConstructionIcon fontSize="small" />,
+	];
+
 	return (
-		<div className="flex flex-row mt-4">
-			{cardData.map((data, index) => {
-				return <StatCard key={index} data={data} index={index} />;
-			})}
+		<div className="flex flex-col justify-center">
+			<span className="mt-8 text-2xl font-bold">지금 누리집은</span>
+			<div className="mt-4 mx-4 flex flex-row flex-wrap justify-between">
+				{cardData.map((data, index) => {
+					return (
+						<div
+							key={index}
+							className="max-w-[400px] min-w-[180px] w-5/12 flex-wrap mx-4 my-4"
+						>
+							<StatCard
+								title={config.catchPhrase[index]}
+								icon={icons[index]}
+								subheader={config.subheaderPhrase[index]}
+								bgcolor={config.warningcolors[index]}
+							/>
+						</div>
+					);
+				})}
+			</div>
 		</div>
 	);
 }

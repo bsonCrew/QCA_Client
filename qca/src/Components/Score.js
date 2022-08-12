@@ -1,34 +1,36 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import { Card } from "@mui/material";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
+
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import styled from "@emotion/styled";
+import config from "../config.json";
+
+const BeautifulBar = styled(`div`)({
+	width: "100%",
+	height: "100%",
+	backgroundImage: `linear-gradient(217deg, ${config.gradientcolor[0]}, ${config.gradientcolor[1]} 71.71%)`,
+});
 
 const card = (
-	<React.Fragment>
-		<Card className="mt-4 h-32 rounded-md">
-			<CardContent>
-				<Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-					총점
-				</Typography>
-				<div className="flex item-middle justify-center">
-					<Typography variant="h3" component="div">
-						89 / 100
-					</Typography>
-				</div>
-				<div className="mt-4">
-					<Typography variant="h6" component="div">
-						<Button size="small">Learn More</Button>
-					</Typography>
-				</div>
-			</CardContent>
-			<CardActions></CardActions>
-		</Card>
-	</React.Fragment>
+	<div className="mt-24">
+		<div className="w-full h-6">
+			<BeautifulBar className="rounded-t-xl" />
+		</div>
+		<div
+			role="button"
+			className="min-w-[280px] h-56 rounded-lg shadow-lg hover:shadow-2xl flex flex-col p-4 px-8 item-middle align-middle justify-center"
+		>
+			<span className="text-xl">총점</span>
+			<div className="flex justify-center">
+				<span className="min-w-[300px] text-7xl">89 / 100</span>
+			</div>
+
+			<span className="flex justify-end">
+				<Button size="small">점수란?</Button>
+			</span>
+		</div>
+	</div>
 );
 
 export default function Score() {
-	return <Box className="w-12/12 mr-6">{card}</Box>;
+	return <div className="max-w-full mx-6">{card}</div>;
 }

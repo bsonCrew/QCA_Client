@@ -1,6 +1,5 @@
 import * as React from "react";
 import Fab from "@mui/material/Fab";
-import AddIcon from "@mui/icons-material/Add";
 import data from "../file.json";
 import { useSpring, animated } from "react-spring";
 
