@@ -116,8 +116,8 @@ const helperIcon = [
 // const
 
 export default function SideBar() {
-	const [open, setOpen] = React.useState(false);
-	const [lock, setLock] = React.useState(false);
+	const [open, setOpen] = React.useState(true);
+	const [lock, setLock] = React.useState(true);
 
 	const handleDrawer = () => {
 		setOpen(open);
