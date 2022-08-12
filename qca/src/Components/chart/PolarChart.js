@@ -45,26 +45,23 @@ export default function PolarChart() {
 
 	ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 	const data = {
-		labels: config.info,
+		labels: config.evaluation,
 		datasets: [
 			{
 				label: "전체 점수",
 				data: result.sampleData,
-				backgroundColor: [
-					config.colors.blue,
-					config.colors.red,
-					config.colors.green,
-					config.colors.yellow,
-					config.colors.purple,
-				],
+				backgroundColor: [...config.polargraphcolor],
 				borderWidth: 1,
 			},
 		],
 	};
 
 	return (
-		<div className="w-5/12 mt-4 px-4">
-			<PolarArea data={data} options={options} />
+		<div className="min-w-[400px] w-5/12 mt-4">
+			<div>
+				<span className="mt-8 text-2xl font-bold">여러 가지 검사한 결과..</span>
+				<PolarArea data={data} options={options} />
+			</div>
 		</div>
 	);
 }

@@ -35,7 +35,7 @@ export const options = {
 	},
 };
 
-const labels = config.info;
+const labels = config.evaluation;
 
 export const data = {
 	labels,
@@ -43,19 +43,22 @@ export const data = {
 		{
 			label: "비교군",
 			data: result.sampleLargeData,
-			backgroundColor: config.colors.blue,
+			backgroundColor: config.bargraphcolor[0],
 		},
 		{
 			label: result.target,
 			data: result.sampleLargeData2,
-			backgroundColor: config.colors.red,
+			backgroundColor: config.bargraphcolor[1],
 		},
 	],
 };
 
 export default function VeticalChart() {
 	return (
-		<div className="w-5/12 mt-4 px-4">
+		<div className="min-w-[400px] w-5/12 mt-4 px-4">
+			<span className="mt-8 text-2xl font-bold">
+				다른 사이트들은 이렇습니다
+			</span>
 			<Bar height={280} options={options} data={data} />
 		</div>
 	);
