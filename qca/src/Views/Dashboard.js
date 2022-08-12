@@ -6,8 +6,6 @@ import PolarChart from "../Components/chart/PolarChart";
 import VeticalChart from "../Components/chart/VerticalChart";
 import StatCards from "../Components/StatCards";
 
-const VISIBLE_FIELDS = ["name", "rating", "country", "dateCreated", "isAdmin"];
-
 export default function Dashboard() {
 	return (
 		<div className="flex flex-row flex-wrap h-screen w-screen">
