@@ -3,6 +3,8 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import data from "../file.json";
+import parse from "autosuggest-highlight/parse";
+import match from "autosuggest-highlight/match";
 
 export default function SearchBar() {
 	React.useEffect(() => {
@@ -59,6 +61,27 @@ export default function SearchBar() {
 					inputProps={{
 						...params.inputProps,
 						autoComplete: "new-password", // disable autocomplete and autofill
+					}}
+					renderOption={(props, option, { inputValue }) => {
+						const matches = match(option.title, inputValue);
+						const parts = parse(option.title, matches);
+
+						return (
+							<li {...props}>
+								<div>
+									{parts.map((part, index) => (
+										<span
+											key={index}
+											style={{
+												fontWeight: part.highlight ? 700 : 400,
+											}}
+										>
+											{part.text}
+										</span>
+									))}
+								</div>
+							</li>
+						);
 					}}
 				/>
 			)}
