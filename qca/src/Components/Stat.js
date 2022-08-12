@@ -18,8 +18,6 @@ function StyledDatagrid() {
 		rowLength: 10,
 	});
 
-	console.log(data);
-
 	return (
 		<Box
 			sx={{

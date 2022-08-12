@@ -1,16 +1,14 @@
 import * as React from "react";
-import Stat from "../Components/Stat";
 import SideBar from "../Components/Sidebar";
-import Score from "../Components/Score";
-import PolarChart from "../Components/chart/PolarChart";
-import VeticalChart from "../Components/chart/VerticalChart";
-import StatCards from "../Components/StatCards";
 import TopBar from "../Components/TopBar";
 import Footer from "../Components/Footer";
+import MainView from "./MainView";
+import { CompatibilityView } from "./CompatibilityView";
 
 export default function Dashboard() {
 	const [open, setOpen] = React.useState(false);
 	const [lock, setLock] = React.useState(false);
+	const [viewOn, setViewOn] = React.useState([0]);
 
 	const handleDrawer = () => {
 		setOpen(!open);
@@ -27,6 +25,18 @@ export default function Dashboard() {
 		}
 	};
 
+	const handleViewOn = view => {
+		const found = viewOn.find(el => el === view);
+		if (Number.isInteger(found)) {
+			setViewOn(viewOn.filter(v => v !== view));
+		} else {
+			setViewOn([...viewOn, view]);
+		}
+		console.log(viewOn);
+	};
+
+	const views = [<MainView key={0} />, <CompatibilityView key={1} />];
+
 	return (
 		<div className="flex flex-row flex-wrap h-full w-screen bg-main">
 			<div>
@@ -38,25 +48,12 @@ export default function Dashboard() {
 					closeDrawer={closeDrawer}
 					openDrawer={openDrawer}
 					lock={lock}
+					handleViewOn={handleViewOn}
 				/>
 			</div>
-			<div className="flex-12 flex-col flex-wrap pt-16 bg-main">
+			<div className="flex-12 flex-col flex-wrap pt-8 bg-main">
 				<div className="bg-white rounded-2xl px-24">
-					<div className="my-12 flex flex-row flex-wrap-reverse">
-						<div className="flex-4 rounded-2xl ">
-							<StatCards />
-						</div>
-						<div className="flex-3 rounded-2xl">
-							<Score />
-						</div>
-					</div>
-					<div className="my-12 flex flex-wrap justify-between">
-						<PolarChart />
-						<VeticalChart />
-					</div>
-					<div className="flex w-full h-full pb-24 overflow-hidden">
-						<Stat />
-					</div>
+					{viewOn.map(view => views[view])}
 				</div>
 			</div>
 			<Footer />

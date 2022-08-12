@@ -85,7 +85,7 @@ export default function SideBar(props) {
 		<HelpIcon />,
 	];
 
-	const SideBarItem = icnBarProps => {
+	const SideBarItem = ({ index }) => {
 		return (
 			<ListItem disablePadding>
 				<ListItemButton
@@ -94,6 +94,8 @@ export default function SideBar(props) {
 						justifyContent: props.open ? "initial" : "center",
 						px: 2.5,
 					}}
+					onClick={() => props.handleViewOn(index)}
+					id={index}
 				>
 					<ListItemIcon
 						sx={{
@@ -102,10 +104,10 @@ export default function SideBar(props) {
 							justifyContent: "center",
 						}}
 					>
-						{iconImage[icnBarProps.index]}
+						{iconImage[index]}
 					</ListItemIcon>
 					<ListItemText
-						primary={iconInfo[icnBarProps.index]}
+						primary={iconInfo[index]}
 						sx={{ opacity: props.open ? 1 : 0 }}
 					/>
 				</ListItemButton>
