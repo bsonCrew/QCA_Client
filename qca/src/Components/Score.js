@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 
 const card = (
 	<React.Fragment>
-		<Card className="mt-4 h-40">
+		<Card className="mt-4 h-32 rounded-md">
 			<CardContent>
 				<Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
 					총점

@@ -7,6 +7,7 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DangerousIcon from "@mui/icons-material/Dangerous";
 import AnnouncementIcon from "@mui/icons-material/Announcement";
 import ConstructionIcon from "@mui/icons-material/Construction";
+import { NewCard } from "../Themes/NewCard";
 import config from "../config.json";
 
 const icons = [
@@ -20,21 +21,19 @@ const colors = ["bg-green", "bg-red", "bg-yellow", "bg-blue", "bg-gray"];
 
 const StatCard = ({ data, index }) => {
 	const cardColor =
-		"flex flex-col text-center item-center justify-center min-w-[10rem] " +
+		"min-w-[10rem] h-full flex flex-row text-center item-center justify-center " +
 		colors[index];
 	return (
-		<Box key={index} className="flex flex-wrap w-full mx-6">
-			<Card className="w-full min-w-fit h-40">
+		<Box key={index} className="flex flex-wrap w-full mx-4">
+			<NewCard className="w-full min-w-fit h-32">
 				<CardContent className={cardColor}>
-					<div className="flex align-middle justify-center my-4">
-						{icons[index]}
-					</div>
-					<Typography variant="h6">{index}</Typography>
+					<span className="text-7xl font-light">{index}</span>
+					<div className="flex align-middle justify-center">{icons[index]}</div>
 					<Typography gutterBottom variant="h6" component="div">
 						{catchPhrase[index]}
 					</Typography>
 				</CardContent>
-			</Card>
+			</NewCard>
 		</Box>
 	);
 };

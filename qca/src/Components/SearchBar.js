@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import data from "../file.json";
+import data2 from "../file2.json";
 
 export default function SearchBar() {
 	React.useEffect(() => {
@@ -46,25 +47,31 @@ export default function SearchBar() {
 			id="search-bar"
 			options={websites}
 			className="w-[max(40vw,20rem)] mt-4"
-			groupBy={option => option.firstLetter}
 			renderOption={(props, option) => (
-				<Box className="mr-2 flex-shrink" component="li" {...props}>
-					{option.label}
-				</Box>
+				<div component="li" {...props}>
+					<div className="mr-2 w-full flex justify-between">
+						<div>{option.label}</div>
+						<div>{option.homepage}</div>
+					</div>
+				</div>
 			)}
 			renderInput={params => (
 				<TextField
+					sx={{
+						"& label": { paddingLeft: theme => theme.spacing(2) },
+						"& input": { paddingLeft: theme => theme.spacing(3.5) },
+						"& fieldset": {
+							paddingLeft: theme => theme.spacing(2.5),
+							borderRadius: "20px",
+						},
+					}}
 					{...params}
 					label="기관명"
-					inputProps={{
-						...params.inputProps,
-						autoComplete: "new-password", // disable autocomplete and autofill
-					}}
+					autoFocus={true}
 				/>
 			)}
 		/>
 	);
 }
 
-// Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const websites = data.websites;
