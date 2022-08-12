@@ -27,7 +27,7 @@ const StatCard = ({ data, index }) => {
 		<Box key={index} className="flex flex-wrap w-full mx-4">
 			<NewCard className="w-full min-w-fit h-32">
 				<CardContent className={cardColor}>
-					<Typography variant="h1">{index}</Typography>
+					<span className="text-7xl font-light">{index}</span>
 					<div className="flex align-middle justify-center">{icons[index]}</div>
 					<Typography gutterBottom variant="h6" component="div">
 						{catchPhrase[index]}

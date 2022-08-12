@@ -12,10 +12,10 @@ export default function Dashboard() {
 			<SideBar />
 			<div className="flex-12 flex-col flex-wrap pt-16">
 				<div className="flex flex-row">
-					<div className="flex-7">
+					<div className="flex-8">
 						<StatCards />
 					</div>
-					<div className="flex-3">
+					<div className="flex-2">
 						<Score />
 					</div>
 				</div>
