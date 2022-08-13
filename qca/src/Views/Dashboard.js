@@ -9,7 +9,7 @@ import useLighthouse from "../hooks/useLighthouse";
 export default function Dashboard() {
 	const [open, setOpen] = React.useState(false);
 	const [lock, setLock] = React.useState(false);
-	const [viewOn, setViewOn] = React.useState([0]);
+	const [viewOn, setViewOn] = React.useState([1, 0, 0, 0, 0]);
 	const [status, data] = useLighthouse();
 	console.log(data);
 
@@ -29,16 +29,13 @@ export default function Dashboard() {
 	};
 
 	const handleViewOn = view => {
-		const found = viewOn.find(el => el === view);
-		if (Number.isInteger(found)) {
-			setViewOn(viewOn.filter(v => v !== view));
-		} else {
-			setViewOn([...viewOn, view]);
-		}
+		let newViewOn = [...viewOn];
+		newViewOn[view] = 1 - newViewOn[view];
+		setViewOn(newViewOn);
 		console.log(viewOn);
 	};
 
-	const views = [<MainView key={0} />, <CompatibilityView key={1} />];
+	const views = [<MainView key={10} />, <CompatibilityView key={11} />];
 
 	return (
 		<div className="flex flex-row flex-wrap h-full w-screen bg-main">
@@ -52,11 +49,18 @@ export default function Dashboard() {
 					openDrawer={openDrawer}
 					lock={lock}
 					handleViewOn={handleViewOn}
+					viewOn={viewOn}
 				/>
 			</div>
 			<div className="flex-12 flex-col flex-wrap pt-8 bg-main">
 				<div className="bg-white rounded-2xl px-24">
-					{viewOn.map(view => views[view])}
+					{viewOn.map((v, idx) => {
+						if (v === 1) {
+							console.log(v, idx);
+							return views[idx];
+						} else return null;
+					})}
+					{/* {views[0]} */}
 				</div>
 			</div>
 			<Footer />

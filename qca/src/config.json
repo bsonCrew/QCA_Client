@@ -24,7 +24,7 @@
 		"#d3dce6",
 		"#FFEFEF"
 	],
-	"polargraphcolor": ["#1A374D", "#406882", "#6998AB", "#B1D0E0"],
+	"polargraphcolor": ["#1A374D", "#406882", "#6998AB", "#B1D0E0", "#B6C1D9"],
 	"bargraphcolor": ["#355764", "#5A8F7B"],
 
 	"evaluation": ["호환성", "접근성", "개방성", "접속성", "편의성"],

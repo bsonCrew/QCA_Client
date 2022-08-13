@@ -21,10 +21,10 @@ const card = (
 		>
 			<span className="text-xl">총점</span>
 			<div className="flex justify-center">
-				<span className="min-w-[300px] text-7xl">89 / 100</span>
+				<span className="min-w-[300px] text-center text-7xl">89 / 100</span>
 			</div>
 
-			<span className="flex justify-end">
+			<span className="pt-4 flex justify-end">
 				<Button size="small">점수란?</Button>
 			</span>
 		</div>
