@@ -2,17 +2,15 @@ import * as React from "react";
 import Fab from "@mui/material/Fab";
 import data from "../file.json";
 import { useSpring, animated } from "react-spring";
-
-let top5 = data.websites.slice(1, 6);
+import useTop5 from "../hooks/useTop5";
 
 const ShortCut = props => {
+	const AnimatedFab = animated(Fab);
 	const styles = useSpring({
 		opacity: 1,
 		from: { opacity: 0 },
 		velocity: 0.25,
 	});
-
-	const AnimatedFab = animated(Fab);
 
 	return (
 		<div className="items-center justify-center m-5 text-center">
@@ -30,11 +28,15 @@ const ShortCut = props => {
 };
 
 export default function Recommend() {
+	const [status, data] = useTop5();
+
+	console.log(status);
+
 	return (
 		<div className="w-[max(40vw,20rem)] mt-4 flex-wrap flex items-center justify-center flex-row">
-			{top5.map(el => {
-				return <ShortCut key={el.homepage} name={el.label} />;
-			})}
+			{status === "success"
+				? data.map(el => <ShortCut key={el.homepage} name={el.label} />)
+				: null}
 		</div>
 	);
 }

@@ -4,11 +4,14 @@ import TopBar from "../Components/TopBar";
 import Footer from "../Components/Footer";
 import MainView from "./MainView";
 import { CompatibilityView } from "./CompatibilityView";
+import useLighthouse from "../hooks/useLighthouse";
 
 export default function Dashboard() {
 	const [open, setOpen] = React.useState(false);
 	const [lock, setLock] = React.useState(false);
 	const [viewOn, setViewOn] = React.useState([0]);
+	const [status, data] = useLighthouse();
+	console.log(data);
 
 	const handleDrawer = () => {
 		setOpen(!open);

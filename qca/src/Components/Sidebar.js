@@ -35,7 +35,7 @@ const openedMixin = (theme, lock) => ({
 	overflowX: "hidden",
 });
 
-const closedMixin = (theme, lock) => ({
+const closedMixin = theme => ({
 	transition: theme.transitions.create("width", {
 		easing: theme.transitions.easing.sharp,
 		duration: "0.1s",
@@ -66,55 +66,56 @@ const Drawer = styled(MuiDrawer, {
 		"& .MuiDrawer-paper": openedMixin(theme, lock),
 	}),
 	...(!open && {
-		...closedMixin(theme, lock),
-		"& .MuiDrawer-paper": closedMixin(theme, lock),
+		...closedMixin(theme),
+		"& .MuiDrawer-paper": closedMixin(theme),
 	}),
 }));
 
-export default function SideBar(props) {
-	const iconInfo = config.iconInfo;
-	const iconImage = [
-		<SummarizeIcon />,
-		<AccessibilityNewIcon />,
-		<CoPresentIcon />,
-		<SmartButtonIcon />,
-		<ExploreIcon />,
-		<ChairIcon />,
-		<HomeIcon />,
-		<PrintIcon />,
-		<HelpIcon />,
-	];
+const iconInfo = config.iconInfo;
+const iconImage = [
+	<SummarizeIcon />,
+	<AccessibilityNewIcon />,
+	<CoPresentIcon />,
+	<SmartButtonIcon />,
+	<ExploreIcon />,
+	<ChairIcon />,
+	<HelpIcon />,
+	<PrintIcon />,
+	<HomeIcon />,
+];
 
-	const SideBarItem = ({ index }) => {
-		return (
-			<ListItem disablePadding>
-				<ListItemButton
+const SideBarItem = ({ open, handleClick, index }) => {
+	return (
+		<ListItem disablePadding>
+			<ListItemButton
+				sx={{
+					minHeight: 48,
+					justifyContent: open ? "initial" : "center",
+					px: 2.5,
+					// backgroundColor:
+				}}
+				onClick={() => handleClick(index)}
+				id={index}
+			>
+				<ListItemIcon
 					sx={{
-						minHeight: 48,
-						justifyContent: props.open ? "initial" : "center",
-						px: 2.5,
+						minWidth: 0,
+						mr: open ? 3 : "auto",
+						justifyContent: "center",
 					}}
-					onClick={() => props.handleViewOn(index)}
-					id={index}
 				>
-					<ListItemIcon
-						sx={{
-							minWidth: 0,
-							mr: props.open ? 3 : "auto",
-							justifyContent: "center",
-						}}
-					>
-						{iconImage[index]}
-					</ListItemIcon>
-					<ListItemText
-						primary={iconInfo[index]}
-						sx={{ opacity: props.open ? 1 : 0 }}
-					/>
-				</ListItemButton>
-			</ListItem>
-		);
-	};
+					{iconImage[index]}
+				</ListItemIcon>
+				<ListItemText
+					primary={iconInfo[index]}
+					sx={{ opacity: open ? 1 : 0 }}
+				/>
+			</ListItemButton>
+		</ListItem>
+	);
+};
 
+export default function SideBar(props) {
 	return (
 		<Drawer
 			variant="permanent"
@@ -126,19 +127,30 @@ export default function SideBar(props) {
 		>
 			<div className="mt-16 h-full rounded-2xl bg-main">
 				<List>
-					<SideBarItem index={0} />
-					<SideBarItem index={1} />
-					<SideBarItem index={2} />
-					<SideBarItem index={3} />
-					<SideBarItem index={4} />
-					<SideBarItem index={5} />
+					{[0, 1, 2, 3, 4, 5].map(idx => {
+						return (
+							<SideBarItem
+								handleClick={props.handleViewItemClick}
+								key={idx}
+								index={idx}
+								open={props.open}
+							/>
+						);
+					})}
 				</List>
 				<Divider />
 
 				<List>
-					<SideBarItem index={6} />
-					<SideBarItem index={7} />
-					<SideBarItem index={8} />
+					{[6, 7, 8].map(idx => {
+						return (
+							<SideBarItem
+								handleFunctionItemClick={props.handleFunctionItemClick}
+								key={idx}
+								index={idx}
+								open={props.open}
+							/>
+						);
+					})}
 				</List>
 			</div>
 		</Drawer>

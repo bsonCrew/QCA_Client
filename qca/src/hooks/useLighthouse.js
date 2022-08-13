@@ -1,35 +1,36 @@
-// import React from "react";
-// import lighthouse from "lighthouse";
+import React from "react";
 
-// const useLightHouse = () => {
-// 	const [report, setReport] = React.useState(null);
-// 	const [score, setScore] = React.useState(null);
-// 	const [loading, setLoading] = React.useState(false);
-// 	const chromeLauncher = require("chrome-launcher");
+const useLighthouse = website => {
+	const [status, setStatus] = React.useState("idle");
+	const [data, setData] = React.useState([]);
+	const postQuery = "http://localhost:3001/lighthouse";
 
-// 	React.useEffect(() => {
-// 		getLightHouse().then(setReport);
-// 	}, []);
+	React.useEffect(() => {
+		if (!postQuery) return;
 
-// 	async function getLightHouse() {
-// 		const chrome = await chromeLauncher.launch({ chromeFlags: ["--headless"] });
-// 		const options = {
-// 			logLevel: "info",
-// 			output: "json",
-// 			onlyCategories: ["performance"],
-// 			port: chrome.port,
-// 		};
-// 		const runnerResult = await lighthouse("https://example.com", options);
+		const fetchWithPost = async () => {
+			setStatus("loading");
+			try {
+				const response = await fetch(postQuery, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify({ title: website }),
+				});
+				const data = await response.json();
+				setStatus("success");
+				setData(data);
+			} catch (error) {
+				console.log(error);
+				setStatus("error");
+			}
+		};
 
-// 		// `.report` is the HTML report as a string
-// 		const reportArr = runnerResult.report;
+		fetchWithPost();
+	}, [postQuery, website]);
 
-// 		setScore(runnerResult.lhr.categories.performance.score * 100);
+	return [status, data];
+};
 
-// 		await chrome.kill();
-// 	}
-
-// 	return [report, score, loading];
-// };
-
-// export default useLightHouse;
+export default useLighthouse;
