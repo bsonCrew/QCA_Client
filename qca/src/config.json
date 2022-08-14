@@ -1,6 +1,7 @@
 {
 	"catchPhrase": ["잘했어요", "위험해요", "경고합니다", "개선해봐요"],
 	"colors": {
+		"main": "#F6F6F6",
 		"blue": "#1fb6ff",
 		"red": "#ff4949",
 		"green": "#13ce66",
@@ -9,10 +10,12 @@
 		"pink": "#ff49db",
 		"orange": "#ff7849",
 		"gray-dark": "#273444",
+		"black": "#000000",
 		"gray": "#8492a6",
 		"gray-light": "#d3dce6",
-		"main": "#F6F6F6",
-		"main2": "#F2F2F2"
+		"beige": "#6C6C6C",
+		"main2": "#F2F2F2",
+		"hoverColor": "#ECECEC"
 	},
 	"gradientcolor": ["#112B3C", "#205375"],
 	"warningcolors": [
@@ -44,6 +47,14 @@
 		"위험한 상황입니다",
 		"잠재적 위험 요소가 있어요",
 		"더 좋은 누리집을 만들어요"
+	],
+	"links": [
+		"main",
+		"compatibility",
+		"accessibility",
+		"openness",
+		"connectivity",
+		"convenience"
 	],
 	"sampleData": [15, 19, 13, 6, 12],
 	"sampleLargeData": [40, 19, 59, 71, 40],

@@ -1,10 +1,10 @@
 import * as React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { useDemoData } from "@mui/x-data-grid-generator";
 import { darken, lighten } from "@mui/material/styles";
 import result from "../result.json";
 
 import Box from "@mui/material/Box";
+import sampeData from "../sampleData.json";
 
 const getBackgroundColor = (color, mode) =>
 	mode === "dark" ? darken(color, 0.6) : lighten(color, 0.6);
@@ -12,16 +12,11 @@ const getBackgroundColor = (color, mode) =>
 const getHoverBackgroundColor = (color, mode) =>
 	mode === "dark" ? darken(color, 0.5) : lighten(color, 0.5);
 
-function StyledDatagrid() {
-	const { data } = useDemoData({
-		dataSet: result.data,
-		rowLength: 10,
-	});
-
+function StyledDatagrid(props) {
 	return (
 		<Box
 			sx={{
-				height: 400,
+				height: "100%",
 				width: "100%",
 				"& .super-app-theme--Open": {
 					bgcolor: theme =>
@@ -70,24 +65,20 @@ function StyledDatagrid() {
 			}}
 		>
 			<DataGrid
-				{...data}
+				{...props.data}
 				getRowClassName={params => `super-app-theme--${params.row.status}`}
 			/>
 		</Box>
 	);
 }
 
-export default function Stat() {
+export default function Stat(props) {
 	return (
-		<div className="w-full h-full">
+		<div className="w-full pb-24">
 			<div className="mt-12 mb-8 text-2xl font-bold">
 				<h1>세부사항을 보면요..</h1>
 			</div>
-			<StyledDatagrid
-				sx={{
-					height: "50vh",
-				}}
-			/>
+			<StyledDatagrid {...props} />
 		</div>
 	);
 }

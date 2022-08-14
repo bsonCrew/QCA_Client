@@ -9,7 +9,6 @@
 		"@mui/material": "^5.10.0",
 		"@mui/styled-engine": "^5.10.0",
 		"@mui/x-data-grid": "^5.15.1",
-		"@mui/x-data-grid-generator": "^5.15.1",
 		"@testing-library/react": "^13.3.0",
 		"@testing-library/user-event": "^13.5.0",
 		"chart.js": "^3.9.1",

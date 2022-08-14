@@ -17,6 +17,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import config from "../config.json";
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -84,13 +85,54 @@ const iconImage = [
 	<HomeIcon />,
 ];
 
-const SideBarItem = ({ open, handleClick, index }) => {
+const SideBarLink = ({ openView, sideBarOpen, index }) => {
+	const isOpen = config.links[index] === openView;
+	return (
+		<Link to={config.links[index]}>
+			<ListItem
+				sx={{
+					borderTopRightRadius: index === 0 ? 10 : 0,
+					px: 2.5,
+					justifyContent: sideBarOpen ? "initial" : "center",
+					color: isOpen ? config.colors.blue : config.colors.black,
+					backgroundColor: isOpen ? config.colors["gray-light"] : "transparent",
+					"&:hover": {
+						color: isOpen ? config.colors.blue : "inherit",
+						backgroundColor: isOpen
+							? config.colors["gray-light"]
+							: config.colors.hoverColor,
+					},
+				}}
+				id={index}
+			>
+				<ListItemIcon
+					sx={{
+						minWidth: 0,
+						mr: sideBarOpen ? 3 : "auto",
+						justifyContent: "center",
+						color: isOpen ? config.colors.blue : config.colors.beige,
+					}}
+				>
+					{iconImage[index]}
+				</ListItemIcon>
+				<ListItemText
+					primary={iconInfo[index]}
+					sx={{
+						opacity: sideBarOpen ? 1 : 0,
+						color: isOpen ? config.colors.blue : "inherit",
+					}}
+				/>
+			</ListItem>
+		</Link>
+	);
+};
+
+const SideBarFnc = ({ sideBarOpen, handleClick, index }) => {
 	return (
 		<ListItem disablePadding>
 			<ListItemButton
 				sx={{
-					minHeight: 48,
-					justifyContent: open ? "initial" : "center",
+					justifyContent: sideBarOpen ? "initial" : "center",
 					px: 2.5,
 					// backgroundColor:
 				}}
@@ -100,7 +142,7 @@ const SideBarItem = ({ open, handleClick, index }) => {
 				<ListItemIcon
 					sx={{
 						minWidth: 0,
-						mr: open ? 3 : "auto",
+						mr: sideBarOpen ? 3 : "auto",
 						justifyContent: "center",
 					}}
 				>
@@ -108,7 +150,7 @@ const SideBarItem = ({ open, handleClick, index }) => {
 				</ListItemIcon>
 				<ListItemText
 					primary={iconInfo[index]}
-					sx={{ opacity: open ? 1 : 0 }}
+					sx={{ opacity: sideBarOpen ? 1 : 0 }}
 				/>
 			</ListItemButton>
 		</ListItem>
@@ -119,7 +161,7 @@ export default function SideBar(props) {
 	return (
 		<Drawer
 			variant="permanent"
-			open={props.open}
+			open={props.sideBarOpen}
 			lock={props.lock.toString()}
 			onMouseOver={props.openDrawer}
 			onMouseOut={props.closeDrawer}
@@ -129,11 +171,11 @@ export default function SideBar(props) {
 				<List>
 					{[0, 1, 2, 3, 4, 5].map(idx => {
 						return (
-							<SideBarItem
-								handleClick={props.handleViewItemClick}
+							<SideBarLink
 								key={idx}
 								index={idx}
-								open={props.open}
+								sideBarOpen={props.sideBarOpen}
+								openView={props.openView}
 							/>
 						);
 					})}
@@ -143,11 +185,11 @@ export default function SideBar(props) {
 				<List>
 					{[6, 7, 8].map(idx => {
 						return (
-							<SideBarItem
-								handleFunctionItemClick={props.handleFunctionItemClick}
+							<SideBarFnc
 								key={idx}
 								index={idx}
-								open={props.open}
+								sideBarOpen={props.sideBarOpen}
+								handleClick={() => alert(idx)}
 							/>
 						);
 					})}

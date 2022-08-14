@@ -2,14 +2,14 @@ import Stat from "../Components/Stat";
 import Score from "../Components/Score";
 import PolarChart from "../Components/chart/PolarChart";
 import VeticalChart from "../Components/chart/VerticalChart";
-import StatCards from "../Components/StatCards";
+import MainCards from "../Components/Cards";
 
-export default function MainView() {
+export default function MainView(props) {
 	return (
 		<>
 			<div className="my-12 flex flex-row flex-wrap-reverse">
 				<div className="flex-4 rounded-2xl ">
-					<StatCards />
+					<MainCards />
 				</div>
 				<div className="flex-3 rounded-2xl">
 					<Score />
@@ -20,7 +20,7 @@ export default function MainView() {
 				<VeticalChart />
 			</div>
 			<div className="flex w-full h-full pb-24 overflow-hidden">
-				<Stat />
+				<Stat {...props} />
 			</div>
 		</>
 	);

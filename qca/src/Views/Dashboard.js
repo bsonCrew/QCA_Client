@@ -5,62 +5,56 @@ import Footer from "../Components/Footer";
 import MainView from "./MainView";
 import { CompatibilityView } from "./CompatibilityView";
 import useLighthouse from "../hooks/useLighthouse";
+import { Routes, Route, useParams } from "react-router-dom";
+
+import sampeData from "../sampleData.json";
 
 export default function Dashboard() {
-	const [open, setOpen] = React.useState(false);
+	const [sideBarOpen, setSideBarOpen] = React.useState(false);
 	const [lock, setLock] = React.useState(false);
-	const [viewOn, setViewOn] = React.useState([1, 0, 0, 0, 0]);
-	const [status, data] = useLighthouse();
-	console.log(data);
+	// const [status, data] = useLighthouse();
+	const data = sampeData;
+
+	const openView = useParams()["*"];
 
 	const handleDrawer = () => {
-		setOpen(!open);
+		setSideBarOpen(!sideBarOpen);
 		setLock(true);
 	};
 
 	const closeDrawer = () => {
-		if (!lock && open) setOpen(false);
+		if (!lock && sideBarOpen) setSideBarOpen(false);
 	};
 
 	const openDrawer = () => {
 		if (!lock) {
-			setOpen(true);
+			setSideBarOpen(true);
 		}
 	};
-
-	const handleViewOn = view => {
-		let newViewOn = [...viewOn];
-		newViewOn[view] = 1 - newViewOn[view];
-		setViewOn(newViewOn);
-		console.log(viewOn);
-	};
-
-	const views = [<MainView key={10} />, <CompatibilityView key={11} />];
 
 	return (
 		<div className="flex flex-row flex-wrap h-full w-screen bg-main">
 			<div>
-				<TopBar open={open} handleDrawer={handleDrawer} />
+				<TopBar open={sideBarOpen} handleDrawer={handleDrawer} />
 				<SideBar
-					open={open}
-					setOpen={setOpen}
+					sideBarOpen={sideBarOpen}
+					setOpen={setSideBarOpen}
 					handleDrawer={handleDrawer}
 					closeDrawer={closeDrawer}
 					openDrawer={openDrawer}
 					lock={lock}
-					handleViewOn={handleViewOn}
-					viewOn={viewOn}
+					openView={openView}
 				/>
 			</div>
 			<div className="flex-12 flex-col flex-wrap pt-8 bg-main">
 				<div className="bg-white rounded-2xl px-24">
-					{viewOn.map((v, idx) => {
-						if (v === 1) {
-							console.log(v, idx);
-							return views[idx];
-						} else return null;
-					})}
-					{/* {views[0]} */}
+					<Routes>
+						<Route path="/main" element={<MainView data={data} />} />
+						<Route
+							path="/compatibility"
+							element={<CompatibilityView data={data} />}
+						/>
+					</Routes>
 				</div>
 			</div>
 			<Footer />
