@@ -13,6 +13,14 @@ const getHoverBackgroundColor = (color, mode) =>
 	mode === "dark" ? darken(color, 0.5) : lighten(color, 0.5);
 
 function StyledDatagrid(props) {
+	const data = props.data;
+	const newData = {
+		columns: data["rows"].field,
+		rows: data["columns"],
+		initialState: data["initialState"],
+	};
+	console.log(data);
+	console.log(newData);
 	return (
 		<Box
 			sx={{
@@ -65,7 +73,7 @@ function StyledDatagrid(props) {
 			}}
 		>
 			<DataGrid
-				{...props.data}
+				{...data}
 				getRowClassName={params => `super-app-theme--${params.row.status}`}
 			/>
 		</Box>
@@ -74,7 +82,7 @@ function StyledDatagrid(props) {
 
 export default function Stat(props) {
 	return (
-		<div className="w-full pb-24">
+		<div className="w-full h-full px-6 pb-24">
 			<div className="mt-12 mb-8 text-2xl font-bold">
 				<h1>세부사항을 보면요..</h1>
 			</div>

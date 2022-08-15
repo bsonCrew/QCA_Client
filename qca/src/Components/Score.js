@@ -11,7 +11,7 @@ const BeautifulBar = styled(`div`)({
 });
 
 const card = (
-	<div className="mt-24">
+	<div>
 		<div className="w-full h-6">
 			<BeautifulBar className="rounded-t-xl" />
 		</div>

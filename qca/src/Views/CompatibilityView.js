@@ -6,16 +6,14 @@ export function CompatibilityView(props) {
 	const columns = props.data.columns;
 	return (
 		<>
-			<div className="my-12 flex flex-row flex-wrap-reverse">
+			<div className="my-12 pb-24 flex flex-row flex-wrap">
 				<div className="flex-4 rounded-2xl ">
 					<StatCards {...props} />
 				</div>
-				<div className="flex-3 rounded-2xl">
+				<div className="flex-3 min-h-screen flex pt-24 pb-8 flex-col rounded-2xl">
 					<Score />
+					<Stat data={props.data} />
 				</div>
-			</div>
-			<div className="flex w-full h-screen pb-24 overflow-hidden">
-				<Stat data={props.data} />
 			</div>
 		</>
 	);

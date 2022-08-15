@@ -46,7 +46,7 @@ export function StatCards(props) {
 					return (
 						<div
 							key={index}
-							className="max-w-[400px] min-w-[180px] w-5/12 flex-wrap mx-7 my-4"
+							className="max-w-[300px] min-w-[180px] w-5/12 flex-wrap mx-4 my-4 justify-center"
 						>
 							<StatCard
 								title={cardColumns[index].field}
