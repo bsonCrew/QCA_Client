@@ -3,7 +3,8 @@ import React from "react";
 const useLighthouse = website => {
 	const [status, setStatus] = React.useState("idle");
 	const [data, setData] = React.useState([]);
-	const postQuery = "http://localhost:3001/lighthouse";
+	// const postQuery = "http://localhost:3001/lighthouse";
+	const postQuery = "http://34.64.198.147:8080/api/control";
 
 	React.useEffect(() => {
 		if (!postQuery) return;
@@ -16,7 +17,7 @@ const useLighthouse = website => {
 					headers: {
 						"Content-Type": "application/json",
 					},
-					body: JSON.stringify({ title: website }),
+					body: JSON.stringify({ url: website }),
 				});
 				const data = await response.json();
 				setStatus("success");

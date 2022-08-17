@@ -5,6 +5,8 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DangerousIcon from "@mui/icons-material/Dangerous";
 import AnnouncementIcon from "@mui/icons-material/Announcement";
 import ConstructionIcon from "@mui/icons-material/Construction";
+import CheckIcon from "@mui/icons-material/Check";
+import Tooltip from "@mui/material/Tooltip";
 
 export function StatCard(props) {
 	const icons = [
@@ -12,18 +14,33 @@ export function StatCard(props) {
 		<DangerousIcon fontSize="small" />,
 		<AnnouncementIcon fontSize="small" />,
 		<ConstructionIcon fontSize="small" />,
+		<CheckIcon fontSize="small" />,
 	];
+
+	const [clicked, setClicked] = React.useState(false);
+
 	return (
 		<>
-			<Avatar
-				sx={{ width: 36, height: 36, bgcolor: props.bgcolor }}
-				className="-ml-5 z-2 -mb-6"
+			<Tooltip
+				title={config.catchPhrase[props.iconIdx] || "No description"}
+				placement="left"
+				arrow
 			>
-				{icons[props.iconIdx]}
-			</Avatar>
+				<Avatar
+					sx={{ width: 36, height: 36, bgcolor: props.bgcolor }}
+					className="-ml-5 z-2 -mb-6 hover:cursor-pointer"
+				>
+					{icons[props.iconIdx]}
+				</Avatar>
+			</Tooltip>
 			<div
 				role="button"
-				className="h-24 rounded-lg shadow-lg hover:shadow-2xl text-center flex justify-center flex-col p-4 px-8"
+				className={
+					clicked
+						? "h-24 rounded-lg shadow-lg hover:shadow-2xl text-center flex justify-center flex-col p-4 px-8 bg-mildRed"
+						: "h-24 rounded-lg shadow-lg hover:shadow-2xl text-center flex justify-center flex-col p-4 px-8 "
+				}
+				onClick={() => setClicked(!clicked)}
 			>
 				<span className="text-xl">{props.title}</span>
 				<span className="text-sm font-bold text-gray">{props.subheader}</span>
@@ -33,10 +50,8 @@ export function StatCard(props) {
 }
 
 export function StatCards(props) {
-	let cardColumns = props.data.columns;
-	let cardRows = props.data.rows;
-	console.log(props.data.columns);
-	console.log(props.data.rows);
+	const cardColumns = props.data.columns;
+	const cardRows = props.data.rows;
 
 	return (
 		<div className="flex flex-col justify-center">
@@ -45,14 +60,16 @@ export function StatCards(props) {
 				{cardColumns.map((data, index) => {
 					return (
 						<div
-							key={index}
-							className="max-w-[300px] min-w-[180px] w-5/12 flex-wrap mx-4 my-4 justify-center"
+							k
+							ey={index}
+							className="max-w-[320px] min-w-[180px] w-5/12 flex-wrap mx-4 my-4 justify-center"
 						>
 							<StatCard
 								title={cardColumns[index].field}
 								iconIdx={index}
 								subheader={cardRows[0][cardColumns[index].field].toString()}
 								bgcolor={config.warningcolors[index]}
+								handleSelectedItems={props.handleSelectedItems}
 							/>
 						</div>
 					);

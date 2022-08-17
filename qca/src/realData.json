@@ -3424,7 +3424,7 @@
 							"type": "node",
 							"lhId": "6-9-A",
 							"path": "1,HTML,1,BODY,2,YTM-APP,2,DIV,0,YTM-BROWSE,0,YTM-SINGLE-COLUMN-BROWSE-RESULTS-RENDERER,0,DIV,0,DIV,0,YTM-RICH-GRID-RENDERER,1,DIV,1,YTM-RICH-ITEM-RENDERER,0,YTM-VIDEO-WITH-CONTEXT-RENDERER,0,YTM-MEDIA-ITEM,0,A",
-							"selector": "ytm-rich-item-renderer > ytm-video-with-context-renderer > ytm-media-item > a.media-item-thumbnail-container",
+							"		": "ytm-rich-item-renderer > ytm-video-with-context-renderer > ytm-media-item > a.media-item-thumbnail-container",
 							"boundingRect": {
 								"top": 442,
 								"bottom": 645,

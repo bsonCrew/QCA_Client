@@ -30,6 +30,7 @@ const ShortCut = props => {
 export default function Recommend() {
 	const [status, data] = useTop5();
 
+	console.log(data);
 	console.log(status);
 
 	return (

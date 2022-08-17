@@ -1,10 +1,8 @@
 import * as React from "react";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import { darken, lighten } from "@mui/material/styles";
-import result from "../result.json";
 
 import Box from "@mui/material/Box";
-import sampeData from "../sampleData.json";
 
 const getBackgroundColor = (color, mode) =>
 	mode === "dark" ? darken(color, 0.6) : lighten(color, 0.6);
@@ -14,13 +12,47 @@ const getHoverBackgroundColor = (color, mode) =>
 
 function StyledDatagrid(props) {
 	const data = props.data;
-	const newData = {
-		columns: data["rows"].field,
-		rows: data["columns"],
+	const columns = [
+		{
+			field: "id",
+			headerName: "id",
+			width: 0,
+			editable: true,
+			groupable: false,
+			aggregable: false,
+		},
+		{
+			field: "criteria",
+			headerName: "criteria",
+			width: 200,
+			editable: false,
+			groupable: false,
+			aggregable: false,
+		},
+		{
+			field: "value",
+			headerName: "value",
+			width: 400,
+			editable: false,
+			groupable: false,
+			aggregable: false,
+		},
+	];
+
+	const rows = [];
+
+	const formedData = {
+		columns: columns,
+		rows: rows,
 		initialState: data["initialState"],
 	};
-	console.log(data);
-	console.log(newData);
+
+	data["rows"].forEach(row => {
+		Object.keys(row).forEach(key => {
+			rows.push({ id: key, criteria: key, value: row[key] });
+		});
+	});
+
 	return (
 		<Box
 			sx={{
@@ -73,8 +105,12 @@ function StyledDatagrid(props) {
 			}}
 		>
 			<DataGrid
-				{...data}
+				{...formedData}
 				getRowClassName={params => `super-app-theme--${params.row.status}`}
+				checkboxSelection
+				onSelectionModelChange={item => {
+					props.handleSelectedItems(item);
+				}}
 			/>
 		</Box>
 	);

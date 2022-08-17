@@ -15,8 +15,8 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Landing />} />
 					<Route path="/dashboard/*" element={<Dashboard />}>
-						<Route path="main" element={<MainView />} />
 						<Route path="compatibility" element={<CompatibilityView />} />
+						<Route path="main" element={<MainView />} />
 					</Route>
 					<Route path="/*" element={<NotFound />} />
 				</Routes>

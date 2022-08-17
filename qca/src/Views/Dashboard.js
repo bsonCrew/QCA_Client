@@ -49,6 +49,7 @@ export default function Dashboard() {
 			<div className="flex-12 flex-col flex-wrap pt-8 bg-main">
 				<div className="bg-white rounded-2xl px-24">
 					<Routes>
+						<Route path="/" element={<MainView data={data} />} />
 						<Route path="/main" element={<MainView data={data} />} />
 						<Route
 							path="/compatibility"
