@@ -1,7 +1,7 @@
 import * as React from "react";
-import SideBar from "../Components/Sidebar";
-import TopBar from "../Components/TopBar";
-import Footer from "../Components/Footer";
+import SideBar from "../Components/layout/Sidebar";
+import TopBar from "../Components/layout/TopBar";
+import Footer from "../Components/layout/Footer";
 import MainView from "./MainView";
 import { CompatibilityView } from "./CompatibilityView";
 import useLighthouse from "../hooks/useLighthouse";

@@ -16,7 +16,7 @@ import SummarizeIcon from "@mui/icons-material/Summarize";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import config from "../config.json";
+import config from "../../config.json";
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;

@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import styled from "@emotion/styled";
 import config from "../config.json";
 import Box from "@mui/material/Box";
-import ClickModal from "./ClickModal";
+import ScoreModal from "./ScoreModal";
 
 const BeautifulBar = styled(`div`)({
 	width: "100%",
@@ -19,7 +19,7 @@ export default function Score() {
 
 	return (
 		<div className="max-w-full mx-6">
-			<ClickModal
+			<ScoreModal
 				open={open}
 				handleClose={handleClose}
 				onClose={handleClose}

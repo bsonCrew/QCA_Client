@@ -1,7 +1,7 @@
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import data from "../file.json";
+import data from "../../file.json";
 
 export default function SearchBar() {
 	React.useEffect(() => {

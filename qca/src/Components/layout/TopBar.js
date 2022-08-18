@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import config from "../config.json";
+import config from "../../config.json";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
 	display: "flex",

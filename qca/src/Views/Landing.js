@@ -1,5 +1,5 @@
-import SearchBar from "../Components/SearchBar";
-import Header from "../Components/Header";
+import SearchBar from "../Components/layout/SearchBar";
+import Header from "../Components/layout/Header";
 import Recommend from "../Components/Recommend";
 import bkgImage from "../Themes/bkg.svg";
 
