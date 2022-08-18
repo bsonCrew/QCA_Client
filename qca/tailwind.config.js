@@ -44,6 +44,10 @@ module.exports = {
 				11: "11 11 0%",
 				12: "12 12 0%",
 			},
+			transitionProperty: {
+				height: "height",
+				spacing: "margin, padding",
+			},
 		},
 	},
 };

@@ -109,7 +109,7 @@ function StyledDatagrid(props) {
 				getRowClassName={params => `super-app-theme--${params.row.status}`}
 				checkboxSelection
 				onSelectionModelChange={item => {
-					props.handleSelectedItems(item);
+					alert(item);
 				}}
 			/>
 		</Box>

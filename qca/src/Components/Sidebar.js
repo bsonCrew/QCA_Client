@@ -79,7 +79,6 @@ const iconImage = [
 	<CoPresentIcon />,
 	<SmartButtonIcon />,
 	<ExploreIcon />,
-	<ChairIcon />,
 	<HelpIcon />,
 	<PrintIcon />,
 	<HomeIcon />,
@@ -169,7 +168,7 @@ export default function SideBar(props) {
 		>
 			<div className="mt-16 h-full rounded-2xl bg-main">
 				<List>
-					{[0, 1, 2, 3, 4, 5].map(idx => {
+					{[0, 1, 2, 3, 4].map(idx => {
 						return (
 							<SideBarLink
 								key={idx}
@@ -183,7 +182,7 @@ export default function SideBar(props) {
 				<Divider />
 
 				<List>
-					{[6, 7, 8].map(idx => {
+					{[5, 6, 7].map(idx => {
 						return (
 							<SideBarFnc
 								key={idx}

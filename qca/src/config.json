@@ -31,14 +31,13 @@
 	"polargraphcolor": ["#1A374D", "#406882", "#6998AB", "#B1D0E0", "#B6C1D9"],
 	"bargraphcolor": ["#355764", "#5A8F7B"],
 
-	"evaluation": ["호환성", "접근성", "개방성", "접속성", "편의성"],
+	"evaluation": ["호환성", "접근성", "개방성", "접속성"],
 	"iconInfo": [
 		"전체",
 		"호환성",
 		"접근성",
 		"개방성",
 		"접속성",
-		"편의성",
 		"도움말",
 		"결과 내보내기",
 		"홈 화면"
@@ -54,9 +53,16 @@
 		"compatibility",
 		"accessibility",
 		"openness",
-		"connectivity",
-		"convenience"
+		"connectivity"
 	],
+	"scoreDescription": {
+		"title": "총점",
+		"description": "총점 계산 알고리즘은 아래와 같습니다.",
+		"description2": [
+			"총점은 전체 성능 점수와 성능 점수의 비율을 계산합니다.",
+			"전체 성능 점수는 성능 점수의 합계입니다."
+		]
+	},
 	"sampleData": [15, 19, 13, 6, 12],
 	"sampleLargeData": [40, 19, 59, 71, 40],
 	"sampleLargeData2": [90, 12, 30, 60, 35]
