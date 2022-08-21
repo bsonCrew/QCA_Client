@@ -11,7 +11,7 @@ export default function MainView(props) {
 				<div className="flex-4 rounded-2xl ">
 					<MainCards />
 				</div>
-				<div className="flex-3 rounded-2xl">
+				<div className="mt-32 flex-3 rounded-2xl">
 					<Score />
 				</div>
 			</div>

@@ -18,6 +18,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import config from "../../config.json";
 import { Link } from "react-router-dom";
+import TopBar from "./TopBar";
 
 const drawerWidth = 240;
 
@@ -157,43 +158,64 @@ const SideBarFnc = ({ sideBarOpen, handleClick, index }) => {
 };
 
 export default function SideBar(props) {
-	return (
-		<Drawer
-			variant="permanent"
-			open={props.sideBarOpen}
-			lock={props.lock.toString()}
-			onMouseOver={props.openDrawer}
-			onMouseOut={props.closeDrawer}
-			className="bg-main"
-		>
-			<div className="mt-16 h-full rounded-2xl bg-main">
-				<List>
-					{[0, 1, 2, 3, 4].map(idx => {
-						return (
-							<SideBarLink
-								key={idx}
-								index={idx}
-								sideBarOpen={props.sideBarOpen}
-								openView={props.openView}
-							/>
-						);
-					})}
-				</List>
-				<Divider />
+	const [lock, setLock] = React.useState(false);
+	const [sideBarOpen, setSideBarOpen] = React.useState(false);
 
-				<List>
-					{[5, 6, 7].map(idx => {
-						return (
-							<SideBarFnc
-								key={idx}
-								index={idx}
-								sideBarOpen={props.sideBarOpen}
-								handleClick={() => alert(idx)}
-							/>
-						);
-					})}
-				</List>
-			</div>
-		</Drawer>
+	const handleDrawer = () => {
+		setSideBarOpen(!sideBarOpen);
+		setLock(true);
+	};
+
+	const closeDrawer = () => {
+		if (!lock && sideBarOpen) setSideBarOpen(false);
+	};
+
+	const openDrawer = () => {
+		if (!lock) {
+			setSideBarOpen(true);
+		}
+	};
+
+	return (
+		<>
+			<TopBar open={sideBarOpen} handleDrawer={handleDrawer} />
+			<Drawer
+				variant="permanent"
+				open={sideBarOpen}
+				lock={lock.toString()}
+				onMouseOver={openDrawer}
+				onMouseOut={closeDrawer}
+				className="bg-main"
+			>
+				<div className="mt-16 h-full rounded-2xl bg-main">
+					<List>
+						{[0, 1, 2, 3, 4].map(idx => {
+							return (
+								<SideBarLink
+									key={idx}
+									index={idx}
+									sideBarOpen={sideBarOpen}
+									openView={props.openView}
+								/>
+							);
+						})}
+					</List>
+					<Divider />
+
+					<List>
+						{[5, 6, 7].map(idx => {
+							return (
+								<SideBarFnc
+									key={idx}
+									index={idx}
+									sideBarOpen={sideBarOpen}
+									handleClick={() => alert(idx)}
+								/>
+							);
+						})}
+					</List>
+				</div>
+			</Drawer>
+		</>
 	);
 }

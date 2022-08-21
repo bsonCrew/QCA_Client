@@ -1,6 +1,6 @@
 {
 	"target": "http://www.gov24.com",
-	"sampleData": [15, 19, 13, 6, 12],
-	"sampleLargeData": [40, 19, 59, 71, 40],
-	"sampleLargeData2": [70, 12, 30, 60, 35]
+	"sampleData": [15, 19, 13, 6],
+	"sampleLargeData": [40, 19, 59, 71],
+	"sampleLargeData2": [70, 12, 30, 60]
 }

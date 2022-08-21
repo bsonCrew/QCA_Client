@@ -10,41 +10,15 @@ import { Routes, Route, useParams } from "react-router-dom";
 import sampeData from "../sampleData.json";
 
 export default function Dashboard() {
-	const [sideBarOpen, setSideBarOpen] = React.useState(false);
-	const [lock, setLock] = React.useState(false);
 	// const [status, data] = useLighthouse();
 	const data = sampeData;
 
 	const openView = useParams()["*"];
 
-	const handleDrawer = () => {
-		setSideBarOpen(!sideBarOpen);
-		setLock(true);
-	};
-
-	const closeDrawer = () => {
-		if (!lock && sideBarOpen) setSideBarOpen(false);
-	};
-
-	const openDrawer = () => {
-		if (!lock) {
-			setSideBarOpen(true);
-		}
-	};
-
 	return (
 		<div className="flex flex-row flex-wrap h-full w-screen bg-main">
 			<div>
-				<TopBar open={sideBarOpen} handleDrawer={handleDrawer} />
-				<SideBar
-					sideBarOpen={sideBarOpen}
-					setOpen={setSideBarOpen}
-					handleDrawer={handleDrawer}
-					closeDrawer={closeDrawer}
-					openDrawer={openDrawer}
-					lock={lock}
-					openView={openView}
-				/>
+				<SideBar openView={openView} />
 			</div>
 			<div className="flex-12 flex-col flex-wrap pt-8 bg-main">
 				<div className="bg-white rounded-2xl px-24">

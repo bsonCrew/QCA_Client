@@ -28,8 +28,8 @@
 		"#d3dce6",
 		"#FFEFEF"
 	],
-	"polargraphcolor": ["#1A374D", "#406882", "#6998AB", "#B1D0E0", "#B6C1D9"],
-	"bargraphcolor": ["#355764", "#5A8F7B"],
+	"polargraphcolor": ["#3DB2FF", "#FFEDDA", "#FFB830", "#E8F9FD", "#B6C1D9"],
+	"bargraphcolor": ["#3DB2FF", "#FFB830"],
 
 	"evaluation": ["호환성", "접근성", "개방성", "접속성"],
 	"iconInfo": [
