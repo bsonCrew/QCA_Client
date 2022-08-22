@@ -6,7 +6,8 @@ import Landing from "./Views/Landing";
 import NotFound from "./Views/NotFound";
 import Dashboard from "./Views/Dashboard";
 import MainView from "./Views/MainView";
-import { CompatibilityView } from "./Views/CompatibilityView";
+import CompatibilityView from "./Views/CompatibilityView";
+import AccessibilityView from "./Views/AccessibilityView";
 
 function App() {
 	return (
@@ -15,7 +16,6 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Landing />} />
 					<Route path="/dashboard/*" element={<Dashboard />}>
-						<Route path="compatibility" element={<CompatibilityView />} />
 						<Route path="main" element={<MainView />} />
 					</Route>
 					<Route path="/*" element={<NotFound />} />

@@ -3,9 +3,13 @@ import SideBar from "../Components/layout/Sidebar";
 import TopBar from "../Components/layout/TopBar";
 import Footer from "../Components/layout/Footer";
 import MainView from "./MainView";
-import { CompatibilityView } from "./CompatibilityView";
 import useLighthouse from "../hooks/useLighthouse";
 import { Routes, Route, useParams } from "react-router-dom";
+
+import CompatibilityView from "./CompatibilityView";
+import AccessibilityView from "./AccessibilityView";
+import ConnectivityView from "./ConnectivityView";
+import OpennessView from "./OpennessView";
 
 import sampeData from "../sampleData.json";
 
@@ -29,6 +33,15 @@ export default function Dashboard() {
 							path="/compatibility"
 							element={<CompatibilityView data={data} />}
 						/>
+						<Route
+							path="/accessibility"
+							element={<AccessibilityView data={data} />}
+						/>
+						<Route
+							path="/connectivity"
+							element={<ConnectivityView data={data} />}
+						/>
+						<Route path="/openness" element={<OpennessView data={data} />} />
 					</Routes>
 				</div>
 			</div>

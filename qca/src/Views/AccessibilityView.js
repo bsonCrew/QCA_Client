@@ -3,7 +3,7 @@ import Stat from "../Components/Stat";
 import Score from "../Components/Score";
 import { StatCards } from "../Components/Cards";
 
-export default function CompatibilityView(props) {
+export default function AccessibilityView(props) {
 	const [solvedArr, setSolvedArr] = React.useState([]);
 	console.log(solvedArr);
 
