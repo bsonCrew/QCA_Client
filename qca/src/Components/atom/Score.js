@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Button from "@mui/material/Button";
 import styled from "@emotion/styled";
-import config from "../config.json";
+import config from "../../config.json";
 import Box from "@mui/material/Box";
 import ScoreModal from "./ScoreModal";
 

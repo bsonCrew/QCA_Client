@@ -101,22 +101,16 @@
 	],
 	"rows": [
 		{
-			"id": "4e5cc4c3-09dc-5279-b5cf-a2126049942b",
-			"avatar": "#2196f3",
-			"name": "Leona Morales",
-			"website": "http://tov.ao/vifeju",
-			"rating": 5,
-			"email": "di@beple.ec",
-			"phone": "(811) 619-8719",
-			"username": "@bahezpe",
-			"city": "Botgeruw",
-
-			"company": "Bausch & Lomb Incorporated",
-			"position": "Author",
-			"lastUpdated": "2022-08-13T20:09:40.433Z",
-			"dateCreated": "2021-10-10T08:30:49.984Z",
-			"isAdmin": false,
-			"salary": 53725
+			"id": "is-on-https",
+			"title": "Uses HTTPS",
+			"description": "All sites should be protected with HTTPS, even ones that don't handle sensitive data. This includes avoiding [mixed content](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content), where some resources are loaded over HTTP despite the initial request being served over HTTPS. HTTPS prevents intruders from tampering with or passively listening in on the communications between your app and your users, and is a prerequisite for HTTP/2 and many new web platform APIs. [Learn more](https://web.dev/is-on-https/).",
+			"score": 1,
+			"scoreDisplayMode": "binary",
+			"details": {
+				"type": "table",
+				"headings": [],
+				"items": []
+			}
 		}
 	],
 	"initialState": {

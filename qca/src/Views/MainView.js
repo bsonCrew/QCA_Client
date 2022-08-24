@@ -1,8 +1,8 @@
-import Stat from "../Components/Stat";
-import Score from "../Components/Score";
+import Stat from "../Components/atom/Stat";
+import Score from "../Components/atom/Score";
 import PolarChart from "../Components/chart/PolarChart";
 import VeticalChart from "../Components/chart/VerticalChart";
-import MainCards from "../Components/Cards";
+import MainCards from "../Components/atom/Cards";
 
 export default function MainView(props) {
 	return (
@@ -20,7 +20,7 @@ export default function MainView(props) {
 				<VeticalChart />
 			</div>
 			<div className="flex w-full h-full pb-24 overflow-hidden">
-				<Stat {...props} />
+				<Stat data={props.data} />
 			</div>
 		</>
 	);

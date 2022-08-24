@@ -1,5 +1,5 @@
 import * as React from "react";
-import config from "../config.json";
+import config from "../../config.json";
 import Avatar from "@mui/material/Avatar";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DangerousIcon from "@mui/icons-material/Dangerous";
@@ -15,7 +15,7 @@ export function StatCard(props) {
 		<DangerousIcon fontSize="small" />,
 		<AnnouncementIcon fontSize="small" />,
 		<ConstructionIcon fontSize="small" />,
-		<CheckIcon fontSize="small" />,
+		<CheckIcon fontS2ize="small" />,
 	];
 
 	const [clicked, setClicked] = React.useState(false);
@@ -44,7 +44,7 @@ export function StatCard(props) {
 			<div
 				role="button"
 				className={
-					"h-24 rounded-lg shadow-lg hover:shadow-2xl text-center flex justify-center flex-col p-4 px-8 " +
+					"h-48 rounded-lg shadow-lg hover:shadow-2xl text-center flex justify-center flex-col p-4 px-8 " +
 					(clicked ? "bg-mildRed " : null)
 				}
 				onClick={() => setClicked(!clicked)}
@@ -57,25 +57,25 @@ export function StatCard(props) {
 }
 
 export function StatCards(props) {
-	const cardColumns = props.data.columns;
 	const cardRows = props.data.rows;
 
 	return (
 		<div className="flex flex-col justify-center">
 			<span className="mt-8 text-2xl font-bold">지금 누리집은</span>
 			<div className="mt-4 mx-4 flex flex-row flex-wrap justify-between">
-				{cardColumns.map((data, index) => {
+				{cardRows.map(row => {
 					return (
 						// <div
 						// 	key={index}
 						// 	className="max-w-[320px] min-w-[180px] flex-wrap mx-4 my-4 justify-center"
 						// >
 						<StatCard
-							title={cardColumns[index].field}
-							iconIdx={index}
-							subheader={cardRows[0][cardColumns[index].field].toString()}
-							bgcolor={config.warningcolors[index]}
-							key={index}
+							title={row.title}
+							iconIdx={0}
+							subheader={row.description}
+							score={row.score}
+							bgcolor={config.warningcolors[0]}
+							key={row.id}
 						/>
 						// </div>
 					);

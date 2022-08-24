@@ -1,7 +1,7 @@
 import Dialog from "@mui/material/Dialog";
 import Button from "@mui/material/Button";
-import config from "../config.json";
-import MarkDown from "./Markdown";
+import config from "../../config.json";
+import MarkDown from "../utils/Markdown";
 
 export default function ScoreModal(props) {
 	const description2 = config.scoreDescription.description2;

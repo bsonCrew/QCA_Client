@@ -14,14 +14,14 @@ export default function SearchBar() {
 	const [value, setValue] = React.useState(data.websites[0]);
 
 	const handleSubmit = e => {
-		console.log("submit");
+		console.info("submit");
 		window.open(value.homepage, "_blank");
 	};
 
 	const handleChangeTab = () => {};
 
 	const keyDownHandler = e => {
-		console.log("User pressed: ", e.key);
+		console.info("User pressed: ", e.key);
 
 		if (e.key === "Enter") {
 			e.preventDefault();

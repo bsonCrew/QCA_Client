@@ -1,8 +1,8 @@
 import * as React from "react";
 import Fab from "@mui/material/Fab";
-import data from "../file.json";
+import data from "../../file.json";
 import { useSpring, animated } from "react-spring";
-import useTop5 from "../hooks/useTop5";
+import useTop5 from "../../hooks/useTop5";
 
 const ShortCut = props => {
 	const AnimatedFab = animated(Fab);
