@@ -50,6 +50,8 @@ const useLighthouse = website => {
 		},
 	};
 
+	console.info(data);
+
 	const postQuery = "http://localhost:3001/lighthouse";
 	// const postQuery = "http://34.64.198.147:8080/api/control";
 
@@ -81,8 +83,6 @@ const useLighthouse = website => {
 	for (const [, val] of Object.entries(data)) {
 		entriesValue["rows"].push({ ...val });
 	}
-
-	// console.info(entriesValue);
 
 	return [status, entriesValue];
 };

@@ -4,7 +4,7 @@ import config from "../../config.json";
 import MarkDown from "../utils/Markdown";
 
 export default function ScoreModal(props) {
-	const description2 = config.scoreDescription.description2;
+	const description = config.scoreDescription.description2;
 	return (
 		<Dialog
 			open={props.open}
@@ -18,7 +18,7 @@ export default function ScoreModal(props) {
 				"& .MuiDialog-container": {
 					"& .MuiPaper-root": {
 						width: "100%",
-						maxWidth: "1000px", // Set your width here
+						maxWidth: "lg",
 					},
 				},
 			}}
@@ -31,7 +31,7 @@ export default function ScoreModal(props) {
 						{config.scoreDescription.description}
 					</p>
 
-					{description2.map((phrase, idx) => {
+					{description.map((phrase, idx) => {
 						return (
 							<p
 								id={"modal-modal-description" + idx}

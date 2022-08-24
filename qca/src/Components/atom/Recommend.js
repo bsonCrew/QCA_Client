@@ -30,9 +30,6 @@ const ShortCut = props => {
 export default function Recommend() {
 	const [status, data] = useTop5();
 
-	console.log(data);
-	console.log(status);
-
 	return (
 		<div className="w-[max(40vw,20rem)] mt-4 flex-wrap flex items-center justify-center flex-row">
 			{status === "success"

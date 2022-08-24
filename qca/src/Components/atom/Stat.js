@@ -1,7 +1,6 @@
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { darken, lighten } from "@mui/material/styles";
-import sampleData from "../../sampleData";
 
 import Box from "@mui/material/Box";
 

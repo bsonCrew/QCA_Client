@@ -15,10 +15,11 @@ export function StatCard(props) {
 		<DangerousIcon fontSize="small" />,
 		<AnnouncementIcon fontSize="small" />,
 		<ConstructionIcon fontSize="small" />,
-		<CheckIcon fontS2ize="small" />,
+		<CheckIcon fontSize="small" />,
 	];
 
 	const [clicked, setClicked] = React.useState(false);
+	const handleClose = () => setClicked(false);
 
 	return (
 		<div className="lg:min-w-[280px] mx-4 my-4 grow transition-transform ease-in-out ">
@@ -37,14 +38,15 @@ export function StatCard(props) {
 			<CardDialog
 				{...props}
 				open={clicked}
-				handleClick={() => setClicked(false)}
+				handleClose={handleClose}
+				onClose={handleClose}
 			>
 				<div className="w-80 h-96"></div>
 			</CardDialog>
 			<div
 				role="button"
 				className={
-					"h-48 rounded-lg shadow-lg hover:shadow-2xl text-center flex justify-center flex-col p-4 px-8 " +
+					"w-full h-48 rounded-lg shadow-lg hover:shadow-2xl text-center flex justify-center flex-col p-4 px-8 " +
 					(clicked ? "bg-mildRed " : null)
 				}
 				onClick={() => setClicked(!clicked)}
@@ -72,7 +74,8 @@ export function StatCards(props) {
 						<StatCard
 							title={row.title}
 							iconIdx={0}
-							subheader={row.description}
+							subheader={row.description.split(". ")[0] + "."}
+							description={row.description}
 							score={row.score}
 							bgcolor={config.warningcolors[0]}
 							key={row.id}
