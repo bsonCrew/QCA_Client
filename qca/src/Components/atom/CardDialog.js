@@ -1,26 +1,60 @@
 import * as React from "react";
 import Dialog from "@mui/material/Dialog";
 
-const RE_URL = /\[[ㄱ-ㅎ|ㅏ-ㅣ|가-힣|\s]+|[a-z]+\](w+:\/\/\S+)/;
-
+const RE_LEARNMORE = /\[[ㄱ-ㅎ|ㅏ-ㅣ|가-힣|\s]+\]|\[[a-zA-Z\s]+\]/g;
+const RE_URL =
+	/(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/g;
 function linkify(str) {
-	const results = [];
-	let match, match2;
-	while ((match = RE_URL.exec(str))) {
-		match2 = match.input;
-		console.log(match.input);
+	let results = [];
+	const matchesLearnmore = [...str.matchAll(RE_LEARNMORE)];
+	const matchesURL = [...str.matchAll(RE_URL)];
+	// console.log(matchesLearnmore, matchesURL);
 
-		results.push(
-			<a key={match2.length} href={match2}>
-				{match2}
-			</a>
-		);
+	if (matchesLearnmore !== null) {
+		matchesLearnmore.forEach((match, idx) => {
+			console.log(matchesURL[0]);
+			// if (matchesURL[idx][0] !== null && matchesURL[idx][0] !== 0) {
+			results.push(
+				<a href={matchesURL[0][0]} target="_blank" rel="noopener noreferrer">
+					{match[0]}
+				</a>
+			);
+			// }
+		});
 	}
+
+	// match2 = match.input;
+	// if (match !== null) {
+	// 	console.log(match);
+
+	// console.log("str: ", str);
+	// console.log("beforeText: ", beforeText);
+	// console.log("linkHref: ", linkHref);
+	// console.log("linkText: ", match[0]);
+	// console.log("afterText: ", afterText);
+
+	// results.unshift(
+	// 	<span key={str.length}>
+	// 		{beforeText}
+	// 		<a
+	// 			style={{
+	// 				color: "red",
+	// 			}}
+	// 			key={match[0].length}
+	// 			href={linkHref}
+	// 		>
+	// 			{match[0]}
+	// 		</a>
+	// 		{afterText}
+	// 	</span>
+	// );
+	// } else results.push(<span key={str.length}>{str}</span>);
 
 	return results;
 }
 
 export default function CardDialog(props) {
+	// console.log(props.subheader);
 	let description = props.description.replace(props.subheader, "");
 
 	return (
@@ -43,7 +77,7 @@ export default function CardDialog(props) {
 				<span className="text-xl pt-4 leading-8">{props.subheader}</span>
 				<br />
 				<br />
-				{linkify(description)}
+				{linkify(description, [])}
 				<br />
 
 				<p className="text-lg pt-4"></p>

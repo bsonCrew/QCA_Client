@@ -17,7 +17,7 @@ export default function Score() {
 	const handleClose = () => setOpen(false);
 
 	return (
-		<div className="max-w-full mx-6">
+		<div className="max-w-full mx-6 mt-3">
 			<ScoreModal
 				open={open}
 				handleClose={handleClose}
@@ -32,7 +32,7 @@ export default function Score() {
 
 			<div
 				role="button"
-				className="min-w-[280px] h-60 rounded-lg shadow-lg hover:shadow-2xl flex flex-col p-4 px-8 item-middle align-middle justify-center"
+				className="min-w-[280px] h-56 rounded-lg shadow-lg hover:shadow-2xl flex flex-col p-4 px-8 item-middle align-middle justify-center"
 				onClick={handleOpen}
 			>
 				<span className="text-xl">총점</span>
