@@ -43,39 +43,7 @@ function linkify(str) {
 				</React.Fragment>
 			);
 		} else results.push(<span key={spl.length}>{spl}.&nbsp;</span>);
-
-		// if (matchesLearnmore !== null) {
-		// 	matchesLearnmore.forEach((match, idx) => {
-		// 		if (match !== null && match !== undefined) {
-		// 			match[0] = match[0].replace(")");
-		// 			console.log(match, idx);
-		// 		}
-		// 		results.push(
-		// 			<a
-		// 				key={match[0]}
-		// 				href={matchesURL[0][0]}
-		// 				target="_blank"
-		// 				rel="noopener noreferrer"
-		// 			>
-		// 				{match[0]}
-		// 			</a>
-		// 		);
-		// 		// }
-		// 	});
-		// }
 	});
-
-	// match2 = match.input;
-	// if (match !== null) {
-	// 	console.log(match);
-
-	// console.log("str: ", str);
-	// console.log("beforeText: ", beforeText);
-	// console.log("linkHref: ", linkHref);
-	// console.log("linkText: ", match[0]);
-	// console.log("afterText: ", afterText);
-
-	//
 
 	return results;
 }
