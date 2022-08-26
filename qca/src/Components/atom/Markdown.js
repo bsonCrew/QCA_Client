@@ -9,20 +9,6 @@ import useGithub from "../../hooks/useGithub";
 function MarkDown() {
 	const [status, data] = useGithub();
 
-	// 	const data = `A paragraph with *emphasis* and **strong importance**.
-
-	// > A block quote with ~strikethrough~ and a URL: https://reactjs.org.
-
-	// * Lists
-	// * [ ] todo
-	// * [x] done
-
-	// A table:
-
-	// | a | b |
-	// | - | - |
-	// `;
-
 	return (
 		<ReactMarkdown
 			children={data}

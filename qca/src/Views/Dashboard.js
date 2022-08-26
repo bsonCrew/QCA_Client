@@ -14,10 +14,6 @@ import OpennessView from "./OpennessView";
 export default function Dashboard() {
 	const [status, data] = useLighthouse();
 
-	React.useEffect(() => {
-		console.log("fish");
-	}, []);
-
 	const openView = useParams()["*"];
 
 	return (
