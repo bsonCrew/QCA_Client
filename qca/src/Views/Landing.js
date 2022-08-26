@@ -1,6 +1,6 @@
 import SearchBar from "../Components/layout/SearchBar";
 import Header from "../Components/layout/Header";
-import Recommend from "../Components/Recommend";
+import Recommend from "../Components/atom/Recommend";
 import bkgImage from "../Themes/bkg.svg";
 
 function Landing() {

@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
-import useGithub from "../hooks/useGithub";
+import useGithub from "../../hooks/useGithub";
 
 function MarkDown() {
 	const [status, data] = useGithub();

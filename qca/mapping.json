@@ -1,0 +1,1487 @@
+{
+	"core/audits/accessibility/accesskeys.js | description": {
+		"message": "액세스 키를 사용하면 사용자가 페이지의 특정 부분에 신속하게 포커스를 맞출 수 있습니다. 정상적으로 탐색하려면 모든 액세스 키가 고유해야 합니다. [자세히 알아보기](https://web.dev/accesskeys/)"
+	},
+	"core/audits/accessibility/accesskeys.js | failureTitle": {
+		"message": "`[accesskey]` 값이 고유하지 않음"
+	},
+	"core/audits/accessibility/accesskeys.js | title": {
+		"message": "`[accesskey]` 값이 고유합니다"
+	},
+	"core/audits/accessibility/aria-allowed-attr.js | description": {
+		"message": "각 ARIA `role`은(는) `aria-*` 속성으로 구성된 특정 하위 세트를 지원합니다. 이 두 가지가 일치하지 않으면 `aria-*` 속성이 유효하지 않게 됩니다. [자세히 알아보기](https://web.dev/aria-allowed-attr/)"
+	},
+	"core/audits/accessibility/aria-allowed-attr.js | failureTitle": {
+		"message": "`[aria-*]` 속성이 역할과 일치하지 않음"
+	},
+	"core/audits/accessibility/aria-allowed-attr.js | title": {
+		"message": "`[aria-*]` 속성이 역할과 일치함"
+	},
+	"core/audits/accessibility/aria-command-name.js | description": {
+		"message": "접근성을 위한 이름이 요소에 없는 경우 스크린 리더가 일반적인 이름으로 읽기 때문에 스크린 리더에 의존하는 사용자는 이용할 수 없게 됩니다. [자세히 알아보기](https://web.dev/aria-name/)"
+	},
+	"core/audits/accessibility/aria-command-name.js | failureTitle": {
+		"message": "`button`, `link` 및 `menuitem` 요소에 접근성을 위한 이름이 없음"
+	},
+	"core/audits/accessibility/aria-command-name.js | title": {
+		"message": "`button`, `link` 및 `menuitem` 요소에 접근성을 위한 이름이 있음"
+	},
+	"core/audits/accessibility/aria-hidden-body.js | description": {
+		"message": "스크린 리더와 같은 보조 기술은 `aria-hidden=\"true\"`이(가) 문서 `<body>`에 설정된 경우 일관성 없게 작동합니다. [자세히 알아보기](https://web.dev/aria-hidden-body/)"
+	},
+	"core/audits/accessibility/aria-hidden-body.js | failureTitle": {
+		"message": "`[aria-hidden=\"true\"]`이(가) 문서 `<body>`에 있음"
+	},
+	"core/audits/accessibility/aria-hidden-body.js | title": {
+		"message": "`[aria-hidden=\"true\"]`이(가) 문서 `<body>`에 없음"
+	},
+	"core/audits/accessibility/aria-hidden-focus.js | description": {
+		"message": "`[aria-hidden=\"true\"]` 요소 내 포커스할 수 있는 하위 요소는 스크린 리더와 같은 보조 기술 사용자가 상호 작용 가능한 요소를 사용하지 못하게 합니다. [자세히 알아보기](https://web.dev/aria-hidden-focus/)"
+	},
+	"core/audits/accessibility/aria-hidden-focus.js | failureTitle": {
+		"message": "`[aria-hidden=\"true\"]` 요소에 포커스할 수 있는 하위 요소가 있음"
+	},
+	"core/audits/accessibility/aria-hidden-focus.js | title": {
+		"message": "`[aria-hidden=\"true\"]` 요소에 포커스할 수 있는 하위 요소가 없음"
+	},
+	"core/audits/accessibility/aria-input-field-name.js | description": {
+		"message": "입력란에 접근 가능한 이름이 없는 경우 스크린 리더에서 일반 이름으로 읽기 때문에 스크린 리더에 의존하는 사용자는 사용할 수 없게 됩니다. [자세히 알아보기](https://web.dev/aria-name/)"
+	},
+	"core/audits/accessibility/aria-input-field-name.js | failureTitle": {
+		"message": "ARIA 입력란에 접근 가능한 이름이 없음"
+	},
+	"core/audits/accessibility/aria-input-field-name.js | title": {
+		"message": "ARIA 입력란에 접근 가능한 이름이 있음"
+	},
+	"core/audits/accessibility/aria-meter-name.js | description": {
+		"message": "접근성을 위한 이름이 요소에 없는 경우 스크린 리더가 일반적인 이름으로 읽기 때문에 스크린 리더에 의존하는 사용자는 이용할 수 없게 됩니다. [자세히 알아보기](https://web.dev/aria-name/)"
+	},
+	"core/audits/accessibility/aria-meter-name.js | failureTitle": {
+		"message": "ARIA `meter` 요소에 접근성을 위한 이름이 없음"
+	},
+	"core/audits/accessibility/aria-meter-name.js | title": {
+		"message": "ARIA `meter` 요소에 접근성을 위한 이름이 있음"
+	},
+	"core/audits/accessibility/aria-progressbar-name.js | description": {
+		"message": "`progressbar` 요소에 접근성을 위한 이름이 없는 경우 스크린 리더가 일반적인 이름으로 읽기 때문에 스크린 리더에 의존하는 사용자는 이용할 수 없게 됩니다. [자세히 알아보기](https://web.dev/aria-name/)"
+	},
+	"core/audits/accessibility/aria-progressbar-name.js | failureTitle": {
+		"message": "ARIA `progressbar` 요소에 접근성을 위한 이름이 없음"
+	},
+	"core/audits/accessibility/aria-progressbar-name.js | title": {
+		"message": "ARIA `progressbar` 요소에 접근성을 위한 이름이 있음"
+	},
+	"core/audits/accessibility/aria-required-attr.js | description": {
+		"message": "일부 ARIA 역할에는 스크린 리더에 관한 요소의 상태를 설명하는 속성이 필요합니다. [자세히 알아보기](https://web.dev/aria-required-attr/)"
+	},
+	"core/audits/accessibility/aria-required-attr.js | failureTitle": {
+		"message": "`[role]`에 필요한 `[aria-*]` 속성이 일부 포함되지 않음"
+	},
+	"core/audits/accessibility/aria-required-attr.js | title": {
+		"message": "`[role]`에 필요한 모든 `[aria-*]` 속성이 있음"
+	},
+	"core/audits/accessibility/aria-required-children.js | description": {
+		"message": "일부 ARIA 상위 역할에서 의도한 접근성 기능을 실행하려면 특정 하위 역할을 포함하고 있어야 합니다. [자세히 알아보기](https://web.dev/aria-required-children/)"
+	},
+	"core/audits/accessibility/aria-required-children.js | failureTitle": {
+		"message": "하위 요소에 특정 `[role]`을(를) 포함해야 하는 ARIA `[role]` 지원 요소에 일부 또는 전체 하위 요소가 누락되었습니다."
+	},
+	"core/audits/accessibility/aria-required-children.js | title": {
+		"message": "하위 요소에 특정 `[role]`을(를) 포함해야 하는 ARIA `[role]` 지원 요소에 필요한 모든 하위 요소가 있습니다."
+	},
+	"core/audits/accessibility/aria-required-parent.js | description": {
+		"message": "일부 ARIA 하위 역할에서 의도한 접근성 기능을 올바르게 실행하려면 특정 상위 역할에 포함되어 있어야 합니다. [자세히 알아보기](https://web.dev/aria-required-parent/)"
+	},
+	"core/audits/accessibility/aria-required-parent.js | failureTitle": {
+		"message": "`[role]`이(가) 필수 상위 요소에 포함되지 않음"
+	},
+	"core/audits/accessibility/aria-required-parent.js | title": {
+		"message": "`[role]`이(가) 필수 상위 요소에 포함됨"
+	},
+	"core/audits/accessibility/aria-roles.js | description": {
+		"message": "ARIA 역할에서 의도한 접근성 기능을 실행하려면 유효한 값을 포함하고 있어야 합니다. [자세히 알아보기](https://web.dev/aria-roles/)"
+	},
+	"core/audits/accessibility/aria-roles.js | failureTitle": {
+		"message": "`[role]` 값이 유효하지 않음"
+	},
+	"core/audits/accessibility/aria-roles.js | title": {
+		"message": "`[role]` 값이 유효함"
+	},
+	"core/audits/accessibility/aria-toggle-field-name.js | description": {
+		"message": "토글 입력란에 접근 가능한 이름이 없는 경우 스크린 리더에서 일반적인 이름으로 읽기 때문에 스크린 리더에 의존하는 사용자는 사용할 수 없게 됩니다. [자세히 알아보기](https://web.dev/aria-name/)"
+	},
+	"core/audits/accessibility/aria-toggle-field-name.js | failureTitle": {
+		"message": "ARIA 토글 입력란에 접근 가능한 이름이 없음"
+	},
+	"core/audits/accessibility/aria-toggle-field-name.js | title": {
+		"message": "ARIA 토글 입력란에 접근 가능한 이름이 있음"
+	},
+	"core/audits/accessibility/aria-tooltip-name.js | description": {
+		"message": "접근성을 위한 이름이 요소에 없는 경우 스크린 리더가 일반적인 이름으로 읽기 때문에 스크린 리더에 의존하는 사용자는 이용할 수 없게 됩니다. [자세히 알아보기](https://web.dev/aria-name/)"
+	},
+	"core/audits/accessibility/aria-tooltip-name.js | failureTitle": {
+		"message": "ARIA `tooltip` 요소에 접근성을 위한 이름이 없음"
+	},
+	"core/audits/accessibility/aria-tooltip-name.js | title": {
+		"message": "ARIA `tooltip` 요소에 접근성을 위한 이름이 있음"
+	},
+	"core/audits/accessibility/aria-treeitem-name.js | description": {
+		"message": "접근성을 위한 이름이 요소에 없는 경우 스크린 리더가 일반적인 이름으로 읽기 때문에 스크린 리더에 의존하는 사용자는 이용할 수 없게 됩니다. [자세히 알아보기](https://web.dev/aria-name/)"
+	},
+	"core/audits/accessibility/aria-treeitem-name.js | failureTitle": {
+		"message": "ARIA `treeitem` 요소에 접근성을 위한 이름이 없음"
+	},
+	"core/audits/accessibility/aria-treeitem-name.js | title": {
+		"message": "ARIA `treeitem` 요소에 접근성을 위한 이름이 있음"
+	},
+	"core/audits/accessibility/aria-valid-attr-value.js | description": {
+		"message": "스크린 리더와 같은 보조 기술은 잘못된 값이 있는 ARIA 속성을 해석하지 못합니다. [자세히 알아보기](https://web.dev/aria-valid-attr-value/)"
+	},
+	"core/audits/accessibility/aria-valid-attr-value.js | failureTitle": {
+		"message": "`[aria-*]` 속성에 유효한 값이 없음"
+	},
+	"core/audits/accessibility/aria-valid-attr-value.js | title": {
+		"message": "`[aria-*]` 속성에 유효한 값이 있음"
+	},
+	"core/audits/accessibility/aria-valid-attr.js | description": {
+		"message": "스크린 리더와 같은 보조 기술은 잘못된 이름이 있는 ARIA 속성을 해석하지 못합니다. [자세히 알아보기](https://web.dev/aria-valid-attr/)"
+	},
+	"core/audits/accessibility/aria-valid-attr.js | failureTitle": {
+		"message": "`[aria-*]` 속성이 유효하지 않거나 맞춤법 오류가 있음"
+	},
+	"core/audits/accessibility/aria-valid-attr.js | title": {
+		"message": "`[aria-*]` 속성이 유효하며 맞춤법 오류가 없음"
+	},
+	"core/audits/accessibility/axe-audit.js | failingElementsHeader": {
+		"message": "통과하지 못한 요소"
+	},
+	"core/audits/accessibility/button-name.js | description": {
+		"message": "버튼에 접근 가능한 이름이 없는 경우 스크린 리더에서 '버튼'으로만 읽기 때문에 스크린 리더에 의존하는 사용자에게는 해당 버튼이 유용하지 않게 됩니다. [자세히 알아보기](https://web.dev/button-name/)"
+	},
+	"core/audits/accessibility/button-name.js | failureTitle": {
+		"message": "버튼에 접근 가능한 이름이 없습니다"
+	},
+	"core/audits/accessibility/button-name.js | title": {
+		"message": "버튼에 접근 가능한 이름이 있습니다"
+	},
+	"core/audits/accessibility/bypass.js | description": {
+		"message": "반복적인 콘텐츠를 건너뛸 방법을 추가하면 키보드 사용자가 페이지를 더 효율적으로 탐색할 수 있습니다. [자세히 알아보기](https://web.dev/bypass/)"
+	},
+	"core/audits/accessibility/bypass.js | failureTitle": {
+		"message": "페이지에 제목, 링크 건너뛰기, 랜드마크 영역이 포함되어 있지 않습니다"
+	},
+	"core/audits/accessibility/bypass.js | title": {
+		"message": "페이지에 제목, 링크 건너뛰기, 랜드마크 영역이 포함되어 있습니다"
+	},
+	"core/audits/accessibility/color-contrast.js | description": {
+		"message": "많은 사용자가 저대비 텍스트를 읽는 데 어려움을 겪거나 전혀 읽지 못합니다. [자세히 알아보기](https://web.dev/color-contrast/)"
+	},
+	"core/audits/accessibility/color-contrast.js | failureTitle": {
+		"message": "백그라운드 및 포그라운드 색상의 대비율이 충분하지 않습니다"
+	},
+	"core/audits/accessibility/color-contrast.js | title": {
+		"message": "백그라운드 및 포그라운드 색상의 대비율이 충분합니다"
+	},
+	"core/audits/accessibility/definition-list.js | description": {
+		"message": "정의 목록이 올바르게 표시되지 않으면 스크린 리더에서 혼란스럽거나 정확하지 않은 내용을 말할 수 있습니다. [자세히 알아보기](https://web.dev/definition-list/)"
+	},
+	"core/audits/accessibility/definition-list.js | failureTitle": {
+		"message": "`<dl>`에 순서가 올바른 `<dt>` 및 `<dd>` 그룹, `<script>`, `<template>` 또는 `<div>` 요소만 포함되어 있지 않음"
+	},
+	"core/audits/accessibility/definition-list.js | title": {
+		"message": "`<dl>`에 순서가 올바른 `<dt>` 및 `<dd>` 그룹, `<script>`, `<template>` 또는 `<div>` 요소만 포함되어 있음"
+	},
+	"core/audits/accessibility/dlitem.js | description": {
+		"message": "스크린 리더에서 정의 목록 항목(`<dt>` 및 `<dd>`)을 올바르게 읽으려면 정의 목록 항목이 상위 `<dl>` 요소에 래핑되어 있어야 합니다. [자세히 알아보기](https://web.dev/dlitem/)"
+	},
+	"core/audits/accessibility/dlitem.js | failureTitle": {
+		"message": "정의 목록 항목이 `<dl>` 요소에서 래핑되어 있지 않음"
+	},
+	"core/audits/accessibility/dlitem.js | title": {
+		"message": "정의 목록 항목이 `<dl>` 요소에서 래핑되어 있음"
+	},
+	"core/audits/accessibility/document-title.js | description": {
+		"message": "제목을 사용하면 스크린 리더 사용자에게는 페이지의 개요를 제공할 수 있습니다. 검색엔진 사용자는 제목으로 페이지가 자신의 검색어와 관련되어 있는지 여부를 판단합니다. [자세히 알아보기](https://web.dev/document-title/)"
+	},
+	"core/audits/accessibility/document-title.js | failureTitle": {
+		"message": "문서에 `<title>` 요소가 없음"
+	},
+	"core/audits/accessibility/document-title.js | title": {
+		"message": "문서에 `<title>` 요소가 있음"
+	},
+	"core/audits/accessibility/duplicate-id-active.js | description": {
+		"message": "포커스할 수 있는 모든 요소에는 고유한 `id`이(가) 있어 보조 기술에 올바르게 표시되어야 합니다. [자세히 알아보기](https://web.dev/duplicate-id-active/)"
+	},
+	"core/audits/accessibility/duplicate-id-active.js | failureTitle": {
+		"message": "포커스할 수 있는 활성 요소에 중복되는 `[id]` 속성이 있음"
+	},
+	"core/audits/accessibility/duplicate-id-active.js | title": {
+		"message": "포커스할 수 있는 활성 요소에 중복되는 `[id]` 속성이 없음"
+	},
+	"core/audits/accessibility/duplicate-id-aria.js | description": {
+		"message": "중복되는 ARIA ID 값이 없어야 보조 기술이 다른 인스턴스를 놓치지 않습니다. [자세히 알아보기](https://web.dev/duplicate-id-aria/)"
+	},
+	"core/audits/accessibility/duplicate-id-aria.js | failureTitle": {
+		"message": "중복되는 ARIA ID가 있음"
+	},
+	"core/audits/accessibility/duplicate-id-aria.js | title": {
+		"message": "중복되는 ARIA ID가 없음"
+	},
+	"core/audits/accessibility/form-field-multiple-labels.js | description": {
+		"message": "라벨이 여러 개인 양식 입력란은 첫 번째, 마지막 또는 모든 라벨을 사용하는 스크린 리더와 같은 보조 기술에서 잘못 읽을 수 있습니다. [자세히 알아보기](https://web.dev/form-field-multiple-labels/)"
+	},
+	"core/audits/accessibility/form-field-multiple-labels.js | failureTitle": {
+		"message": "양식 입력란에 라벨이 여러 개 있음"
+	},
+	"core/audits/accessibility/form-field-multiple-labels.js | title": {
+		"message": "양식 입력란에 라벨이 여러 개가 아님"
+	},
+	"core/audits/accessibility/frame-title.js | description": {
+		"message": "스크린 리더 사용자는 프레임 콘텐츠를 설명해 주는 프레임 제목을 사용합니다. [자세히 알아보기](https://web.dev/frame-title/)"
+	},
+	"core/audits/accessibility/frame-title.js | failureTitle": {
+		"message": "`<frame>` 또는 `<iframe>` 요소에 제목이 없음"
+	},
+	"core/audits/accessibility/frame-title.js | title": {
+		"message": "`<frame>` 또는 `<iframe>` 요소에 제목이 있음"
+	},
+	"core/audits/accessibility/heading-order.js | description": {
+		"message": "레벨을 건너뛰지 않고 제대로 정렬된 제목은 페이지의 시맨틱 구조를 포함하여, 보조 기술을 사용할 때 더 쉽게 이동하고 이해하는 데 도움이 됩니다. [자세히 알아보기](https://web.dev/heading-order/)"
+	},
+	"core/audits/accessibility/heading-order.js | failureTitle": {
+		"message": "제목 요소가 내림차순으로 표시되지 않음"
+	},
+	"core/audits/accessibility/heading-order.js | title": {
+		"message": "제목 요소가 내림차순으로 표시됨"
+	},
+	"core/audits/accessibility/html-has-lang.js | description": {
+		"message": "페이지에서 lang 속성을 지정하지 않는 경우 스크린 리더는 사용자가 스크린 리더를 설정할 때 선택한 기본 언어로 페이지가 작성되어 있다고 가정합니다. 페이지가 기본 언어로 작성되어 있지 않으면 스크린 리더에서 페이지에 있는 텍스트를 제대로 읽어줄 수 없습니다. [자세히 알아보기](https://web.dev/html-has-lang/)"
+	},
+	"core/audits/accessibility/html-has-lang.js | failureTitle": {
+		"message": "`<html>` 요소에 `[lang]` 속성이 없음"
+	},
+	"core/audits/accessibility/html-has-lang.js | title": {
+		"message": "`<html>` 요소에 `[lang]` 속성이 있음"
+	},
+	"core/audits/accessibility/html-lang-valid.js | description": {
+		"message": "유효한 [BCP 47 언어](https://www.w3.org/International/questions/qa-choosing-language-tags#question)를 지정하면 스크린 리더에서 텍스트를 올바르게 읽는 데 도움이 됩니다. [자세히 알아보기](https://web.dev/html-lang-valid/)"
+	},
+	"core/audits/accessibility/html-lang-valid.js | failureTitle": {
+		"message": "`<html>` 요소의 `[lang]` 속성에 유효한 값이 없음"
+	},
+	"core/audits/accessibility/html-lang-valid.js | title": {
+		"message": "`<html>` 요소에 `[lang]` 속성의 유효한 값이 있음"
+	},
+	"core/audits/accessibility/image-alt.js | description": {
+		"message": "정보 요소는 짧아야 하며 설명을 제공하는 대체 텍스트를 목표로 해야 합니다. 장식 요소는 Alt 속성이 비어 있는 경우 무시될 수 있습니다. [자세히 알아보기](https://web.dev/image-alt/)"
+	},
+	"core/audits/accessibility/image-alt.js | failureTitle": {
+		"message": "이미지 요소에 `[alt]` 속성 없음"
+	},
+	"core/audits/accessibility/image-alt.js | title": {
+		"message": "이미지 요소에 `[alt]` 속성이 있음"
+	},
+	"core/audits/accessibility/input-image-alt.js | description": {
+		"message": "이미지가 `<input>` 버튼으로 사용되는 경우 대체 텍스트를 제공하면 스크린 리더 사용자가 버튼의 목적을 쉽게 이해하는 데 도움이 됩니다. [자세히 알아보기](https://web.dev/input-image-alt/)"
+	},
+	"core/audits/accessibility/input-image-alt.js | failureTitle": {
+		"message": "`<input type=\"image\">` 요소에 `[alt]` 텍스트가 없음"
+	},
+	"core/audits/accessibility/input-image-alt.js | title": {
+		"message": "`<input type=\"image\">` 요소에 `[alt]` 텍스트가 있음"
+	},
+	"core/audits/accessibility/label.js | description": {
+		"message": "라벨을 사용하면 스크린 리더와 같은 보조 기술에서 양식 컨트롤을 올바르게 읽을 수 있습니다. [자세히 알아보기](https://web.dev/label/)"
+	},
+	"core/audits/accessibility/label.js | failureTitle": {
+		"message": "양식 요소에 관련 라벨이 포함되어 있지 않습니다"
+	},
+	"core/audits/accessibility/label.js | title": {
+		"message": "양식 요소에 관련 라벨이 포함되어 있습니다"
+	},
+	"core/audits/accessibility/link-name.js | description": {
+		"message": "인식하기 쉽고, 고유하고, 초점을 맞추기 쉬운 링크 텍스트(및 이미지가 링크로 사용되는 경우 이미지의 대체 텍스트)를 사용하면 스크린 리더 사용자의 탐색 환경을 개선할 수 있습니다. [자세히 알아보기](https://web.dev/link-name/)"
+	},
+	"core/audits/accessibility/link-name.js | failureTitle": {
+		"message": "링크에 인식 가능한 이름이 포함되어 있지 않습니다"
+	},
+	"core/audits/accessibility/link-name.js | title": {
+		"message": "링크에 인식 가능한 이름이 포함되어 있습니다"
+	},
+	"core/audits/accessibility/list.js | description": {
+		"message": "스크린 리더에는 목록을 읽는 특정 방식이 있습니다. 목록 구조를 적절히 작성하면 스크린 리더 출력에 도움이 됩니다. [자세히 알아보기](https://web.dev/list/)"
+	},
+	"core/audits/accessibility/list.js | failureTitle": {
+		"message": "목록에 `<li>` 요소와 스크립트 지원 요소(`<script>` 및 `<template>`)만 포함되지 않음"
+	},
+	"core/audits/accessibility/list.js | title": {
+		"message": "목록에 `<li>` 요소와 요소 지원 스크립트(`<script>` 및 `<template>`)만 포함됨"
+	},
+	"core/audits/accessibility/listitem.js | description": {
+		"message": "스크린 리더에서 목록 항목(`<li>`)을 올바르게 읽으려면 목록 항목이 상위 `<ul>` 또는 `<ol>`에 포함되어 있어야 합니다. [자세히 알아보기](https://web.dev/listitem/)"
+	},
+	"core/audits/accessibility/listitem.js | failureTitle": {
+		"message": "목록 항목(`<li>`)이 `<ul>` 또는 `<ol>` 상위 요소 내에 포함되지 않음"
+	},
+	"core/audits/accessibility/listitem.js | title": {
+		"message": "목록 항목(`<li>`)이 `<ul>` 또는 `<ol>` 상위 요소 내에 포함되어 있음"
+	},
+	"core/audits/accessibility/meta-refresh.js | description": {
+		"message": "사용자는 페이지가 자동으로 새로고침된다고 예상하지 못하기 때문에 페이지가 자동으로 새로고침되면 초점이 다시 페이지 상단에 맞춰집니다. 이로 인해 불쾌하거나 혼란스러운 상황이 발생할 수 있습니다. [자세히 알아보기](https://web.dev/meta-refresh/)"
+	},
+	"core/audits/accessibility/meta-refresh.js | failureTitle": {
+		"message": "문서에서 `<meta http-equiv=\"refresh\">` 사용됨"
+	},
+	"core/audits/accessibility/meta-refresh.js | title": {
+		"message": "문서에서 `<meta http-equiv=\"refresh\">`이(가) 사용되지 않음"
+	},
+	"core/audits/accessibility/meta-viewport.js | description": {
+		"message": "확대/축소를 사용 중지하면 저시력으로 인해 웹페이지의 콘텐츠를 제대로 확인하기 위해 화면 확대를 사용하는 사용자에게 문제가 될 수 있습니다. [자세히 알아보기](https://web.dev/meta-viewport/)"
+	},
+	"core/audits/accessibility/meta-viewport.js | failureTitle": {
+		"message": "`[user-scalable=\"no\"]`이(가) `<meta name=\"viewport\">` 요소에서 사용되거나 `[maximum-scale]` 속성이 5보다 작음"
+	},
+	"core/audits/accessibility/meta-viewport.js | title": {
+		"message": "`[user-scalable=\"no\"]`은(는) `<meta name=\"viewport\">` 요소에 사용되지 않으며 `[maximum-scale]` 속성이 5보다 작지 않음"
+	},
+	"core/audits/accessibility/object-alt.js | description": {
+		"message": "스크린 리더는 텍스트가 아닌 콘텐츠를 번역할 수 없습니다. `<object>` 요소에 대체 텍스트를 추가하면 스크린 리더에서 사용자에게 텍스트의 의미를 전달하는 데 도움이 됩니다. [자세히 알아보기](https://web.dev/object-alt/)"
+	},
+	"core/audits/accessibility/object-alt.js | failureTitle": {
+		"message": "`<object>` 요소에 대체 텍스트가 없음"
+	},
+	"core/audits/accessibility/object-alt.js | title": {
+		"message": "`<object>` 요소에 대체 텍스트가 있음"
+	},
+	"core/audits/accessibility/tabindex.js | description": {
+		"message": "0보다 큰 값은 명시적인 탐색 순서를 나타냅니다. 기술적으로는 유효하나 보조 기술에 의존하는 사용자에게 불편한 환경이 생기는 경우가 많습니다. [자세히 알아보기](https://web.dev/tabindex/)"
+	},
+	"core/audits/accessibility/tabindex.js | failureTitle": {
+		"message": "일부 요소의 `[tabindex]` 값이 0보다 큼"
+	},
+	"core/audits/accessibility/tabindex.js | title": {
+		"message": "`[tabindex]` 값이 0보다 큰 요소가 없음"
+	},
+	"core/audits/accessibility/td-headers-attr.js | description": {
+		"message": "스크린 리더에는 표를 좀 더 쉽게 탐색하는 기능이 있습니다. `[headers]` 속성을 사용하는 `<td>` 셀이 동일한 테이블에 있는 다른 셀만 참조하게 하면 스크린 리더 사용자 환경을 개선할 수 있습니다. [자세히 알아보기](https://web.dev/td-headers-attr/)"
+	},
+	"core/audits/accessibility/td-headers-attr.js | failureTitle": {
+		"message": "`[headers]` 속성을 사용하는 `<table>` 요소의 셀은 동일한 테이블 내에 없는 요소 `id`만 참조합니다."
+	},
+	"core/audits/accessibility/td-headers-attr.js | title": {
+		"message": "`[headers]` 속성을 사용하는 `<table>` 요소의 셀이 동일한 테이블 내의 테이블 셀을 참조합니다."
+	},
+	"core/audits/accessibility/th-has-data-cells.js | description": {
+		"message": "스크린 리더에는 표를 좀 더 쉽게 탐색하는 기능이 있습니다. 표 헤더에서 항상 셀 세트 일부를 참조하게 하면 스크린 리더 사용자 환경이 개선될 수 있습니다. [자세히 알아보기](https://web.dev/th-has-data-cells/)"
+	},
+	"core/audits/accessibility/th-has-data-cells.js | failureTitle": {
+		"message": "`<th>` 요소와 `[role=\"columnheader\"/\"rowheader\"]` 지원 요소가 설명하는 데이터 셀이 해당 요소에 포함되지 않음"
+	},
+	"core/audits/accessibility/th-has-data-cells.js | title": {
+		"message": "`<th>` 요소와 `[role=\"columnheader\"/\"rowheader\"]` 지원 요소가 설명하는 데이터 셀이 해당 요소에 포함됨"
+	},
+	"core/audits/accessibility/valid-lang.js | description": {
+		"message": "요소에 유효한 [BCP 47 언어](https://www.w3.org/International/questions/qa-choosing-language-tags#question)를 지정하면 스크린 리더에서 텍스트를 올바르게 읽는 데 도움이 됩니다. [자세히 알아보기](https://web.dev/valid-lang/)"
+	},
+	"core/audits/accessibility/valid-lang.js | failureTitle": {
+		"message": "`[lang]` 속성에 유효한 값이 없음"
+	},
+	"core/audits/accessibility/valid-lang.js | title": {
+		"message": "`[lang]` 속성에 유효한 값이 있음"
+	},
+	"core/audits/accessibility/video-caption.js | description": {
+		"message": "동영상에 자막이 제공되면 청각장애인이나 난청이 있는 사용자가 동영상의 정보에 더 쉽게 접근할 수 있습니다. [자세히 알아보기](https://web.dev/video-caption/)"
+	},
+	"core/audits/accessibility/video-caption.js | failureTitle": {
+		"message": "`<video>` 요소에 `[kind=\"captions\"]` 지원 `<track>` 요소가 포함되지 않음"
+	},
+	"core/audits/accessibility/video-caption.js | title": {
+		"message": "`<video>` 요소에 `[kind=\"captions\"]` 지원 `<track>` 요소가 포함됨"
+	},
+	"core/audits/autocomplete.js | columnCurrent": {
+		"message": "현재 값"
+	},
+	"core/audits/autocomplete.js | columnSuggestions": {
+		"message": "추천 토큰"
+	},
+	"core/audits/autocomplete.js | description": {
+		"message": "`autocomplete`를 사용하면 사용자가 양식을 빨리 제출할 수 있습니다. 사용자가 더 쉽게 입력할 수 있도록 `autocomplete` 속성에 유효한 값을 지정하여 기능을 사용 설정하세요. [자세히 알아보기](https://developers.google.com/web/fundamentals/design-and-ux/input/forms#use_metadata_to_enable_auto-complete)"
+	},
+	"core/audits/autocomplete.js | failureTitle": {
+		"message": "`<input>` 요소에 올바른 `autocomplete` 속성이 없음"
+	},
+	"core/audits/autocomplete.js | manualReview": {
+		"message": "직접 검토가 필요함"
+	},
+	"core/audits/autocomplete.js | reviewOrder": {
+		"message": "토큰 순서 검토"
+	},
+	"core/audits/autocomplete.js | title": {
+		"message": "`<input>` 구성요소가 `autocomplete`를 올바르게 사용함"
+	},
+	"core/audits/autocomplete.js | warningInvalid": {
+		"message": "`autocomplete` 토큰: {snippet}에서 '{token}' 이름이 유효하지 않습니다."
+	},
+	"core/audits/autocomplete.js | warningOrder": {
+		"message": "{snippet}에서 '{tokens}' 토큰의 순서를 검토하세요."
+	},
+	"core/audits/bootup-time.js | chromeExtensionsWarning": {
+		"message": "Chrome 확장 프로그램이 이 페이지의 로드 성능에 부정적인 영향을 미쳤습니다. 시크릿 모드나 확장 프로그램이 없는 Chrome 프로필에서 페이지를 검사해 보세요."
+	},
+	"core/audits/bootup-time.js | columnScriptEval": {
+		"message": "스크립트 평가"
+	},
+	"core/audits/bootup-time.js | columnScriptParse": {
+		"message": "스크립트 파싱"
+	},
+	"core/audits/bootup-time.js | columnTotal": {
+		"message": "총 CPU 시간"
+	},
+	"core/audits/bootup-time.js | description": {
+		"message": "JS 파싱, 컴파일, 실행에 소요되는 시간을 줄여 보세요. 용량이 적은 JS 페이로드를 제공하면 도움이 될 수 있습니다. [자세히 알아보기](https://web.dev/bootup-time/)"
+	},
+	"core/audits/bootup-time.js | failureTitle": {
+		"message": "자바스크립트 실행 시간 단축"
+	},
+	"core/audits/bootup-time.js | title": {
+		"message": "자바스크립트 실행 시간"
+	},
+	"core/audits/byte-efficiency/duplicated-javascript.js | description": {
+		"message": "번들에서 큰 중복 자바스크립트 모듈을 삭제하여 네트워크 활동이 소비하는 불필요한 바이트 수를 줄입니다. "
+	},
+	"core/audits/byte-efficiency/duplicated-javascript.js | title": {
+		"message": "자바스크립트 번들에서 중복 모듈 삭제"
+	},
+	"core/audits/byte-efficiency/efficient-animated-content.js | description": {
+		"message": "대용량의 GIF는 애니메이션 콘텐츠를 전달하는 데 비효율적입니다. 애니메이션에는 MPEG4/WebM 동영상을, 정적인 이미지에는 GIF 대신 PNG/WebP를 사용하여 네트워크 바이트를 절약하세요. [자세히 알아보기](https://web.dev/efficient-animated-content/)"
+	},
+	"core/audits/byte-efficiency/efficient-animated-content.js | title": {
+		"message": "애니메이션 콘텐츠에 동영상 형식 사용하기"
+	},
+	"core/audits/byte-efficiency/legacy-javascript.js | description": {
+		"message": "Polyfill 및 변환을 통해 레거시 브라우저에서 새로운 자바스크립트 기능을 사용할 수 있습니다. 하지만 최신 브라우저에서는 대부분 필요하지 않습니다. 번들로 포함된 자바스크립트의 경우, module/nomodule 기능 감지를 사용하는 최신 스크립트 배포 전략을 채택하여 최신 브라우저에 적용되는 코드를 줄이고 레거시 브라우저 지원을 유지할 수 있습니다. [자세히 알아보기](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/)"
+	},
+	"core/audits/byte-efficiency/legacy-javascript.js | title": {
+		"message": "레거시 JavaScript를 최신 브라우저에 제공하지 않기"
+	},
+	"core/audits/byte-efficiency/modern-image-formats.js | description": {
+		"message": "WebP 및 AVIF와 같은 이미지 형식은 PNG나 JPEG보다 압축률이 높기 때문에 다운로드가 빠르고 데이터 소비량도 적습니다. [자세히 알아보기](https://web.dev/uses-webp-images/)"
+	},
+	"core/audits/byte-efficiency/modern-image-formats.js | title": {
+		"message": "차세대 형식을 사용해 이미지 제공하기"
+	},
+	"core/audits/byte-efficiency/offscreen-images.js | description": {
+		"message": "중요한 리소스의 로드가 모두 완료된 후에는 오프스크린 및 숨겨진 이미지를 지연 로드함으로써 상호작용 시간을 줄이는 것이 좋습니다. [자세히 알아보기](https://web.dev/offscreen-images/)"
+	},
+	"core/audits/byte-efficiency/offscreen-images.js | title": {
+		"message": "오프스크린 이미지 지연하기"
+	},
+	"core/audits/byte-efficiency/render-blocking-resources.js | description": {
+		"message": "리소스가 페이지의 첫 페인트를 차단하고 있습니다. 중요한 JS/CSS를 인라인으로 전달하고 중요하지 않은 모든 JS/Style을 지연하는 것이 좋습니다. [자세히 알아보기](https://web.dev/render-blocking-resources/)"
+	},
+	"core/audits/byte-efficiency/render-blocking-resources.js | title": {
+		"message": "렌더링 차단 리소스 제거하기"
+	},
+	"core/audits/byte-efficiency/total-byte-weight.js | description": {
+		"message": "네트워크 페이로드가 커지면 사용자에게 실제 비용 부담이 되며 로드 시간이 길어질 수 있습니다. [자세히 알아보기](https://web.dev/total-byte-weight/)"
+	},
+	"core/audits/byte-efficiency/total-byte-weight.js | displayValue": {
+		"message": "총 크기: {totalBytes, number, bytes}KiB"
+	},
+	"core/audits/byte-efficiency/total-byte-weight.js | failureTitle": {
+		"message": "네트워크 페이로드가 커지지 않도록 관리하기"
+	},
+	"core/audits/byte-efficiency/total-byte-weight.js | title": {
+		"message": "대규모 네트워크 페이로드 방지하기"
+	},
+	"core/audits/byte-efficiency/unminified-css.js | description": {
+		"message": "CSS 파일을 축소하면 네트워크 페이로드 크기를 줄일 수 있습니다. [자세히 알아보기](https://web.dev/unminified-css/)"
+	},
+	"core/audits/byte-efficiency/unminified-css.js | title": {
+		"message": "CSS 축소하기"
+	},
+	"core/audits/byte-efficiency/unminified-javascript.js | description": {
+		"message": "자바스크립트 파일을 축소하면 페이로드 크기와 스크립트 파싱 시간을 줄일 수 있습니다. [자세히 알아보기](https://web.dev/unminified-javascript/)"
+	},
+	"core/audits/byte-efficiency/unminified-javascript.js | title": {
+		"message": "자바스크립트 줄이기"
+	},
+	"core/audits/byte-efficiency/unused-css-rules.js | description": {
+		"message": "스타일시트에서 사용하지 않는 규칙을 줄이고 스크롤 없이 볼 수 있는 부분에 사용되지 않는 CSS의 로딩을 지연시켜 네트워크 활동에 소비되는 바이트를 줄이세요. [자세히 알아보기](https://web.dev/unused-css-rules/)"
+	},
+	"core/audits/byte-efficiency/unused-css-rules.js | title": {
+		"message": "사용하지 않는 CSS 줄이기"
+	},
+	"core/audits/byte-efficiency/unused-javascript.js | description": {
+		"message": "사용하지 않는 자바스크립트를 줄이고 스크립트가 필요할 때까지 로딩을 지연시켜 네트워크 활동에 소비되는 바이트를 줄이세요. [자세히 알아보기](https://web.dev/unused-javascript/)"
+	},
+	"core/audits/byte-efficiency/unused-javascript.js | title": {
+		"message": "사용하지 않는 자바스크립트 줄이기"
+	},
+	"core/audits/byte-efficiency/uses-long-cache-ttl.js | description": {
+		"message": "캐시 수명이 길면 페이지를 반복해서 방문하는 속도가 빨라질 수 있습니다. [자세히 알아보기](https://web.dev/uses-long-cache-ttl/)"
+	},
+	"core/audits/byte-efficiency/uses-long-cache-ttl.js | displayValue": {
+		"message": "{itemCount,plural, =1{리소스 1개 발견됨}other{리소스 #개 발견됨}}"
+	},
+	"core/audits/byte-efficiency/uses-long-cache-ttl.js | failureTitle": {
+		"message": "효율적인 캐시 정책을 사용하여 정적인 애셋 제공하기"
+	},
+	"core/audits/byte-efficiency/uses-long-cache-ttl.js | title": {
+		"message": "정적인 애셋에 효율적인 캐시 정책 사용하기"
+	},
+	"core/audits/byte-efficiency/uses-optimized-images.js | description": {
+		"message": "최적화된 이미지는 빠르게 로드되며 모바일 데이터를 적게 소비합니다. [자세히 알아보기](https://web.dev/uses-optimized-images/)"
+	},
+	"core/audits/byte-efficiency/uses-optimized-images.js | title": {
+		"message": "효율적으로 이미지 인코딩하기"
+	},
+	"core/audits/byte-efficiency/uses-responsive-images-snapshot.js | columnActualDimensions": {
+		"message": "실제 크기"
+	},
+	"core/audits/byte-efficiency/uses-responsive-images-snapshot.js | columnDisplayedDimensions": {
+		"message": "표시된 크기"
+	},
+	"core/audits/byte-efficiency/uses-responsive-images-snapshot.js | failureTitle": {
+		"message": "이미지가 표시된 크기보다 큽니다"
+	},
+	"core/audits/byte-efficiency/uses-responsive-images-snapshot.js | title": {
+		"message": "이미지가 표시된 크기에 적합합니다"
+	},
+	"core/audits/byte-efficiency/uses-responsive-images.js | description": {
+		"message": "적절한 크기의 이미지를 게재하여 모바일 데이터를 절약하고 로드 시간을 단축하세요. [자세히 알아보기](https://web.dev/uses-responsive-images/)"
+	},
+	"core/audits/byte-efficiency/uses-responsive-images.js | title": {
+		"message": "이미지 크기 적절하게 설정하기"
+	},
+	"core/audits/byte-efficiency/uses-text-compression.js | description": {
+		"message": "총 네트워크 바이트를 최소화하려면 텍스트 기반 리소스를 압축(gzip, deflate, brotli)하여 제공해야 합니다. [자세히 알아보기](https://web.dev/uses-text-compression/)"
+	},
+	"core/audits/byte-efficiency/uses-text-compression.js | title": {
+		"message": "텍스트 압축 사용"
+	},
+	"core/audits/content-width.js | description": {
+		"message": "앱 콘텐츠의 너비가 표시 영역의 너비와 일치하지 않을 경우 앱이 휴대기기 화면에 최적화되지 않을 수 있습니다. [자세히 알아보기](https://web.dev/content-width/)"
+	},
+	"core/audits/content-width.js | explanation": {
+		"message": "{innerWidth}px의 표시 영역 크기는 {outerWidth}px인 창 크기와 일치하지 않습니다."
+	},
+	"core/audits/content-width.js | failureTitle": {
+		"message": "콘텐츠의 크기가 표시 영역에 알맞지 않음"
+	},
+	"core/audits/content-width.js | title": {
+		"message": "콘텐츠의 크기가 표시 영역에 알맞음"
+	},
+	"core/audits/critical-request-chains.js | description": {
+		"message": "다음의 크리티컬 요청 체인은 로드 시 우선순위가 높은 리소스를 보여줍니다. 체인의 길이를 줄이고, 리소스의 다운로드 크기를 줄이거나 불필요한 리소스의 다운로드를 지연하여 페이지 로드 속도를 높이는 것이 좋습니다. [자세히 알아보기](https://web.dev/critical-request-chains/)"
+	},
+	"core/audits/critical-request-chains.js | displayValue": {
+		"message": "{itemCount,plural, =1{1개 체인 발견됨}other{#개 체인 발견됨}}"
+	},
+	"core/audits/critical-request-chains.js | title": {
+		"message": "중요 요청 체이닝 차단"
+	},
+	"core/audits/csp-xss.js | columnDirective": {
+		"message": "명령어"
+	},
+	"core/audits/csp-xss.js | columnSeverity": {
+		"message": "심각도"
+	},
+	"core/audits/csp-xss.js | description": {
+		"message": "강력한 콘텐츠 보안 정책(CSP)을 사용하면 교차 사이트 스크립팅(XSS) 공격을 받을 위험이 크게 줄어듭니다. [자세히 알아보기](https://web.dev/csp-xss/)"
+	},
+	"core/audits/csp-xss.js | itemSeveritySyntax": {
+		"message": "구문"
+	},
+	"core/audits/csp-xss.js | metaTagMessage": {
+		"message": "페이지에 <meta> 태그에서 정의된 CSP가 포함되어 있습니다. 가능하면 HTTP 헤더에서 CSP를 정의하는 것이 좋습니다."
+	},
+	"core/audits/csp-xss.js | noCsp": {
+		"message": "시행 모드에 CSP가 없습니다."
+	},
+	"core/audits/csp-xss.js | title": {
+		"message": "CSP가 XSS 공격에 효과적인지 확인"
+	},
+	"core/audits/deprecations.js | columnDeprecate": {
+		"message": "지원 중단/경고"
+	},
+	"core/audits/deprecations.js | columnLine": {
+		"message": "행"
+	},
+	"core/audits/deprecations.js | description": {
+		"message": "이후에 지원 중단된 API는 브라우저에서 삭제됩니다. [자세히 알아보기](https://web.dev/deprecations/)"
+	},
+	"core/audits/deprecations.js | displayValue": {
+		"message": "{itemCount,plural, =1{경고 1개가 발견됨}other{경고 #개가 발견됨}}"
+	},
+	"core/audits/deprecations.js | failureTitle": {
+		"message": "지원 중단된 API 사용"
+	},
+	"core/audits/deprecations.js | title": {
+		"message": "지원 중단 API 사용하지 않기"
+	},
+	"core/audits/dobetterweb/charset.js | description": {
+		"message": "문자 인코딩 선언이 필요합니다. HTML의 첫 1,024바이트 또는 Content-Type HTTP 응답 헤더에서 `<meta>` 태그를 사용하여 선언할 수 있습니다. [자세히 알아보기](https://web.dev/charset/)"
+	},
+	"core/audits/dobetterweb/charset.js | failureTitle": {
+		"message": "문자 집합 선언이 없거나 HTML에서 너무 뒤에 있음"
+	},
+	"core/audits/dobetterweb/charset.js | title": {
+		"message": "문자 집합을 제대로 정의함"
+	},
+	"core/audits/dobetterweb/doctype.js | description": {
+		"message": "Doctype을 지정하면 브라우저가 쿼크 모드로 전환할 수 없습니다. [자세히 알아보기](https://web.dev/doctype/)"
+	},
+	"core/audits/dobetterweb/doctype.js | explanationBadDoctype": {
+		"message": "Doctype 이름은 소문자 문자열 `html`이어야 합니다."
+	},
+	"core/audits/dobetterweb/doctype.js | explanationNoDoctype": {
+		"message": "문서에는 Doctype이 포함되어 있어야 합니다."
+	},
+	"core/audits/dobetterweb/doctype.js | explanationPublicId": {
+		"message": "publicId가 빈 문자열일 것으로 예상됨"
+	},
+	"core/audits/dobetterweb/doctype.js | explanationSystemId": {
+		"message": "systemId가 빈 문자열일 것으로 예상됨"
+	},
+	"core/audits/dobetterweb/doctype.js | failureTitle": {
+		"message": "페이지에 HTML Doctype이 없으므로 쿼크 모드가 트리거됨"
+	},
+	"core/audits/dobetterweb/doctype.js | title": {
+		"message": "페이지에 HTML Doctype 있음"
+	},
+	"core/audits/dobetterweb/dom-size.js | columnStatistic": {
+		"message": "통계"
+	},
+	"core/audits/dobetterweb/dom-size.js | columnValue": {
+		"message": "값"
+	},
+	"core/audits/dobetterweb/dom-size.js | description": {
+		"message": "DOM이 크면 메모리 사용량이 늘어나고 [스타일 계산](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations) 시간이 길어질 수 있으며 큰 비용이 드는 [레이아웃 리플로우](https://developers.google.com/speed/articles/reflow)가 발생할 수 있습니다. [자세히 알아보기](https://web.dev/dom-size/)"
+	},
+	"core/audits/dobetterweb/dom-size.js | displayValue": {
+		"message": "{itemCount,plural, =1{요소 1개}other{요소 #개}}"
+	},
+	"core/audits/dobetterweb/dom-size.js | failureTitle": {
+		"message": "과도한 DOM 크기 지양하기"
+	},
+	"core/audits/dobetterweb/dom-size.js | statisticDOMDepth": {
+		"message": "최대 DOM 깊이"
+	},
+	"core/audits/dobetterweb/dom-size.js | statisticDOMElements": {
+		"message": "총 DOM 요소 개수"
+	},
+	"core/audits/dobetterweb/dom-size.js | statisticDOMWidth": {
+		"message": "최대 하위 요소"
+	},
+	"core/audits/dobetterweb/dom-size.js | title": {
+		"message": "과도한 DOM 크기 지양하기"
+	},
+	"core/audits/dobetterweb/geolocation-on-start.js | description": {
+		"message": "사용자가 컨텍스트 없이 위치 정보를 요청한 사이트를 신뢰할 수 없거나 이로 인해 혼란스러운 상태입니다. 대신 사용자 작업 요청 입력을 고려해 보세요. [자세히 알아보기](https://web.dev/geolocation-on-start/)"
+	},
+	"core/audits/dobetterweb/geolocation-on-start.js | failureTitle": {
+		"message": "페이지 로드 시 위치정보 권한 요청"
+	},
+	"core/audits/dobetterweb/geolocation-on-start.js | title": {
+		"message": "페이지 로드 시 위치정보 권한 요청 방지하기"
+	},
+	"core/audits/dobetterweb/inspector-issues.js | columnIssueType": {
+		"message": "문제 유형"
+	},
+	"core/audits/dobetterweb/inspector-issues.js | description": {
+		"message": "Chrome Devtools의 `Issues` 패널에 로그된 문제는 아직 해결되지 않은 문제들입니다. 이러한 문제는 네트워크 요청 실패, 충분하지 않은 보안 제어를 비롯한 기타 브라우저 문제로 인해 발생할 수 있습니다. 각 문제에 관한 자세한 내용은 Chrome DevTools의 문제 패널에서 확인하세요."
+	},
+	"core/audits/dobetterweb/inspector-issues.js | failureTitle": {
+		"message": "문제가 Chrome Devtools의 `Issues` 패널에 로그됨"
+	},
+	"core/audits/dobetterweb/inspector-issues.js | issueTypeBlockedByResponse": {
+		"message": "교차 도메인 정책에 의해 차단됨"
+	},
+	"core/audits/dobetterweb/inspector-issues.js | issueTypeHeavyAds": {
+		"message": "광고에서 과도한 리소스 사용"
+	},
+	"core/audits/dobetterweb/inspector-issues.js | title": {
+		"message": "Chrome Devtools의 `Issues` 패널에 문제 없음"
+	},
+	"core/audits/dobetterweb/js-libraries.js | columnVersion": {
+		"message": "버전"
+	},
+	"core/audits/dobetterweb/js-libraries.js | description": {
+		"message": "페이지에서 감지된 모든 프런트 엔드 JavaScript 라이브러리입니다. [자세히 알아보기](https://web.dev/js-libraries/)"
+	},
+	"core/audits/dobetterweb/js-libraries.js | title": {
+		"message": "감지된 JavaScript 라이브러리"
+	},
+	"core/audits/dobetterweb/no-document-write.js | description": {
+		"message": "연결이 느린 사용자의 경우 `document.write()`에서 동적으로 삽입된 외부 스크립트로 인해 페이지 로드가 몇십 초까지 지연될 수 있습니다. [자세히 알아보기](https://web.dev/no-document-write/)"
+	},
+	"core/audits/dobetterweb/no-document-write.js | failureTitle": {
+		"message": "`document.write()` 피하기"
+	},
+	"core/audits/dobetterweb/no-document-write.js | title": {
+		"message": "`document.write()` 지양하기"
+	},
+	"core/audits/dobetterweb/notification-on-start.js | description": {
+		"message": "사용자가 컨텍스트 없이 알림 전송을 요청한 사이트를 신뢰할 수 없거나 이로 인해 혼란스러운 상태입니다. 대신 사용자 동작에 대한 요청 입력을 고려해 보세요. [자세히 알아보기](https://web.dev/notification-on-start/)"
+	},
+	"core/audits/dobetterweb/notification-on-start.js | failureTitle": {
+		"message": "페이지 로드 시 알림 권한 요청"
+	},
+	"core/audits/dobetterweb/notification-on-start.js | title": {
+		"message": "페이지 로드 시 알림 권한 요청 방지하기"
+	},
+	"core/audits/dobetterweb/password-inputs-can-be-pasted-into.js | description": {
+		"message": "비밀번호 붙여넣기 방지로 인해 타당한 보안 정책이 저해됩니다. [자세히 알아보기](https://web.dev/password-inputs-can-be-pasted-into/)"
+	},
+	"core/audits/dobetterweb/password-inputs-can-be-pasted-into.js | failureTitle": {
+		"message": "사용자가 비밀번호 입력란에 내용을 붙여넣지 못하도록 차단"
+	},
+	"core/audits/dobetterweb/password-inputs-can-be-pasted-into.js | title": {
+		"message": "사용자가 비밀번호 입력란에 붙여넣을 수 있도록 허용"
+	},
+	"core/audits/dobetterweb/uses-http2.js | columnProtocol": {
+		"message": "프로토콜"
+	},
+	"core/audits/dobetterweb/uses-http2.js | description": {
+		"message": "HTTP/2는 HTTP/1.1에 비해 바이너리 헤더, 멀티플렉싱 등의 다양한 이점을 제공합니다. [자세히 알아보기](https://web.dev/uses-http2/)"
+	},
+	"core/audits/dobetterweb/uses-http2.js | displayValue": {
+		"message": "{itemCount,plural, =1{HTTP/2를 통해 게재되지 않는 요청 1건}other{HTTP/2를 통해 게재되지 않는 요청 #건}}"
+	},
+	"core/audits/dobetterweb/uses-http2.js | title": {
+		"message": "HTTP/2를 사용하세요"
+	},
+	"core/audits/dobetterweb/uses-passive-event-listeners.js | description": {
+		"message": "터치 및 휠 이벤트 리스너를 `passive`(으)로 표시하면 페이지 스크롤 성능을 개선할 수 있습니다. [자세히 알아보기](https://web.dev/uses-passive-event-listeners/)"
+	},
+	"core/audits/dobetterweb/uses-passive-event-listeners.js | failureTitle": {
+		"message": "스크롤 성능 개선에 패시브 리스너를 사용하지 않음"
+	},
+	"core/audits/dobetterweb/uses-passive-event-listeners.js | title": {
+		"message": "스크롤 성능 개선에 패시브 리스너 사용"
+	},
+	"core/audits/errors-in-console.js | description": {
+		"message": "콘솔에 로그된 오류는 해결되지 않은 문제를 의미합니다. 네트워크 요청 실패를 비롯한 기타 브라우저 문제로 인해 발생할 수 있습니다. [자세히 알아보기](https://web.dev/errors-in-console/)"
+	},
+	"core/audits/errors-in-console.js | failureTitle": {
+		"message": "브라우저 오류가 콘솔에 로그됨"
+	},
+	"core/audits/errors-in-console.js | title": {
+		"message": "콘솔에 로그된 브라우저 오류 없음"
+	},
+	"core/audits/font-display.js | description": {
+		"message": "웹폰트가 로드되는 동안 사용자에게 텍스트가 표시되도록 글꼴 표시 CSS 기능을 사용합니다. [자세히 알아보기](https://web.dev/font-display/)"
+	},
+	"core/audits/font-display.js | failureTitle": {
+		"message": "웹폰트가 로드되는 동안 텍스트가 계속 표시되는지 확인하기"
+	},
+	"core/audits/font-display.js | title": {
+		"message": "웹폰트가 로드되는 동안 모든 텍스트가 계속 표시됩니다"
+	},
+	"core/audits/font-display.js | undeclaredFontOriginWarning": {
+		"message": "{fontCountForOrigin,plural, =1{Lighthouse에서 원본 {fontOrigin}의 `font-display` 값을 자동으로 확인할 수 없습니다.}other{Lighthouse에서 원본 {fontOrigin}의 `font-display` 값을 자동으로 확인할 수 없습니다.}}"
+	},
+	"core/audits/image-aspect-ratio.js | columnActual": {
+		"message": "가로세로 비율(실제)"
+	},
+	"core/audits/image-aspect-ratio.js | columnDisplayed": {
+		"message": "가로세로 비율(표시됨)"
+	},
+	"core/audits/image-aspect-ratio.js | description": {
+		"message": "이미지 표시 측정기준은 원래 가로세로 비율과 일치해야 합니다. [자세히 알아보기](https://web.dev/image-aspect-ratio/)"
+	},
+	"core/audits/image-aspect-ratio.js | failureTitle": {
+		"message": "이미지를 올바르지 않은 가로세로 비율로 표시"
+	},
+	"core/audits/image-aspect-ratio.js | title": {
+		"message": "이미지를 올바른 가로세로 비율로 표시"
+	},
+	"core/audits/image-size-responsive.js | columnActual": {
+		"message": "실제 크기"
+	},
+	"core/audits/image-size-responsive.js | columnDisplayed": {
+		"message": "표시된 크기"
+	},
+	"core/audits/image-size-responsive.js | columnExpected": {
+		"message": "예상 크기"
+	},
+	"core/audits/image-size-responsive.js | description": {
+		"message": "이미지의 본래 크기가 표시 크기와 픽셀 비율에 비례해야 이미지가 가장 선명하게 보입니다. [자세히 알아보기](https://web.dev/serve-responsive-images/)"
+	},
+	"core/audits/image-size-responsive.js | failureTitle": {
+		"message": "이미지가 낮은 해상도로 제공됨"
+	},
+	"core/audits/image-size-responsive.js | title": {
+		"message": "이미지가 적절한 해상도로 제공됨"
+	},
+	"core/audits/installable-manifest.js | already-installed": {
+		"message": "앱이 이미 설치되어 있습니다."
+	},
+	"core/audits/installable-manifest.js | cannot-download-icon": {
+		"message": "매니페스트에서 필요한 아이콘을 다운로드할 수 없음"
+	},
+	"core/audits/installable-manifest.js | columnValue": {
+		"message": "실패 이유"
+	},
+	"core/audits/installable-manifest.js | description": {
+		"message": "서비스 워커는 앱에서 오프라인, 홈 화면에 추가, 푸시 알림 등 다양한 프로그레시브 웹 앱 기능을 사용할 수 있도록 설정하는 기술입니다. 적절한 서비스 워커와 매니페스트를 구현할 경우 브라우저는 사용자에게 홈 화면에 앱을 추가하라는 메시지를 사전에 표시할 수 있으며 이렇게 하면 참여도가 높아질 수 있습니다. [자세히 알아보기](https://web.dev/installable-manifest/)"
+	},
+	"core/audits/installable-manifest.js | displayValue": {
+		"message": "{itemCount,plural, =1{이유: 1개}other{이유: #개}}"
+	},
+	"core/audits/installable-manifest.js | failureTitle": {
+		"message": "웹 앱 매니페스트 또는 서비스 워커가 설치 가능 요건을 충족하지 않음"
+	},
+	"core/audits/installable-manifest.js | ids-do-not-match": {
+		"message": "Play 스토어 앱 URL 및 Play 스토어 ID가 일치하지 않습니다."
+	},
+	"core/audits/installable-manifest.js | in-incognito": {
+		"message": "페이지가 시크릿 창에 로드되었습니다."
+	},
+	"core/audits/installable-manifest.js | manifest-display-not-supported": {
+		"message": "매니페스트 'display' 속성은 'standalone', 'fullscreen', 'minimal-ui' 중 하나여야 합니다."
+	},
+	"core/audits/installable-manifest.js | manifest-display-override-not-supported": {
+		"message": "매니페스트에 'display_override' 입력란이 포함되어 있으며 첫 번째 지원되는 디스플레이 모드는 'standalone', 'fullscreen', 'minimal-ui' 중 하나여야 합니다."
+	},
+	"core/audits/installable-manifest.js | manifest-empty": {
+		"message": "매니페스트를 가져올 수 없거나 비어있거나 파싱할 수 없습니다."
+	},
+	"core/audits/installable-manifest.js | manifest-location-changed": {
+		"message": "매니페스트를 가져오는 중에 매니페스트 URL이 변경되었습니다."
+	},
+	"core/audits/installable-manifest.js | manifest-missing-name-or-short-name": {
+		"message": "매니페스트에 'name' 또는 'short_name' 필드가 포함되어 있지 않습니다."
+	},
+	"core/audits/installable-manifest.js | manifest-missing-suitable-icon": {
+		"message": "매니페스트에 적절한 아이콘이 포함되어 있지 않습니다. 아이콘은 최소 {value0}px 크기의 PNG, SVG 또는 WebP 형식으로 sizes 속성이 설정되어야 하며 purpose 속성이 설정된 경우 'any'를 포함해야 합니다."
+	},
+	"core/audits/installable-manifest.js | no-acceptable-icon": {
+		"message": "제공된 아이콘 중 최소 {value0}px인 PNG, SVG, WebP 형식의 정사각형이며, purpose 속성이 설정되어 있지 않거나 'any'로 설정되어 있는 아이콘이 없습니다."
+	},
+	"core/audits/installable-manifest.js | no-icon-available": {
+		"message": "다운로드된 아이콘이 비어 있거나 손상됨"
+	},
+	"core/audits/installable-manifest.js | no-id-specified": {
+		"message": "제공된 Play 스토어 ID 없음"
+	},
+	"core/audits/installable-manifest.js | no-manifest": {
+		"message": "페이지에 매니페스트 <link> URL이 없습니다."
+	},
+	"core/audits/installable-manifest.js | no-matching-service-worker": {
+		"message": "일치하는 서비스 워커가 감지되지 않았습니다. 페이지를 새로고침하거나 현재 페이지에 관한 서비스 워커의 범위가 범위와 매니페스트의 시작 URL을 포괄하는지 확인하세요."
+	},
+	"core/audits/installable-manifest.js | no-url-for-service-worker": {
+		"message": "매니페스트에 'start_url' 필드가 없는 서비스 워크를 확인할 수 없습니다."
+	},
+	"core/audits/installable-manifest.js | noErrorId": {
+		"message": "설치 가능 오류 ID ‘{errorId}’을(를) 인식할 수 없습니다."
+	},
+	"core/audits/installable-manifest.js | not-from-secure-origin": {
+		"message": "페이지가 보안이 설정된 출처에서 제공되지 않았습니다."
+	},
+	"core/audits/installable-manifest.js | not-in-main-frame": {
+		"message": "메인 프레임에 페이지가 로드되지 않았습니다."
+	},
+	"core/audits/installable-manifest.js | not-offline-capable": {
+		"message": "페이지가 오프라인에서 작동하지 않습니다."
+	},
+	"core/audits/installable-manifest.js | pipeline-restarted": {
+		"message": "PWA가 제거되었으며 설치 가능 여부 확인이 재설정되었습니다."
+	},
+	"core/audits/installable-manifest.js | platform-not-supported-on-android": {
+		"message": "지정된 애플리케이션 플랫폼이 Android에서 지원되지 않습니다."
+	},
+	"core/audits/installable-manifest.js | prefer-related-applications": {
+		"message": "매니페스트에서 다음과 같이 지정합니다. prefer_related_applications: true"
+	},
+	"core/audits/installable-manifest.js | prefer-related-applications-only-beta-stable": {
+		"message": "prefer_related_applications는 Android의 Chrome 베타 및 공개 버전 채널에서만 지원됩니다."
+	},
+	"core/audits/installable-manifest.js | protocol-timeout": {
+		"message": "Lighthouse에서 서비스 워커의 유무를 판단할 수 없습니다. 최신 버전의 Chrome을 사용해 시도해 보세요."
+	},
+	"core/audits/installable-manifest.js | start-url-not-valid": {
+		"message": "잘못된 매니페스트 시작 URL입니다."
+	},
+	"core/audits/installable-manifest.js | title": {
+		"message": "웹 앱 매니페스트 및 서비스 워커가 설치 가능 요건을 충족함"
+	},
+	"core/audits/installable-manifest.js | url-not-supported-for-webapk": {
+		"message": "매니페스트의 URL에 사용자 이름, 비밀번호 또는 포트가 포함되어 있습니다."
+	},
+	"core/audits/installable-manifest.js | warn-not-offline-capable": {
+		"message": "페이지가 오프라인에서 작동하지 않습니다. Chrome 93 안정화 버전이 2021년 8월 출시된 이후에는 이 페이지가 설치 가능한 것으로 간주되지 않을 것입니다."
+	},
+	"core/audits/is-on-https.js | allowed": {
+		"message": "허용됨"
+	},
+	"core/audits/is-on-https.js | blocked": {
+		"message": "차단됨"
+	},
+	"core/audits/is-on-https.js | columnInsecureURL": {
+		"message": "안전하지 않은 URL"
+	},
+	"core/audits/is-on-https.js | columnResolution": {
+		"message": "해결 요청"
+	},
+	"core/audits/is-on-https.js | description": {
+		"message": "민감한 정보를 다루지 않는 사이트를 비롯해 모든 사이트는 HTTPS로 보호해야 합니다. 또한 [혼합 콘텐츠](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content)도 피해야 합니다. 혼합 콘텐츠에서는 초기 요청은 HTTPS로 전송되지만 일부 리소스가 HTTP를 통해 로드됩니다. HTTPS는 침입자가 앱과 사용자 사이의 통신을 조작하거나 통신에 대해 패시브 리스너를 사용하지 못하도록 방지하며 HTTP/2와 여러 신규 웹 플랫폼 API의 필수 요건이기도 합니다. [자세히 알아보기](https://web.dev/is-on-https/)"
+	},
+	"core/audits/is-on-https.js | displayValue": {
+		"message": "{itemCount,plural, =1{안전하지 않은 요청 1건 검색됨}other{안전하지 않은 요청 #건 검색됨}}"
+	},
+	"core/audits/is-on-https.js | failureTitle": {
+		"message": "HTTPS 사용하지 않음"
+	},
+	"core/audits/is-on-https.js | title": {
+		"message": "HTTPS 사용"
+	},
+	"core/audits/is-on-https.js | upgraded": {
+		"message": "HTTPS로 자동 업그레이드됨"
+	},
+	"core/audits/is-on-https.js | warning": {
+		"message": "허용됨(경고 포함)"
+	},
+	"core/audits/largest-contentful-paint-element.js | description": {
+		"message": "표시 영역에 페인팅된 가장 큰 콘텐츠가 포함된 요소입니다. [자세히 알아보기](https://web.dev/lighthouse-largest-contentful-paint/)"
+	},
+	"core/audits/largest-contentful-paint-element.js | title": {
+		"message": "콘텐츠가 포함된 최대 페인트 요소"
+	},
+	"core/audits/layout-shift-elements.js | columnContribution": {
+		"message": "CLS에 기여한 양"
+	},
+	"core/audits/layout-shift-elements.js | description": {
+		"message": "DOM 요소가 페이지 CLS의 대부분을 차지합니다."
+	},
+	"core/audits/layout-shift-elements.js | title": {
+		"message": "대규모 레이아웃 변경 피하기"
+	},
+	"core/audits/lcp-lazy-loaded.js | description": {
+		"message": "스크롤 없이 볼 수 있는 이미지가 지연 로드되면 페이지 수명 주기 후반에 렌더링되므로 최대 콘텐츠 렌더링 시간이 늘어날 수 있습니다. [자세히 알아보기](https://web.dev/lcp-lazy-loading/)"
+	},
+	"core/audits/lcp-lazy-loaded.js | failureTitle": {
+		"message": "최대 콘텐츠 렌더링 시간 이미지가 지연 로드되었습니다"
+	},
+	"core/audits/lcp-lazy-loaded.js | title": {
+		"message": "최대 콘텐츠 렌더링 시간 이미지가 지연 로드되지 않았습니다"
+	},
+	"core/audits/long-tasks.js | description": {
+		"message": "기본 스레드의 가장 긴 작업을 열거합니다. 입력 지연을 가장 많이 유발하는 작업을 찾을 때 용이합니다. [자세히 알아보기](https://web.dev/long-tasks-devtools/)"
+	},
+	"core/audits/long-tasks.js | displayValue": {
+		"message": "{itemCount,plural, =1{긴 작업 #개 발견}other{긴 작업 #개 발견}}"
+	},
+	"core/audits/long-tasks.js | title": {
+		"message": "긴 기본 스레드 작업 피하기"
+	},
+	"core/audits/mainthread-work-breakdown.js | columnCategory": {
+		"message": "카테고리"
+	},
+	"core/audits/mainthread-work-breakdown.js | description": {
+		"message": "JS 파싱, 컴파일, 실행에 소요되는 시간을 줄여 보세요. 용량이 적은 JS 페이로드를 제공하면 도움이 될 수 있습니다. [자세히 알아보기](https://web.dev/mainthread-work-breakdown/)"
+	},
+	"core/audits/mainthread-work-breakdown.js | failureTitle": {
+		"message": "기본 스레드 작업 최소화하기"
+	},
+	"core/audits/mainthread-work-breakdown.js | title": {
+		"message": "기본 스레드 작업 최소화하기"
+	},
+	"core/audits/manual/pwa-cross-browser.js | description": {
+		"message": "최대한 많은 사용자가 이용할 수 있으려면 사이트가 모든 주요 브라우저에서 작동해야 합니다. [자세히 알아보기](https://web.dev/pwa-cross-browser/)"
+	},
+	"core/audits/manual/pwa-cross-browser.js | title": {
+		"message": "사이트가 다양한 브라우저에서 작동함"
+	},
+	"core/audits/manual/pwa-each-page-has-url.js | description": {
+		"message": "페이지를 소셜 미디어에 공유하려면 개별 페이지가 URL을 통해 딥 링크로 연결될 수 있어야 하며 페이지별로 URL이 달라야 합니다. [자세히 알아보기](https://web.dev/pwa-each-page-has-url/)"
+	},
+	"core/audits/manual/pwa-each-page-has-url.js | title": {
+		"message": "페이지마다 URL이 있음"
+	},
+	"core/audits/manual/pwa-page-transitions.js | description": {
+		"message": "탭을 했을 때 느린 네트워크에서도 전환이 빠르게 느껴져야 합니다. 이 전환 경험이야말로 사용자의 성능에 대한 인식에 중요한 영향을 미칩니다. [자세히 알아보기](https://web.dev/pwa-page-transitions/)"
+	},
+	"core/audits/manual/pwa-page-transitions.js | title": {
+		"message": "페이지 전환 시 네트워크에서 막히는 느낌이 들지 않음"
+	},
+	"core/audits/maskable-icon.js | description": {
+		"message": "마스크 가능한 아이콘은 앱을 기기에 설치할 때 레터박스 없이 이미지가 도형 전체를 채울 수 있게 합니다. [자세히 알아보기](https://web.dev/maskable-icon-audit/)"
+	},
+	"core/audits/maskable-icon.js | failureTitle": {
+		"message": "매니페스트에 마스크 가능한 아이콘이 없음"
+	},
+	"core/audits/maskable-icon.js | title": {
+		"message": "매니페스트에 마스크 가능한 아이콘이 있음"
+	},
+	"core/audits/metrics/cumulative-layout-shift.js | description": {
+		"message": "누적 레이아웃 변경은 표시 영역 안에 보이는 요소의 이동을 측정합니다. [자세히 알아보기](https://web.dev/cls/)"
+	},
+	"core/audits/metrics/first-contentful-paint.js | description": {
+		"message": "콘텐츠가 포함된 첫 페인트는 첫 번째 텍스트 또는 이미지가 표시되는 시간을 나타냅니다. [자세히 알아보기](https://web.dev/first-contentful-paint/)"
+	},
+	"core/audits/metrics/first-meaningful-paint.js | description": {
+		"message": "유의미한 첫 페인트는 페이지의 기본 콘텐츠가 표시되는 경우를 측정합니다. [자세히 알아보기](https://web.dev/first-meaningful-paint/)"
+	},
+	"core/audits/metrics/interactive.js | description": {
+		"message": "사용할 수 있을 때까지 걸리는 시간은 완전히 페이지와 상호작용할 수 있게 될 때까지 걸리는 시간입니다. [자세히 알아보기](https://web.dev/interactive/)"
+	},
+	"core/audits/metrics/largest-contentful-paint.js | description": {
+		"message": "콘텐츠가 포함된 최대 페인트는 최대 텍스트 또는 이미지가 표시되는 시간을 나타냅니다. [자세히 알아보기](https://web.dev/lighthouse-largest-contentful-paint/)"
+	},
+	"core/audits/metrics/max-potential-fid.js | description": {
+		"message": "사용자가 경험할 수 있는 최대 첫 입력 지연 예상 시간은 가장 긴 작업의 길이입니다. [자세히 알아보기](https://web.dev/lighthouse-max-potential-fid/)"
+	},
+	"core/audits/metrics/speed-index.js | description": {
+		"message": "속도 색인은 페이지 콘텐츠가 얼마나 빨리 표시되는지 보여줍니다. [자세히 알아보기](https://web.dev/speed-index/)"
+	},
+	"core/audits/metrics/total-blocking-time.js | description": {
+		"message": "FCP와 상호작용 시간 사이의 모든 시간의 합으로 작업 지속 시간이 50ms를 넘으면 밀리초 단위로 표현됩니다. [자세히 알아보기](https://web.dev/lighthouse-total-blocking-time/)"
+	},
+	"core/audits/network-rtt.js | description": {
+		"message": "네트워크 왕복 시간(RTT)이 성능에 큰 영향을 줍니다. 출발지로의 RTT가 크면 서버가 사용자에게 가까울 때 성능이 향상될 수 있음을 나타냅니다. [자세히 알아보기](https://hpbn.co/primer-on-latency-and-bandwidth/)"
+	},
+	"core/audits/network-rtt.js | title": {
+		"message": "네트워크 왕복 시간"
+	},
+	"core/audits/network-server-latency.js | description": {
+		"message": "서버 지연 시간은 웹 성능에 영향을 줄 수 있습니다. 출발지의 서버 지연 시간이 길면 서버에 과부하가 걸렸거나 백엔드 성능이 낮음을 나타냅니다. [자세히 알아보기](https://hpbn.co/primer-on-web-performance/#analyzing-the-resource-waterfall)"
+	},
+	"core/audits/network-server-latency.js | title": {
+		"message": "서버 백엔드 지연 시간"
+	},
+	"core/audits/no-unload-listeners.js | description": {
+		"message": "`unload` 이벤트는 안정적으로 실행되지 않으며 이 이벤트를 리스닝하면 뒤로-앞으로 캐시와 같은 브라우저 최적화 기능을 사용하지 못할 수 있습니다. `pagehide` 또는 `visibilitychange` 이벤트를 대신 사용하세요. [자세히 알아보기](https://web.dev/bfcache/#never-use-the-unload-event)"
+	},
+	"core/audits/no-unload-listeners.js | failureTitle": {
+		"message": "`unload` 리스너 등록"
+	},
+	"core/audits/no-unload-listeners.js | title": {
+		"message": "`unload` 이벤트 리스너를 사용하지 않음"
+	},
+	"core/audits/non-composited-animations.js | description": {
+		"message": "합성 작업을 거치지 않은 애니메이션은 품질이 나쁘고 CLS를 높일 수 있습니다. [자세히 알아보기](https://web.dev/non-composited-animations)"
+	},
+	"core/audits/non-composited-animations.js | displayValue": {
+		"message": "{itemCount,plural, =1{애니메이션 요소 #개 발견됨}other{애니메이션 요소 #개 발견됨}}"
+	},
+	"core/audits/non-composited-animations.js | filterMayMovePixels": {
+		"message": "필터 관련 속성으로 인해 픽셀이 움직일 수 있음"
+	},
+	"core/audits/non-composited-animations.js | incompatibleAnimations": {
+		"message": "타겟에 호환되지 않는 다른 애니메이션이 있음"
+	},
+	"core/audits/non-composited-animations.js | nonReplaceCompositeMode": {
+		"message": "효과에 'replace'가 아닌 합성 모드가 있음"
+	},
+	"core/audits/non-composited-animations.js | title": {
+		"message": "합성 작업을 거치지 않은 애니메이션 지양하기"
+	},
+	"core/audits/non-composited-animations.js | transformDependsBoxSize": {
+		"message": "변환 관련 속성은 박스 크기에 의존합니다."
+	},
+	"core/audits/non-composited-animations.js | unsupportedCSSProperty": {
+		"message": "{propertyCount,plural, =1{지원되지 않는 CSS 속성: {properties}}other{지원되지 않는 CSS 속성: {properties}}}"
+	},
+	"core/audits/non-composited-animations.js | unsupportedTimingParameters": {
+		"message": "지원되지 않는 타이밍 매개변수가 효과에 포함됨"
+	},
+	"core/audits/performance-budget.js | description": {
+		"message": "네트워크 요청의 양과 크기는 제공된 성능 예산에 따라 설정된 목표치 아래로 유지하세요. [자세히 알아보기](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
+	},
+	"core/audits/performance-budget.js | requestCountOverBudget": {
+		"message": "{count,plural, =1{요청 1건}other{요청 #건}}"
+	},
+	"core/audits/performance-budget.js | title": {
+		"message": "성능 예산"
+	},
+	"core/audits/preload-fonts.js | description": {
+		"message": "신규 방문자가 사용할 수 있도록 `optional` 글꼴을 미리 로드하세요. [자세히 알아보기](https://web.dev/preload-optional-fonts/)"
+	},
+	"core/audits/preload-fonts.js | failureTitle": {
+		"message": "`font-display: optional`을 사용하는 글꼴이 미리 로드되지 않음"
+	},
+	"core/audits/preload-fonts.js | title": {
+		"message": "`font-display: optional`을 사용하는 글꼴이 미리 로드됨"
+	},
+	"core/audits/preload-lcp-image.js | description": {
+		"message": "LCP 요소에서 사용된 이미지를 미리 로드하여 LCP 시간을 개선하세요. [자세히 알아보기](https://web.dev/optimize-lcp/#preload-important-resources)"
+	},
+	"core/audits/preload-lcp-image.js | title": {
+		"message": "콘텐츠가 포함된 최대 페인트 이미지 미리 로드"
+	},
+	"core/audits/redirects.js | description": {
+		"message": "리디렉션을 사용하면 페이지가 로드되기 전 추가적인 지연이 발생합니다. [자세히 알아보기](https://web.dev/redirects/)"
+	},
+	"core/audits/redirects.js | title": {
+		"message": "여러 차례의 페이지 리디렉션 피하기"
+	},
+	"core/audits/resource-summary.js | description": {
+		"message": "페이지 리소스의 수량과 크기와 관련해 예산을 설정하려면 budget.json 파일을 추가하세요. [자세히 알아보기](https://web.dev/use-lighthouse-for-performance-budgets/)"
+	},
+	"core/audits/resource-summary.js | displayValue": {
+		"message": "{requestCount,plural, =1{요청 1개 • {byteCount, number, bytes}KiB}other{요청 #개 • {byteCount, number, bytes}KiB}}"
+	},
+	"core/audits/resource-summary.js | title": {
+		"message": "요청 수는 낮게, 전송 크기는 작게 유지하기"
+	},
+	"core/audits/seo/canonical.js | description": {
+		"message": "표준 링크는 검색결과에 어떤 URL을 표시할지 알려줍니다. [자세히 알아보기](https://web.dev/canonical/)"
+	},
+	"core/audits/seo/canonical.js | explanationConflict": {
+		"message": "여러 개의 URL({urlList})이 충돌됨"
+	},
+	"core/audits/seo/canonical.js | explanationInvalid": {
+		"message": "잘못된 URL({url})"
+	},
+	"core/audits/seo/canonical.js | explanationPointsElsewhere": {
+		"message": "다른 `hreflang` 위치({url})를 가리킵니다."
+	},
+	"core/audits/seo/canonical.js | explanationRelative": {
+		"message": "절대 URL이 아님({url})"
+	},
+	"core/audits/seo/canonical.js | explanationRoot": {
+		"message": "콘텐츠 페이지가 아닌 도메인의 루트 URL(홈페이지)을 가리킴"
+	},
+	"core/audits/seo/canonical.js | failureTitle": {
+		"message": "문서에 유효한 `rel=canonical` 없음"
+	},
+	"core/audits/seo/canonical.js | title": {
+		"message": "문서에 유효한 `rel=canonical` 있음"
+	},
+	"core/audits/seo/crawlable-anchors.js | columnFailingLink": {
+		"message": "크롤링할 수 없는 링크"
+	},
+	"core/audits/seo/crawlable-anchors.js | description": {
+		"message": "검색엔진에서 링크에 대해 `href` 속성을 사용하여 웹사이트를 크롤링할 수 있습니다. 앵커 요소의 `href` 속성이 적절한 대상에 연결되어 사이트에서 더 많은 페이지가 검색되도록 하세요. [자세히 알아보기](https://support.google.com/webmasters/answer/9112205)"
+	},
+	"core/audits/seo/crawlable-anchors.js | failureTitle": {
+		"message": "링크를 크롤링할 수 없음"
+	},
+	"core/audits/seo/crawlable-anchors.js | title": {
+		"message": "링크를 크롤링할 수 있음"
+	},
+	"core/audits/seo/font-size.js | additionalIllegibleText": {
+		"message": "읽을 수 없는 추가 텍스트"
+	},
+	"core/audits/seo/font-size.js | columnFontSize": {
+		"message": "글꼴 크기"
+	},
+	"core/audits/seo/font-size.js | columnPercentPageText": {
+		"message": "페이지 텍스트 비율(%)"
+	},
+	"core/audits/seo/font-size.js | columnSelector": {
+		"message": "선택기"
+	},
+	"core/audits/seo/font-size.js | description": {
+		"message": "12px보다 글꼴 크기가 작으면 읽기 어렵기 때문에 모바일 방문자가 '손가락으로 확대'해야만 읽을 수 있습니다. 페이지 텍스트의 60% 이상을 12px 이상으로 유지하도록 노력하세요. [자세히 알아보기](https://web.dev/font-size/)"
+	},
+	"core/audits/seo/font-size.js | displayValue": {
+		"message": "{decimalProportion, number, extendedPercent} 읽기 쉬운 텍스트"
+	},
+	"core/audits/seo/font-size.js | explanationViewport": {
+		"message": "모바일 화면에 최적화된 표시 영역 메타 태그가 없어서 텍스트를 알아볼 수 없음"
+	},
+	"core/audits/seo/font-size.js | failureTitle": {
+		"message": "문서에서 읽기 쉬운 글꼴 크기를 사용하지 않음"
+	},
+	"core/audits/seo/font-size.js | legibleText": {
+		"message": "읽기 쉬운 텍스트"
+	},
+	"core/audits/seo/font-size.js | title": {
+		"message": "문서가 읽기 쉬운 글꼴 크기를 사용함"
+	},
+	"core/audits/seo/hreflang.js | description": {
+		"message": "hreflang 링크는 검색엔진에 특정 언어나 지역에서 페이지의 어떤 버전을 검색결과로 표시해야 할지 알려줍니다. [자세히 알아보기](https://web.dev/hreflang/)"
+	},
+	"core/audits/seo/hreflang.js | failureTitle": {
+		"message": "문서에 유효한 `hreflang` 없음"
+	},
+	"core/audits/seo/hreflang.js | notFullyQualified": {
+		"message": "상대적인 href 값"
+	},
+	"core/audits/seo/hreflang.js | title": {
+		"message": "문서에 유효한 `hreflang` 있음"
+	},
+	"core/audits/seo/hreflang.js | unexpectedLanguage": {
+		"message": "예상치 못한 언어 코드"
+	},
+	"core/audits/seo/http-status-code.js | description": {
+		"message": "실패한 HTTP 상태 코드가 있는 페이지는 제대로 색인이 생성되지 않을 수 있습니다. [자세히 알아보기](https://web.dev/http-status-code/)"
+	},
+	"core/audits/seo/http-status-code.js | failureTitle": {
+		"message": "페이지에 실패한 HTTP 상태 코드가 있음"
+	},
+	"core/audits/seo/http-status-code.js | title": {
+		"message": "페이지에 성공적인 HTTP 상태 코드가 있음"
+	},
+	"core/audits/seo/is-crawlable.js | description": {
+		"message": "검색엔진이 페이지를 크롤링할 권한이 없으면 검색결과에 포함할 수 없습니다. [자세히 알아보기](https://web.dev/is-crawable/)"
+	},
+	"core/audits/seo/is-crawlable.js | failureTitle": {
+		"message": "페이지의 색인 생성이 차단됨"
+	},
+	"core/audits/seo/is-crawlable.js | title": {
+		"message": "페이지의 색인 생성이 차단되지 않음"
+	},
+	"core/audits/seo/link-text.js | description": {
+		"message": "구체적인 링크 텍스트는 검색엔진에서 콘텐츠를 이해하는 데 도움이 됩니다. [자세히 알아보기](https://web.dev/link-text/)"
+	},
+	"core/audits/seo/link-text.js | displayValue": {
+		"message": "{itemCount,plural, =1{링크 1개 찾음}other{링크 #개 찾음}}"
+	},
+	"core/audits/seo/link-text.js | failureTitle": {
+		"message": "링크에 설명 텍스트가 없음"
+	},
+	"core/audits/seo/link-text.js | title": {
+		"message": "링크에 설명 텍스트가 있음"
+	},
+	"core/audits/seo/manual/structured-data.js | description": {
+		"message": "[구조화된 데이터용 테스트 도구](https://search.google.com/structured-data/testing-tool/)와 [구조화된 데이터 Linter](http://linter.structured-data.org/)를 실행하여 구조화된 데이터를 검증합니다. [자세히 알아보기](https://web.dev/structured-data/)"
+	},
+	"core/audits/seo/manual/structured-data.js | title": {
+		"message": "구조화된 데이터가 유효함"
+	},
+	"core/audits/seo/meta-description.js | description": {
+		"message": "검색결과에 페이지 콘텐츠를 간략하게 요약하기 위한 메타 설명이 포함될 수 있습니다. [자세히 알아보기](https://web.dev/meta-description/)"
+	},
+	"core/audits/seo/meta-description.js | explanation": {
+		"message": "설명 텍스트가 비어 있습니다."
+	},
+	"core/audits/seo/meta-description.js | failureTitle": {
+		"message": "문서에 메타 설명이 없음"
+	},
+	"core/audits/seo/meta-description.js | title": {
+		"message": "문서에 메타 설명이 있음"
+	},
+	"core/audits/seo/plugins.js | description": {
+		"message": "검색엔진은 플러그인 콘텐츠의 색인을 생성할 수 없고 플러그인을 제한하거나 지원하지 않는 기기도 많습니다. [자세히 알아보기](https://web.dev/plugins/)"
+	},
+	"core/audits/seo/plugins.js | failureTitle": {
+		"message": "문서가 플러그인을 사용함"
+	},
+	"core/audits/seo/plugins.js | title": {
+		"message": "문서에서 플러그인을 사용할 수 없음"
+	},
+	"core/audits/seo/robots-txt.js | description": {
+		"message": "robots.txt 파일 형식이 잘못된 경우 크롤러가 웹사이트를 어떻게 크롤링하고 색인을 생성해야 할지 파악하지 못할 수 있습니다. [자세히 알아보기](https://web.dev/robots-txt/)"
+	},
+	"core/audits/seo/robots-txt.js | displayValueHttpBadCode": {
+		"message": "robots.txt 요청에 반환된 HTTP 상태: {statusCode}"
+	},
+	"core/audits/seo/robots-txt.js | displayValueValidationError": {
+		"message": "{itemCount,plural, =1{오류 1개 발견}other{오류 #개 발견}}"
+	},
+	"core/audits/seo/robots-txt.js | explanation": {
+		"message": "Lighthouse에서 robots.txt 파일을 다운로드할 수 없음"
+	},
+	"core/audits/seo/robots-txt.js | failureTitle": {
+		"message": "robots.txt가 유효하지 않음"
+	},
+	"core/audits/seo/robots-txt.js | title": {
+		"message": "robots.txt가 유효함"
+	},
+	"core/audits/seo/tap-targets.js | description": {
+		"message": "버튼이나 링크 같은 상호작용 요소는 충분히 커야 하며(48 x 48px), 주변에 충분한 공간이 있고 다른 요소와 겹치지 않아 쉽게 탭할 수 있어야 합니다. [자세히 알아보기](https://web.dev/tap-targets/)"
+	},
+	"core/audits/seo/tap-targets.js | displayValue": {
+		"message": "{decimalProportion, number, percent} 탭 타겟 크기가 적절함"
+	},
+	"core/audits/seo/tap-targets.js | explanationViewportMetaNotOptimized": {
+		"message": "모바일 화면에 최적화된 표시 영역 메타 태그가 없어서 탭 타겟이 너무 작음"
+	},
+	"core/audits/seo/tap-targets.js | failureTitle": {
+		"message": "탭 타겟 크기가 적절하지 않음"
+	},
+	"core/audits/seo/tap-targets.js | overlappingTargetHeader": {
+		"message": "타겟이 중복됨"
+	},
+	"core/audits/seo/tap-targets.js | tapTargetHeader": {
+		"message": "탭 타겟"
+	},
+	"core/audits/seo/tap-targets.js | title": {
+		"message": "탭 타겟의 크기가 적절함"
+	},
+	"core/audits/server-response-time.js | description": {
+		"message": "다른 모든 요청이 기본 문서의 영향을 받으므로 기본 문서에 대한 서버 응답 시간을 짧게 유지하세요. [자세히 알아보기](https://web.dev/time-to-first-byte/)"
+	},
+	"core/audits/server-response-time.js | displayValue": {
+		"message": "루트 문서에 {timeInMs, number, milliseconds} ms 소요됨"
+	},
+	"core/audits/server-response-time.js | failureTitle": {
+		"message": "초기 서버 응답 시간 단축"
+	},
+	"core/audits/server-response-time.js | title": {
+		"message": "초기 서버 응답 시간 짧음"
+	},
+	"core/audits/service-worker.js | description": {
+		"message": "서비스 워커는 앱에서 오프라인, 홈 화면에 추가, 푸시 알림 등 다양한 프로그레시브 웹 앱 기능을 사용할 수 있도록 설정하는 기술입니다. [자세히 알아보기](https://web.dev/service-worker/)"
+	},
+	"core/audits/service-worker.js | explanationBadManifest": {
+		"message": "이 페이지는 서비스 워커로 인해 제어되지만 매니페스트가 유효한 JSON으로 파싱하는 데 실패했으므로 `start_url`을(를) 찾지 못했습니다."
+	},
+	"core/audits/service-worker.js | explanationBadStartUrl": {
+		"message": "이 페이지는 서비스 워커로 인해 제어되지만 `start_url`({startUrl})이(가) 서비스 워커의 범위({scopeUrl})에 있지 않습니다."
+	},
+	"core/audits/service-worker.js | explanationNoManifest": {
+		"message": "이 페이지는 서비스 워커로 인해 제어되지만 가져온 매니페스트가 없으므로 `start_url`을(를) 찾지 못했습니다."
+	},
+	"core/audits/service-worker.js | explanationOutOfScope": {
+		"message": "이 원본에 하나 이상의 서비스 워커가 있지만 페이지({pageUrl})가 범위 내에 있지 않습니다."
+	},
+	"core/audits/service-worker.js | failureTitle": {
+		"message": "페이지와 `start_url`을(를) 제어하는 서비스 워커를 등록하지 않음"
+	},
+	"core/audits/service-worker.js | title": {
+		"message": "페이지와 `start_url`을(를) 제어하는 서비스 워커를 등록함"
+	},
+	"core/audits/splash-screen.js | description": {
+		"message": "테마 스플래시 화면을 사용하면 사용자가 홈 화면에서 앱을 실행했을 때 고품질의 환경을 경험할 수 있습니다. [자세히 알아보기](https://web.dev/splash-screen/)"
+	},
+	"core/audits/splash-screen.js | failureTitle": {
+		"message": "맞춤 스플래시 화면에 맞게 구성되지 않음"
+	},
+	"core/audits/splash-screen.js | title": {
+		"message": "맞춤 스플래시 화면에 맞게 구성됨"
+	},
+	"core/audits/themed-omnibox.js | description": {
+		"message": "브라우저 주소 표시줄에는 사이트와 맞는 테마를 설정할 수 있습니다. [자세히 알아보기](https://web.dev/themed-omnibox/)"
+	},
+	"core/audits/themed-omnibox.js | failureTitle": {
+		"message": "주소 표시줄의 테마 색상을 설정하지 않음"
+	},
+	"core/audits/themed-omnibox.js | title": {
+		"message": "주소 표시줄의 테마 색상을 설정함"
+	},
+	"core/audits/third-party-facades.js | categoryCustomerSuccess": {
+		"message": "{productName}(고객 성공 사례)"
+	},
+	"core/audits/third-party-facades.js | categoryMarketing": {
+		"message": "{productName}(마케팅)"
+	},
+	"core/audits/third-party-facades.js | categorySocial": {
+		"message": "{productName}(소셜)"
+	},
+	"core/audits/third-party-facades.js | categoryVideo": {
+		"message": "{productName}(동영상)"
+	},
+	"core/audits/third-party-facades.js | columnProduct": {
+		"message": "제품"
+	},
+	"core/audits/third-party-facades.js | description": {
+		"message": "일부 타사 임베딩은 지연 로드될 수 있습니다. 필요할 때까지 파사드로 대체해 보세요. [자세히 알아보기](https://web.dev/third-party-facades/)"
+	},
+	"core/audits/third-party-facades.js | displayValue": {
+		"message": "{itemCount,plural, =1{대체 퍼사드 #개 사용 가능}other{대체 퍼사드 #개 사용 가능}}"
+	},
+	"core/audits/third-party-facades.js | failureTitle": {
+		"message": "일부 타사 리소스는 퍼사드와 함께 지연 로드될 수 있음"
+	},
+	"core/audits/third-party-facades.js | title": {
+		"message": "퍼사드로 타사 리소스 지연 로드"
+	},
+	"core/audits/third-party-summary.js | columnThirdParty": {
+		"message": "타사"
+	},
+	"core/audits/third-party-summary.js | description": {
+		"message": "타사 코드는 로드 성능에 크게 영향을 미칠 수 있습니다. 페이지에서 먼저 로딩을 끝낸 후 중복되는 타사 공급업체의 수를 제한하고 타사 코드를 로드해 보세요. [자세히 알아보기](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)"
+	},
+	"core/audits/third-party-summary.js | displayValue": {
+		"message": "타사 코드가 {timeInMs, number, milliseconds} ms 동안 기본 스레드를 차단했습니다."
+	},
+	"core/audits/third-party-summary.js | failureTitle": {
+		"message": "타사 코드의 영향을 줄임"
+	},
+	"core/audits/third-party-summary.js | title": {
+		"message": "타사 사용량 최소화"
+	},
+	"core/audits/timing-budget.js | columnMeasurement": {
+		"message": "측정값"
+	},
+	"core/audits/timing-budget.js | columnTimingMetric": {
+		"message": "측정항목"
+	},
+	"core/audits/timing-budget.js | description": {
+		"message": "시기 예산을 설정하면 사이트 실적을 확인하는 데 도움이 됩니다. 성능 기준에 맞는 사이트는 빠르게 로드되고 사용자 입력 이벤트에 빠르게 응답합니다. [자세히 알아보기](https://developers.google.com/web/tools/lighthouse/audits/budgets)"
+	},
+	"core/audits/timing-budget.js | title": {
+		"message": "시기 예산"
+	},
+	"core/audits/unsized-images.js | description": {
+		"message": "이미지 요소에 명시적인 너비 및 높이를 설정하여 레이아웃 변경 횟수를 줄이고 누적 레이아웃 변경을 개선합니다. [자세히 알아보기](https://web.dev/optimize-cls/#images-without-dimensions)"
+	},
+	"core/audits/unsized-images.js | failureTitle": {
+		"message": "이미지 요소에 `width` 및 `height`가 명시되어 있지 않습니다"
+	},
+	"core/audits/unsized-images.js | title": {
+		"message": "이미지 요소에 `width` 및 `height`가 명시되어 있습니다"
+	},
+	"core/audits/user-timings.js | columnType": {
+		"message": "유형"
+	},
+	"core/audits/user-timings.js | description": {
+		"message": "앱에서 User Timing API를 사용하여 중요 사용자 경험이 이루어지는 동안의 실제 성능을 측정하세요. [자세히 알아보기](https://web.dev/user-timings/)"
+	},
+	"core/audits/user-timings.js | displayValue": {
+		"message": "{itemCount,plural, =1{사용자 시간 1회}other{사용자 시간 #회}}"
+	},
+	"core/audits/user-timings.js | title": {
+		"message": "사용자 타이밍 표시 및 측정 값"
+	},
+	"core/audits/uses-rel-preconnect.js | crossoriginWarning": {
+		"message": "'{securityOrigin}'에 `<link rel=preconnect>` 링크가 있으나 브라우저에서 사용되지 않았습니다. `crossorigin` 속성을 올바르게 사용하고 있는지 확인하세요."
+	},
+	"core/audits/uses-rel-preconnect.js | description": {
+		"message": "`preconnect` 또는 `dns-prefetch` 리소스 힌트를 추가하여 중요한 타사 원본에 대한 조기 연결을 수립하는 것이 좋습니다. [자세히 알아보기](https://web.dev/uses-rel-preconnect/)"
+	},
+	"core/audits/uses-rel-preconnect.js | title": {
+		"message": "필수 원본 미리 연결하기"
+	},
+	"core/audits/uses-rel-preconnect.js | tooManyPreconnectLinksWarning": {
+		"message": "`<link rel=preconnect>` 연결이 3개 이상 발견되었습니다. 사전 연결 링크는 가장 중요한 원본에 한해 조금만 사용해야 합니다."
+	},
+	"core/audits/uses-rel-preconnect.js | unusedWarning": {
+		"message": "'{securityOrigin}'에 `<link rel=preconnect>` 링크가 있으나 브라우저에서 사용되지 않았습니다. 페이지에서 확실하게 요청하는 중요 출처에만 `preconnect`를 사용합니다."
+	},
+	"core/audits/uses-rel-preload.js | crossoriginWarning": {
+		"message": "'{preloadURL}'에 미리 로드된 `<link>` 링크가 있으나 브라우저에서 사용되지 않았습니다. `crossorigin` 속성을 올바르게 사용하고 있는지 확인하세요."
+	},
+	"core/audits/uses-rel-preload.js | description": {
+		"message": "`<link rel=preload>`을(를) 사용하여 현재 요청되는 리소스를 페이지 로드에 나중에 가져올 때 우선순위를 정하는 것이 좋습니다. [자세히 알아보기](https://web.dev/uses-rel-preload/)"
+	},
+	"core/audits/uses-rel-preload.js | title": {
+		"message": "중요한 요청을 미리 로드하기"
+	},
+	"core/audits/valid-source-maps.js | columnMapURL": {
+		"message": "맵 URL"
+	},
+	"core/audits/valid-source-maps.js | description": {
+		"message": "소스 맵은 축소된 코드를 원본 소스 코드로 변환합니다. 이는 프로덕션 단계에서 개발자의 디버깅에 도움이 됩니다. 또한 Lighthouse에서 더 많은 정보를 확인할 수 있습니다. 소스 맵을 배포하여 이러한 이점을 활용해 보세요. [자세히 알아보기](https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps)"
+	},
+	"core/audits/valid-source-maps.js | failureTitle": {
+		"message": "큰 자사 자바스크립트에 소스 맵이 누락됨"
+	},
+	"core/audits/valid-source-maps.js | missingSourceMapErrorMessage": {
+		"message": "큰 자바스크립트 파일에 소스 맵이 없음"
+	},
+	"core/audits/valid-source-maps.js | missingSourceMapItemsWarningMesssage": {
+		"message": "{missingItems,plural, =1{경고: `.sourcesContent`에 항목 1개 누락}other{경고: `.sourcesContent`에 항목 #개 누락}}"
+	},
+	"core/audits/valid-source-maps.js | title": {
+		"message": "페이지에 유효한 소스 맵이 있음"
+	},
+	"core/audits/viewport.js | description": {
+		"message": "`<meta name=\"viewport\">`는 앱을 모바일 화면 크기에 최적화할 뿐만 아니라 [사용자 입력 300밀리초 지연](https://developers.google.com/web/updates/2013/12/300ms-tap-delay-gone-away)도 방지합니다. [자세히 알아보기](https://web.dev/viewport/)"
+	},
+	"core/audits/viewport.js | explanationNoTag": {
+		"message": "`<meta name=\"viewport\">` 태그 없음"
+	},
+	"core/audits/viewport.js | failureTitle": {
+		"message": "`width` 또는 `initial-scale`이(가) 포함된 `<meta name=\"viewport\">` 태그가 없음"
+	},
+	"core/audits/viewport.js | title": {
+		"message": "`width` 또는 `initial-scale`이(가) 포함된 `<meta name=\"viewport\">` 태그가 있음"
+	}
+}

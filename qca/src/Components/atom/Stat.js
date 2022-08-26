@@ -11,47 +11,11 @@ const getHoverBackgroundColor = (color, mode) =>
 	mode === "dark" ? darken(color, 0.5) : lighten(color, 0.5);
 
 function StyledDatagrid(props) {
-	const data = props.data;
-	const columns = [
-		{
-			field: "id",
-			headerName: "id",
-			width: 0,
-			editable: true,
-			groupable: false,
-			aggregable: false,
-		},
-		{
-			field: "criteria",
-			headerName: "criteria",
-			width: 200,
-			editable: false,
-			groupable: false,
-			aggregable: false,
-		},
-		{
-			field: "value",
-			headerName: "value",
-			width: 400,
-			editable: false,
-			groupable: false,
-			aggregable: false,
-		},
-	];
-
-	const rows = [];
-
 	const formedData = {
-		columns: columns,
-		rows: rows,
-		initialState: data["initialState"],
+		columns: props.data["columns"],
+		rows: props.data["rows"],
+		initialState: props.data["initialState"],
 	};
-
-	data["rows"].forEach(row => {
-		Object.keys(row).forEach(key => {
-			rows.push({ id: key, criteria: key, value: row[key] });
-		});
-	});
 
 	return (
 		<Box
@@ -118,11 +82,11 @@ function StyledDatagrid(props) {
 
 export default function Stat(props) {
 	return (
-		<div className="w-full h-full px-6 pb-24">
+		<div className="w-full h-screen px-6 pb-24">
 			<div className="mt-12 mb-8 text-2xl font-bold">
 				<h1>세부사항을 보면요..</h1>
 			</div>
-			<StyledDatagrid {...props} />
+			<StyledDatagrid data={props.data} />
 		</div>
 	);
 }

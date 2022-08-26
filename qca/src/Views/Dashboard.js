@@ -11,11 +11,12 @@ import AccessibilityView from "./AccessibilityView";
 import ConnectivityView from "./ConnectivityView";
 import OpennessView from "./OpennessView";
 
-import sampeData from "../sampleData.json";
-
 export default function Dashboard() {
-	// const [status, data] = useLighthouse();
-	const data = sampeData;
+	const [status, data] = useLighthouse();
+
+	React.useEffect(() => {
+		console.log("fish");
+	}, []);
 
 	const openView = useParams()["*"];
 
