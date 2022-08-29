@@ -13,7 +13,7 @@ import linkify from "../utils/linkify";
 // import CardDialog from "./CardDialog";
 
 function CardDialog(props) {
-	let description = props.description.replace(props.subheader, "");
+	let description = props.description?.replace(props.subheader, "");
 
 	return (
 		<Dialog
@@ -79,13 +79,15 @@ export default function Card(props) {
 			<div
 				role="button"
 				className={
-					"w-full h-48 rounded-lg shadow-lg hover:shadow-2xl text-center flex justify-center flex-col p-4 px-8 " +
+					"w-full h-32 rounded-lg shadow-lg hover:shadow-2xl text-center flex justify-center flex-col p-4 px-8 " +
 					(clicked ? "bg-mildRed " : null)
 				}
 				onClick={() => setClicked(!clicked)}
 			>
 				<span className="text-xl">{props.title}</span>
-				<span className="text-sm font-bold text-gray">{props.subheader}</span>
+				<span className="text-sm font-bold text-gray">
+					{props.subheader.slice(0, 30) + "..."}
+				</span>
 			</div>
 		</div>
 	);

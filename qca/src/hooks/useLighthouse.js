@@ -1,5 +1,6 @@
 import React from "react";
 import config from "../config";
+import calculate from "../Components/utils/calculate";
 
 const columns = [
 	{
@@ -67,6 +68,19 @@ const nonUseAttributes = [
 const useLighthouse = website => {
 	const [status, setStatus] = React.useState("idle");
 	const [data, setData] = React.useState([]);
+	/*
+	const lighthouseResult = {
+		columns: columns,
+		rows: [],
+		initialState: {
+			columns: {
+				columnVisibilityModel: {
+					id: false,
+				},
+			},
+		},
+	};
+ */
 	const lighthouseResult = {
 		columns: columns,
 		rows: [],
@@ -116,7 +130,7 @@ const useLighthouse = website => {
 		return !nonUseAttributes.includes(row.id);
 	});
 
-	console.info(lighthouseResult["rows"].length);
+	const res = calculate(lighthouseResult["rows"]);
 
 	return [status, lighthouseResult];
 };

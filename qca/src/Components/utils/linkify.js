@@ -7,7 +7,7 @@ const RE_URL =
 
 export default function linkify(str) {
 	let results = [];
-	str.split(". ").forEach(spl => {
+	str?.split(". ").forEach(spl => {
 		const matchesLearnmore = [...spl.matchAll(RE_LEARNMORE)][0];
 		const matchesURL = [...spl.matchAll(RE_URL)][0];
 
