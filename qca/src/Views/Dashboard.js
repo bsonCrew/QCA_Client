@@ -13,7 +13,6 @@ import OpennessView from "./OpennessView";
 
 export default function Dashboard() {
 	const [status, data] = useLighthouse();
-
 	const openView = useParams()["*"];
 
 	return (

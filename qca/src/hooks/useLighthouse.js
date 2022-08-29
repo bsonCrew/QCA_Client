@@ -47,7 +47,7 @@ const columns = [
 
 const calculateScore = (score, total) => {};
 
-// Non-use attributes which are not displayed in the table
+/** Non-use attributes which are not displayed in the table*/
 const nonUseAttributes = [
 	"full-page-screenshot",
 	"apple-touch-icon",
