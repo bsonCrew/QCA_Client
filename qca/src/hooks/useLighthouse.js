@@ -1,9 +1,19 @@
 import React from "react";
+import config from "../config";
+import calculate from "../Components/utils/calculate";
 
 const columns = [
 	{
 		field: "id",
 		headerName: "id",
+		width: 100,
+		editable: true,
+		groupable: false,
+		aggregable: false,
+	},
+	{
+		field: "id",
+		headerName: "tag",
 		width: 100,
 		editable: true,
 		groupable: false,
@@ -35,10 +45,31 @@ const columns = [
 	},
 ];
 
+const calculateScore = (score, total) => {};
+
+/** Non-use attributes which are not displayed in the table*/
+const nonUseAttributes = [
+	"full-page-screenshot",
+	"apple-touch-icon",
+	"installable-manifest",
+	"manual/pwa-cross-browser",
+	"manual/pwa-each-page-has-url",
+	"manual/pwa-page-transitions",
+	"maskable-icon",
+	"metrics",
+	"oopif-iframe-test-audit",
+	"screenshot-thumbnails",
+	"service-worker",
+	"themed-omnibox",
+	"valid-source-maps",
+	"work-during-interaction",
+];
+
 const useLighthouse = website => {
 	const [status, setStatus] = React.useState("idle");
 	const [data, setData] = React.useState([]);
-	const entriesValue = {
+	/*
+	const lighthouseResult = {
 		columns: columns,
 		rows: [],
 		initialState: {
@@ -49,8 +80,18 @@ const useLighthouse = website => {
 			},
 		},
 	};
-
-	console.info(data);
+ */
+	const lighthouseResult = {
+		columns: columns,
+		rows: [],
+		initialState: {
+			columns: {
+				columnVisibilityModel: {
+					id: false,
+				},
+			},
+		},
+	};
 
 	const postQuery = "http://localhost:3001/lighthouse";
 	// const postQuery = "http://34.64.198.147:8080/api/control";
@@ -78,13 +119,20 @@ const useLighthouse = website => {
 		};
 
 		fetchWithPost();
-	}, []);
+	}, [website]);
 
-	for (const [, val] of Object.entries(data)) {
-		entriesValue["rows"].push({ ...val });
+	for (const [, rowValue] of Object.entries(data)) {
+		lighthouseResult["rows"].push({ ...rowValue });
 	}
 
-	return [status, entriesValue];
+	// Filter out non-use attributes
+	lighthouseResult["rows"] = lighthouseResult["rows"].filter(row => {
+		return !nonUseAttributes.includes(row.id);
+	});
+
+	const res = calculate(lighthouseResult["rows"]);
+
+	return [status, lighthouseResult];
 };
 
 export default useLighthouse;
