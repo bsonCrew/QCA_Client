@@ -72,16 +72,9 @@ const useLighthouse = website => {
 	const lighthouseResult = {
 		columns: columns,
 		rows: [],
-		initialState: {
-			columns: {
-				columnVisibilityModel: {
-					id: false,
-				},
-			},
-		},
 	};
  */
-	const lighthouseResult = {
+	const lighthouseResults = {
 		columns: columns,
 		rows: [],
 		initialState: {
@@ -122,17 +115,17 @@ const useLighthouse = website => {
 	}, [website]);
 
 	for (const [, rowValue] of Object.entries(data)) {
-		lighthouseResult["rows"].push({ ...rowValue });
+		lighthouseResults["rows"].push({ ...rowValue });
 	}
 
 	// Filter out non-use attributes
-	lighthouseResult["rows"] = lighthouseResult["rows"].filter(row => {
+	lighthouseResults["rows"] = lighthouseResults["rows"].filter(row => {
 		return !nonUseAttributes.includes(row.id);
 	});
 
-	const res = calculate(lighthouseResult["rows"]);
+	const res = calculate(lighthouseResults["rows"]);
 
-	return [status, lighthouseResult];
+	return [status, lighthouseResults];
 };
 
 export default useLighthouse;

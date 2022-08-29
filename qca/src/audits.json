@@ -4,106 +4,167 @@
 			"easyOperation": {
 				"keyboardUse": {
 					"title": "키보드 사용 보장",
-					"score": 6
+					"totalScore": 6
 				},
 				"provideTitle": {
 					"title": "제목 제공",
-					"score": 6
+					"totalScore": 6
 				},
 				"linkText": {
 					"title": "적절한 링크 텍스트",
-					"score": 6
+					"totalScore": 6
 				},
 				"eyeMovement": {
 					"title": "초점 이동",
-					"score": 6
+					"totalScore": 6
 				},
 				"stopAvailable": {
 					"title": "정지기능 제공",
-					"score": 4
+					"totalScore": 4
 				},
 				"operationAvailable": {
 					"title": "조작 가능",
-					"score": 3
+					"totalScore": 3
 				},
 				"noAutoplay": {
 					"title": "자동 재생 금지",
-					"score": 2
+					"totalScore": 2
 				},
 				"noBlinking": {
 					"title": "광과민성 발작 예방",
-					"score": 2
+					"totalScore": 2
 				},
 				"enoughTime": {
 					"title": "충분한 시간 제공",
-					"score": 2
+					"totalScore": 2
 				},
 				"skipAvailable": {
 					"title": "반복영역 건너뛰기",
-					"score": 5
+					"totalScore": 5
 				}
 			},
+
 			"easyUnderstanding": {
 				"linearContent": {
 					"title": "콘텐츠의 선형 구조",
-					"score": 3
+					"totalScore": 3
 				},
 				"tableContent": {
 					"title": "표의 구성",
-					"score": 6
+					"totalScore": 6
 				},
 				"hasLang": {
 					"title": "기본 언어 표시",
-					"score": 4
+					"totalScore": 4
 				},
 				"userRequest": {
 					"title": "사용자 요구에 따른 실행",
-					"score": 5
+					"totalScore": 5
 				}
 			},
+
 			"easyRecognition": {
 				"clearInstruction": {
 					"title": "명확한 지시사항",
-					"score": 2
+					"totalScore": 2
 				},
 				"hasAlt": {
 					"title": "적절한 대체 텍스트 제공",
-					"score": 10
+					"totalScore": 10
 				},
 				"clearContrast": {
 					"title": "텍스트 명도, 대비",
-					"score": 6
+					"totalScore": 6
 				},
 				"divideContent": {
 					"title": "컨텐츠 간의 구분",
-					"score": 3
+					"totalScore": 3
 				},
 				"hasLabel": {
 					"title": "레이블 제공",
-					"score": 6
+					"totalScore": 6
 				},
 				"contentRecognitionWithoutColor": {
 					"title": "색에 무관한 콘텐츠 인식",
-					"score": 3
+					"totalScore": 3
 				},
 				"hasCaption": {
 					"title": "자막 제공",
-					"score": 4
+					"totalScore": 4
 				},
 				"hasErrorCorrection": {
 					"title": "오류 정정",
-					"score": 4
+					"totalScore": 4
 				}
 			},
+
 			"robustness": {
 				"noMarkupError": {
 					"title": "마크업 오류 방지",
-					"score": 4
+					"totalScore": 4
 				},
 				"webAppAccessibility": {
 					"title": "웹 애플리케이션 접근성 준수",
-					"score": 0
+					"totalScore": 0
 				}
+			}
+		},
+		"compatibility": {
+			"webMobileCompatibility": {
+				"keyboardUse": {
+					"title": "화면표시 호환성(시범적용)",
+					"totalScore": 0
+				}
+			},
+
+			"webStandard": {
+				"langStandard": {
+					"title": "문자(한글) 부호화 준수",
+					"totalScore": 1
+				},
+				"cssStandard": {
+					"title": "CSS 표준 준수",
+					"totalScore": 20
+				},
+				"htmlStandard": {
+					"title": "(X)HTML 표준 준수",
+					"totalScore": 30
+				},
+				"noNonStandard": {
+					"title": "비표준 기술 제거",
+					"totalScore": 2
+				}
+			},
+
+			"webCompatibility": {
+				"JSError": {
+					"title": "JS 오류",
+					"totalScore": 6
+				},
+				"functionalCompatibility": {
+					"title": "기능 호환성 확보",
+					"totalScore": 20
+				},
+				"displayCompatibility": {
+					"title": "화면 표시 호환성",
+					"totalScore": 20
+				}
+			}
+		},
+		"openness": {
+			"robotsTxt": {
+				"title": "웹 개방성",
+				"totalScore": 100
+			}
+		},
+		"connectivity": {
+			"size": {
+				"title": "웹 접속성 크기 평가 기준",
+				"totalScore": 50
+			},
+			"speed": {
+				"title": "웹 접속성 속도 평가 기준",
+				"totalScore": 50
 			}
 		}
 	},
@@ -114,85 +175,85 @@
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/link-name": {
+		"link-name": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/meta-refresh": {
+		"meta-refresh": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/document-title": {
+		"document-title": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/frame-title": {
+		"frame-title": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/meta-viewport": {
+		"meta-viewport": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/custom-controls-labels": {
+		"manual/custom-controls-labels": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/custom-controls-roles": {
+		"manual/custom-controls-roles": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/focus-traps": {
+		"manual/focus-traps": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/focusable-controls": {
+		"manual/focusable-controls": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/interactive-element-affordance": {
+		"manual/interactive-element-affordance": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/logical-tab-order": {
+		"manual/logical-tab-order": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/managed-focus": {
+		"manual/managed-focus": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/offscreen-content-hidden": {
+		"manual/offscreen-content-hidden": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/tabindex": {
+		"tabindex": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
@@ -205,25 +266,25 @@
 			"subClass": "easyOperation"
 		},
 
-		"accessibility/bypass": {
+		"bypass": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/html-has-lang": {
+		"html-has-lang": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/html-lang-valid": {
+		"html-lang-valid": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/valid-lang": {
+		"valid-lang": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
@@ -235,212 +296,212 @@
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/heading-order": {
+		"heading-order": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/definition-list": {
+		"definition-list": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/dlitem": {
+		"dlitem": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/list": {
+		"list": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/listitem": {
+		"listitem": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/manual/visual-order-follows-dom": {
+		"manual/visual-order-follows-dom": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/form-field-multiple-labels": {
+		"form-field-multiple-labels": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/td-headers-attr": {
+		"td-headers-attr": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/th-has-data-cells": {
+		"th-has-data-cells": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/accesskeys": {
+		"accesskeys": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-allowed-attr": {
+		"aria-allowed-attr": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-command-name": {
+		"aria-command-name": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-hidden-body": {
+		"aria-hidden-body": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-hidden-focus": {
+		"aria-hidden-focus": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-input-field-name": {
+		"aria-input-field-name": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-meter-name": {
+		"aria-meter-name": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-progressbar-name": {
+		"aria-progressbar-name": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-required-attr": {
+		"aria-required-attr": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-required-children": {
+		"aria-required-children": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-required-parent": {
+		"aria-required-parent": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-roles": {
+		"aria-roles": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-toggle-field-name": {
+		"aria-toggle-field-name": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-tooltip-name": {
+		"aria-tooltip-name": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-treeitem-name": {
+		"aria-treeitem-name": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-valid-attr-value": {
+		"aria-valid-attr-value": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-valid-attr": {
+		"aria-valid-attr": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/manual/use-landmarks": {
+		"manual/use-landmarks": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/color-contrast": {
+		"color-contrast": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/video-caption": {
+		"video-caption": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/image-alt": {
+		"image-alt": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/input-image-alt": {
+		"input-image-alt": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/object-alt": {
+		"object-alt": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/button-name": {
+		"button-name": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/duplicate-id-aria": {
+		"duplicate-id-aria": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/label": {
+		"label": {
 			"criteriaId": 0,
 			"scoreType": null,
 			"class": "accessibility",
@@ -451,6 +512,54 @@
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
+		},
+		"image-aspect-ratio": {
+			"criteriaId": 0,
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webMobileCompatibility"
+		},
+		"image-size-responsive": {
+			"criteriaId": 0,
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webMobileCompatibility"
+		},
+		"viewport": {
+			"criteriaId": 0,
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webMobileCompatibility"
+		},
+		"dobetterweb/charset": {
+			"criteriaId": 0,
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webStandard"
+		},
+		"dobetterweb/cssvalidator": {
+			"criteriaId": 0,
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webStandard"
+		},
+		"dobetterweb/doctype": {
+			"criteriaId": 0,
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webStandard"
+		},
+		"errors-in-console": {
+			"criteriaId": 0,
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webCompatibility"
+		},
+		"seo/robots-txt": {
+			"criteriaId": 0,
+			"scoreType": null,
+			"class": "openness",
+			"subClass": "robotsTxt"
 		}
 	}
 }
