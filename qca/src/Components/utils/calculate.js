@@ -18,12 +18,16 @@ const createCriteriaMap = mapId => {
 const calculate = lighthouseResults => {
 	/** 0: accessibility, 1: compatibility, 2: connectivity, 3: openness */
 
-	const accessibility = createCriteriaMap("accessibility");
-	console.log(accessibility);
+	const [accessibility, compatibility, connectivity, openness] = [
+		"accessibility",
+		"compatibility",
+		"connectivity",
+		"openness",
+	].map(_ => createCriteriaMap(_));
+	console.log(accessibility, compatibility, connectivity, openness);
 
 	lighthouseResults.forEach(lr => {
 		if (audits.audits[lr.id] !== undefined) {
-			console.log(lr);
 		}
 	});
 
