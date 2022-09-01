@@ -1,6 +1,5 @@
 import * as React from "react";
 import SideBar from "../Components/layout/Sidebar";
-import TopBar from "../Components/layout/TopBar";
 import Footer from "../Components/layout/Footer";
 import MainView from "./MainView";
 import useLighthouse from "../hooks/useLighthouse";
@@ -11,8 +10,9 @@ import AccessibilityView from "./AccessibilityView";
 import ConnectivityView from "./ConnectivityView";
 import OpennessView from "./OpennessView";
 
-export default function Dashboard() {
-	const [status, data] = useLighthouse();
+export default function Dashboard({ targetWebsite }) {
+	const [status, data] = useLighthouse(targetWebsite);
+	console.log(status);
 
 	const openView = useParams()["*"];
 
@@ -24,21 +24,26 @@ export default function Dashboard() {
 			<div className="flex-12 flex-col flex-wrap pt-8 bg-main">
 				<div className="bg-white rounded-2xl px-24">
 					<Routes>
-						<Route path="/" element={<MainView data={data} />} />
-						<Route path="/main" element={<MainView data={data} />} />
+						<Route
+							path="/main"
+							element={<MainView data={data} status={status} />}
+						/>
 						<Route
 							path="/compatibility"
-							element={<CompatibilityView data={data} />}
+							element={<CompatibilityView data={data} status={status} />}
 						/>
 						<Route
 							path="/accessibility"
-							element={<AccessibilityView data={data} />}
+							element={<AccessibilityView data={data} status={status} />}
 						/>
 						<Route
 							path="/connectivity"
-							element={<ConnectivityView data={data} />}
+							element={<ConnectivityView data={data} status={status} />}
 						/>
-						<Route path="/openness" element={<OpennessView data={data} />} />
+						<Route
+							path="/openness"
+							element={<OpennessView data={data} status={status} />}
+						/>
 					</Routes>
 				</div>
 			</div>

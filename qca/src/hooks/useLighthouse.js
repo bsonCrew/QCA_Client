@@ -101,7 +101,7 @@ const useLighthouse = website => {
 						"Content-Type": "application/json",
 					},
 					body: JSON.stringify({
-						url: "https://www.korailnetworks.com",
+						url: website,
 						requestedDate: new Date().toISOString(),
 					}),
 				});

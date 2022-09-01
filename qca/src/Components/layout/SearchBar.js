@@ -4,7 +4,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import data from "../../file.json";
 import { useNavigate } from "react-router-dom";
 
-export default function SearchBar(props) {
+export default function SearchBar({ setTargetWebsite }) {
 	React.useEffect(() => {
 		document.addEventListener("keydown", keyDownHandler);
 		return () => {
@@ -18,8 +18,8 @@ export default function SearchBar(props) {
 	const handleSubmit = e => {
 		console.info("submit");
 		value.homepage.includes("www.")
-			? props.setTargetWebsite(value.homepage)
-			: props.setTargetWebsite(value.label);
+			? setTargetWebsite(value.homepage)
+			: setTargetWebsite(value.label);
 		navigate("/dashboard/main");
 	};
 
@@ -50,6 +50,7 @@ export default function SearchBar(props) {
 			id="search-bar"
 			options={websites}
 			className="w-[max(40vw,20rem)] mt-4"
+			autoSelect={true}
 			renderOption={(props, option) => (
 				<div component="li" {...props}>
 					<div className="mr-2 w-full flex justify-between">

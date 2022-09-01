@@ -9,6 +9,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import Tooltip from "@mui/material/Tooltip";
 import Dialog from "@mui/material/Dialog";
 import linkify from "../utils/linkify";
+import { Skeleton } from "@mui/material";
 
 // import CardDialog from "./CardDialog";
 
@@ -54,16 +55,18 @@ export default function Card(props) {
 	const [clicked, setClicked] = React.useState(false);
 	const handleClose = () => setClicked(false);
 
+	console.log(props.status === "loading");
+
 	return (
-		<div className="lg:min-w-[280px] mx-4 my-4 grow transition-transform ease-in-out ">
+		<div className="w-5/12 mx-4 my-4 grow transition-transform ease-in-out ">
 			<Tooltip
 				title={config.catchPhrase[props.iconIdx] || "No description"}
 				placement="left"
 				arrow
 			>
 				<Avatar
-					sx={{ width: 36, height: 36, bgcolor: props.bgcolor }}
-					className="-ml-5 -mr-8 z-2 -mb-6 hover:cursor-pointer"
+					sx={{ width: 36, height: 36, zIndex: 2, bgcolor: props.bgcolor }}
+					className="-ml-4 -mr-8 z-2 -mb-6 hover:cursor-pointer"
 				>
 					{icons[props.iconIdx]}
 				</Avatar>
@@ -76,19 +79,28 @@ export default function Card(props) {
 			>
 				<div className="w-80 h-96"></div>
 			</CardDialog>
-			<div
-				role="button"
-				className={
-					"w-full h-32 rounded-lg shadow-lg hover:shadow-2xl text-center flex justify-center flex-col p-4 px-8 " +
-					(clicked ? "bg-mildRed " : null)
-				}
-				onClick={() => setClicked(!clicked)}
-			>
-				<span className="text-xl">{props.title}</span>
-				<span className="text-sm font-bold text-gray">
-					{props.subheader.slice(0, 30) + "..."}
-				</span>
-			</div>
+			{props.status === "success" ? (
+				<>
+					<div
+						role="button"
+						className={
+							"w-full h-32 rounded-lg shadow-lg hover:shadow-2xl text-center flex justify-center flex-col p-4 px-8 " +
+							(clicked ? "bg-mildRed " : null)
+						}
+						onClick={() => setClicked(!clicked)}
+					>
+						<span className="text-xl">{props.title}</span>
+						<span className="text-sm font-bold text-gray">
+							{props.subheader.slice(0, 30) + "..."}
+						</span>
+					</div>
+				</>
+			) : (
+				<Skeleton
+					sx={{ width: "100%", height: 128, bgcolor: "grey.300" }}
+					variant="rounded"
+				/>
+			)}
 		</div>
 	);
 }
