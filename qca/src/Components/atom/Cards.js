@@ -9,7 +9,7 @@ export function StatCards(props) {
 		<div className="flex flex-col justify-center">
 			<span className="mt-8 text-2xl font-bold">지금 누리집은</span>
 			<div className="mt-4 mx-4 flex flex-row flex-wrap justify-between">
-				{cardRows.map(row => {
+				{cardRows?.map(row => {
 					return (
 						// <div
 						// 	key={index}

@@ -1,6 +1,6 @@
 import audits from "../../audits.json";
 
-const createCriteriaMap = mapId => {
+const createClassifyMap = mapId => {
 	const criteriaMap = new Map(
 		Object.keys(audits.auditMappings[mapId]).map(key => {
 			const rowItem = audits.auditMappings[mapId][key];
@@ -11,10 +11,9 @@ const createCriteriaMap = mapId => {
 		})
 	);
 	return criteriaMap;
-	// return [accessibility, compatibility, connectivity, openness];
 };
 
-const calculate = lighthouseResults => {
+const classify = lighthouseResults => {
 	/** 0: accessibility, 1: compatibility, 2: connectivity, 3: openness */
 
 	const [
@@ -31,7 +30,7 @@ const calculate = lighthouseResults => {
 		"openness",
 		"enhancement",
 		"warning",
-	].map(_ => createCriteriaMap(_));
+	].map(_ => createClassifyMap(_));
 	const criterias = {
 		accessibility,
 		compatibility,
@@ -42,16 +41,19 @@ const calculate = lighthouseResults => {
 	};
 
 	lighthouseResults.forEach(lr => {
+		console.log(lr.score, lr.id, lr.scoreDisplayMode);
 		if (audits.audits[lr.id] !== undefined) {
 			const audit = audits.audits[lr.id];
 			const criteria = criterias[audit.class].get(audit.subClass)[
 				audit.criteriaId
 			];
 			criteria.scores.push(lr.score);
-			console.log(lr.score);
 		}
 	});
 	console.log(criterias);
+	return criterias;
 };
 
-export default calculate;
+const calculate = (criterias, website) => {};
+
+export default classify;

@@ -599,97 +599,97 @@
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/duplicated-javascript": {
+		"duplicated-javascript": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/efficient-animated-content": {
+		"efficient-animated-content": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/legacy-javascript": {
+		"legacy-javascript": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/modern-image-formats": {
+		"modern-image-formats": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/offscreen-images": {
+		"offscreen-images": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/render-blocking-resources": {
+		"render-blocking-resources": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/total-byte-weight": {
+		"total-byte-weight": {
 			"criteriaId": "size",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "size"
 		},
-		"byte-efficiency/unminified-css": {
+		"unminified-css": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/unminified-javascript": {
+		"unminified-javascript": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/unused-css-rules": {
+		"unused-css-rules": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/unused-javascript": {
+		"unused-javascript": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/uses-long-cache-ttl": {
+		"uses-long-cache-ttl": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/uses-optimized-images": {
+		"uses-optimized-images": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/uses-responsive-images-snapshot": {
+		"uses-responsive-images-snapshot": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/uses-responsive-images": {
+		"uses-responsive-images": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"byte-efficiency/uses-text-compression": {
+		"uses-text-compression": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",

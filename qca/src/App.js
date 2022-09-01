@@ -8,12 +8,20 @@ import Dashboard from "./Views/Dashboard";
 import MainView from "./Views/MainView";
 
 function App() {
+	const [targetWebsite, setTargetWebsite] = React.useState("");
+
 	return (
 		<ThemeProvider theme={theme}>
 			<BrowserRouter>
 				<Routes>
-					<Route path="/" element={<Landing />} />
-					<Route path="/dashboard/*" element={<Dashboard />}>
+					<Route
+						path="/"
+						element={<Landing setTargetWebsite={setTargetWebsite} />}
+					/>
+					<Route
+						path="/dashboard/*"
+						element={<Dashboard targetWebsite={targetWebsite} />}
+					>
 						<Route path="main" element={<MainView />} />
 					</Route>
 					<Route path="/*" element={<NotFound />} />

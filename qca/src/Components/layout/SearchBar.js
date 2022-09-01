@@ -2,8 +2,9 @@ import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import data from "../../file.json";
+import { useNavigate } from "react-router-dom";
 
-export default function SearchBar() {
+export default function SearchBar(props) {
 	React.useEffect(() => {
 		document.addEventListener("keydown", keyDownHandler);
 		return () => {
@@ -12,10 +13,14 @@ export default function SearchBar() {
 	});
 
 	const [value, setValue] = React.useState(data.websites[0]);
+	const navigate = useNavigate();
 
 	const handleSubmit = e => {
 		console.info("submit");
-		window.open(value.homepage, "_blank");
+		value.homepage.includes("www.")
+			? props.setTargetWebsite(value.homepage)
+			: props.setTargetWebsite(value.label);
+		navigate("/dashboard/main");
 	};
 
 	const handleChangeTab = () => {};

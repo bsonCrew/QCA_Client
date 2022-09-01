@@ -1,6 +1,6 @@
 import React from "react";
 import config from "../config";
-import calculate from "../Components/utils/calculate";
+import classify from "../Components/utils/calculate";
 
 const columns = [
 	{
@@ -87,7 +87,7 @@ const useLighthouse = website => {
 	};
 
 	const postQuery = "http://localhost:3001/lighthouse";
-	// const postQuery = "http://34.64.198.147:8080/api/control";
+	// const postQuery = "http://13.209.177.236:8080/api/control";
 
 	React.useEffect(() => {
 		if (!postQuery) return;
@@ -100,7 +100,10 @@ const useLighthouse = website => {
 					headers: {
 						"Content-Type": "application/json",
 					},
-					body: JSON.stringify({ url: website }),
+					body: JSON.stringify({
+						url: "https://www.korailnetworks.com",
+						requestedDate: new Date().toISOString(),
+					}),
 				});
 				const data = await response.json();
 				setStatus("success");
@@ -123,7 +126,7 @@ const useLighthouse = website => {
 		return !nonUseAttributes.includes(row.id);
 	});
 
-	const res = calculate(lighthouseResults["rows"]);
+	const res = classify(lighthouseResults["rows"]);
 
 	return [status, lighthouseResults];
 };
