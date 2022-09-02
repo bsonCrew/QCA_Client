@@ -2,8 +2,9 @@ import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import data from "../../file.json";
+import { useNavigate } from "react-router-dom";
 
-export default function SearchBar() {
+export default function SearchBar({ setTargetWebsite }) {
 	React.useEffect(() => {
 		document.addEventListener("keydown", keyDownHandler);
 		return () => {
@@ -12,10 +13,14 @@ export default function SearchBar() {
 	});
 
 	const [value, setValue] = React.useState(data.websites[0]);
+	const navigate = useNavigate();
 
 	const handleSubmit = e => {
 		console.info("submit");
-		window.open(value.homepage, "_blank");
+		value.homepage.includes("www.")
+			? setTargetWebsite(value.homepage)
+			: setTargetWebsite(value.label);
+		navigate("/dashboard/main");
 	};
 
 	const handleChangeTab = () => {};
@@ -45,6 +50,7 @@ export default function SearchBar() {
 			id="search-bar"
 			options={websites}
 			className="w-[max(40vw,20rem)] mt-4"
+			autoSelect={true}
 			renderOption={(props, option) => (
 				<div component="li" {...props}>
 					<div className="mr-2 w-full flex justify-between">

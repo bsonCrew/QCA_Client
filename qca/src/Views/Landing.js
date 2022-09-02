@@ -3,7 +3,7 @@ import Header from "../Components/layout/Header";
 import Recommend from "../Components/atom/Recommend";
 import bkgImage from "../Themes/bkg.svg";
 
-function Landing() {
+function Landing({ setTargetWebsite }) {
 	return (
 		<div
 			style={{
@@ -14,7 +14,7 @@ function Landing() {
 			className="w-full h-full flex flex-col align-center items-center"
 		>
 			<Header />
-			<SearchBar />
+			<SearchBar setTargetWebsite={setTargetWebsite} />
 			<Recommend />
 		</div>
 	);

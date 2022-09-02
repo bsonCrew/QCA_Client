@@ -10,11 +10,11 @@ const getBackgroundColor = (color, mode) =>
 const getHoverBackgroundColor = (color, mode) =>
 	mode === "dark" ? darken(color, 0.5) : lighten(color, 0.5);
 
-function StyledDatagrid(props) {
+function StyledDatagrid({ data }) {
 	const formedData = {
-		columns: props.data["columns"],
-		rows: props.data["rows"],
-		initialState: props.data["initialState"],
+		columns: data["columns"],
+		rows: data["rows"],
+		initialState: data["initialState"],
 	};
 
 	return (
@@ -80,13 +80,13 @@ function StyledDatagrid(props) {
 	);
 }
 
-export default function Stat(props) {
+export default function Stat({ data }) {
 	return (
 		<div className="w-full h-screen px-6 pb-24">
 			<div className="mt-12 mb-8 text-2xl font-bold">
 				<h1>세부사항을 보면요..</h1>
 			</div>
-			<StyledDatagrid data={props.data} />
+			<StyledDatagrid data={data} />
 		</div>
 	);
 }

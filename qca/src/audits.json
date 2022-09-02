@@ -4,453 +4,1062 @@
 			"easyOperation": {
 				"keyboardUse": {
 					"title": "키보드 사용 보장",
-					"score": 6
+					"totalScore": 6
 				},
 				"provideTitle": {
 					"title": "제목 제공",
-					"score": 6
+					"totalScore": 6
 				},
 				"linkText": {
 					"title": "적절한 링크 텍스트",
-					"score": 6
+					"totalScore": 6
 				},
 				"eyeMovement": {
 					"title": "초점 이동",
-					"score": 6
+					"totalScore": 6
 				},
 				"stopAvailable": {
 					"title": "정지기능 제공",
-					"score": 4
+					"totalScore": 4
 				},
 				"operationAvailable": {
 					"title": "조작 가능",
-					"score": 3
+					"totalScore": 3
 				},
 				"noAutoplay": {
 					"title": "자동 재생 금지",
-					"score": 2
+					"totalScore": 2
 				},
 				"noBlinking": {
 					"title": "광과민성 발작 예방",
-					"score": 2
+					"totalScore": 2
 				},
 				"enoughTime": {
 					"title": "충분한 시간 제공",
-					"score": 2
+					"totalScore": 2
 				},
 				"skipAvailable": {
 					"title": "반복영역 건너뛰기",
-					"score": 5
+					"totalScore": 5
 				}
 			},
+
 			"easyUnderstanding": {
 				"linearContent": {
 					"title": "콘텐츠의 선형 구조",
-					"score": 3
+					"totalScore": 3
 				},
 				"tableContent": {
 					"title": "표의 구성",
-					"score": 6
+					"totalScore": 6
 				},
 				"hasLang": {
 					"title": "기본 언어 표시",
-					"score": 4
+					"totalScore": 4
 				},
 				"userRequest": {
 					"title": "사용자 요구에 따른 실행",
-					"score": 5
+					"totalScore": 5
 				}
 			},
+
 			"easyRecognition": {
 				"clearInstruction": {
 					"title": "명확한 지시사항",
-					"score": 2
+					"totalScore": 2
 				},
 				"hasAlt": {
 					"title": "적절한 대체 텍스트 제공",
-					"score": 10
+					"totalScore": 10
 				},
 				"clearContrast": {
 					"title": "텍스트 명도, 대비",
-					"score": 6
+					"totalScore": 6
 				},
 				"divideContent": {
 					"title": "컨텐츠 간의 구분",
-					"score": 3
+					"totalScore": 3
 				},
 				"hasLabel": {
 					"title": "레이블 제공",
-					"score": 6
+					"totalScore": 6
 				},
 				"contentRecognitionWithoutColor": {
 					"title": "색에 무관한 콘텐츠 인식",
-					"score": 3
+					"totalScore": 3
 				},
 				"hasCaption": {
 					"title": "자막 제공",
-					"score": 4
+					"totalScore": 4
 				},
 				"hasErrorCorrection": {
 					"title": "오류 정정",
-					"score": 4
+					"totalScore": 4
 				}
 			},
+
 			"robustness": {
 				"noMarkupError": {
 					"title": "마크업 오류 방지",
-					"score": 4
+					"totalScore": 4
 				},
 				"webAppAccessibility": {
 					"title": "웹 애플리케이션 접근성 준수",
-					"score": 0
+					"totalScore": 0
+				}
+			}
+		},
+		"compatibility": {
+			"webMobileCompatibility": {
+				"webMobileCompatibility": {
+					"title": "화면표시 호환성(시범적용)",
+					"totalScore": 0
+				}
+			},
+
+			"webStandard": {
+				"langStandard": {
+					"title": "문자(한글) 부호화 준수",
+					"totalScore": 1
+				},
+				"cssStandard": {
+					"title": "CSS 표준 준수",
+					"totalScore": 20
+				},
+				"htmlStandard": {
+					"title": "(X)HTML 표준 준수",
+					"totalScore": 30
+				},
+				"noNonStandard": {
+					"title": "비표준 기술 제거",
+					"totalScore": 2
+				}
+			},
+
+			"webCompatibility": {
+				"JSError": {
+					"title": "JS 오류",
+					"totalScore": 6
+				},
+				"functionalCompatibility": {
+					"title": "기능 호환성 확보",
+					"totalScore": 20
+				},
+				"displayCompatibility": {
+					"title": "화면 표시 호환성",
+					"totalScore": 20
+				}
+			}
+		},
+		"openness": {
+			"openness": {
+				"robots-txt": {
+					"title": "웹 개방성",
+					"totalScore": 100
+				}
+			}
+		},
+		"connectivity": {
+			"speed": {
+				"speed": {
+					"title": "웹 접속성 속도 평가 기준",
+					"totalScore": 50
+				}
+			},
+			"size": {
+				"size": {
+					"title": "웹 접속성 크기 평가 기준",
+					"totalScore": 50
+				}
+			},
+			"enhancement": {
+				"enhancement": {
+					"title": "속도 향상 방안",
+					"totalScore": 0
+				}
+			}
+		},
+		"enhancement": {
+			"enhancement": {
+				"enhancement": {
+					"title": "누리집 개선 방안",
+					"totalScore": 0
+				}
+			}
+		},
+		"warning": {
+			"warning": {
+				"securityWarning": {
+					"title": "보안 위협",
+					"totalScore": 0
+				},
+				"generalWarning": {
+					"title": "경고",
+					"totalScore": 0
 				}
 			}
 		}
 	},
 	"audits": {
 		"font-display": {
-			"criteriaId": 0,
+			"criteriaId": "noBlinking",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/link-name": {
-			"criteriaId": 0,
+		"link-name": {
+			"criteriaId": "linkText",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/meta-refresh": {
-			"criteriaId": 0,
+		"meta-refresh": {
+			"criteriaId": "stopAvailable",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/document-title": {
-			"criteriaId": 0,
+		"document-title": {
+			"criteriaId": "provideTitle",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/frame-title": {
-			"criteriaId": 0,
+		"frame-title": {
+			"criteriaId": "provideTitle",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/meta-viewport": {
-			"criteriaId": 0,
+		"meta-viewport": {
+			"criteriaId": "operationAvailable",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/custom-controls-labels": {
-			"criteriaId": 0,
+		"manual/custom-controls-labels": {
+			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/custom-controls-roles": {
-			"criteriaId": 0,
+		"manual/custom-controls-roles": {
+			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/focus-traps": {
-			"criteriaId": 0,
+		"manual/focus-traps": {
+			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/focusable-controls": {
-			"criteriaId": 0,
+		"manual/focusable-controls": {
+			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/interactive-element-affordance": {
-			"criteriaId": 0,
+		"manual/interactive-element-affordance": {
+			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/logical-tab-order": {
-			"criteriaId": 0,
+		"manual/logical-tab-order": {
+			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/managed-focus": {
-			"criteriaId": 0,
+		"manual/managed-focus": {
+			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/manual/offscreen-content-hidden": {
-			"criteriaId": 0,
+		"manual/offscreen-content-hidden": {
+			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/tabindex": {
-			"criteriaId": 0,
+		"tabindex": {
+			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"dobetterweb/uses-passive-event-listeners": {
-			"criteriaId": 0,
+			"criteriaId": "noAutoplay",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 
-		"accessibility/bypass": {
-			"criteriaId": 0,
+		"bypass": {
+			"criteriaId": "keyboardUse",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"accessibility/html-has-lang": {
-			"criteriaId": 0,
+		"html-has-lang": {
+			"criteriaId": "hasLang",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/html-lang-valid": {
-			"criteriaId": 0,
+		"html-lang-valid": {
+			"criteriaId": "hasLang",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/valid-lang": {
-			"criteriaId": 0,
+		"valid-lang": {
+			"criteriaId": "hasLang",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"no-unload-listeners": {
-			"criteriaId": 0,
+			"criteriaId": "userRequest",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/heading-order": {
-			"criteriaId": 0,
+		"heading-order": {
+			"criteriaId": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
 
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/definition-list": {
-			"criteriaId": 0,
+		"definition-list": {
+			"criteriaId": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/dlitem": {
-			"criteriaId": 0,
+		"dlitem": {
+			"criteriaId": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/list": {
-			"criteriaId": 0,
+		"list": {
+			"criteriaId": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/listitem": {
-			"criteriaId": 0,
+		"listitem": {
+			"criteriaId": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/manual/visual-order-follows-dom": {
-			"criteriaId": 0,
+		"manual/visual-order-follows-dom": {
+			"criteriaId": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/form-field-multiple-labels": {
-			"criteriaId": 0,
+		"form-field-multiple-labels": {
+			"criteriaId": "tableContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/td-headers-attr": {
-			"criteriaId": 0,
+		"td-headers-attr": {
+			"criteriaId": "tableContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/th-has-data-cells": {
-			"criteriaId": 0,
+		"th-has-data-cells": {
+			"criteriaId": "tableContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"accessibility/accesskeys": {
-			"criteriaId": 0,
+		"accesskeys": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-allowed-attr": {
-			"criteriaId": 0,
+		"aria-allowed-attr": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-command-name": {
-			"criteriaId": 0,
+		"aria-command-name": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-hidden-body": {
-			"criteriaId": 0,
+		"aria-hidden-body": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-hidden-focus": {
-			"criteriaId": 0,
+		"aria-hidden-focus": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-input-field-name": {
-			"criteriaId": 0,
+		"aria-input-field-name": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-meter-name": {
-			"criteriaId": 0,
+		"aria-meter-name": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-progressbar-name": {
-			"criteriaId": 0,
+		"aria-progressbar-name": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-required-attr": {
-			"criteriaId": 0,
+		"aria-required-attr": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-required-children": {
-			"criteriaId": 0,
+		"aria-required-children": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-required-parent": {
-			"criteriaId": 0,
+		"aria-required-parent": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-roles": {
-			"criteriaId": 0,
+		"aria-roles": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-toggle-field-name": {
-			"criteriaId": 0,
+		"aria-toggle-field-name": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-tooltip-name": {
-			"criteriaId": 0,
+		"aria-tooltip-name": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-treeitem-name": {
-			"criteriaId": 0,
+		"aria-treeitem-name": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-valid-attr-value": {
-			"criteriaId": 0,
+		"aria-valid-attr-value": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/aria-valid-attr": {
-			"criteriaId": 0,
+		"aria-valid-attr": {
+			"criteriaId": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/manual/use-landmarks": {
-			"criteriaId": 0,
+		"manual/use-landmarks": {
+			"criteriaId": "contentRecognitionWithoutColor",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/color-contrast": {
-			"criteriaId": 0,
+		"color-contrast": {
+			"criteriaId": "clearContrast",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/video-caption": {
-			"criteriaId": 0,
+		"video-caption": {
+			"criteriaId": "hasCaption",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/image-alt": {
-			"criteriaId": 0,
+		"image-alt": {
+			"criteriaId": "hasAlt",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/input-image-alt": {
-			"criteriaId": 0,
+		"input-image-alt": {
+			"criteriaId": "hasAlt",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/object-alt": {
-			"criteriaId": 0,
+		"object-alt": {
+			"criteriaId": "hasAlt",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/button-name": {
-			"criteriaId": 0,
+		"button-name": {
+			"criteriaId": "hasAlt",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/duplicate-id-aria": {
-			"criteriaId": 0,
+		"duplicate-id-aria": {
+			"criteriaId": "divideContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"accessibility/label": {
-			"criteriaId": 0,
+		"label": {
+			"criteriaId": "hasLabel",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"autocomplete": {
-			"criteriaId": 0,
+			"criteriaId": "hasErrorCorrection",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
+		},
+		"image-aspect-ratio": {
+			"criteriaId": "webMobileCompatibility",
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webMobileCompatibility"
+		},
+		"image-size-responsive": {
+			"criteriaId": "webMobileCompatibility",
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webMobileCompatibility"
+		},
+		"viewport": {
+			"criteriaId": "webMobileCompatibility",
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webMobileCompatibility"
+		},
+		"dobetterweb/charset": {
+			"criteriaId": "langStandard",
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webStandard"
+		},
+		"dobetterweb/cssvalidator": {
+			"criteriaId": "cssStandard",
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webStandard"
+		},
+		"dobetterweb/doctype": {
+			"criteriaId": "htmlStandard",
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webStandard"
+		},
+		"errors-in-console": {
+			"criteriaId": "JSError",
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "webCompatibility"
+		},
+		"seo/robots-txt": {
+			"criteriaId": "robots-txt",
+			"scoreType": null,
+			"class": "openness",
+			"subClass": "robots-txt"
+		},
+		"bootup-time": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"duplicated-javascript": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"efficient-animated-content": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"legacy-javascript": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"modern-image-formats": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"offscreen-images": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"render-blocking-resources": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"total-byte-weight": {
+			"criteriaId": "size",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "size"
+		},
+		"unminified-css": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"unminified-javascript": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"unused-css-rules": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"unused-javascript": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"uses-long-cache-ttl": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"uses-optimized-images": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"uses-responsive-images-snapshot": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"uses-responsive-images": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"uses-text-compression": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"content-width": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"critical-request-chains": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"diagnostics": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"largest-contentful-paint-element": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"layout-shift-elements": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"lcp-lazy-loaded": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"long-tasks": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"main-thread-tasks": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"mainthread-work-breakdown": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"metrics/cumulative-layout-shift": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"metrics/experimental-interaction-to-next-paint": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"metrics/first-contentful-paint-3g": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"metrics/first-contentful-paint": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"metrics/first-meaningful-paint": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"metrics/interactive": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"metrics/largest-contentful-paint": {
+			"criteriaId": "speed",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "speed"
+		},
+		"metrics/max-potential-fid": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"metrics/speed-index": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"metrics/total-blocking-time": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"network-requests": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"network-rtt": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"network-server-latency": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"non-composited-animations": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"performance-budget": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"predictive-perf": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"preload-fonts": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"preload-lcp-image": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"redirects": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"resource-summary": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"script-treemap-data": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"server-response-time": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"timing-budget": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"unsized-images": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"user-timings": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"uses-rel-preconnect": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"uses-rel-preload": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "connectivity",
+			"subClass": "enhancement"
+		},
+		"dobetterweb/dom-size": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"dobetterweb/js-libraries": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"dobetterweb/no-document-write": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"dobetterweb/password-inputs-can-be-pasted-into": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"dobetterweb/uses-http2": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"seo/canonical": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"seo/crawlable-anchors": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"seo/font-size": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"seo/hreflang": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"seo/http-status-code": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"seo/is-crawlable": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"seo/link-text": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"seo/manual/structured-data": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"seo/meta-description": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"seo/plugins": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"seo/tap-targets": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"splash-screen": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"third-party-facades": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"third-party-summary": {
+			"criteriaId": "enhancement",
+			"scoreType": null,
+			"class": "enhancement",
+			"subClass": "enhancement"
+		},
+		"csp-xss": {
+			"criteriaId": "securityWarning",
+			"scoreType": null,
+			"class": "warning",
+			"subClass": "warning"
+		},
+		"deprecations": {
+			"criteriaId": "securityWarning",
+			"scoreType": null,
+			"class": "warning",
+			"subClass": "warning"
+		},
+		"dobetterweb/geolocation-on-start": {
+			"criteriaId": "generalWarning",
+			"scoreType": null,
+			"class": "warning",
+			"subClass": "warning"
+		},
+		"dobetterweb/no-vulnerable-libraries": {
+			"criteriaId": "securityWarning",
+			"scoreType": null,
+			"class": "warning",
+			"subClass": "warning"
+		},
+		"dobetterweb/notification-on-start": {
+			"criteriaId": "generalWarning",
+			"scoreType": null,
+			"class": "warning",
+			"subClass": "warning"
+		},
+		"is-on-https": {
+			"criteriaId": "securityWarning",
+			"scoreType": null,
+			"class": "warning",
+			"subClass": "warning"
 		}
 	}
 }
