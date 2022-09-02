@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import styled from "@emotion/styled";
 import config from "../../config.json";
 import ScoreModal from "./ScoreModal";
+import { Skeleton } from "@mui/material";
 
 const BeautifulBar = styled(`div`)({
 	width: "100%",
@@ -31,20 +32,26 @@ export default function Score({ status }) {
 					<BeautifulBar className="rounded-t-xl" />
 				</div>
 
-				<div
-					role="button"
-					className="min-w-[280px] h-64 mt-3 rounded-lg shadow-lg hover:shadow-2xl flex flex-col p-4 px-8 item-middle align-middle justify-center"
-					onClick={handleOpen}
-				>
-					<span className="text-xl">총점</span>
-					<div className="flex justify-center">
-						<span className="min-w-[300px] text-center text-7xl">89 / 100</span>
-					</div>
+				{status === "success" ? (
+					<div
+						role="button"
+						className="min-w-[280px] h-64 mt-3 rounded-lg shadow-lg hover:shadow-2xl flex flex-col p-4 px-8 item-middle align-middle justify-center"
+						onClick={handleOpen}
+					>
+						<span className="text-xl">총점</span>
+						<div className="flex justify-center">
+							<span className="min-w-[300px] text-center text-7xl">
+								89 / 100
+							</span>
+						</div>
 
-					<span className="pt-4 flex justify-end">
-						<Button size="small">점수란?</Button>
-					</span>
-				</div>
+						<span className="pt-4 flex justify-end">
+							<Button size="small">점수란?</Button>
+						</span>
+					</div>
+				) : (
+					<Skeleton variant="rounded" height={270} />
+				)}
 			</>
 		</div>
 	);

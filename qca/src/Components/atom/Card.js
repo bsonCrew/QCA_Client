@@ -55,8 +55,6 @@ export default function Card(props) {
 	const [clicked, setClicked] = React.useState(false);
 	const handleClose = () => setClicked(false);
 
-	console.log(props.status === "loading");
-
 	return (
 		<div className="w-5/12 mx-4 my-4 grow transition-transform ease-in-out ">
 			<Tooltip
