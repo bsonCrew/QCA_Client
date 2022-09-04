@@ -6,11 +6,10 @@ import {
 	Tooltip,
 	Legend,
 } from "chart.js";
-import { Chart, Doughnut } from "react-chartjs-2";
-import result from "../../result.json";
-import config from "../../config.json";
+import { Doughnut } from "react-chartjs-2";
+import Skeleton from "@mui/material/Skeleton";
 
-export default function PolarChart() {
+export default function PolarChart({ status }) {
 	const DATA_COUNT = 5;
 	const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 100 };
 
@@ -127,7 +126,11 @@ export default function PolarChart() {
 		<div className="min-w-[400px] w-5/12 mt-4">
 			<div>
 				<span className="mt-8 text-2xl font-bold">여러 가지 검사한 결과..</span>
-				<Doughnut data={data} options={options} />
+				{status === "success" ? (
+					<Doughnut data={data} options={options} />
+				) : (
+					<Skeleton sx={{ width: "132%", height: 800, marginTop: -14 }} />
+				)}
 			</div>
 		</div>
 	);

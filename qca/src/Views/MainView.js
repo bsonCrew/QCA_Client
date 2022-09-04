@@ -7,7 +7,7 @@ import MainCards from "../Components/atom/Cards";
 export default function MainView({ data, status }) {
 	return (
 		<>
-			<div className="my-12 flex flex-row flex-wrap-reverse">
+			<div className="my-10 flex flex-row flex-wrap-reverse">
 				<div className="flex-4 rounded-2xl ">
 					<MainCards data={data} status={status} />
 				</div>
@@ -16,11 +16,11 @@ export default function MainView({ data, status }) {
 				</div>
 			</div>
 			<div className="my-12 flex flex-wrap justify-between">
-				<PolarChart />
-				<VeticalChart />
+				<PolarChart status={status} />
+				<VeticalChart status={status} />
 			</div>
 			<div className="flex w-full h-full pb-24 overflow-hidden">
-				<Stat data={data} />
+				<Stat status={status} data={data} />
 			</div>
 		</>
 	);

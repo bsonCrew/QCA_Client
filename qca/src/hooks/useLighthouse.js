@@ -52,9 +52,9 @@ const nonUseAttributes = [
 	"full-page-screenshot",
 	"apple-touch-icon",
 	"installable-manifest",
-	"manual/pwa-cross-browser",
-	"manual/pwa-each-page-has-url",
-	"manual/pwa-page-transitions",
+	"pwa-cross-browser",
+	"pwa-each-page-has-url",
+	"pwa-page-transitions",
 	"maskable-icon",
 	"metrics",
 	"oopif-iframe-test-audit",
@@ -63,17 +63,15 @@ const nonUseAttributes = [
 	"themed-omnibox",
 	"valid-source-maps",
 	"work-during-interaction",
+	"final-screenshot",
+	"inspector-issues",
+	"largest-contentful-paint-element",
 ];
 
 const useLighthouse = website => {
 	const [status, setStatus] = React.useState("idle");
 	const [data, setData] = React.useState([]);
-	/*
-	const lighthouseResult = {
-		columns: columns,
-		rows: [],
-	};
- */
+
 	const lighthouseResults = {
 		columns: columns,
 		rows: [],
@@ -108,25 +106,31 @@ const useLighthouse = website => {
 				const data = await response.json();
 				setStatus("success");
 				setData(data);
+				return true;
 			} catch (error) {
 				console.info(error);
 				setStatus("error");
+				return null;
 			}
 		};
 
-		fetchWithPost();
+		if (fetchWithPost()) {
+		}
 	}, [website]);
 
-	for (const [, rowValue] of Object.entries(data)) {
-		lighthouseResults["rows"].push({ ...rowValue });
+	if (status === "success") {
+		for (const [, rowValue] of Object.entries(data)) {
+			lighthouseResults["rows"].push({ ...rowValue });
+		}
+
+		// Filter out non-use attributes
+		lighthouseResults["rows"] = lighthouseResults["rows"].filter(row => {
+			return !nonUseAttributes.includes(row.id);
+		});
+
+		const res = classify(lighthouseResults["rows"]);
+		console.log(lighthouseResults);
 	}
-
-	// Filter out non-use attributes
-	lighthouseResults["rows"] = lighthouseResults["rows"].filter(row => {
-		return !nonUseAttributes.includes(row.id);
-	});
-
-	const res = classify(lighthouseResults["rows"]);
 
 	return [status, lighthouseResults];
 };

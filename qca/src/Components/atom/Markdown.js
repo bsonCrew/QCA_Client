@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // MARK DOWN
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import a11yDark from "react-syntax-highlighter/dist/esm/styles/prism/a11y-dark";
 import remarkGfm from "remark-gfm";
 import useGithub from "../../hooks/useGithub";
 

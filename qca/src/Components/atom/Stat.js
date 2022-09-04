@@ -3,6 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { darken, lighten } from "@mui/material/styles";
 
 import Box from "@mui/material/Box";
+import Skeleton from "@mui/material/Skeleton";
 
 const getBackgroundColor = (color, mode) =>
 	mode === "dark" ? darken(color, 0.6) : lighten(color, 0.6);
@@ -80,13 +81,17 @@ function StyledDatagrid({ data }) {
 	);
 }
 
-export default function Stat({ data }) {
+export default function Stat({ data, status }) {
 	return (
 		<div className="w-full h-screen px-6 pb-24">
 			<div className="mt-12 mb-8 text-2xl font-bold">
 				<h1>세부사항을 보면요..</h1>
 			</div>
-			<StyledDatagrid data={data} />
+			{status === "success" ? (
+				<StyledDatagrid data={data} />
+			) : (
+				<Skeleton sx={{ width: "100%", height: 800, marginTop: -22 }} />
+			)}
 		</div>
 	);
 }

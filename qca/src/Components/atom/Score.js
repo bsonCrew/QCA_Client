@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import styled from "@emotion/styled";
 import config from "../../config.json";
 import ScoreModal from "./ScoreModal";
-import { Skeleton } from "@mui/material";
+import Skeleton from "@mui/material/Skeleton";
 
 const BeautifulBar = styled(`div`)({
 	width: "100%",

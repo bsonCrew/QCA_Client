@@ -9,6 +9,7 @@ import {
 	Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import Skeleton from "@mui/material/Skeleton";
 
 import result from "../../result.json";
 import config from "../../config.json";
@@ -53,13 +54,17 @@ export const data = {
 	],
 };
 
-export default function VeticalChart() {
+export default function VeticalChart({ status }) {
 	return (
 		<div className="min-w-[400px] w-5/12 mt-4 px-4">
 			<span className="mt-8 text-2xl font-bold">
 				다른 사이트들은 이렇습니다
 			</span>
-			<Bar height={280} options={options} data={data} />
+			{status === "success" ? (
+				<Bar height={280} options={options} data={data} />
+			) : (
+				<Skeleton sx={{ width: "98%", height: 800, marginTop: -14 }} />
+			)}
 		</div>
 	);
 }

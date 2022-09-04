@@ -18,9 +18,7 @@ export default function Dashboard({ targetWebsite }) {
 
 	return (
 		<div className="flex flex-row flex-wrap h-full w-screen bg-main">
-			<div>
-				<SideBar openView={openView} />
-			</div>
+			<SideBar targetWebsite={targetWebsite} openView={openView} />
 			<div className="flex-12 flex-col flex-wrap pt-8 bg-main">
 				<div className="bg-white rounded-2xl px-24">
 					<Routes>

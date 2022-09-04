@@ -32,7 +32,7 @@ const openedMixin = (theme, lock) => ({
 	border: "none",
 
 	borderRadius: 10,
-	boxShadow: lock === "true" ? "none" : "3px 6rem 10px rgba(0, 0, 0, 0.3)",
+	boxShadow: lock === "true" ? "none" : "3px 6rem 40px rgba(0, 0, 0, 0.3)",
 
 	overflowX: "hidden",
 });
@@ -157,7 +157,7 @@ const SideBarFnc = ({ sideBarOpen, handleClick, index }) => {
 	);
 };
 
-export default function SideBar(props) {
+export default function SideBar({ targetWebsite, openView }) {
 	const [lock, setLock] = React.useState(false);
 	const [sideBarOpen, setSideBarOpen] = React.useState(false);
 
@@ -178,7 +178,11 @@ export default function SideBar(props) {
 
 	return (
 		<>
-			<TopBar open={sideBarOpen} handleDrawer={handleDrawer} />
+			<TopBar
+				open={sideBarOpen}
+				handleDrawer={handleDrawer}
+				targetWebsite={targetWebsite}
+			/>
 			<Drawer
 				variant="permanent"
 				open={sideBarOpen}
@@ -195,7 +199,7 @@ export default function SideBar(props) {
 									key={idx}
 									index={idx}
 									sideBarOpen={sideBarOpen}
-									openView={props.openView}
+									openView={openView}
 								/>
 							);
 						})}

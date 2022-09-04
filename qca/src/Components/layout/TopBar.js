@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import MuiAppBar from "@mui/material/AppBar";
-import { styled } from "@mui/material/styles";
+import styled from "@mui/material/styles/styled";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -15,7 +15,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 	...theme.mixins.toolbar,
 }));
 
-export default function TopBar(props) {
+export default function TopBar({ sideBarOpen, handleDrawer, targetWebsite }) {
 	const AppBar = styled(MuiAppBar, {
 		shouldForwardProp: prop => prop !== "open",
 	})(({ theme, open }) => ({
@@ -46,16 +46,14 @@ export default function TopBar(props) {
 	});
 
 	return (
-		<AppBar position="fixed" open={props.open}>
+		<AppBar position="fixed" open={sideBarOpen}>
 			<div className="w-screen flex justify-between">
 				<DrawerHeader className="flex">
-					<IconButton className="flex mr-8" onClick={props.handleDrawer}>
+					<IconButton className="flex mr-8" onClick={handleDrawer}>
 						<MenuIcon />
 					</IconButton>
-					<div className="ml-3">
-						<Typography variant="h5" color="#1f1f1f">
-							www.gov24.com
-						</Typography>
+					<div className="ml-4">
+						<span className=" font-bold text-black">{targetWebsite}</span>
 					</div>
 				</DrawerHeader>
 			</div>

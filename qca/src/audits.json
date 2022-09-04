@@ -4,108 +4,133 @@
 			"easyOperation": {
 				"keyboardUse": {
 					"title": "키보드 사용 보장",
-					"totalScore": 6
+					"totalScore": 6,
+					"calcFunctionType": 4
 				},
 				"provideTitle": {
 					"title": "제목 제공",
-					"totalScore": 6
+					"totalScore": 6,
+					"calcFunctionType": 3
 				},
 				"linkText": {
 					"title": "적절한 링크 텍스트",
-					"totalScore": 6
+					"totalScore": 6,
+					"calcFunctionType": 4
 				},
 				"eyeMovement": {
 					"title": "초점 이동",
-					"totalScore": 6
+					"totalScore": 6,
+					"calcFunctionType": 5
 				},
 				"stopAvailable": {
 					"title": "정지기능 제공",
-					"totalScore": 4
+					"totalScore": 4,
+					"calcFunctionType": 4
 				},
 				"operationAvailable": {
 					"title": "조작 가능",
-					"totalScore": 3
+					"totalScore": 3,
+					"calcFunctionType": 4
 				},
 				"noAutoplay": {
 					"title": "자동 재생 금지",
-					"totalScore": 2
+					"totalScore": 2,
+					"calcFunctionType": 4
 				},
 				"noBlinking": {
 					"title": "광과민성 발작 예방",
-					"totalScore": 2
+					"totalScore": 2,
+					"calcFunctionType": 4
 				},
 				"enoughTime": {
 					"title": "충분한 시간 제공",
-					"totalScore": 2
+					"totalScore": 2,
+					"calcFunctionType": 12
 				},
 				"skipAvailable": {
 					"title": "반복영역 건너뛰기",
-					"totalScore": 5
+					"totalScore": 5,
+					"calcFunctionType": 9
 				}
 			},
 
 			"easyUnderstanding": {
 				"linearContent": {
 					"title": "콘텐츠의 선형 구조",
-					"totalScore": 3
+					"totalScore": 3,
+					"calcFunctionType": 3
 				},
 				"tableContent": {
 					"title": "표의 구성",
-					"totalScore": 6
+					"totalScore": 6,
+					"calcFunctionType": 3
 				},
 				"hasLang": {
 					"title": "기본 언어 표시",
-					"totalScore": 4
+					"totalScore": 4,
+					"calcFunctionType": 10
 				},
 				"userRequest": {
 					"title": "사용자 요구에 따른 실행",
-					"totalScore": 5
+					"totalScore": 5,
+					"calcFunctionType": 4
+				},
+				"hasLabel": {
+					"title": "레이블 제공",
+					"totalScore": 6,
+					"calcFunctionType": 4
 				}
 			},
 
 			"easyRecognition": {
 				"clearInstruction": {
 					"title": "명확한 지시사항",
-					"totalScore": 2
+					"totalScore": 2,
+					"calcFunctionType": 3
 				},
 				"hasAlt": {
 					"title": "적절한 대체 텍스트 제공",
-					"totalScore": 10
+					"totalScore": 10,
+					"calcFunctionType": 3
 				},
 				"clearContrast": {
 					"title": "텍스트 명도, 대비",
-					"totalScore": 6
+					"totalScore": 6,
+					"calcFunctionType": 4
 				},
 				"divideContent": {
 					"title": "컨텐츠 간의 구분",
-					"totalScore": 3
+					"totalScore": 3,
+					"calcFunctionType": 4
 				},
-				"hasLabel": {
-					"title": "레이블 제공",
-					"totalScore": 6
-				},
+
 				"contentRecognitionWithoutColor": {
 					"title": "색에 무관한 콘텐츠 인식",
-					"totalScore": 3
+					"totalScore": 3,
+					"calcFunctionType": 4
 				},
 				"hasCaption": {
 					"title": "자막 제공",
-					"totalScore": 4
+					"totalScore": 4,
+					"calcFunctionType": 4
 				},
 				"hasErrorCorrection": {
 					"title": "오류 정정",
-					"totalScore": 4
+					"totalScore": 4,
+					"calcFunctionType": 4
 				}
 			},
 
 			"robustness": {
-				"noMarkupError": {
+				"noMarkUpError": {
 					"title": "마크업 오류 방지",
-					"totalScore": 4
+					"totalScore": 4,
+					"calcFunctionType": 8
 				},
 				"webAppAccessibility": {
 					"title": "웹 애플리케이션 접근성 준수",
-					"totalScore": 0
+					"totalScore": 0,
+					"calcFunctionType": 11
 				}
 			}
 		},
@@ -113,49 +138,58 @@
 			"webMobileCompatibility": {
 				"webMobileCompatibility": {
 					"title": "화면표시 호환성(시범적용)",
-					"totalScore": 0
+					"totalScore": 0,
+					"calcFunctionType": 11
 				}
 			},
 
 			"webStandard": {
 				"langStandard": {
 					"title": "문자(한글) 부호화 준수",
-					"totalScore": 1
+					"totalScore": 1,
+					"calcFunctionType": 8
 				},
 				"cssStandard": {
 					"title": "CSS 표준 준수",
-					"totalScore": 20
+					"totalScore": 20,
+					"calcFunctionType": 8
 				},
 				"htmlStandard": {
 					"title": "(X)HTML 표준 준수",
-					"totalScore": 30
+					"totalScore": 30,
+					"calcFunctionType": 8
 				},
 				"noNonStandard": {
 					"title": "비표준 기술 제거",
-					"totalScore": 2
+					"totalScore": 2,
+					"calcFunctionType": 11
 				}
 			},
 
 			"webCompatibility": {
 				"JSError": {
 					"title": "JS 오류",
-					"totalScore": 6
+					"totalScore": 6,
+					"calcFunctionType": 6
 				},
 				"functionalCompatibility": {
 					"title": "기능 호환성 확보",
-					"totalScore": 20
+					"totalScore": 20,
+					"calcFunctionType": 13
 				},
 				"displayCompatibility": {
 					"title": "화면 표시 호환성",
-					"totalScore": 20
+					"totalScore": 20,
+					"calcFunctionType": 8
 				}
 			}
 		},
 		"openness": {
-			"openness": {
+			"robots-txt": {
 				"robots-txt": {
 					"title": "웹 개방성",
-					"totalScore": 100
+					"totalScore": 100,
+					"calcFunctionType": 4
 				}
 			}
 		},
@@ -163,19 +197,22 @@
 			"speed": {
 				"speed": {
 					"title": "웹 접속성 속도 평가 기준",
-					"totalScore": 50
+					"totalScore": 50,
+					"calcFunctionType": 13
 				}
 			},
 			"size": {
 				"size": {
 					"title": "웹 접속성 크기 평가 기준",
-					"totalScore": 50
+					"totalScore": 50,
+					"calcFunctionType": 13
 				}
 			},
 			"enhancement": {
 				"enhancement": {
 					"title": "속도 향상 방안",
-					"totalScore": 0
+					"totalScore": 0,
+					"calcFunctionType": 11
 				}
 			}
 		},
@@ -183,7 +220,8 @@
 			"enhancement": {
 				"enhancement": {
 					"title": "누리집 개선 방안",
-					"totalScore": 0
+					"totalScore": 0,
+					"calcFunctionType": 1
 				}
 			}
 		},
@@ -191,11 +229,13 @@
 			"warning": {
 				"securityWarning": {
 					"title": "보안 위협",
-					"totalScore": 0
+					"totalScore": 0,
+					"calcFunctionType": 2
 				},
 				"generalWarning": {
 					"title": "경고",
-					"totalScore": 0
+					"totalScore": 0,
+					"calcFunctionType": 2
 				}
 			}
 		}
@@ -237,49 +277,49 @@
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"manual/custom-controls-labels": {
+		"custom-controls-labels": {
 			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"manual/custom-controls-roles": {
+		"custom-controls-roles": {
 			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"manual/focus-traps": {
+		"focus-traps": {
 			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"manual/focusable-controls": {
+		"focusable-controls": {
 			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"manual/interactive-element-affordance": {
+		"interactive-element-affordance": {
 			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"manual/logical-tab-order": {
+		"logical-tab-order": {
 			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"manual/managed-focus": {
+		"managed-focus": {
 			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"manual/offscreen-content-hidden": {
+		"offscreen-content-hidden": {
 			"criteriaId": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
@@ -291,7 +331,7 @@
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
-		"dobetterweb/uses-passive-event-listeners": {
+		"uses-passive-event-listeners": {
 			"criteriaId": "noAutoplay",
 			"scoreType": null,
 			"class": "accessibility",
@@ -359,7 +399,7 @@
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
-		"manual/visual-order-follows-dom": {
+		"visual-order-follows-dom": {
 			"criteriaId": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
@@ -485,7 +525,7 @@
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
-		"manual/use-landmarks": {
+		"use-landmarks": {
 			"criteriaId": "contentRecognitionWithoutColor",
 			"scoreType": null,
 			"class": "accessibility",
@@ -533,11 +573,17 @@
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
+		"duplicate-id-active": {
+			"criteriaId": "noMarkUpError",
+			"scoreType": null,
+			"class": "accessibility",
+			"subClass": "robustness"
+		},
 		"label": {
 			"criteriaId": "hasLabel",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "easyUnderstanding"
 		},
 		"autocomplete": {
 			"criteriaId": "hasErrorCorrection",
@@ -563,19 +609,19 @@
 			"class": "compatibility",
 			"subClass": "webMobileCompatibility"
 		},
-		"dobetterweb/charset": {
+		"charset": {
 			"criteriaId": "langStandard",
 			"scoreType": null,
 			"class": "compatibility",
 			"subClass": "webStandard"
 		},
-		"dobetterweb/cssvalidator": {
+		"cssvalidator": {
 			"criteriaId": "cssStandard",
 			"scoreType": null,
 			"class": "compatibility",
 			"subClass": "webStandard"
 		},
-		"dobetterweb/doctype": {
+		"doctype": {
 			"criteriaId": "htmlStandard",
 			"scoreType": null,
 			"class": "compatibility",
@@ -587,7 +633,7 @@
 			"class": "compatibility",
 			"subClass": "webCompatibility"
 		},
-		"seo/robots-txt": {
+		"robots-txt": {
 			"criteriaId": "robots-txt",
 			"scoreType": null,
 			"class": "openness",
@@ -713,12 +759,7 @@
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"largest-contentful-paint-element": {
-			"criteriaId": "enhancement",
-			"scoreType": null,
-			"class": "connectivity",
-			"subClass": "enhancement"
-		},
+
 		"layout-shift-elements": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
@@ -749,61 +790,61 @@
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"metrics/cumulative-layout-shift": {
+		"cumulative-layout-shift": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"metrics/experimental-interaction-to-next-paint": {
+		"experimental-interaction-to-next-paint": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"metrics/first-contentful-paint-3g": {
+		"first-contentful-paint-3g": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"metrics/first-contentful-paint": {
+		"first-contentful-paint": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"metrics/first-meaningful-paint": {
+		"first-meaningful-paint": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"metrics/interactive": {
+		"interactive": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"metrics/largest-contentful-paint": {
+		"largest-contentful-paint": {
 			"criteriaId": "speed",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "speed"
 		},
-		"metrics/max-potential-fid": {
+		"max-potential-fid": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"metrics/speed-index": {
+		"speed-index": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"metrics/total-blocking-time": {
+		"total-blocking-time": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
@@ -911,97 +952,97 @@
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
-		"dobetterweb/dom-size": {
+		"dom-size": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"dobetterweb/js-libraries": {
+		"js-libraries": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"dobetterweb/no-document-write": {
+		"no-document-write": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"dobetterweb/password-inputs-can-be-pasted-into": {
+		"password-inputs-can-be-pasted-into": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"dobetterweb/uses-http2": {
+		"uses-http2": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"seo/canonical": {
+		"canonical": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"seo/crawlable-anchors": {
+		"crawlable-anchors": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"seo/font-size": {
+		"font-size": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"seo/hreflang": {
+		"hreflang": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"seo/http-status-code": {
+		"http-status-code": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"seo/is-crawlable": {
+		"is-crawlable": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"seo/link-text": {
+		"link-text": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"seo/manual/structured-data": {
+		"structured-data": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"seo/meta-description": {
+		"meta-description": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"seo/plugins": {
+		"plugins": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
-		"seo/tap-targets": {
+		"tap-targets": {
 			"criteriaId": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
@@ -1037,19 +1078,19 @@
 			"class": "warning",
 			"subClass": "warning"
 		},
-		"dobetterweb/geolocation-on-start": {
+		"geolocation-on-start": {
 			"criteriaId": "generalWarning",
 			"scoreType": null,
 			"class": "warning",
 			"subClass": "warning"
 		},
-		"dobetterweb/no-vulnerable-libraries": {
+		"no-vulnerable-libraries": {
 			"criteriaId": "securityWarning",
 			"scoreType": null,
 			"class": "warning",
 			"subClass": "warning"
 		},
-		"dobetterweb/notification-on-start": {
+		"notification-on-start": {
 			"criteriaId": "generalWarning",
 			"scoreType": null,
 			"class": "warning",

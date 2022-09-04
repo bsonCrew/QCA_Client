@@ -9,7 +9,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import Tooltip from "@mui/material/Tooltip";
 import Dialog from "@mui/material/Dialog";
 import linkify from "../utils/linkify";
-import { Skeleton } from "@mui/material";
+import Skeleton from "@mui/material/Skeleton";
 
 // import CardDialog from "./CardDialog";
 
@@ -87,9 +87,9 @@ export default function Card(props) {
 						}
 						onClick={() => setClicked(!clicked)}
 					>
-						<span className="text-xl">{props.title}</span>
+						<span className="text-lg">{props.title}</span>
 						<span className="text-sm font-bold text-gray">
-							{props.subheader.slice(0, 30) + "..."}
+							{props.subheader.slice(0, 28) + "..."}
 						</span>
 					</div>
 				</>
