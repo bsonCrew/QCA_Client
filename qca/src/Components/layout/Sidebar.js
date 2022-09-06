@@ -1,5 +1,6 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
+import { Link } from "react-router-dom";
 import MuiDrawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
@@ -16,8 +17,8 @@ import SummarizeIcon from "@mui/icons-material/Summarize";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+
 import config from "../../config.json";
-import { Link } from "react-router-dom";
 import TopBar from "./TopBar";
 
 const drawerWidth = 240;

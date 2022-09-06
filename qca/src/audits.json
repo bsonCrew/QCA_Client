@@ -162,7 +162,7 @@
 				"noNonStandard": {
 					"title": "비표준 기술 제거",
 					"totalScore": 2,
-					"calcFunctionType": 11
+					"calcFunctionType": 12
 				}
 			},
 
@@ -175,7 +175,7 @@
 				"functionalCompatibility": {
 					"title": "기능 호환성 확보",
 					"totalScore": 20,
-					"calcFunctionType": 13
+					"calcFunctionType": 12
 				},
 				"displayCompatibility": {
 					"title": "화면 표시 호환성",
@@ -242,862 +242,862 @@
 	},
 	"audits": {
 		"font-display": {
-			"criteriaId": "noBlinking",
+			"spec": "noBlinking",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"link-name": {
-			"criteriaId": "linkText",
+			"spec": "linkText",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"meta-refresh": {
-			"criteriaId": "stopAvailable",
+			"spec": "stopAvailable",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"document-title": {
-			"criteriaId": "provideTitle",
+			"spec": "provideTitle",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"frame-title": {
-			"criteriaId": "provideTitle",
+			"spec": "provideTitle",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"meta-viewport": {
-			"criteriaId": "operationAvailable",
+			"spec": "operationAvailable",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"custom-controls-labels": {
-			"criteriaId": "eyeMovement",
+			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"custom-controls-roles": {
-			"criteriaId": "eyeMovement",
+			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"focus-traps": {
-			"criteriaId": "eyeMovement",
+			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"focusable-controls": {
-			"criteriaId": "eyeMovement",
+			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"interactive-element-affordance": {
-			"criteriaId": "eyeMovement",
+			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"logical-tab-order": {
-			"criteriaId": "eyeMovement",
+			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"managed-focus": {
-			"criteriaId": "eyeMovement",
+			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"offscreen-content-hidden": {
-			"criteriaId": "eyeMovement",
+			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"tabindex": {
-			"criteriaId": "eyeMovement",
+			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"uses-passive-event-listeners": {
-			"criteriaId": "noAutoplay",
+			"spec": "noAutoplay",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 
 		"bypass": {
-			"criteriaId": "keyboardUse",
+			"spec": "keyboardUse",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyOperation"
 		},
 		"html-has-lang": {
-			"criteriaId": "hasLang",
+			"spec": "hasLang",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"html-lang-valid": {
-			"criteriaId": "hasLang",
+			"spec": "hasLang",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"valid-lang": {
-			"criteriaId": "hasLang",
+			"spec": "hasLang",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"no-unload-listeners": {
-			"criteriaId": "userRequest",
+			"spec": "userRequest",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"heading-order": {
-			"criteriaId": "linearContent",
+			"spec": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
 
 			"subClass": "easyUnderstanding"
 		},
 		"definition-list": {
-			"criteriaId": "linearContent",
+			"spec": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"dlitem": {
-			"criteriaId": "linearContent",
+			"spec": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"list": {
-			"criteriaId": "linearContent",
+			"spec": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"listitem": {
-			"criteriaId": "linearContent",
+			"spec": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"visual-order-follows-dom": {
-			"criteriaId": "linearContent",
+			"spec": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"form-field-multiple-labels": {
-			"criteriaId": "tableContent",
+			"spec": "tableContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"td-headers-attr": {
-			"criteriaId": "tableContent",
+			"spec": "tableContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"th-has-data-cells": {
-			"criteriaId": "tableContent",
+			"spec": "tableContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"accesskeys": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-allowed-attr": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-command-name": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-hidden-body": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-hidden-focus": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-input-field-name": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-meter-name": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-progressbar-name": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-required-attr": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-required-children": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-required-parent": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-roles": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-toggle-field-name": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-tooltip-name": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-treeitem-name": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-valid-attr-value": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"aria-valid-attr": {
-			"criteriaId": "clearInstruction",
+			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"use-landmarks": {
-			"criteriaId": "contentRecognitionWithoutColor",
+			"spec": "contentRecognitionWithoutColor",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"color-contrast": {
-			"criteriaId": "clearContrast",
+			"spec": "clearContrast",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"video-caption": {
-			"criteriaId": "hasCaption",
+			"spec": "hasCaption",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"image-alt": {
-			"criteriaId": "hasAlt",
+			"spec": "hasAlt",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"input-image-alt": {
-			"criteriaId": "hasAlt",
+			"spec": "hasAlt",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"object-alt": {
-			"criteriaId": "hasAlt",
+			"spec": "hasAlt",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"button-name": {
-			"criteriaId": "hasAlt",
+			"spec": "hasAlt",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"duplicate-id-aria": {
-			"criteriaId": "divideContent",
+			"spec": "divideContent",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"duplicate-id-active": {
-			"criteriaId": "noMarkUpError",
+			"spec": "noMarkUpError",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "robustness"
 		},
 		"label": {
-			"criteriaId": "hasLabel",
+			"spec": "hasLabel",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyUnderstanding"
 		},
 		"autocomplete": {
-			"criteriaId": "hasErrorCorrection",
+			"spec": "hasErrorCorrection",
 			"scoreType": null,
 			"class": "accessibility",
 			"subClass": "easyRecognition"
 		},
 		"image-aspect-ratio": {
-			"criteriaId": "webMobileCompatibility",
+			"spec": "webMobileCompatibility",
 			"scoreType": null,
 			"class": "compatibility",
 			"subClass": "webMobileCompatibility"
 		},
 		"image-size-responsive": {
-			"criteriaId": "webMobileCompatibility",
+			"spec": "webMobileCompatibility",
 			"scoreType": null,
 			"class": "compatibility",
 			"subClass": "webMobileCompatibility"
 		},
 		"viewport": {
-			"criteriaId": "webMobileCompatibility",
+			"spec": "webMobileCompatibility",
 			"scoreType": null,
 			"class": "compatibility",
 			"subClass": "webMobileCompatibility"
 		},
 		"charset": {
-			"criteriaId": "langStandard",
+			"spec": "langStandard",
 			"scoreType": null,
 			"class": "compatibility",
 			"subClass": "webStandard"
 		},
 		"cssvalidator": {
-			"criteriaId": "cssStandard",
+			"spec": "cssStandard",
 			"scoreType": null,
 			"class": "compatibility",
 			"subClass": "webStandard"
 		},
 		"doctype": {
-			"criteriaId": "htmlStandard",
+			"spec": "htmlStandard",
 			"scoreType": null,
 			"class": "compatibility",
 			"subClass": "webStandard"
 		},
 		"errors-in-console": {
-			"criteriaId": "JSError",
+			"spec": "JSError",
 			"scoreType": null,
 			"class": "compatibility",
 			"subClass": "webCompatibility"
 		},
 		"robots-txt": {
-			"criteriaId": "robots-txt",
+			"spec": "robots-txt",
 			"scoreType": null,
 			"class": "openness",
 			"subClass": "robots-txt"
 		},
 		"bootup-time": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"duplicated-javascript": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"efficient-animated-content": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"legacy-javascript": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"modern-image-formats": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"offscreen-images": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"render-blocking-resources": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"total-byte-weight": {
-			"criteriaId": "size",
+			"spec": "size",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "size"
 		},
 		"unminified-css": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"unminified-javascript": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"unused-css-rules": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"unused-javascript": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"uses-long-cache-ttl": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"uses-optimized-images": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"uses-responsive-images-snapshot": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"uses-responsive-images": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"uses-text-compression": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"content-width": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"critical-request-chains": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"diagnostics": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 
 		"layout-shift-elements": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"lcp-lazy-loaded": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"long-tasks": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"main-thread-tasks": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"mainthread-work-breakdown": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"cumulative-layout-shift": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"experimental-interaction-to-next-paint": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"first-contentful-paint-3g": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"first-contentful-paint": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"first-meaningful-paint": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"interactive": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"largest-contentful-paint": {
-			"criteriaId": "speed",
+			"spec": "speed",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "speed"
 		},
 		"max-potential-fid": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"speed-index": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"total-blocking-time": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"network-requests": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"network-rtt": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"network-server-latency": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"non-composited-animations": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"performance-budget": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"predictive-perf": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"preload-fonts": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"preload-lcp-image": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"redirects": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"resource-summary": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"script-treemap-data": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"server-response-time": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"timing-budget": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"unsized-images": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"user-timings": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"uses-rel-preconnect": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"uses-rel-preload": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
 			"subClass": "enhancement"
 		},
 		"dom-size": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"js-libraries": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"no-document-write": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"password-inputs-can-be-pasted-into": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"uses-http2": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"canonical": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"crawlable-anchors": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"font-size": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"hreflang": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"http-status-code": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"is-crawlable": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"link-text": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"structured-data": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"meta-description": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"plugins": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"tap-targets": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"splash-screen": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"third-party-facades": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"third-party-summary": {
-			"criteriaId": "enhancement",
+			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
 			"subClass": "enhancement"
 		},
 		"csp-xss": {
-			"criteriaId": "securityWarning",
+			"spec": "securityWarning",
 			"scoreType": null,
 			"class": "warning",
 			"subClass": "warning"
 		},
 		"deprecations": {
-			"criteriaId": "securityWarning",
+			"spec": "securityWarning",
 			"scoreType": null,
 			"class": "warning",
 			"subClass": "warning"
 		},
 		"geolocation-on-start": {
-			"criteriaId": "generalWarning",
+			"spec": "generalWarning",
 			"scoreType": null,
 			"class": "warning",
 			"subClass": "warning"
 		},
 		"no-vulnerable-libraries": {
-			"criteriaId": "securityWarning",
+			"spec": "securityWarning",
 			"scoreType": null,
 			"class": "warning",
 			"subClass": "warning"
 		},
 		"notification-on-start": {
-			"criteriaId": "generalWarning",
+			"spec": "generalWarning",
 			"scoreType": null,
 			"class": "warning",
 			"subClass": "warning"
 		},
 		"is-on-https": {
-			"criteriaId": "securityWarning",
+			"spec": "securityWarning",
 			"scoreType": null,
 			"class": "warning",
 			"subClass": "warning"

@@ -49,11 +49,11 @@
 		"더 좋은 누리집을 만들어요"
 	],
 	"links": [
-		"main",
-		"compatibility",
-		"accessibility",
-		"openness",
-		"connectivity"
+		"/dashboard",
+		"/dashboard/compatibility",
+		"/dashboard/accessibility",
+		"/dashboard/openness",
+		"/dashboard/connectivity"
 	],
 	"scoreDescription": {
 		"title": "총점",

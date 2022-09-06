@@ -21,9 +21,7 @@ function App() {
 					<Route
 						path="/dashboard/*"
 						element={<Dashboard targetWebsite={targetWebsite} />}
-					>
-						<Route path="main" element={<MainView />} />
-					</Route>
+					></Route>
 					<Route path="/*" element={<NotFound />} />
 				</Routes>
 			</BrowserRouter>

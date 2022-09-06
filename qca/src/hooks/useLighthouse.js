@@ -45,8 +45,6 @@ const columns = [
 	},
 ];
 
-const calculateScore = (score, total) => {};
-
 /** Non-use attributes which are not displayed in the table*/
 const nonUseAttributes = [
 	"full-page-screenshot",
@@ -71,24 +69,25 @@ const nonUseAttributes = [
 const useLighthouse = website => {
 	const [status, setStatus] = React.useState("idle");
 	const [data, setData] = React.useState([]);
-
-	const lighthouseResults = {
-		columns: columns,
-		rows: [],
-		initialState: {
-			columns: {
-				columnVisibilityModel: {
-					id: false,
-				},
-			},
-		},
-	};
+	const [lighthouseResults, setLighthouseResults] = React.useState();
+	const [classification, setClassification] = React.useState();
 
 	const postQuery = "http://localhost:3001/lighthouse";
 	// const postQuery = "http://13.209.177.236:8080/api/control";
-
 	React.useEffect(() => {
 		if (!postQuery) return;
+
+		const checkLocalStorage = () => {
+			if (JSON.parse(localStorage.getItem(website)) !== null) {
+				const localData = JSON.parse(localStorage.getItem(website));
+				setStatus("success");
+				setClassification(localData.classification);
+				setLighthouseResults(localData.lighthouseResults);
+
+				return true;
+			}
+			return false;
+		};
 
 		const fetchWithPost = async () => {
 			setStatus("loading");
@@ -104,7 +103,7 @@ const useLighthouse = website => {
 					}),
 				});
 				const data = await response.json();
-				setStatus("success");
+				setStatus("fetched");
 				setData(data);
 				return true;
 			} catch (error) {
@@ -114,25 +113,60 @@ const useLighthouse = website => {
 			}
 		};
 
-		if (fetchWithPost()) {
+		if (!checkLocalStorage()) {
+			fetchWithPost();
 		}
 	}, [website]);
 
-	if (status === "success") {
-		for (const [, rowValue] of Object.entries(data)) {
-			lighthouseResults["rows"].push({ ...rowValue });
+	React.useEffect(() => {
+		if (status === "fetched" && lighthouseResults === undefined) {
+			let rows = [];
+			for (const [, rowValue] of Object.entries(data)) {
+				rows.push({ ...rowValue });
+			}
+			// Filter out non-use attributes
+			rows = rows.filter(row => {
+				return !nonUseAttributes.includes(row.id);
+			});
+			setStatus("calculating");
+
+			const res = classify(rows);
+			setClassification(res);
+
+			setLighthouseResults({
+				columns: columns,
+				rows: rows,
+				initialState: {
+					columns: {
+						columnVisibilityModel: {
+							id: false,
+						},
+					},
+				},
+			});
+			setStatus("success");
+
+			localStorage.setItem(
+				website,
+				JSON.stringify({
+					classification: res,
+					lighthouseResults: {
+						columns: columns,
+						rows: rows,
+						initialState: {
+							columns: {
+								columnVisibilityModel: {
+									id: false,
+								},
+							},
+						},
+					},
+				})
+			);
 		}
+	}, [website, data, status, lighthouseResults]);
 
-		// Filter out non-use attributes
-		lighthouseResults["rows"] = lighthouseResults["rows"].filter(row => {
-			return !nonUseAttributes.includes(row.id);
-		});
-
-		const res = classify(lighthouseResults["rows"]);
-		console.log(lighthouseResults);
-	}
-
-	return [status, lighthouseResults];
+	return [status, lighthouseResults, classification];
 };
 
 export default useLighthouse;

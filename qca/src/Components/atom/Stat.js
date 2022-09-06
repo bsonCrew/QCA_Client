@@ -17,7 +17,23 @@ function StyledDatagrid({ data }) {
 		rows: data["rows"],
 		initialState: data["initialState"],
 	};
+	console.log(formedData);
 
+	const Grid = React.memo(
+		formedData => {
+			return (
+				<DataGrid
+					{...formedData}
+					getRowClassName={params => `super-app-theme--${params.row.status}`}
+					checkboxSelection
+					onSelectionModelChange={item => {
+						alert(item);
+					}}
+				/>
+			);
+		},
+		[formedData]
+	);
 	return (
 		<Box
 			sx={{

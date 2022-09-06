@@ -40,8 +40,6 @@ export function StatCards({ data, status }) {
 export default function MainCards({ data, status }) {
 	let cardData = Array(4).fill(0);
 
-	console.log(data);
-
 	return (
 		<div className="flex flex-col justify-center pt-8">
 			<div className="w-full h-9">

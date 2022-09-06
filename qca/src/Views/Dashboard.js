@@ -11,8 +11,19 @@ import ConnectivityView from "./ConnectivityView";
 import OpennessView from "./OpennessView";
 
 export default function Dashboard({ targetWebsite }) {
-	const [status, data] = useLighthouse(targetWebsite);
+	let [status, data, classification] = useLighthouse(targetWebsite);
+	// console.log(classification);
+	const [
+		accessibility,
+		compatibility,
+		connectivity,
+		openness,
+		enhancement,
+		warning,
+	] = status === "success" ? classification : [0, 0, 0, 0, 0, 0];
+
 	console.log(status);
+	// console.log(classifiedData);
 
 	const openView = useParams()["*"];
 
@@ -23,12 +34,18 @@ export default function Dashboard({ targetWebsite }) {
 				<div className="bg-white rounded-2xl px-24">
 					<Routes>
 						<Route
-							path="/main"
+							path="/"
 							element={<MainView data={data} status={status} />}
 						/>
 						<Route
 							path="/compatibility"
-							element={<CompatibilityView data={data} status={status} />}
+							element={
+								<CompatibilityView
+									// compatibility={compatibility}
+									data={data}
+									status={status}
+								/>
+							}
 						/>
 						<Route
 							path="/accessibility"
