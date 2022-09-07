@@ -11,7 +11,6 @@ import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
 import CoPresentIcon from "@mui/icons-material/CoPresent";
 import SmartButtonIcon from "@mui/icons-material/SmartButton";
 import ExploreIcon from "@mui/icons-material/Explore";
-import ChairIcon from "@mui/icons-material/Chair";
 import HelpIcon from "@mui/icons-material/Help";
 import SummarizeIcon from "@mui/icons-material/Summarize";
 import ListItem from "@mui/material/ListItem";
@@ -88,6 +87,7 @@ const iconImage = [
 
 const SideBarLink = ({ openView, sideBarOpen, index }) => {
 	const isOpen = config.links[index] === openView;
+	console.log(config.links[index], openView, isOpen);
 	return (
 		<Link to={config.links[index]}>
 			<ListItem

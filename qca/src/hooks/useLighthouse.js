@@ -69,8 +69,12 @@ const nonUseAttributes = [
 const useLighthouse = website => {
 	const [status, setStatus] = React.useState("idle");
 	const [data, setData] = React.useState([]);
-	const [lighthouseResults, setLighthouseResults] = React.useState();
-	const [classification, setClassification] = React.useState();
+	const [lighthouseResults, setLighthouseResults] = React.useState(
+		JSON.parse(localStorage.getItem(website)).lighthouseResults || {}
+	);
+	const [classification, setClassification] = React.useState(
+		JSON.parse(localStorage.getItem(website)).classification || {}
+	);
 
 	const postQuery = "http://localhost:3001/lighthouse";
 	// const postQuery = "http://13.209.177.236:8080/api/control";
@@ -165,6 +169,8 @@ const useLighthouse = website => {
 			);
 		}
 	}, [website, data, status, lighthouseResults]);
+
+	console.log(status, lighthouseResults, classification);
 
 	return [status, lighthouseResults, classification];
 };

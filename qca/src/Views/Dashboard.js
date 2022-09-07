@@ -12,7 +12,6 @@ import OpennessView from "./OpennessView";
 
 export default function Dashboard({ targetWebsite }) {
 	let [status, data, classification] = useLighthouse(targetWebsite);
-	// console.log(classification);
 	const [
 		accessibility,
 		compatibility,
@@ -23,9 +22,9 @@ export default function Dashboard({ targetWebsite }) {
 	] = status === "success" ? classification : [0, 0, 0, 0, 0, 0];
 
 	console.log(status);
-	// console.log(classifiedData);
+	console.log(classification);
 
-	const openView = useParams()["*"];
+	const openView = "/dashboard/" + useParams()["*"];
 
 	return (
 		<div className="flex flex-row flex-wrap h-full w-screen bg-main">
@@ -39,13 +38,7 @@ export default function Dashboard({ targetWebsite }) {
 						/>
 						<Route
 							path="/compatibility"
-							element={
-								<CompatibilityView
-									// compatibility={compatibility}
-									data={data}
-									status={status}
-								/>
-							}
+							element={<CompatibilityView website={targetWebsite} />}
 						/>
 						<Route
 							path="/accessibility"

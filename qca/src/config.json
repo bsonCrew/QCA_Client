@@ -49,7 +49,7 @@
 		"더 좋은 누리집을 만들어요"
 	],
 	"links": [
-		"/dashboard",
+		"/dashboard/",
 		"/dashboard/compatibility",
 		"/dashboard/accessibility",
 		"/dashboard/openness",
