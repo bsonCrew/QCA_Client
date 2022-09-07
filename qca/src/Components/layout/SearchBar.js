@@ -11,7 +11,6 @@ export default function SearchBar({ setTargetWebsite }) {
 			document.removeEventListener("keydown", keyDownHandler);
 		};
 	});
-
 	const [value, setValue] = React.useState(data.websites[0]);
 	const navigate = useNavigate();
 
@@ -20,7 +19,9 @@ export default function SearchBar({ setTargetWebsite }) {
 		value.homepage.includes("www.")
 			? setTargetWebsite(value.homepage)
 			: setTargetWebsite(value.label);
-		navigate("/dashboard/main");
+		navigate("/dashboard", {
+			state: { targetWebsite: value.homepage },
+		});
 	};
 
 	const handleChangeTab = () => {};

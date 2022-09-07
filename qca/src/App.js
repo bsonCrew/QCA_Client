@@ -20,7 +20,12 @@ function App() {
 					/>
 					<Route
 						path="/dashboard/*"
-						element={<Dashboard targetWebsite={targetWebsite} />}
+						element={
+							<Dashboard
+								setTargetWebsite={setTargetWebsite}
+								targetWebsite={targetWebsite}
+							/>
+						}
 					></Route>
 					<Route path="/*" element={<NotFound />} />
 				</Routes>

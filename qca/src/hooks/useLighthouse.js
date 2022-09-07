@@ -70,14 +70,14 @@ const useLighthouse = website => {
 	const [status, setStatus] = React.useState("idle");
 	const [data, setData] = React.useState([]);
 	const [lighthouseResults, setLighthouseResults] = React.useState(
-		JSON.parse(localStorage.getItem(website)).lighthouseResults || {}
+		JSON.parse(localStorage.getItem(website))?.lighthouseResults || {}
 	);
 	const [classification, setClassification] = React.useState(
-		JSON.parse(localStorage.getItem(website)).classification || {}
+		JSON.parse(localStorage.getItem(website))?.classification || {}
 	);
 
 	const postQuery = "http://localhost:3001/lighthouse";
-	// const postQuery = "http://13.209.177.236:8080/api/control";
+	// const postQuery = "http://58.124.108.42:11209/api/control";
 	React.useEffect(() => {
 		if (!postQuery) return;
 
@@ -123,7 +123,11 @@ const useLighthouse = website => {
 	}, [website]);
 
 	React.useEffect(() => {
-		if (status === "fetched" && lighthouseResults === undefined) {
+		if (
+			status === "fetched" &&
+			(lighthouseResults === undefined ||
+				lighthouseResults.length === undefined)
+		) {
 			let rows = [];
 			for (const [, rowValue] of Object.entries(data)) {
 				rows.push({ ...rowValue });
@@ -169,8 +173,6 @@ const useLighthouse = website => {
 			);
 		}
 	}, [website, data, status, lighthouseResults]);
-
-	console.log(status, lighthouseResults, classification);
 
 	return [status, lighthouseResults, classification];
 };

@@ -2,8 +2,10 @@ import * as React from "react";
 import config from "../../config.json";
 import Card from "./Card";
 
-export function StatCards({ data, status }) {
+export function StatCards({ data, status, classificationData }) {
 	const cardRows = data.rows;
+	console.log(classificationData);
+	console.log(data);
 
 	return (
 		<div className="flex flex-col justify-center pt-8">

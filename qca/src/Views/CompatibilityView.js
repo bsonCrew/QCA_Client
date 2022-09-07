@@ -4,19 +4,21 @@ import Score from "../Components/atom/Score";
 import { StatCards } from "../Components/atom/Cards";
 import useLighthouse from "../hooks/useLighthouse";
 
-export default function CompatibilityView({ website }) {
+export default function CompatibilityView({
+	data,
+	status,
+	website,
+	compatibility,
+}) {
 	// export default function CompatibilityView({ compatibility, data, status }) {
 	const [solvedArr, setSolvedArr] = React.useState([]);
-	let [status, data, classification] = useLighthouse(website);
-	console.log(localStorage.getItem(classification));
-
-	// console.log(compatibility);
+	// let [status, data, classification] = useLighthouse(website);
 
 	return (
 		<div className="my-10 pb-24 flex flex-row flex-wrap">
 			<div className="flex-4 rounded-2xl ">
 				<StatCards
-					// compatibility={compatibility}
+					classificationData={compatibility}
 					status={status}
 					data={data}
 					solvedArr={solvedArr}

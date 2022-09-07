@@ -3,14 +3,19 @@ import SideBar from "../Components/layout/Sidebar";
 import Footer from "../Components/layout/Footer";
 import MainView from "./MainView";
 import useLighthouse from "../hooks/useLighthouse";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route, useParams, useLocation } from "react-router-dom";
 
 import CompatibilityView from "./CompatibilityView";
 import AccessibilityView from "./AccessibilityView";
 import ConnectivityView from "./ConnectivityView";
 import OpennessView from "./OpennessView";
 
-export default function Dashboard({ targetWebsite }) {
+export default function Dashboard() {
+	const location = useLocation();
+	const [targetWebsite, setTargetWebsite] = React.useState(
+		location.state?.targetWebsite || localStorage.getItem("targetWebsite") || ""
+	);
+	console.log(targetWebsite);
 	let [status, data, classification] = useLighthouse(targetWebsite);
 	const [
 		accessibility,
@@ -21,8 +26,12 @@ export default function Dashboard({ targetWebsite }) {
 		warning,
 	] = status === "success" ? classification : [0, 0, 0, 0, 0, 0];
 
+	React.useEffect(() => {
+		if (targetWebsite !== "")
+			localStorage.setItem("targetWebsite", targetWebsite);
+	}, [targetWebsite]);
+
 	console.log(status);
-	console.log(classification);
 
 	const openView = "/dashboard/" + useParams()["*"];
 
@@ -38,7 +47,14 @@ export default function Dashboard({ targetWebsite }) {
 						/>
 						<Route
 							path="/compatibility"
-							element={<CompatibilityView website={targetWebsite} />}
+							element={
+								<CompatibilityView
+									data={data}
+									status={status}
+									website={targetWebsite}
+									compatibilityData={compatibility}
+								/>
+							}
 						/>
 						<Route
 							path="/accessibility"

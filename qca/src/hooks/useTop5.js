@@ -4,7 +4,7 @@ const useTop5 = () => {
 	const [status, setStatus] = React.useState("idle");
 	const [data, setData] = React.useState([]);
 	const getQuery = "http://localhost:3001/top5";
-	// const getQuery = "http://13.209.177.236:8080/api/list";
+	// const getQuery = "http://58.124.108.42:11209/api/list";
 
 	React.useEffect(() => {
 		if (!getQuery) return;

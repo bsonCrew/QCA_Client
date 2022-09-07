@@ -87,7 +87,6 @@ const iconImage = [
 
 const SideBarLink = ({ openView, sideBarOpen, index }) => {
 	const isOpen = config.links[index] === openView;
-	console.log(config.links[index], openView, isOpen);
 	return (
 		<Link to={config.links[index]}>
 			<ListItem
