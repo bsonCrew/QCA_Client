@@ -36,7 +36,10 @@ const ClassStepper = ({ criteriaClass }) => {
 				className="flex-1 flex flex-row max-h-96"
 			>
 				{Object.entries(criteriaClass)
-					.filter(([subClass, val]) => subClass !== "resultScore")
+					.filter(
+						([subClass, val]) =>
+							subClass !== "resultScore" && subClass !== "totalScore"
+					)
 					.map(([subClass, val], idx) => (
 						<Step key={idx}>
 							{console.log(val)}
@@ -78,7 +81,9 @@ const SubClassStepper = ({ subClass }) => {
 				className="flex-1 flex-wrap "
 			>
 				{Object.entries(subClass)
-					.filter(([subClass, val]) => subClass !== "resultScore")
+					.filter(
+						([spec, val]) => spec !== "resultScore" && spec !== "totalScore"
+					)
 					.map(([spec, val], idx) => (
 						<Step key={idx}>
 							<StepLabel onClick={() => handleActiveStep(idx)}>
@@ -90,8 +95,8 @@ const SubClassStepper = ({ subClass }) => {
 								<StepContent TransitionProps={{ unmountOnExit: false }}>
 									{spec !== "resultScore" && (
 										<div key={spec} className="w-full flex flex-col">
-											{/* {console.log(val)} */}
 											<span className="text-xl p-2">{val.title}</span>
+											{console.log(val, subClass)}
 											{val.items.map((item, idx) => (
 												<div key={idx} className="flex flex-row">
 													<span className=" w-full p-2">{item.title}</span>
