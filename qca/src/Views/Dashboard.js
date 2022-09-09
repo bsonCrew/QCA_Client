@@ -26,6 +26,8 @@ export default function Dashboard() {
 		warning,
 	] = status === "success" ? classification : [0, 0, 0, 0, 0, 0];
 
+	console.log(status, data, classification);
+
 	React.useEffect(() => {
 		if (targetWebsite !== "")
 			localStorage.setItem("targetWebsite", targetWebsite);
@@ -43,7 +45,13 @@ export default function Dashboard() {
 					<Routes>
 						<Route
 							path="/"
-							element={<MainView data={data} status={status} />}
+							element={
+								<MainView
+									classification={classification}
+									data={data}
+									status={status}
+								/>
+							}
 						/>
 						<Route
 							path="/compatibility"
@@ -51,8 +59,7 @@ export default function Dashboard() {
 								<CompatibilityView
 									data={data}
 									status={status}
-									website={targetWebsite}
-									compatibilityData={compatibility}
+									compatibility={compatibility}
 								/>
 							}
 						/>

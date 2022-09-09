@@ -46,11 +46,13 @@ const classify = lighthouseResults => {
 		let criteriaScore = 0;
 		Object.values(criteria).forEach(subClass => {
 			let score = 0;
+			let totalScore = 0;
 			Object.values(subClass).forEach(spec => {
 				score += calcByFunctionType(spec);
+				totalScore += spec.totalScore;
 			});
 			subClass.resultScore = score;
-			criteriaScore += score;
+			subClass.totalScore = totalScore;
 		});
 		criteria.resultScore = criteriaScore;
 	});

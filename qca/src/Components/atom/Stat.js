@@ -17,7 +17,6 @@ function StyledDatagrid({ data }) {
 		rows: data["rows"],
 		initialState: data["initialState"],
 	};
-	console.log(formedData);
 
 	const Grid = React.memo(
 		formedData => {

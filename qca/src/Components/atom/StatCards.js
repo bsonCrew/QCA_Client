@@ -4,8 +4,6 @@ import Card from "./Card";
 
 export function StatCards({ data, status, classificationData }) {
 	const cardRows = data.rows;
-	console.log(classificationData);
-	console.log(data);
 
 	return (
 		<div className="flex flex-col justify-center pt-8">
@@ -13,6 +11,24 @@ export function StatCards({ data, status, classificationData }) {
 				<span className="text-2xl font-bold">지금 누리집은</span>
 			</div>
 			<div className="mt-4 flex flex-row flex-wrap justify-between">
+				{status === "success"
+					? Object.entries(classificationData).map(([key, val]) => {
+							return (
+								<React.Fragment key={key + " divider"}>
+									<span className="text-2xl w-full">{key}</span>
+									<Card
+										iconIdx={key.resultScore > 0 ? 0 : 1}
+										title={key}
+										key={key}
+										name={key}
+										status={status}
+										subheader={val.toString()}
+										// value={classificationData[key]}
+									/>
+								</React.Fragment>
+							);
+					  })
+					: null}
 				{status === "success"
 					? cardRows.map(row => {
 							return (
@@ -34,32 +50,6 @@ export function StatCards({ data, status, classificationData }) {
 							.map((row, idx) => {
 								return <Card key={row + idx} status={status} />;
 							})}
-			</div>
-		</div>
-	);
-}
-
-export default function MainCards({ data, status }) {
-	let cardData = Array(4).fill(0);
-
-	return (
-		<div className="flex flex-col justify-center pt-8">
-			<div className="w-full h-9">
-				<span className="text-2xl font-bold">지금 누리집은</span>
-			</div>
-			<div className="mt-4 flex flex-row flex-wrap justify-between">
-				{cardData.map((data, index) => {
-					return (
-						<Card
-							title={config.catchPhrase[index]}
-							iconIdx={index}
-							subheader={config.subheaderPhrase[index]}
-							bgcolor={config.warningcolors[index]}
-							key={index}
-							status={status}
-						/>
-					);
-				})}
 			</div>
 		</div>
 	);

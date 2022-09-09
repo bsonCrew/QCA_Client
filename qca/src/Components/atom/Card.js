@@ -47,10 +47,12 @@ export default function Card(props) {
 	const icons = [
 		<ThumbUpAltIcon fontSize="medium" />,
 		<DangerousIcon fontSize="small" />,
-		<AnnouncementIcon fontSize="small" />,
 		<ConstructionIcon fontSize="small" />,
+		<AnnouncementIcon fontSize="small" />,
 		<CheckIcon fontSize="small" />,
 	];
+
+	const bgcolors = config.warningcolors;
 
 	const [clicked, setClicked] = React.useState(false);
 	const handleClose = () => setClicked(false);
@@ -63,7 +65,12 @@ export default function Card(props) {
 				arrow
 			>
 				<Avatar
-					sx={{ width: 36, height: 36, zIndex: 2, bgcolor: props.bgcolor }}
+					sx={{
+						width: 36,
+						height: 36,
+						zIndex: 2,
+						bgcolor: bgcolors[props.iconIdx],
+					}}
 					className="-ml-4 -mr-8 z-2 -mb-6 hover:cursor-pointer"
 				>
 					{icons[props.iconIdx]}

@@ -12,7 +12,7 @@ const BeautifulBar = styled(`div`)({
 	backgroundImage: `linear-gradient(217deg, ${config.gradientcolor[0]}, ${config.gradientcolor[1]} 71.71%)`,
 });
 
-export default function Score({ status }) {
+export default function Score({ score, status }) {
 	const [open, setOpen] = React.useState(false);
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
@@ -27,21 +27,20 @@ export default function Score({ status }) {
 				aria-describedby="modal-modal-description"
 				className="w-full h-full flex justify-center items-center"
 			/>
+			<div className="w-full h-8">
+				<BeautifulBar className="rounded-t-xl" />
+			</div>
 			<>
-				<div className="w-full h-8">
-					<BeautifulBar className="rounded-t-xl" />
-				</div>
-
 				{status === "success" ? (
 					<div
 						role="button"
-						className="min-w-[280px] h-64 mt-3 rounded-lg shadow-lg hover:shadow-2xl flex flex-col p-4 px-8 item-middle align-middle justify-center"
+						className="min-w-[280px] h-64 rounded-b-xl shadow-lg hover:shadow-2xl flex flex-col p-4 px-8 item-middle align-middle justify-center"
 						onClick={handleOpen}
 					>
 						<span className="text-xl">총점</span>
 						<div className="flex justify-center">
 							<span className="min-w-[300px] text-center text-7xl">
-								89 / 100
+								{score} / 100
 							</span>
 						</div>
 

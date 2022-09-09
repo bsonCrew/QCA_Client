@@ -1,7 +1,7 @@
 import * as React from "react";
 import Stat from "../Components/atom/Stat";
 import Score from "../Components/atom/Score";
-import { StatCards } from "../Components/atom/Cards";
+import { StatCards } from "../Components/atom/StatCards";
 
 export default function AccessibilityView({ data, status }) {
 	const [solvedArr, setSolvedArr] = React.useState([]);

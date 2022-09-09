@@ -31,7 +31,14 @@
 	"polargraphcolor": ["#3DB2FF", "#FFEDDA", "#FFB830", "#E8F9FD", "#B6C1D9"],
 	"bargraphcolor": ["#3DB2FF", "#FFB830"],
 
-	"evaluation": ["호환성", "접근성", "개방성", "접속성"],
+	"evaluation": [
+		"호환성",
+		"접근성",
+		"개방성",
+		"접속성",
+		"개선해봐요",
+		"경고합니다"
+	],
 	"iconInfo": [
 		"전체",
 		"호환성",

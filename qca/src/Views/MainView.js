@@ -2,14 +2,17 @@ import Stat from "../Components/atom/Stat";
 import Score from "../Components/atom/Score";
 import PolarChart from "../Components/chart/PolarChart";
 import VeticalChart from "../Components/chart/VerticalChart";
-import MainCards from "../Components/atom/Cards";
+import MainGrid from "../Components/atom/MainGrid";
+import StepGrid from "../Components/atom/StepGrid";
 
-export default function MainView({ data, status }) {
+export default function MainView({ classification, data, status }) {
 	return (
 		<>
 			<div className="my-10 flex flex-row flex-wrap-reverse">
+				<StepGrid classification={classification} data={data} status={status} />
+
 				<div className="flex-4 rounded-2xl ">
-					<MainCards data={data} status={status} />
+					<MainGrid data={data} status={status} />
 				</div>
 				<div className="mt-28 flex-3 rounded-2xl">
 					<Score status={status} />
