@@ -11,7 +11,6 @@ import styled from "@emotion/styled";
 import config from "../../config.json";
 import Box from "@mui/material/Box";
 import Portal from "@mui/material/Portal";
-import { Divider } from "@mui/material";
 
 const BeautifulBar = styled(`div`)({
 	width: "100%",
@@ -36,10 +35,12 @@ const ClassStepper = ({ criteriaClass }) => {
 				className="flex-1 flex flex-row max-h-96"
 			>
 				{Object.entries(criteriaClass)
-					.filter(([subClass, val]) => subClass !== "resultScore")
+					.filter(
+						([subClass, val]) =>
+							subClass !== "resultScore" && subClass !== "totalScore"
+					)
 					.map(([subClass, val], idx) => (
 						<Step key={idx}>
-							{console.log(val)}
 							<StepLabel onClick={() => handleActiveStep(idx)}>
 								<span className="text-lg">
 									{subClass} : {val.resultScore}점
@@ -78,7 +79,10 @@ const SubClassStepper = ({ subClass }) => {
 				className="flex-1 flex-wrap "
 			>
 				{Object.entries(subClass)
-					.filter(([subClass, val]) => subClass !== "resultScore")
+					.filter(
+						([subClass, val]) =>
+							subClass !== "resultScore" && subClass !== "totalScore"
+					)
 					.map(([spec, val], idx) => (
 						<Step key={idx}>
 							<StepLabel onClick={() => handleActiveStep(idx)}>
@@ -90,7 +94,6 @@ const SubClassStepper = ({ subClass }) => {
 								<StepContent TransitionProps={{ unmountOnExit: false }}>
 									{spec !== "resultScore" && (
 										<div key={spec} className="w-full flex flex-col">
-											{/* {console.log(val)} */}
 											<span className="text-xl p-2">{val.title}</span>
 											{val.items.map((item, idx) => (
 												<div key={idx} className="flex flex-row">

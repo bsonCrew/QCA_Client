@@ -191,7 +191,7 @@ export default function SideBar({ targetWebsite, openView }) {
 				onMouseOut={closeDrawer}
 				className="bg-main"
 			>
-				<div className="mt-16 h-full rounded-2xl bg-main">
+				<div className="mt-16 h-full rounded-tr-2xl bg-main">
 					<List>
 						{[0, 1, 2, 3, 4].map(idx => {
 							return (

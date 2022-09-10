@@ -9,9 +9,12 @@ import {
 import { Doughnut } from "react-chartjs-2";
 import Skeleton from "@mui/material/Skeleton";
 
-export default function PolarChart({ status }) {
+export default function PolarChart({
+	status,
+	targetWebsite,
+	targetWebsiteScore,
+}) {
 	const DATA_COUNT = 5;
-	const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 100 };
 
 	// const labels = Date.months({ count: 7 });
 	const data = {

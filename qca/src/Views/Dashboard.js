@@ -50,6 +50,7 @@ export default function Dashboard() {
 									classification={classification}
 									data={data}
 									status={status}
+									targetWebsite={targetWebsite}
 								/>
 							}
 						/>

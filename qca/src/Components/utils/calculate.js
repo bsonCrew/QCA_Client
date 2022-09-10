@@ -53,6 +53,7 @@ const classify = lighthouseResults => {
 			});
 			subClass.resultScore = score;
 			subClass.totalScore = totalScore;
+			criteriaScore += score;
 		});
 		criteria.resultScore = criteriaScore;
 	});

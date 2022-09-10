@@ -11,7 +11,6 @@ import {
 import { Bar } from "react-chartjs-2";
 import Skeleton from "@mui/material/Skeleton";
 
-import result from "../../result.json";
 import config from "../../config.json";
 
 ChartJS.register(
@@ -23,38 +22,42 @@ ChartJS.register(
 	Legend
 );
 
-export const options = {
-	responsive: true,
-	plugins: {
-		legend: {
-			position: "top",
-		},
-		title: {
-			display: true,
-			text: "진단 위험",
-		},
-	},
-};
+const labels = config.iconInfo.slice(0, 5);
 
-const labels = config.evaluation;
-
-export const data = {
-	labels,
-	datasets: [
-		{
-			label: "비교군",
-			data: result.sampleLargeData,
-			backgroundColor: config.bargraphcolor[0],
+export default function VeticalChart({
+	status,
+	targetWebsite,
+	targetWebsiteScore,
+}) {
+	const options = {
+		responsive: true,
+		plugins: {
+			legend: {
+				position: "top",
+			},
+			title: {
+				display: true,
+				text: "총점 비교",
+			},
 		},
-		{
-			label: result.target,
-			data: result.sampleLargeData2,
-			backgroundColor: config.bargraphcolor[1],
-		},
-	],
-};
+	};
 
-export default function VeticalChart({ status }) {
+	const data = {
+		labels,
+		datasets: [
+			{
+				label: "비교군",
+				data: config.sampleLargeData,
+				backgroundColor: config.bargraphcolor[0],
+			},
+			{
+				label: targetWebsite,
+				data: targetWebsiteScore,
+				backgroundColor: config.bargraphcolor[1],
+			},
+		],
+	};
+	console.log(data, targetWebsiteScore);
 	return (
 		<div className="min-w-[400px] w-5/12 mt-4 px-4">
 			<span className="mt-8 text-2xl font-bold">
