@@ -1,10 +1,9 @@
 import Dialog from "@mui/material/Dialog";
 import Button from "@mui/material/Button";
 import config from "../../config.json";
-import MarkDown from "./Markdown";
+import MainExplanation from "../explanation/MainExplanation";
 
 export default function MainModal(props) {
-	const description = config.scoreDescription.description2;
 	return (
 		<Dialog
 			open={props.open}
@@ -18,32 +17,35 @@ export default function MainModal(props) {
 				"& .MuiDialog-container": {
 					"& .MuiPaper-root": {
 						width: "100%",
-						maxWidth: "xl",
+						maxWidth: "lg",
+						height: "100%",
+						marginBottom: -10,
+						marginTop: -10,
 					},
 				},
 			}}
 		>
-			<div className="w-fit h-[95vh]">
-				<div id="markdown" className="h-full overflow-y-scroll p-6">
-					{config.scoreDescription.title}
-					<p id="modal-modal-title" className="text-4xl pb-4 font-bold"></p>
-					<p id="modal-modal-description" className="text-lg pb-6">
-						{config.scoreDescription.description}
-					</p>
-					<Button
-						onClick={props.handleClose}
-						color="primary"
-						autoFocus
-						sx={{
-							width: 100,
-							backgroundColor: config.colors["gray-light"],
-							"&:hover": {
-								backgroundColor: config.colors.main,
-							},
-						}}
-					>
-						<p className="font-bold text-md">이해했어요</p>
-					</Button>
+			<Button
+				onClick={props.handleClose}
+				color="primary"
+				autoFocus
+				sx={{
+					width: 100,
+					backgroundColor: config.colors["gray-light"],
+					"&:hover": {
+						backgroundColor: config.colors.main,
+					},
+					position: "sticky",
+					left: "90%",
+					top: "2%",
+					// top: 30,
+				}}
+			>
+				<p className="font-bold text-md">이해했어요</p>
+			</Button>
+			<div className="w-fit">
+				<div className="-mt-12">
+					<MainExplanation />
 				</div>
 			</div>
 		</Dialog>

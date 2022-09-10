@@ -23,30 +23,29 @@ export default function ScoreModal(props) {
 				},
 			}}
 		>
-			<div className="w-fit h-[95vh]">
-				<div id="markdown" className="h-full overflow-y-scroll p-6">
-					{config.scoreDescription.title}
-					<p id="modal-modal-title" className="text-4xl pb-4 font-bold"></p>
-					<p id="modal-modal-description" className="text-lg pb-6">
-						{config.scoreDescription.description}
-					</p>
+			<div className="w-fit h-[95vh] p-16 overflow-y-scroll">
+				<p id="modal-modal-title" className="text-6xl pb-4 font-bold">
+					총점
+				</p>
 
-					{description.map((phrase, idx) => {
-						return (
-							<p
-								id={"modal-modal-description" + idx}
-								className="text-lg pb-1"
-								key={idx}
-							>
-								{phrase}
-							</p>
-						);
-					})}
+				<p id="modal-modal-description" className="text-xl font-semibold pb-6">
+					총점 계산 알고리즘은 아래와 같습니다.
+				</p>
+
+				<p className="text-lg pb-1">
+					<ol>
+						<li>총점은 전체 성능 점수와 성능 점수의 비율을 계산합니다.</li>
+						<li>전체 성능 점수는 성능 점수의 합계입니다.</li>
+					</ol>
+				</p>
+				<br />
+				<hr />
+				<div id="markdown" className="h-full ">
 					<MarkDown />
 					<Button
 						onClick={props.handleClose}
 						color="primary"
-						autoFocus
+						// autoFocus
 						sx={{
 							width: "25%",
 							backgroundColor: config.colors["gray-light"],

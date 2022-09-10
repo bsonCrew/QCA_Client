@@ -8,9 +8,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import HomeIcon from "@mui/icons-material/Home";
 import PrintIcon from "@mui/icons-material/Print";
 import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
-import CoPresentIcon from "@mui/icons-material/CoPresent";
+import DevicesIcon from "@mui/icons-material/Devices";
 import SmartButtonIcon from "@mui/icons-material/SmartButton";
-import ExploreIcon from "@mui/icons-material/Explore";
+import BoltIcon from "@mui/icons-material/Bolt";
 import HelpIcon from "@mui/icons-material/Help";
 import SummarizeIcon from "@mui/icons-material/Summarize";
 import ListItem from "@mui/material/ListItem";
@@ -76,10 +76,10 @@ const Drawer = styled(MuiDrawer, {
 const iconInfo = config.iconInfo;
 const iconImage = [
 	<SummarizeIcon />,
+	<DevicesIcon />,
 	<AccessibilityNewIcon />,
-	<CoPresentIcon />,
 	<SmartButtonIcon />,
-	<ExploreIcon />,
+	<BoltIcon />,
 	<HelpIcon />,
 	<PrintIcon />,
 	<HomeIcon />,

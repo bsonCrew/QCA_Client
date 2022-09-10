@@ -7,18 +7,20 @@ import useLighthouse from "../hooks/useLighthouse";
 export default function CompatibilityView({ data, status, compatibility }) {
 	// export default function CompatibilityView({ compatibility, data, status }) {
 	const [solvedArr, setSolvedArr] = React.useState([]);
+	console.log(compatibility);
+	console.log(data);
 
 	return (
 		<div className="my-10 pb-24 flex flex-row flex-wrap">
 			<div className="flex-4 rounded-2xl ">
 				<Stat status={status} data={data} />
-				<StatCards
-					classificationData={compatibility}
-					status={status}
-					data={data}
-					solvedArr={solvedArr}
-				/>
 			</div>
+			<StatCards
+				classificationData={compatibility}
+				status={status}
+				data={data}
+				solvedArr={solvedArr}
+			/>
 			<div className="flex-3 min-h-screen flex mt-28 flex-col rounded-2xl">
 				<Score status={status} score={compatibility.resultScore} />
 			</div>

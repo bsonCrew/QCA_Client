@@ -39,10 +39,11 @@ export default function ExplanationCard({
 				)}점입니다.`}</span>
 				<br />
 				<span className="text-lg leading-8">
-					{config.evaluation[0]} 점수는 {targetWebsiteScore[1]}점,{" "}
-					{config.evaluation[1]} 점수는 {targetWebsiteScore[2]}점,{" "}
-					{config.evaluation[2]} 점수는 {targetWebsiteScore[3]}점,{" "}
-					{config.evaluation[3]} 점수는 {targetWebsiteScore[4]}점입니다.
+					<b>{config.evaluation[0]}</b> 점수는 <b>{targetWebsiteScore[1]}점</b>,{" "}
+					<b>{config.evaluation[1]}</b> 점수는 <b>{targetWebsiteScore[2]}점</b>,{" "}
+					<b>{config.evaluation[2]}</b> 점수는 <b>{targetWebsiteScore[3]}점</b>,{" "}
+					<b>{config.evaluation[3]}</b> 점수는 <b>{targetWebsiteScore[4]}점</b>
+					입니다.
 				</span>
 			</div>
 		);
@@ -69,7 +70,7 @@ export default function ExplanationCard({
 					{status === "success" ? (
 						<div
 							role="button"
-							className="min-w-[280px] h-64 rounded-b-xl shadow-lg hover:shadow-2xl flex flex-col p-14 px-8 "
+							className="min-w-[280px] h-64 rounded-b-xl shadow-lg hover:shadow-2xl flex flex-col p-14 px-16 justify-center"
 							onClick={handleOpen}
 						>
 							<Display />
