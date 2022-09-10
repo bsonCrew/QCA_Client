@@ -11,6 +11,7 @@ export default function CompatibilityView({ data, status, compatibility }) {
 	return (
 		<div className="my-10 pb-24 flex flex-row flex-wrap">
 			<div className="flex-4 rounded-2xl ">
+				<Stat status={status} data={data} />
 				<StatCards
 					classificationData={compatibility}
 					status={status}
@@ -20,7 +21,6 @@ export default function CompatibilityView({ data, status, compatibility }) {
 			</div>
 			<div className="flex-3 min-h-screen flex mt-28 flex-col rounded-2xl">
 				<Score status={status} score={compatibility.resultScore} />
-				<Stat status={status} data={data} />
 			</div>
 		</div>
 	);

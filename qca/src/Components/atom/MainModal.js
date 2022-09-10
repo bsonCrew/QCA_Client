@@ -30,24 +30,12 @@ export default function MainModal(props) {
 					<p id="modal-modal-description" className="text-lg pb-6">
 						{config.scoreDescription.description}
 					</p>
-
-					{description.map((phrase, idx) => {
-						return (
-							<p
-								id={"modal-modal-description" + idx}
-								className="text-lg pb-1"
-								key={idx}
-							>
-								{phrase}
-							</p>
-						);
-					})}
 					<Button
 						onClick={props.handleClose}
 						color="primary"
 						autoFocus
 						sx={{
-							width: "25%",
+							width: 100,
 							backgroundColor: config.colors["gray-light"],
 							"&:hover": {
 								backgroundColor: config.colors.main,

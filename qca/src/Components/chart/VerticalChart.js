@@ -30,14 +30,20 @@ export default function VeticalChart({
 	targetWebsiteScore,
 }) {
 	const options = {
+		indexAxis: "y",
+		elements: {
+			bar: {
+				borderWidth: 2,
+			},
+		},
 		responsive: true,
 		plugins: {
 			legend: {
-				position: "top",
+				position: "right",
 			},
 			title: {
 				display: true,
-				text: "총점 비교",
+				text: `비교군 vs ${targetWebsite}`,
 			},
 		},
 	};
@@ -59,15 +65,19 @@ export default function VeticalChart({
 	};
 	console.log(data, targetWebsiteScore);
 	return (
-		<div className="min-w-[400px] w-5/12 mt-4 px-4">
+		<div className="min-w-[400px] w-full mt-4 px-4">
 			<span className="mt-8 text-2xl font-bold">
 				다른 사이트들은 이렇습니다
 			</span>
-			{status === "success" ? (
-				<Bar height={280} options={options} data={data} />
-			) : (
-				<Skeleton sx={{ width: "98%", height: 800, marginTop: -14 }} />
-			)}
+			<div className="flex">
+				{status === "success" ? (
+					<div className="flex flex-row align-middle justify-center">
+						<Bar width={1100} height={500} options={options} data={data} />
+					</div>
+				) : (
+					<Skeleton sx={{ width: 1000, height: 400, marginTop: -6 }} />
+				)}
+			</div>
 		</div>
 	);
 }

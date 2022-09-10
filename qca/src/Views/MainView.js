@@ -1,8 +1,7 @@
 import Stat from "../Components/atom/Stat";
 import Score from "../Components/atom/Score";
-import PolarChart from "../Components/chart/PolarChart";
 import VeticalChart from "../Components/chart/VerticalChart";
-import MainGrid from "../Components/atom/MainGrid";
+import ExplanationCard from "../Components/atom/ExplanationCard";
 import StepGrid from "../Components/atom/StepGrid";
 
 export default function MainView({
@@ -24,21 +23,20 @@ export default function MainView({
 
 	return (
 		<>
-			<div className="my-10 flex flex-row flex-wrap-reverse">
-				<StepGrid classification={classification} data={data} status={status} />
+			<div className="my-10 flex flex-row flex-wrap">
 				<div className="flex-4 rounded-2xl ">
-					<MainGrid data={data} status={status} />
+					<ExplanationCard
+						targetWebsite={targetWebsite}
+						targetWebsiteScore={targetWebsiteScore}
+						status={status}
+					/>
 				</div>
 				<div className="mt-28 flex-3 rounded-2xl">
-					<Score status={status} />
+					<Score status={status} score={Math.floor(targetWebsiteScore[0])} />
 				</div>
+				<StepGrid classification={classification} data={data} status={status} />
 			</div>
-			<div className="my-12 flex flex-wrap justify-between">
-				<PolarChart
-					status={status}
-					targetWebsite={targetWebsite}
-					targetWebsiteScore={targetWebsiteScore}
-				/>
+			<div className="my-10 flex flex-wrap">
 				<VeticalChart
 					status={status}
 					targetWebsite={targetWebsite}

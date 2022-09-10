@@ -11,20 +11,40 @@ const BeautifulBar = styled(`div`)({
 	backgroundImage: `linear-gradient(143deg, ${config.gradientcolor[0]}, ${config.gradientcolor[1]} 71.71%)`,
 });
 
-export default function MainGrid({ data, status }) {
+export default function ExplanationCard({
+	targetWebsite,
+	targetWebsiteScore,
+	status,
+}) {
 	const [open, setOpen] = React.useState(false);
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
 
-	let cardData = Array(4).fill(0);
+	const catchPhrase = score => {
+		if (score > 80) return config.scorePhrase[0];
+		else if (score > 60) return config.scorePhrase[1];
+		else if (score > 40) return config.scorePhrase[2];
+		else if (score > 20) return config.scorePhrase[3];
+		else return config.scorePhrase[4];
+	};
 
 	const Display = () => {
 		return (
-			<>
-				<div className="w-full h-64  shadow-lg rounded-b-xl hover:shadow-2xl bg-blue">
-					<div>fish</div>
-				</div>
-			</>
+			<div className="w-full leading-4">
+				<span className="text-4xl font-semibold">{catchPhrase()}</span>
+				<br />
+				<br />
+				<span className="text-lg leading-8">{`${targetWebsite}의 총점은 ${Math.floor(
+					targetWebsiteScore[0]
+				)}점입니다.`}</span>
+				<br />
+				<span className="text-lg leading-8">
+					{config.evaluation[0]} 점수는 {targetWebsiteScore[1]}점,{" "}
+					{config.evaluation[1]} 점수는 {targetWebsiteScore[2]}점,{" "}
+					{config.evaluation[2]} 점수는 {targetWebsiteScore[3]}점,{" "}
+					{config.evaluation[3]} 점수는 {targetWebsiteScore[4]}점입니다.
+				</span>
+			</div>
 		);
 	};
 
@@ -49,9 +69,11 @@ export default function MainGrid({ data, status }) {
 					{status === "success" ? (
 						<div
 							role="button"
-							className="min-w-[280px] h-64 rounded-b-xl shadow-lg hover:shadow-2xl flex flex-col p-4 px-8 item-middle align-middle justify-center"
+							className="min-w-[280px] h-64 rounded-b-xl shadow-lg hover:shadow-2xl flex flex-col p-14 px-8 "
 							onClick={handleOpen}
-						></div>
+						>
+							<Display />
+						</div>
 					) : (
 						<Skeleton variant="rounded" height={270} />
 					)}
