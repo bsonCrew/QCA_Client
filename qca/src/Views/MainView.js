@@ -28,6 +28,9 @@ function MainView({
 				<div className="flex-2 min-w-[280px]">
 					<Score status={status} score={Math.floor(targetWebsiteScore[0])} />
 				</div>
+				<div className="w-full h-9 mt-20 mb-4">
+					<span className="text-2xl font-bold">지금 누리집은</span>
+				</div>
 				<StepGrid classification={classification} data={data} status={status} />
 			</div>
 			<VeticalChart

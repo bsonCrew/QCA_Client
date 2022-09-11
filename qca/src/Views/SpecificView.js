@@ -90,8 +90,11 @@ const SpecCard = ({ subClass, status }) => {
 export default function SpecificView({ data, status, criteriaClass }) {
 	const [solvedArr, setSolvedArr] = React.useState([]);
 	return (
-		<div className="my-2 pb-2 flex flex-col flex-wrap">
-			<div className="flex-3 flex mt-28 flex-col rounded-2xl">
+		<div className="my-10 pb-2 flex flex-col flex-wrap">
+			<div className="flex-3 flex flex-col rounded-2xl">
+				<div className="w-full h-9 mt-12 mb-14">
+					<span className="text-2xl font-bold">지금 누리집은</span>
+				</div>
 				<Score status={status} score={criteriaClass?.resultScore} />
 			</div>
 			<div className="flex-4 mt-24 rounded-2xl ">
