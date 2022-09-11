@@ -68,10 +68,10 @@ export default function SpecificView({ data, status, criteriaClass }) {
 	return (
 		<div className="my-2 pb-2 flex flex-col flex-wrap">
 			<div className="flex-3 flex mt-28 flex-col rounded-2xl">
+				{console.log(criteriaClass)}
 				<Score status={status} score={criteriaClass.resultScore} />
 			</div>
 			<div className="flex-4 mt-24 rounded-2xl ">
-				{console.log(status)}
 				{status === "success" ? (
 					<CriteriaCard status={status} criteriaClass={criteriaClass} />
 				) : null}

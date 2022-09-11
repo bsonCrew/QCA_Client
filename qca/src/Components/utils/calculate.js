@@ -1,13 +1,13 @@
 import audits from "../../audits.json";
 
 const classify = lighthouseResults => {
-	const classifiedLighthouse = [[], [], [], []];
 	const createClassifyMap = mapId => {
 		const criteriasObj = {};
 		Object.keys(audits.auditMappings[mapId])
 			.map(row => {
 				const rowItem = audits.auditMappings[mapId][row];
 				Object.keys(rowItem).forEach(r => {
+					if (Number.isInteger(rowItem[r])) return criteriasObj;
 					rowItem[r].scores = [];
 					rowItem[r].items = [];
 					rowItem[r].resultScore = 0;
@@ -65,6 +65,7 @@ const classify = lighthouseResults => {
 };
 
 const calcByFunctionType = spec => {
+	if (Number.isInteger(spec)) return 0;
 	const nullOneCount = spec.scores.filter(
 		score => score === 1 || score === null
 	).length;

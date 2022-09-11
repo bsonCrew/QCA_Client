@@ -15,22 +15,34 @@ export default function Dashboard() {
 	const [targetWebsite, setTargetWebsite] = React.useState(
 		location.state?.targetWebsite || localStorage.getItem("targetWebsite") || ""
 	);
-	let [status, data, classification] = useLighthouse(targetWebsite);
-	const [
-		accessibility,
-		compatibility,
-		connectivity,
-		openness,
-		enhancement,
-		warning,
-	] = status === "success" ? classification : [0, 0, 0, 0, 0, 0];
+	let [status, lighthouseData, classification] = useLighthouse(targetWebsite);
+	const [classValues, setClassValues] = React.useState({
+		accessibility: 0,
+		compatibility: 0,
+		connectivity: 0,
+		openness: 0,
+		enhancement: 0,
+		warning: 0,
+	});
 
 	React.useEffect(() => {
-		if (targetWebsite !== "")
-			localStorage.setItem("targetWebsite", targetWebsite);
-	}, [targetWebsite]);
+		if (status === "success") {
+			setClassValues(classification);
+			localStorage.setItem(
+				targetWebsite,
+				JSON.stringify({
+					classification: classification,
+					lighthouseData: lighthouseData,
+				})
+			);
+		}
+	}, [status, setClassValues, classification]);
 
-	console.log(status);
+	React.useEffect(() => {
+		if (targetWebsite !== "") {
+			localStorage.setItem("targetWebsite", targetWebsite);
+		}
+	}, [targetWebsite]);
 
 	const openView = "/dashboard/" + useParams()["*"];
 
@@ -45,7 +57,7 @@ export default function Dashboard() {
 							element={
 								<MainView
 									classification={classification}
-									data={data}
+									data={lighthouseData}
 									status={status}
 									targetWebsite={targetWebsite}
 								/>
@@ -55,9 +67,9 @@ export default function Dashboard() {
 							path="/compatibility"
 							element={
 								<SpecificView
-									data={data}
+									data={lighthouseData}
 									status={status}
-									criteriaClass={compatibility}
+									criteriaClass={classValues.compatibility}
 								/>
 							}
 						/>
@@ -65,9 +77,9 @@ export default function Dashboard() {
 							path="/accessibility"
 							element={
 								<SpecificView
-									data={data}
+									data={lighthouseData}
 									status={status}
-									criteriaClass={accessibility}
+									criteriaClass={classValues.accessibility}
 								/>
 							}
 						/>
@@ -75,9 +87,9 @@ export default function Dashboard() {
 							path="/connectivity"
 							element={
 								<SpecificView
-									data={data}
+									data={lighthouseData}
 									status={status}
-									criteriaClass={connectivity}
+									criteriaClass={classValues.connectivity}
 								/>
 							}
 						/>
@@ -85,9 +97,9 @@ export default function Dashboard() {
 							path="/openness"
 							element={
 								<SpecificView
-									data={data}
+									data={lighthouseData}
 									status={status}
-									criteriaClass={openness}
+									criteriaClass={classValues.openness}
 								/>
 							}
 						/>

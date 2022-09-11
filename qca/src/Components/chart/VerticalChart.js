@@ -63,7 +63,6 @@ export default function VeticalChart({
 			},
 		],
 	};
-	console.log(data, targetWebsiteScore);
 	return (
 		<div className="min-w-[400px] w-full mt-4 px-4">
 			<span className="mt-8 text-2xl font-bold">
@@ -75,7 +74,7 @@ export default function VeticalChart({
 						<Bar width={1100} height={500} options={options} data={data} />
 					</div>
 				) : (
-					<Skeleton sx={{ width: 1000, height: 400, marginTop: -6 }} />
+					<Skeleton sx={{ width: "100%", height: 400, marginTop: -6 }} />
 				)}
 			</div>
 		</div>

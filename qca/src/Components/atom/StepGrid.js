@@ -122,6 +122,8 @@ export default function StepGrid({ classification, data, status }) {
 		} else setActiveStep(idx);
 	};
 
+	console.log(status);
+
 	return (
 		<div className="w-full flex flex-col justify-center pt-8">
 			<div className="flex flex-col w-full max-w-full pr-4 mt-11 ">
@@ -129,42 +131,50 @@ export default function StepGrid({ classification, data, status }) {
 					<BeautifulBar className="rounded-t-xl" />
 				</div>
 				<div className="w-full flex flex-row flex-wrap">
-					<div className="flex-2">
-						{status === "success" ? (
-							<Stepper
-								activeStep={activeStep}
-								orientation="vertical"
-								connector={<StepConnector />}
-							>
-								{classification.map((classification, idx) => (
-									<Step key={idx}>
-										<StepLabel
-											onClick={() => handleActiveStep(idx)}
-											sx={{
-												"&:hover": {
-													color: "primary.main",
-													cursor: "pointer",
-												},
-											}}
-										>
-											<span className="text-lg">
-												{config.evaluation[idx]}: {classification.resultScore}{" "}
-												점
-											</span>
-										</StepLabel>
-										<Portal container={subClassContainer.current}>
-											<StepContent TransitionProps={{ unmountOnExit: false }}>
-												<ClassStepper criteriaClass={classification} />
-											</StepContent>
-										</Portal>
-									</Step>
-								))}
-							</Stepper>
-						) : (
-							<Skeleton variant="rounded" height={270} />
-						)}
-					</div>
-					<Box className="flex-10 flex-wrap" ref={subClassContainer}></Box>
+					{status === "success" ? (
+						<>
+							<div className="flex-2">
+								<Stepper
+									activeStep={activeStep}
+									orientation="vertical"
+									connector={<StepConnector />}
+								>
+									{classification.map((classification, idx) => (
+										<Step key={idx}>
+											<StepLabel
+												onClick={() => handleActiveStep(idx)}
+												sx={{
+													"&:hover": {
+														color: "primary.main",
+														cursor: "pointer",
+													},
+												}}
+											>
+												<span className="text-lg">
+													{config.evaluation[idx]}: {classification.resultScore}{" "}
+													점
+												</span>
+											</StepLabel>
+											<Portal container={subClassContainer.current}>
+												<StepContent TransitionProps={{ unmountOnExit: false }}>
+													<ClassStepper criteriaClass={classification} />
+												</StepContent>
+											</Portal>
+										</Step>
+									))}
+								</Stepper>
+							</div>
+							<Box className="flex-10 flex-wrap" ref={subClassContainer}></Box>
+						</>
+					) : (
+						<Skeleton
+							variant="rounded"
+							sx={{
+								width: "100%",
+							}}
+							height={270}
+						/>
+					)}
 				</div>
 			</div>
 		</div>

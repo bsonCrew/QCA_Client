@@ -69,24 +69,19 @@ const nonUseAttributes = [
 const useLighthouse = website => {
 	const [status, setStatus] = React.useState("idle");
 	const [data, setData] = React.useState([]);
-	const [lighthouseResults, setLighthouseResults] = React.useState(
-		JSON.parse(localStorage.getItem(website))?.lighthouseResults || {}
-	);
-	const [classification, setClassification] = React.useState(
-		JSON.parse(localStorage.getItem(website))?.classification || {}
-	);
+	const [lighthouseData, setLighthouseData] = React.useState({});
+	const [classification, setClassification] = React.useState({});
 	const postQuery = "http://localhost:3001/lighthouse";
 	// const postQuery = "http://58.124.108.42:11209/api/control";
+
 	React.useEffect(() => {
-		if (!postQuery) return;
-
+		setStatus("loading");
 		const checkLocalStorage = () => {
-			if (JSON.parse(localStorage.getItem(website)) !== null) {
+			if (localStorage.getItem(website) !== null) {
 				const localData = JSON.parse(localStorage.getItem(website));
-				setStatus("success");
+				console.log(localData);
 				setClassification(localData.classification);
-				setLighthouseResults(localData.lighthouseResults);
-
+				setLighthouseData(localData.lighthouseData);
 				return true;
 			}
 			return false;
@@ -106,39 +101,40 @@ const useLighthouse = website => {
 					}),
 				});
 				const data = await response.json();
-				setStatus("fetched");
 				setData(data);
 				return true;
 			} catch (error) {
 				console.info(error);
 				setStatus("error");
-				return null;
+				return false;
 			}
 		};
 
-		if (!checkLocalStorage()) {
-			fetchWithPost();
+		if (checkLocalStorage()) {
+			setStatus("success");
+			console.log("localStorage hit");
+		} else {
+			fetchWithPost().then(res => {
+				if (res) {
+					setStatus("fetched");
+				}
+			});
 		}
-	}, [website]);
+	}, []);
 
 	React.useEffect(() => {
-		if (
-			status === "fetched" &&
-			(lighthouseResults === undefined ||
-				lighthouseResults.length === undefined)
-		) {
+		console.log("useEffect status", status);
+		if (status === "fetched" && data.length !== 0) {
 			let rows = [];
-			for (const [, rowValue] of Object.entries(data)) {
-				rows.push({ ...rowValue });
-			}
-			// Filter out non-use attributes
-			rows = rows.filter(row => {
-				return !nonUseAttributes.includes(row.id);
+			Object.entries(data).forEach(([, rowValue]) => {
+				if (!nonUseAttributes.includes(rowValue.id)) {
+					rows.push(rowValue);
+				}
 			});
-			setStatus("calculating");
-
 			const res = classify(rows);
-			setLighthouseResults({
+			setClassification(res);
+
+			setLighthouseData({
 				columns: columns,
 				rows: rows,
 				initialState: {
@@ -150,28 +146,10 @@ const useLighthouse = website => {
 				},
 			});
 			setStatus("success");
-
-			localStorage.setItem(
-				website,
-				JSON.stringify({
-					classification: res,
-					lighthouseResults: {
-						columns: columns,
-						rows: rows,
-						initialState: {
-							columns: {
-								columnVisibilityModel: {
-									id: false,
-								},
-							},
-						},
-					},
-				})
-			);
 		}
-	}, [website, data, status, lighthouseResults]);
+	}, [status, website, data, classification]);
 
-	return [status, lighthouseResults, classification];
+	return [status, lighthouseData, classification];
 };
 
 export default useLighthouse;
