@@ -6,6 +6,25 @@ import useLighthouse from "../hooks/useLighthouse";
 import Card from "../Components/atom/Card";
 import config from "../config.json";
 
+const ScoreView = ({ name, score, totalScore }) => {
+	console.log(name, score, totalScore);
+	if (name === "개선해봐요" || name === "속도 향상 방안") {
+		return (
+			<div>
+				{totalScore !== 0 ? `${name} : ${score} / ${totalScore}점` : `${name}`}
+			</div>
+		);
+	} else {
+		return (
+			<div>
+				{totalScore !== 0
+					? `${name} : ${score} / ${totalScore}점`
+					: `${name}: 시범 평가 항목입니다.`}
+			</div>
+		);
+	}
+};
+
 const CriteriaCard = ({ criteriaClass, status }) =>
 	Object.entries(criteriaClass)
 		.filter(([criteria, _]) => criteria !== "resultScore")
@@ -14,8 +33,11 @@ const CriteriaCard = ({ criteriaClass, status }) =>
 				<div key={criteria}>
 					<div className="my-6">
 						<span className="font-bold text-3xl ml-6">
-							{criteria} : {criteriaVal.resultScore} / {criteriaVal.totalScore}
-							점
+							<ScoreView
+								name={criteria}
+								score={criteriaVal.resultScore}
+								totalScore={criteriaVal.totalScore}
+							/>
 						</span>
 					</div>
 					<div className="flex flex-col">
@@ -35,8 +57,11 @@ const SubClassCard = ({ criteriaValue, status }) =>
 				<div key={subClass} className="flex flex-col mx-2">
 					<div className="my-2">
 						<span className="text-xl ml-4">
-							{subClassVal.title} : {subClassVal.resultScore} /{" "}
-							{subClassVal.totalScore}점
+							<ScoreView
+								name={subClassVal.title}
+								score={subClassVal.resultScore}
+								totalScore={subClassVal.totalScore}
+							/>
 						</span>
 					</div>
 					<div className="flex flex-row flex-wrap">
