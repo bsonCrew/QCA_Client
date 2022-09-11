@@ -122,8 +122,6 @@ export default function StepGrid({ classification, data, status }) {
 		} else setActiveStep(idx);
 	};
 
-	console.log(status);
-
 	return (
 		<div className="w-full flex flex-col justify-center pt-8">
 			<div className="flex flex-col w-full max-w-full pr-4 mt-11 ">

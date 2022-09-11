@@ -79,7 +79,6 @@ const useLighthouse = website => {
 		const checkLocalStorage = () => {
 			if (localStorage.getItem(website) !== null) {
 				const localData = JSON.parse(localStorage.getItem(website));
-				console.log(localData);
 				setClassification(localData.classification);
 				setLighthouseData(localData.lighthouseData);
 				return true;
@@ -112,7 +111,6 @@ const useLighthouse = website => {
 
 		if (checkLocalStorage()) {
 			setStatus("success");
-			console.log("localStorage hit");
 		} else {
 			fetchWithPost().then(res => {
 				if (res) {
@@ -123,7 +121,6 @@ const useLighthouse = website => {
 	}, []);
 
 	React.useEffect(() => {
-		console.log("useEffect status", status);
 		if (status === "fetched" && data.length !== 0) {
 			let rows = [];
 			Object.entries(data).forEach(([, rowValue]) => {

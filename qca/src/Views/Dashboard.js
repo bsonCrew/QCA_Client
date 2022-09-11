@@ -16,18 +16,10 @@ export default function Dashboard() {
 		location.state?.targetWebsite || localStorage.getItem("targetWebsite") || ""
 	);
 	let [status, lighthouseData, classification] = useLighthouse(targetWebsite);
-	const [classValues, setClassValues] = React.useState({
-		accessibility: 0,
-		compatibility: 0,
-		connectivity: 0,
-		openness: 0,
-		enhancement: 0,
-		warning: 0,
-	});
+	console.log(status);
 
 	React.useEffect(() => {
 		if (status === "success") {
-			setClassValues(classification);
 			localStorage.setItem(
 				targetWebsite,
 				JSON.stringify({
@@ -36,7 +28,7 @@ export default function Dashboard() {
 				})
 			);
 		}
-	}, [status, setClassValues, classification]);
+	}, [status, classification]);
 
 	React.useEffect(() => {
 		if (targetWebsite !== "") {
@@ -69,7 +61,7 @@ export default function Dashboard() {
 								<SpecificView
 									data={lighthouseData}
 									status={status}
-									criteriaClass={classValues.compatibility}
+									criteriaClass={classification[0]}
 								/>
 							}
 						/>
@@ -79,7 +71,7 @@ export default function Dashboard() {
 								<SpecificView
 									data={lighthouseData}
 									status={status}
-									criteriaClass={classValues.accessibility}
+									criteriaClass={classification[1]}
 								/>
 							}
 						/>
@@ -89,7 +81,7 @@ export default function Dashboard() {
 								<SpecificView
 									data={lighthouseData}
 									status={status}
-									criteriaClass={classValues.connectivity}
+									criteriaClass={classification[2]}
 								/>
 							}
 						/>
@@ -99,7 +91,7 @@ export default function Dashboard() {
 								<SpecificView
 									data={lighthouseData}
 									status={status}
-									criteriaClass={classValues.openness}
+									criteriaClass={classification[3]}
 								/>
 							}
 						/>
