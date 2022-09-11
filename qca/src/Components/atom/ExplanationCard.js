@@ -50,11 +50,8 @@ export default function ExplanationCard({
 	};
 
 	return (
-		<div className="flex flex-col justify-center pt-8">
-			<div className="w-full h-9">
-				<span className="text-2xl font-bold">지금 누리집은</span>
-			</div>
-			<div className="max-w-full pr-4 mt-11 ">
+		<div className="flex flex-col justify-center">
+			<div className="max-w-full pr-4">
 				<MainModal
 					open={open}
 					handleClose={handleClose}

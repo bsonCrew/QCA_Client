@@ -75,7 +75,6 @@ const useLighthouse = website => {
 	const [classification, setClassification] = React.useState(
 		JSON.parse(localStorage.getItem(website))?.classification || {}
 	);
-
 	const postQuery = "http://localhost:3001/lighthouse";
 	// const postQuery = "http://58.124.108.42:11209/api/control";
 	React.useEffect(() => {
@@ -139,8 +138,6 @@ const useLighthouse = website => {
 			setStatus("calculating");
 
 			const res = classify(rows);
-			setClassification(res);
-
 			setLighthouseResults({
 				columns: columns,
 				rows: rows,

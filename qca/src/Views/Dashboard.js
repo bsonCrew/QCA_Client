@@ -5,7 +5,7 @@ import MainView from "./MainView";
 import useLighthouse from "../hooks/useLighthouse";
 import { Routes, Route, useParams, useLocation } from "react-router-dom";
 
-import CompatibilityView from "./CompatibilityView";
+import SpecificView from "./SpecificView";
 import AccessibilityView from "./AccessibilityView";
 import ConnectivityView from "./ConnectivityView";
 import OpennessView from "./OpennessView";
@@ -15,7 +15,6 @@ export default function Dashboard() {
 	const [targetWebsite, setTargetWebsite] = React.useState(
 		location.state?.targetWebsite || localStorage.getItem("targetWebsite") || ""
 	);
-	console.log(targetWebsite);
 	let [status, data, classification] = useLighthouse(targetWebsite);
 	const [
 		accessibility,
@@ -25,8 +24,6 @@ export default function Dashboard() {
 		enhancement,
 		warning,
 	] = status === "success" ? classification : [0, 0, 0, 0, 0, 0];
-
-	console.log(status, data, classification);
 
 	React.useEffect(() => {
 		if (targetWebsite !== "")
@@ -57,24 +54,42 @@ export default function Dashboard() {
 						<Route
 							path="/compatibility"
 							element={
-								<CompatibilityView
+								<SpecificView
 									data={data}
 									status={status}
-									compatibility={compatibility}
+									criteriaClass={compatibility}
 								/>
 							}
 						/>
 						<Route
 							path="/accessibility"
-							element={<AccessibilityView data={data} status={status} />}
+							element={
+								<SpecificView
+									data={data}
+									status={status}
+									criteriaClass={accessibility}
+								/>
+							}
 						/>
 						<Route
 							path="/connectivity"
-							element={<ConnectivityView data={data} status={status} />}
+							element={
+								<SpecificView
+									data={data}
+									status={status}
+									criteriaClass={connectivity}
+								/>
+							}
 						/>
 						<Route
 							path="/openness"
-							element={<OpennessView data={data} status={status} />}
+							element={
+								<SpecificView
+									data={data}
+									status={status}
+									criteriaClass={openness}
+								/>
+							}
 						/>
 					</Routes>
 				</div>

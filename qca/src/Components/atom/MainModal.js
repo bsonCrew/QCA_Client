@@ -44,9 +44,7 @@ export default function MainModal(props) {
 				<p className="font-bold text-md">이해했어요</p>
 			</Button>
 			<div className="w-fit">
-				<div className="-mt-12">
-					<MainExplanation />
-				</div>
+				<MainExplanation className="-mt-12" />
 			</div>
 		</Dialog>
 	);

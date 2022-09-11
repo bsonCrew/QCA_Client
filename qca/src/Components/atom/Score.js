@@ -18,7 +18,7 @@ export default function Score({ score, status }) {
 	const handleClose = () => setOpen(false);
 
 	return (
-		<div className="max-w-full mx-6 ">
+		<div className="max-w-full mx-6">
 			<ScoreModal
 				open={open}
 				handleClose={handleClose}
@@ -28,30 +28,29 @@ export default function Score({ score, status }) {
 				className="w-full h-full flex justify-center items-center"
 			/>
 			<div className="w-full h-8">
-				<BeautifulBar className="rounded-t-xl" />
+				<BeautifulBar className="rounded-t-xl w-full h-8" />
 			</div>
-			<>
-				{status === "success" ? (
-					<div
-						role="button"
-						className="min-w-[280px] h-64 rounded-b-xl shadow-lg hover:shadow-2xl flex flex-col p-4 px-8 item-middle align-middle justify-center"
-						onClick={handleOpen}
-					>
-						<span className="text-xl">총점</span>
-						<div className="flex justify-center">
-							<span className="min-w-[300px] text-center text-7xl">
-								{score} / 100
-							</span>
-						</div>
 
-						<span className="pt-4 flex justify-end">
-							<Button size="small">점수란?</Button>
+			{status === "success" ? (
+				<div
+					role="button"
+					className="min-w-[280px] h-64 rounded-b-xl shadow-lg hover:shadow-2xl flex flex-col p-4 px-24 item-middle align-middle justify-center"
+					onClick={handleOpen}
+				>
+					<span className="text-xl">총점</span>
+					<div className="flex justify-center">
+						<span className="min-w-[300px] text-center text-7xl">
+							{score} / 100
 						</span>
 					</div>
-				) : (
-					<Skeleton variant="rounded" height={270} />
-				)}
-			</>
+
+					<span className="pt-4 flex justify-end">
+						<Button size="small">점수란?</Button>
+					</span>
+				</div>
+			) : (
+				<Skeleton variant="rounded" height={270} />
+			)}
 		</div>
 	);
 }

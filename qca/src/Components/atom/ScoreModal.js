@@ -23,6 +23,24 @@ export default function ScoreModal(props) {
 				},
 			}}
 		>
+			<Button
+				onClick={props.handleClose}
+				color="primary"
+				autoFocus
+				sx={{
+					width: 100,
+					backgroundColor: config.colors["gray-light"],
+					"&:hover": {
+						backgroundColor: config.colors.main,
+					},
+					position: "sticky",
+					left: "90%",
+					top: "2%",
+					// top: 30,
+				}}
+			>
+				<p className="font-bold text-md">이해했어요</p>
+			</Button>
 			<div className="w-fit h-[95vh] p-16 overflow-y-scroll">
 				<p id="modal-modal-title" className="text-6xl pb-4 font-bold">
 					총점
@@ -42,20 +60,6 @@ export default function ScoreModal(props) {
 				<hr />
 				<div id="markdown" className="h-full ">
 					<MarkDown />
-					<Button
-						onClick={props.handleClose}
-						color="primary"
-						// autoFocus
-						sx={{
-							width: "25%",
-							backgroundColor: config.colors["gray-light"],
-							"&:hover": {
-								backgroundColor: config.colors.main,
-							},
-						}}
-					>
-						<p className="font-bold text-md">이해했어요</p>
-					</Button>
 				</div>
 			</div>
 		</Dialog>

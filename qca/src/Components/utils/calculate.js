@@ -1,6 +1,7 @@
 import audits from "../../audits.json";
 
 const classify = lighthouseResults => {
+	const classifiedLighthouse = [[], [], [], []];
 	const createClassifyMap = mapId => {
 		const criteriasObj = {};
 		Object.keys(audits.auditMappings[mapId])
@@ -44,6 +45,7 @@ const classify = lighthouseResults => {
 
 	criterias.forEach(criteria => {
 		let criteriaScore = 0;
+		let criteriaTotalScore = 0;
 		Object.values(criteria).forEach(subClass => {
 			let score = 0;
 			let totalScore = 0;
@@ -54,8 +56,10 @@ const classify = lighthouseResults => {
 			subClass.resultScore = score;
 			subClass.totalScore = totalScore;
 			criteriaScore += score;
+			criteriaTotalScore += totalScore;
 		});
 		criteria.resultScore = criteriaScore;
+		// criteria.totalScore = criteriaTotalScore;
 	});
 	return criterias;
 };
