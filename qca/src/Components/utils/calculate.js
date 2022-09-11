@@ -3,6 +3,12 @@ import audits from "../../audits.json";
 const classify = lighthouseResults => {
 	const createClassifyMap = mapId => {
 		const criteriasObj = {};
+		try {
+			Object.keys(audits.auditMappings[mapId]);
+		} catch {
+			console.log(mapId);
+		}
+
 		Object.keys(audits.auditMappings[mapId])
 			.map(row => {
 				const rowItem = audits.auditMappings[mapId][row];
@@ -31,6 +37,9 @@ const classify = lighthouseResults => {
 	].map(criteria => createClassifyMap(criteria));
 
 	lighthouseResults.forEach(lr => {
+		console.log(audits.audits[lr.id].class);
+		console.log(audits.audits[lr.id].subClass);
+		console.log(audits.audits[lr.id].spec);
 		const spec =
 			audits.auditMappings[audits.audits[lr.id].class][
 				audits.audits[lr.id].subClass

@@ -1,6 +1,10 @@
 import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { darken, lighten } from "@mui/material/styles";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+import Snackbar from "@mui/material/Snackbar";
 
 import Box from "@mui/material/Box";
 import Skeleton from "@mui/material/Skeleton";
@@ -18,66 +22,108 @@ function StyledDatagrid({ data }) {
 		initialState: data["initialState"],
 	};
 
+	const [snackbarOpen, setSnackbarOpen] = React.useState(false);
+
+	const handleClick = item => {
+		setSnackbarOpen(true);
+	};
+
+	const handleClose = (e, reason) => {
+		if (reason === "clickaway") {
+			return;
+		}
+		setSnackbarOpen(false);
+	};
+
+	const action = (
+		<React.Fragment>
+			<Button color="secondary" size="small" onClick={handleClose}>
+				UNDO
+			</Button>
+			<IconButton
+				size="small"
+				aria-label="close"
+				color="inherit"
+				onClick={handleClose}
+			>
+				<CloseIcon fontSize="small" />
+			</IconButton>
+		</React.Fragment>
+	);
+
 	return (
-		<Box
-			sx={{
-				height: "100%",
-				width: "100%",
-				"& .super-app-theme--Open": {
-					bgcolor: theme =>
-						getBackgroundColor(theme.palette.info.main, theme.palette.mode),
-					"&:hover": {
+		<>
+			<Snackbar
+				open={snackbarOpen}
+				autoHideDuration={1000}
+				onClose={handleClose}
+				message="Note archived"
+				action={action}
+			/>
+			<Box
+				sx={{
+					height: "100%",
+					width: "100%",
+					"& .super-app-theme--Open": {
 						bgcolor: theme =>
-							getHoverBackgroundColor(
-								theme.palette.info.main,
-								theme.palette.mode
-							),
+							getBackgroundColor(theme.palette.info.main, theme.palette.mode),
+						"&:hover": {
+							bgcolor: theme =>
+								getHoverBackgroundColor(
+									theme.palette.info.main,
+									theme.palette.mode
+								),
+						},
 					},
-				},
-				"& .super-app-theme--Filled": {
-					bgcolor: theme =>
-						getBackgroundColor(theme.palette.success.main, theme.palette.mode),
-					"&:hover": {
+					"& .super-app-theme--Filled": {
 						bgcolor: theme =>
-							getHoverBackgroundColor(
+							getBackgroundColor(
 								theme.palette.success.main,
 								theme.palette.mode
 							),
+						"&:hover": {
+							bgcolor: theme =>
+								getHoverBackgroundColor(
+									theme.palette.success.main,
+									theme.palette.mode
+								),
+						},
 					},
-				},
-				"& .super-app-theme--PartiallyFilled": {
-					bgcolor: theme =>
-						getBackgroundColor(theme.palette.warning.main, theme.palette.mode),
-					"&:hover": {
+					"& .super-app-theme--PartiallyFilled": {
 						bgcolor: theme =>
-							getHoverBackgroundColor(
+							getBackgroundColor(
 								theme.palette.warning.main,
 								theme.palette.mode
 							),
+						"&:hover": {
+							bgcolor: theme =>
+								getHoverBackgroundColor(
+									theme.palette.warning.main,
+									theme.palette.mode
+								),
+						},
 					},
-				},
-				"& .super-app-theme--Rejected": {
-					bgcolor: theme =>
-						getBackgroundColor(theme.palette.error.main, theme.palette.mode),
-					"&:hover": {
+					"& .super-app-theme--Rejected": {
 						bgcolor: theme =>
-							getHoverBackgroundColor(
-								theme.palette.error.main,
-								theme.palette.mode
-							),
+							getBackgroundColor(theme.palette.error.main, theme.palette.mode),
+						"&:hover": {
+							bgcolor: theme =>
+								getHoverBackgroundColor(
+									theme.palette.error.main,
+									theme.palette.mode
+								),
+						},
 					},
-				},
-			}}
-		>
-			<DataGrid
-				{...formedData}
-				getRowClassName={params => `super-app-theme--${params.row.status}`}
-				checkboxSelection
-				onSelectionModelChange={item => {
-					alert(item);
 				}}
-			/>
-		</Box>
+			>
+				<DataGrid
+					{...formedData}
+					getRowClassName={params => `super-app-theme--${params.row.status}`}
+					checkboxSelection
+					onSelectionModelChange={item => handleClick(item)}
+				/>
+			</Box>
+		</>
 	);
 }
 

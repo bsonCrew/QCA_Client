@@ -15,8 +15,23 @@ export default function Dashboard() {
 	const [targetWebsite, setTargetWebsite] = React.useState(
 		location.state?.targetWebsite || localStorage.getItem("targetWebsite") || ""
 	);
+	const [targetWebsiteScore, settargetWebsiteScore] = React.useState([]);
 	let [status, lighthouseData, classification] = useLighthouse(targetWebsite);
 	console.log(status);
+
+	React.useEffect(() => {
+		if (status === "success" && targetWebsiteScore.length === 0) {
+			const newTargetScore = classification.map(
+				criteria => criteria.resultScore
+			);
+			newTargetScore.unshift(
+				newTargetScore.reduce((acc, cur) => {
+					return acc + cur;
+				}, 0) / newTargetScore.length
+			);
+			settargetWebsiteScore(newTargetScore);
+		}
+	}, [status]);
 
 	React.useEffect(() => {
 		if (status === "success") {
@@ -52,6 +67,7 @@ export default function Dashboard() {
 									data={lighthouseData}
 									status={status}
 									targetWebsite={targetWebsite}
+									targetWebsiteScore={targetWebsiteScore}
 								/>
 							}
 						/>

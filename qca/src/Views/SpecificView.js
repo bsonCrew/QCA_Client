@@ -35,8 +35,8 @@ const SubClassCard = ({ criteriaValue, status }) =>
 				<div key={subClass} className="flex flex-col mx-2">
 					<div className="my-2">
 						<span className="text-xl ml-4">
-							{subClass} : {subClassVal.resultScore} / {subClassVal.totalScore}
-							점
+							{subClassVal.title} : {subClassVal.resultScore} /{" "}
+							{subClassVal.totalScore}점
 						</span>
 					</div>
 					<div className="flex flex-row flex-wrap">
