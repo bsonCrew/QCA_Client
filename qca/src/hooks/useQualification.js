@@ -1,6 +1,6 @@
 import React from "react";
 import config from "../config";
-import classify from "../Components/utils/calculate";
+import calculateAndClassify from "../Components/utils/calculate";
 
 const columns = [
 	{
@@ -46,29 +46,11 @@ const columns = [
 ];
 
 /** Non-use attributes which are not displayed in the table*/
-const nonUseAttributes = [
-	"full-page-screenshot",
-	"apple-touch-icon",
-	"installable-manifest",
-	"pwa-cross-browser",
-	"pwa-each-page-has-url",
-	"pwa-page-transitions",
-	"maskable-icon",
-	"metrics",
-	"oopif-iframe-test-audit",
-	"screenshot-thumbnails",
-	"service-worker",
-	"themed-omnibox",
-	"valid-source-maps",
-	"work-during-interaction",
-	"final-screenshot",
-	"inspector-issues",
-	"largest-contentful-paint-element",
-];
+const nonUseAttributes = config.nonUseAttributes;
 
 const useLighthouse = website => {
 	const [status, setStatus] = React.useState("idle");
-	const [data, setData] = React.useState([]);
+	const [rawData, setRawData] = React.useState([]);
 	const [lighthouseData, setLighthouseData] = React.useState({});
 	const [classification, setClassification] = React.useState({});
 	const postQuery = "http://localhost:3001/lighthouse";
@@ -81,12 +63,13 @@ const useLighthouse = website => {
 				const localData = JSON.parse(localStorage.getItem(website));
 				setClassification(localData.classification);
 				setLighthouseData(localData.lighthouseData);
-				return true;
+				// return true;
 			}
 			return false;
 		};
 
 		const fetchWithPost = async () => {
+			console.log("fetching");
 			setStatus("loading");
 			try {
 				const response = await fetch(postQuery, {
@@ -100,7 +83,7 @@ const useLighthouse = website => {
 					}),
 				});
 				const data = await response.json();
-				setData(data);
+				setRawData(data.data);
 				return true;
 			} catch (error) {
 				console.info(error);
@@ -121,19 +104,23 @@ const useLighthouse = website => {
 	}, []);
 
 	React.useEffect(() => {
-		if (status === "fetched" && data.length !== 0) {
-			let rows = [];
-			Object.entries(data).forEach(([, rowValue]) => {
+		if (status === "fetched" && rawData.length !== 0) {
+			let auditResults = [];
+			const robot = JSON.parse(rawData.robot);
+			const validator = JSON.parse(rawData.validator);
+
+			Object.entries(JSON.parse(rawData.audits)).forEach(([, rowValue]) => {
 				if (!nonUseAttributes.includes(rowValue.id)) {
-					rows.push(rowValue);
+					auditResults.push(rowValue);
 				}
 			});
-			const res = classify(rows);
+
+			const res = calculateAndClassify(auditResults, robot, validator);
 			setClassification(res);
 
 			setLighthouseData({
 				columns: columns,
-				rows: rows,
+				rows: auditResults,
 				initialState: {
 					columns: {
 						columnVisibilityModel: {
@@ -144,7 +131,7 @@ const useLighthouse = website => {
 			});
 			setStatus("success");
 		}
-	}, [status, website, data, classification]);
+	}, [status, website, rawData, classification]);
 
 	return [status, lighthouseData, classification];
 };

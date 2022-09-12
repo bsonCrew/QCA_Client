@@ -18,7 +18,7 @@ export default function Score({ score, status }) {
 	const handleClose = () => setOpen(false);
 
 	return (
-		<div className="max-w-full mx-6">
+		<div className="max-w-full">
 			<ScoreModal
 				open={open}
 				handleClose={handleClose}

@@ -2,7 +2,7 @@ import * as React from "react";
 import SideBar from "../Components/layout/Sidebar";
 import Footer from "../Components/layout/Footer";
 import MainView from "./MainView";
-import useLighthouse from "../hooks/useLighthouse";
+import useLighthouse from "../hooks/useQualification";
 import { Routes, Route, useParams, useLocation } from "react-router-dom";
 
 import SpecificView from "./SpecificView";
@@ -15,8 +15,24 @@ export default function Dashboard() {
 	const [targetWebsite, setTargetWebsite] = React.useState(
 		location.state?.targetWebsite || localStorage.getItem("targetWebsite") || ""
 	);
+	const [targetWebsiteScore, settargetWebsiteScore] = React.useState([]);
 	let [status, lighthouseData, classification] = useLighthouse(targetWebsite);
 	console.log(status);
+	// console.log(location.state.data);
+
+	React.useEffect(() => {
+		if (status === "success" && targetWebsiteScore.length === 0) {
+			const newTargetScore = classification.map(
+				criteria => criteria.resultScore
+			);
+			newTargetScore.unshift(
+				newTargetScore.reduce((acc, cur) => {
+					return acc + cur;
+				}, 0) / newTargetScore.length
+			);
+			settargetWebsiteScore(newTargetScore);
+		}
+	}, [status]);
 
 	React.useEffect(() => {
 		if (status === "success") {
@@ -52,6 +68,7 @@ export default function Dashboard() {
 									data={lighthouseData}
 									status={status}
 									targetWebsite={targetWebsite}
+									targetWebsiteScore={targetWebsiteScore}
 								/>
 							}
 						/>

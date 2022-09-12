@@ -5,28 +5,13 @@ import ExplanationCard from "../Components/atom/ExplanationCard";
 import StepGrid from "../Components/atom/StepGrid";
 import React from "react";
 
-export default function MainView({
+function MainView({
 	classification,
 	data,
 	status,
 	targetWebsite,
+	targetWebsiteScore,
 }) {
-	const [targetWebsiteScore, settargetWebsiteScore] = React.useState([]);
-
-	React.useEffect(() => {
-		if (status === "success" && targetWebsiteScore.length === 0) {
-			const newTargetScore = classification.map(
-				criteria => criteria.resultScore
-			);
-			newTargetScore.unshift(
-				newTargetScore.reduce((acc, cur) => {
-					return acc + cur;
-				}, 0) / newTargetScore.length
-			);
-			settargetWebsiteScore(newTargetScore);
-		}
-	}, [status, classification, targetWebsiteScore]);
-
 	return (
 		<>
 			<div className="my-10 flex flex-row flex-wrap ">
@@ -43,6 +28,9 @@ export default function MainView({
 				<div className="flex-2 min-w-[280px]">
 					<Score status={status} score={Math.floor(targetWebsiteScore[0])} />
 				</div>
+				<div className="w-full h-9 mt-20 mb-4">
+					<span className="text-2xl font-bold">지금 누리집은</span>
+				</div>
 				<StepGrid classification={classification} data={data} status={status} />
 			</div>
 			<VeticalChart
@@ -57,3 +45,5 @@ export default function MainView({
 		</>
 	);
 }
+
+export default React.memo(MainView);

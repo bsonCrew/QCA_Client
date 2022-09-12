@@ -123,10 +123,10 @@ export default function StepGrid({ classification, data, status }) {
 	};
 
 	return (
-		<div className="w-full flex flex-col justify-center pt-8">
-			<div className="flex flex-col w-full max-w-full pr-4 mt-11 ">
-				<div className="w-full h-8">
-					<BeautifulBar className="rounded-t-xl" />
+		<div className="w-full flex flex-col justify-center pt-4">
+			<div className="flex flex-col w-full max-w-full pr-4 mt-11">
+				<div className="w-full h-2">
+					<BeautifulBar className="rounded-xl" />
 				</div>
 				<div className="w-full flex flex-row flex-wrap">
 					{status === "success" ? (
@@ -173,6 +173,9 @@ export default function StepGrid({ classification, data, status }) {
 							height={270}
 						/>
 					)}
+					<div className="w-full h-2 mt-4">
+						<BeautifulBar className="rounded-xl" />
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,5 +1,4 @@
 {
-	"catchPhrase": ["잘했어요", "위험해요", "경고합니다", "개선해봐요"],
 	"colors": {
 		"main": "#F6F6F6",
 		"blue": "#1fb6ff",
@@ -30,7 +29,7 @@
 	],
 	"polargraphcolor": ["#3DB2FF", "#FFEDDA", "#FFB830", "#E8F9FD", "#B6C1D9"],
 	"bargraphcolor": ["#3DB2FF", "#FFB830"],
-
+	"catchPhrase": ["잘했어요", "위험해요", "경고합니다", "개선해봐요"],
 	"evaluation": [
 		"호환성",
 		"접근성",
@@ -77,6 +76,25 @@
 			"전체 성능 점수는 성능 점수의 합계입니다."
 		]
 	},
+	"nonUseAttributes": [
+		"full-page-screenshot",
+		"apple-touch-icon",
+		"installable-manifest",
+		"pwa-cross-browser",
+		"pwa-each-page-has-url",
+		"pwa-page-transitions",
+		"maskable-icon",
+		"metrics",
+		"oopif-iframe-test-audit",
+		"screenshot-thumbnails",
+		"service-worker",
+		"themed-omnibox",
+		"valid-source-maps",
+		"work-during-interaction",
+		"final-screenshot",
+		"inspector-issues",
+		"largest-contentful-paint-element"
+	],
 
 	"sampleData": [15, 19, 13, 6, 12],
 	"sampleLargeData": [40, 19, 59, 71, 40],

@@ -1,7 +1,7 @@
 {
 	"auditMappings": {
 		"accessibility": {
-			"easyOperation": {
+			"운용의 용이성": {
 				"keyboardUse": {
 					"title": "키보드 사용 보장",
 					"totalScore": 6,
@@ -54,7 +54,7 @@
 				}
 			},
 
-			"easyUnderstanding": {
+			"이해의 용이성": {
 				"linearContent": {
 					"title": "콘텐츠의 선형 구조",
 					"totalScore": 3,
@@ -82,7 +82,7 @@
 				}
 			},
 
-			"easyRecognition": {
+			"인식의 용이성": {
 				"clearInstruction": {
 					"title": "명확한 지시사항",
 					"totalScore": 2,
@@ -121,7 +121,7 @@
 				}
 			},
 
-			"robustness": {
+			"견고성": {
 				"noMarkUpError": {
 					"title": "마크업 오류 방지",
 					"totalScore": 4,
@@ -135,15 +135,15 @@
 			}
 		},
 		"compatibility": {
-			"webMobileCompatibility": {
-				"webMobileCompatibility": {
+			"웹 모바일 호환성": {
+				"웹 모바일 호환성": {
 					"title": "화면표시 호환성(시범적용)",
 					"totalScore": 0,
 					"calcFunctionType": 11
 				}
 			},
 
-			"webStandard": {
+			"웹 표준": {
 				"langStandard": {
 					"title": "문자(한글) 부호화 준수",
 					"totalScore": 1,
@@ -166,7 +166,7 @@
 				}
 			},
 
-			"webCompatibility": {
+			"웹 호환성 확보": {
 				"JSError": {
 					"title": "JS 오류",
 					"totalScore": 6,
@@ -185,7 +185,7 @@
 			}
 		},
 		"openness": {
-			"robots-txt": {
+			"검색 엔진 검색 가능": {
 				"robots-txt": {
 					"title": "웹 개방성",
 					"totalScore": 100,
@@ -194,21 +194,21 @@
 			}
 		},
 		"connectivity": {
-			"speed": {
+			"속도": {
 				"speed": {
 					"title": "웹 접속성 속도 평가 기준",
 					"totalScore": 50,
 					"calcFunctionType": 13
 				}
 			},
-			"size": {
+			"크기": {
 				"size": {
 					"title": "웹 접속성 크기 평가 기준",
 					"totalScore": 50,
 					"calcFunctionType": 13
 				}
 			},
-			"enhancement": {
+			"개선해봐요": {
 				"enhancement": {
 					"title": "속도 향상 방안",
 					"totalScore": 0,
@@ -217,7 +217,7 @@
 			}
 		},
 		"enhancement": {
-			"enhancement": {
+			"개선해봐요": {
 				"enhancement": {
 					"title": "누리집 개선 방안",
 					"totalScore": 0,
@@ -226,7 +226,7 @@
 			}
 		},
 		"warning": {
-			"warning": {
+			"경고합니다": {
 				"securityWarning": {
 					"title": "보안 위협",
 					"totalScore": 0,
@@ -245,862 +245,861 @@
 			"spec": "noBlinking",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"link-name": {
 			"spec": "linkText",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"meta-refresh": {
 			"spec": "stopAvailable",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"document-title": {
 			"spec": "provideTitle",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"frame-title": {
 			"spec": "provideTitle",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"meta-viewport": {
 			"spec": "operationAvailable",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"custom-controls-labels": {
 			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"custom-controls-roles": {
 			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"focus-traps": {
 			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"focusable-controls": {
 			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"interactive-element-affordance": {
 			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"logical-tab-order": {
 			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"managed-focus": {
 			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"offscreen-content-hidden": {
 			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"tabindex": {
 			"spec": "eyeMovement",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"uses-passive-event-listeners": {
 			"spec": "noAutoplay",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 
 		"bypass": {
 			"spec": "keyboardUse",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyOperation"
+			"subClass": "운용의 용이성"
 		},
 		"html-has-lang": {
 			"spec": "hasLang",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"html-lang-valid": {
 			"spec": "hasLang",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"valid-lang": {
 			"spec": "hasLang",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"no-unload-listeners": {
 			"spec": "userRequest",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"heading-order": {
 			"spec": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
-
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"definition-list": {
 			"spec": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"dlitem": {
 			"spec": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"list": {
 			"spec": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"listitem": {
 			"spec": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"visual-order-follows-dom": {
 			"spec": "linearContent",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"form-field-multiple-labels": {
 			"spec": "tableContent",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"td-headers-attr": {
 			"spec": "tableContent",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"th-has-data-cells": {
 			"spec": "tableContent",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"accesskeys": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-allowed-attr": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-command-name": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-hidden-body": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-hidden-focus": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-input-field-name": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-meter-name": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-progressbar-name": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-required-attr": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-required-children": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-required-parent": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-roles": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-toggle-field-name": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-tooltip-name": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-treeitem-name": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-valid-attr-value": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"aria-valid-attr": {
 			"spec": "clearInstruction",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"use-landmarks": {
 			"spec": "contentRecognitionWithoutColor",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"color-contrast": {
 			"spec": "clearContrast",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"video-caption": {
 			"spec": "hasCaption",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"image-alt": {
 			"spec": "hasAlt",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"input-image-alt": {
 			"spec": "hasAlt",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"object-alt": {
 			"spec": "hasAlt",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"button-name": {
 			"spec": "hasAlt",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"duplicate-id-aria": {
 			"spec": "divideContent",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"duplicate-id-active": {
 			"spec": "noMarkUpError",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "robustness"
+			"subClass": "견고성"
 		},
 		"label": {
 			"spec": "hasLabel",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyUnderstanding"
+			"subClass": "이해의 용이성"
 		},
 		"autocomplete": {
 			"spec": "hasErrorCorrection",
 			"scoreType": null,
 			"class": "accessibility",
-			"subClass": "easyRecognition"
+			"subClass": "인식의 용이성"
 		},
 		"image-aspect-ratio": {
-			"spec": "webMobileCompatibility",
+			"spec": "웹 모바일 호환성",
 			"scoreType": null,
 			"class": "compatibility",
-			"subClass": "webMobileCompatibility"
+			"subClass": "웹 모바일 호환성"
 		},
 		"image-size-responsive": {
-			"spec": "webMobileCompatibility",
+			"spec": "웹 모바일 호환성",
 			"scoreType": null,
 			"class": "compatibility",
-			"subClass": "webMobileCompatibility"
+			"subClass": "웹 모바일 호환성"
 		},
 		"viewport": {
-			"spec": "webMobileCompatibility",
+			"spec": "웹 모바일 호환성",
 			"scoreType": null,
 			"class": "compatibility",
-			"subClass": "webMobileCompatibility"
+			"subClass": "웹 모바일 호환성"
 		},
 		"charset": {
 			"spec": "langStandard",
 			"scoreType": null,
 			"class": "compatibility",
-			"subClass": "webStandard"
+			"subClass": "웹 표준"
 		},
 		"cssvalidator": {
 			"spec": "cssStandard",
 			"scoreType": null,
 			"class": "compatibility",
-			"subClass": "webStandard"
+			"subClass": "웹 표준"
 		},
 		"doctype": {
 			"spec": "htmlStandard",
 			"scoreType": null,
 			"class": "compatibility",
-			"subClass": "webStandard"
+			"subClass": "웹 표준"
 		},
 		"errors-in-console": {
 			"spec": "JSError",
 			"scoreType": null,
 			"class": "compatibility",
-			"subClass": "webCompatibility"
+			"subClass": "웹 호환성 확보"
 		},
 		"robots-txt": {
 			"spec": "robots-txt",
 			"scoreType": null,
 			"class": "openness",
-			"subClass": "robots-txt"
+			"subClass": "검색 엔진 검색 가능"
 		},
 		"bootup-time": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"duplicated-javascript": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"efficient-animated-content": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"legacy-javascript": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"modern-image-formats": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"offscreen-images": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"render-blocking-resources": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"total-byte-weight": {
 			"spec": "size",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "size"
+			"subClass": "크기"
 		},
 		"unminified-css": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"unminified-javascript": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"unused-css-rules": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"unused-javascript": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"uses-long-cache-ttl": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"uses-optimized-images": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"uses-responsive-images-snapshot": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"uses-responsive-images": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"uses-text-compression": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"content-width": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"critical-request-chains": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"diagnostics": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 
 		"layout-shift-elements": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"lcp-lazy-loaded": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"long-tasks": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"main-thread-tasks": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"mainthread-work-breakdown": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"cumulative-layout-shift": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"experimental-interaction-to-next-paint": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"first-contentful-paint-3g": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"first-contentful-paint": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"first-meaningful-paint": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"interactive": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"largest-contentful-paint": {
 			"spec": "speed",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "speed"
+			"subClass": "속도"
 		},
 		"max-potential-fid": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"speed-index": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"total-blocking-time": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"network-requests": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"network-rtt": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"network-server-latency": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"non-composited-animations": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"performance-budget": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"predictive-perf": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"preload-fonts": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"preload-lcp-image": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"redirects": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"resource-summary": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"script-treemap-data": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"server-response-time": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"timing-budget": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"unsized-images": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"user-timings": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"uses-rel-preconnect": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"uses-rel-preload": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "connectivity",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"dom-size": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"js-libraries": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"no-document-write": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"password-inputs-can-be-pasted-into": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"uses-http2": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"canonical": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"crawlable-anchors": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"font-size": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"hreflang": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"http-status-code": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"is-crawlable": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"link-text": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"structured-data": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"meta-description": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"plugins": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"tap-targets": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"splash-screen": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"third-party-facades": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"third-party-summary": {
 			"spec": "enhancement",
 			"scoreType": null,
 			"class": "enhancement",
-			"subClass": "enhancement"
+			"subClass": "개선해봐요"
 		},
 		"csp-xss": {
 			"spec": "securityWarning",
 			"scoreType": null,
 			"class": "warning",
-			"subClass": "warning"
+			"subClass": "경고합니다"
 		},
 		"deprecations": {
 			"spec": "securityWarning",
 			"scoreType": null,
 			"class": "warning",
-			"subClass": "warning"
+			"subClass": "경고합니다"
 		},
 		"geolocation-on-start": {
 			"spec": "generalWarning",
 			"scoreType": null,
 			"class": "warning",
-			"subClass": "warning"
+			"subClass": "경고합니다"
 		},
 		"no-vulnerable-libraries": {
 			"spec": "securityWarning",
 			"scoreType": null,
 			"class": "warning",
-			"subClass": "warning"
+			"subClass": "경고합니다"
 		},
 		"notification-on-start": {
 			"spec": "generalWarning",
 			"scoreType": null,
 			"class": "warning",
-			"subClass": "warning"
+			"subClass": "경고합니다"
 		},
 		"is-on-https": {
 			"spec": "securityWarning",
 			"scoreType": null,
 			"class": "warning",
-			"subClass": "warning"
+			"subClass": "경고합니다"
 		}
 	}
 }
