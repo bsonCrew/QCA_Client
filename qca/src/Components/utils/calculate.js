@@ -46,9 +46,9 @@ const calcByFunctionType = spec => {
 			spec.resultScore = nullOneCount === 0 ? spec.totalScore : 0;
 			return spec.resultScore;
 
-		//TODO: 8. 서버에서 받기
+		//TODO: 8. robots.txt
 		case 8:
-			spec.resultScore = spec.totalScore;
+			spec.resultScore = spec.scores[0];
 			return spec.resultScore;
 
 		//TODO: 9. 개별 검사

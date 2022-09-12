@@ -2,12 +2,14 @@ const checkRobotTxt = robot => {
 	let score = 100;
 	if (robot !== undefined && robot.length !== 0) {
 		for (const el of robot) {
-			if (el.type === "disallow") {
+			console.log(el, el.type.toLowerCase().includes("disallow"));
+			if (el.type.toLowerCase().includes("disallow")) {
 				score = 0;
 				break;
 			}
 		}
 	}
+
 	return {
 		score: score,
 		description:

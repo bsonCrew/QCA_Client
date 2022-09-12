@@ -139,27 +139,33 @@ const SpecCard = ({ spec, status }) => {
 };
 
 function SpecificView({ title, status, criteriaClass, robot }) {
-	const RobotCard = () => (
-		<>
-			<div className="w-full h-9 mt-24">
-				<span className="text-2xl font-bold">robots.txt가 발견됐어요</span>
-			</div>
+	const RobotCard = () => {
+		return (
+			<>
+				<div className="w-full h-9 mt-24">
+					<span className="text-2xl font-bold">robots.txt가 발견됐어요</span>
+				</div>
 
-			<div className="bg-main w-full font-bold text-xl h-48 rounded-lg p-12 mt-12">
-				{robot?.map(r => {
-					return (
-						<React.Fragment key={r.type}>
-							<span>{r.type}</span>
-							<span>
-								: {r.value}
-								<br />
-							</span>
-						</React.Fragment>
-					);
-				})}
-			</div>
-		</>
-	);
+				<div className="bg-main w-full font-bold text-xl h-48 rounded-lg p-12 mt-12">
+					{robot?.map(r => {
+						const disallowColor = r.type.includes("disallow")
+							? "underline decoration-wavy text-red"
+							: "";
+
+						return (
+							<React.Fragment key={r.type}>
+								<span className={disallowColor}>{r.type}</span>
+								<span>
+									: {r.value}
+									<br />
+								</span>
+							</React.Fragment>
+						);
+					})}
+				</div>
+			</>
+		);
+	};
 	return (
 		<div className="my-10 pb-2 flex flex-col flex-wrap">
 			<div className="flex-3 flex flex-col rounded-2xl">
