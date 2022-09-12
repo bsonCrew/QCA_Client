@@ -9,19 +9,23 @@ const useTop5 = () => {
 	React.useEffect(() => {
 		if (!getQuery) return;
 
-		const fetchWithPost = async () => {
+		const fetchWithGet = async () => {
 			setStatus("loading");
 			try {
 				const response = await fetch(getQuery);
 				const data = await response.json();
-				setStatus("success");
-				setData(data);
+				if (data.status === 200) {
+					setStatus("success");
+					setData(data);
+				} else {
+					setStatus("fetchedButFounderror");
+				}
 			} catch (error) {
 				setStatus("error");
 			}
 		};
 
-		fetchWithPost();
+		fetchWithGet();
 	}, [getQuery]);
 
 	return [status, data.data];

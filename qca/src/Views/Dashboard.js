@@ -2,7 +2,7 @@ import * as React from "react";
 import SideBar from "../Components/layout/Sidebar";
 import Footer from "../Components/layout/Footer";
 import MainView from "./MainView";
-import useLighthouse from "../hooks/useLighthouse";
+import useLighthouse from "../hooks/useQualification";
 import { Routes, Route, useParams, useLocation } from "react-router-dom";
 
 import SpecificView from "./SpecificView";
@@ -18,6 +18,7 @@ export default function Dashboard() {
 	const [targetWebsiteScore, settargetWebsiteScore] = React.useState([]);
 	let [status, lighthouseData, classification] = useLighthouse(targetWebsite);
 	console.log(status);
+	// console.log(location.state.data);
 
 	React.useEffect(() => {
 		if (status === "success" && targetWebsiteScore.length === 0) {

@@ -1,80 +1,7 @@
 import audits from "../../audits.json";
 
-const classify = lighthouseResults => {
-	const createClassifyMap = mapId => {
-		const criteriasObj = {};
-		try {
-			Object.keys(audits.auditMappings[mapId]);
-		} catch {
-			console.log(mapId);
-		}
-
-		Object.keys(audits.auditMappings[mapId])
-			.map(row => {
-				const rowItem = audits.auditMappings[mapId][row];
-				Object.keys(rowItem).forEach(r => {
-					if (Number.isInteger(rowItem[r])) return criteriasObj;
-					rowItem[r].scores = [];
-					rowItem[r].items = [];
-					rowItem[r].resultScore = 0;
-				});
-				return [row, rowItem];
-			})
-			.forEach(criteriaMapItem => {
-				criteriasObj[criteriaMapItem[0]] = criteriaMapItem[1];
-			});
-
-		return criteriasObj;
-	};
-	/** 0: accessibility, 1: compatibility, 2: connectivity, 3: openness, 4:enhancement, 5:warning */
-	const criterias = [
-		"accessibility",
-		"compatibility",
-		"connectivity",
-		"openness",
-		"enhancement",
-		"warning",
-	].map(criteria => createClassifyMap(criteria));
-
-	lighthouseResults.forEach(lr => {
-		console.log(audits.audits[lr.id].class);
-		console.log(audits.audits[lr.id].subClass);
-		console.log(audits.audits[lr.id].spec);
-		const spec =
-			audits.auditMappings[audits.audits[lr.id].class][
-				audits.audits[lr.id].subClass
-			][audits.audits[lr.id].spec];
-		try {
-			spec.scores.push(lr.score);
-			spec.items.push(lr);
-		} catch {
-			console.info("found undefined criteria: ", lr.id);
-		}
-	});
-
-	criterias.forEach(criteria => {
-		let criteriaScore = 0;
-		let criteriaTotalScore = 0;
-		Object.values(criteria).forEach(subClass => {
-			let score = 0;
-			let totalScore = 0;
-			Object.values(subClass).forEach(spec => {
-				score += calcByFunctionType(spec);
-				totalScore += spec.totalScore;
-			});
-			subClass.resultScore = score;
-			subClass.totalScore = totalScore;
-			criteriaScore += score;
-			criteriaTotalScore += totalScore;
-		});
-		criteria.resultScore = criteriaScore;
-		// criteria.totalScore = criteriaTotalScore;
-	});
-	return criterias;
-};
-
 const calcByFunctionType = spec => {
-	if (Number.isInteger(spec)) return 0;
+	if (Number.isInteger(spec) || Number.isNaN(spec)) return 0;
 	const nullOneCount = spec.scores.filter(
 		score => score === 1 || score === null
 	).length;
@@ -174,4 +101,78 @@ const calcByFunctionType = spec => {
 	}
 };
 
-export default classify;
+const createClassifyMap = mapId => {
+	const criteriasObj = {};
+	try {
+		Object.keys(audits.auditMappings[mapId]);
+	} catch {
+		console.log(mapId);
+	}
+
+	Object.keys(audits.auditMappings[mapId])
+		.map(row => {
+			const rowItem = audits.auditMappings[mapId][row];
+			Object.keys(rowItem).forEach(r => {
+				if (Number.isInteger(rowItem[r]) || Number.isNaN(rowItem[r]))
+					return criteriasObj;
+				rowItem[r].scores = [];
+				rowItem[r].items = [];
+				rowItem[r].resultScore = 0;
+			});
+			return [row, rowItem];
+		})
+		.forEach(criteriaMapItem => {
+			criteriasObj[criteriaMapItem[0]] = criteriaMapItem[1];
+		});
+
+	return criteriasObj;
+};
+
+const calculateAndClassify = (lighthouse, robot, validator) => {
+	/** 0: accessibility, 1: compatibility, 2: connectivity, 3: openness, 4:enhancement, 5:warning */
+	const criterias = [
+		"accessibility",
+		"compatibility",
+		"connectivity",
+		"openness",
+		"enhancement",
+		"warning",
+	].map(criteria => createClassifyMap(criteria));
+
+	console.log(robot, validator);
+
+	lighthouse.forEach(l => {
+		const spec =
+			audits.auditMappings[audits.audits[l.id].class][
+				audits.audits[l.id].subClass
+			][audits.audits[l.id].spec];
+		try {
+			spec.scores.push(l.score);
+			spec.items.push(l);
+		} catch {
+			console.info("found undefined criteria: ", l.id);
+		}
+	});
+
+	criterias.forEach(criteria => {
+		let criteriaScore = 0;
+		let criteriaTotalScore = 0;
+		Object.values(criteria).forEach(subClass => {
+			let score = 0;
+			let totalScore = 0;
+			Object.values(subClass).forEach(spec => {
+				score += calcByFunctionType(spec);
+				totalScore += spec.totalScore;
+			});
+			subClass.resultScore = score;
+			subClass.totalScore = totalScore;
+			criteriaScore += score;
+			criteriaTotalScore += totalScore;
+		});
+		criteria.resultScore = criteriaScore;
+		criteria.totalScore = criteriaTotalScore;
+	});
+	return criterias;
+};
+
+export default calculateAndClassify;

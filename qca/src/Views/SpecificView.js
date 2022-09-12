@@ -2,7 +2,7 @@ import * as React from "react";
 import Stat from "../Components/atom/Stat";
 import Score from "../Components/atom/Score";
 import { StatCards } from "../Components/atom/StatCards";
-import useLighthouse from "../hooks/useLighthouse";
+import useLighthouse from "../hooks/useQualification";
 import Card from "../Components/atom/Card";
 import config from "../config.json";
 
