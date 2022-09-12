@@ -1,54 +1,14 @@
 import React from "react";
 import config from "../config";
 import calculateAndClassify from "../Components/utils/calculate";
-
-const columns = [
-	{
-		field: "id",
-		headerName: "id",
-		width: 100,
-		editable: true,
-		groupable: false,
-		aggregable: false,
-	},
-	{
-		field: "id",
-		headerName: "tag",
-		width: 100,
-		editable: true,
-		groupable: false,
-		aggregable: false,
-	},
-	{
-		field: "title",
-		headerName: "title",
-		width: 200,
-		editable: true,
-		groupable: false,
-		aggregable: false,
-	},
-	{
-		field: "score",
-		headerName: "score",
-		width: 100,
-		editable: true,
-		groupable: false,
-		aggregable: false,
-	},
-	{
-		field: "description",
-		headerName: "description",
-		width: 900,
-		editable: true,
-		groupable: false,
-		aggregable: false,
-	},
-];
+import columns from "../Components/utils/gridConfig";
+import checkRobotTxt from "../Components/utils/checkRobotTxt";
+import calculateValidator from "../Components/utils/calculateValidator";
 
 /** Non-use attributes which are not displayed in the table*/
 const nonUseAttributes = config.nonUseAttributes;
 
-const useLighthouse = website => {
+const useQualification = website => {
 	const [status, setStatus] = React.useState("idle");
 	const [rawData, setRawData] = React.useState([]);
 	const [lighthouseData, setLighthouseData] = React.useState({});
@@ -56,29 +16,10 @@ const useLighthouse = website => {
 	const postQuery = "http://localhost:3001/lighthouse";
 	// const postQuery = "http://58.124.108.42:11209/api/control";
 
-	const checkRobotTxt = robot => {
-		let score = 100;
-		for (const el of robot) {
-			if (el.type === "disallow") {
-				score = 0;
-				break;
-			}
-		}
-		return {
-			score: score,
-			description:
-				"robots.txt 파일은 검색 로봇이 웹 사이트 내에서 액세스할 수 있는 URL을 알려 줍니다. 정부는 모든 하위 페이지에 대해 검색 로봇의 완전허용을 권장하고 있습니다. [자세히 알아보기](https://developers.google.com/search/docs/advanced/robots/intro?hl=ko)",
-			id: "robots-txt",
-			title:
-				score === 0
-					? "robots.txt에 검색 로봇이 접근이 불가능한(Disallow) 항목이 존재함"
-					: "robots.txt에 검색 로봇이 접근이 불가능한(Disallow) 항목이 존재하지 않음",
-			scoreDisplayMode: "notApplicable",
-		};
-	};
-
 	React.useEffect(() => {
 		setStatus("loading");
+
+		// Checking localstorage and getting classification and lighthouseData
 		const checkLocalStorage = () => {
 			if (localStorage.getItem(website) !== null) {
 				const localData = JSON.parse(localStorage.getItem(website));
@@ -89,6 +30,7 @@ const useLighthouse = website => {
 			return false;
 		};
 
+		// Fetching from server
 		const fetchWithPost = async () => {
 			console.log("fetching");
 			setStatus("loading");
@@ -113,6 +55,7 @@ const useLighthouse = website => {
 			}
 		};
 
+		// localstorage hit or fetch from server
 		if (checkLocalStorage()) {
 			setStatus("success");
 		} else {
@@ -125,21 +68,27 @@ const useLighthouse = website => {
 	}, []);
 
 	React.useEffect(() => {
+		// Calculate only when fetched. Localstorage has calculated value.
 		if (status === "fetched" && rawData.length !== 0) {
 			let auditResults = [];
 			const robot = JSON.parse(rawData.robot);
 			const validator = JSON.parse(rawData.validator);
 
+			// Parse data
 			Object.entries(JSON.parse(rawData.audits)).forEach(([, rowValue]) => {
 				if (!nonUseAttributes.includes(rowValue.id)) {
 					auditResults.push(rowValue);
 				}
 			});
+
+			// Add robots.txt and validator API
 			auditResults.push(checkRobotTxt(robot));
+			calculateValidator(validator).forEach(val => auditResults.push(val));
 
 			const classified = calculateAndClassify(auditResults, robot, validator);
 			setClassification(classified);
 
+			// Set lighthouseData to use in datagrid
 			setLighthouseData({
 				columns: columns,
 				rows: auditResults,
@@ -158,4 +107,4 @@ const useLighthouse = website => {
 	return [status, lighthouseData, classification];
 };
 
-export default useLighthouse;
+export default useQualification;

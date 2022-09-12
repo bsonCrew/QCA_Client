@@ -2,7 +2,7 @@ import * as React from "react";
 import SideBar from "../Components/layout/Sidebar";
 import Footer from "../Components/layout/Footer";
 import MainView from "./MainView";
-import useLighthouse from "../hooks/useQualification";
+import useQualification from "../hooks/useQualification";
 import { Routes, Route, useParams, useLocation } from "react-router-dom";
 
 import SpecificView from "./SpecificView";
@@ -16,7 +16,8 @@ export default function Dashboard() {
 		location.state?.targetWebsite || localStorage.getItem("targetWebsite") || ""
 	);
 	const [targetWebsiteScore, settargetWebsiteScore] = React.useState([]);
-	let [status, lighthouseData, classification] = useLighthouse(targetWebsite);
+	let [status, lighthouseData, classification] =
+		useQualification(targetWebsite);
 	console.log(status);
 	// console.log(location.state.data);
 
@@ -73,7 +74,7 @@ export default function Dashboard() {
 							}
 						/>
 						<Route
-							path="/compatibility"
+							path="/accessibility"
 							element={
 								<SpecificView
 									data={lighthouseData}
@@ -83,7 +84,7 @@ export default function Dashboard() {
 							}
 						/>
 						<Route
-							path="/accessibility"
+							path="/compatibility"
 							element={
 								<SpecificView
 									data={lighthouseData}
@@ -92,6 +93,7 @@ export default function Dashboard() {
 								/>
 							}
 						/>
+
 						<Route
 							path="/connectivity"
 							element={

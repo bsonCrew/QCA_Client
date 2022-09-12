@@ -49,7 +49,7 @@ const calcByFunctionType = spec => {
 			spec.resultScore = spec.totalScore;
 			return spec.resultScore;
 
-		//TODO: 9. 손명빈이 검사
+		//TODO: 9. 개별 검사
 		case 9:
 			spec.resultScore = spec.totalScore;
 			return spec.resultScore;
@@ -101,7 +101,7 @@ const calcByFunctionType = spec => {
 	}
 };
 
-const createClassifyMap = mapId => {
+const createClassifyObj = mapId => {
 	const criteriasObj = {};
 	try {
 		Object.keys(audits.auditMappings[mapId]);
@@ -128,7 +128,7 @@ const createClassifyMap = mapId => {
 	return criteriasObj;
 };
 
-const calculateAndClassify = (lighthouse, robot, validator) => {
+const calculateAndClassify = lighthouse => {
 	/** 0: accessibility, 1: compatibility, 2: connectivity, 3: openness, 4:enhancement, 5:warning */
 	const classification = [
 		"accessibility",
@@ -137,12 +137,10 @@ const calculateAndClassify = (lighthouse, robot, validator) => {
 		"openness",
 		"enhancement",
 		"warning",
-	].map(criteria => createClassifyMap(criteria));
-
-	console.log(robot, validator);
+	].map(criteria => createClassifyObj(criteria));
 
 	lighthouse.forEach(l => {
-		// console.log(l);
+		console.log(l);
 		const spec =
 			audits.auditMappings[audits.audits[l.id].class][
 				audits.audits[l.id].subClass
@@ -154,16 +152,6 @@ const calculateAndClassify = (lighthouse, robot, validator) => {
 			console.info("found undefined criteria: ", l.id);
 		}
 	});
-
-	console.log(lighthouse);
-
-	// {
-	// 	"score": null,
-	// 	"description": "요소에 유효한 [BCP 47 언어](https://www.w3.org/International/questions/qa-choosing-language-tags#question)를 지정하면 스크린 리더에서 텍스트를 올바르게 읽는 데 도움이 됩니다. [자세히 알아보기](https://web.dev/valid-lang/)",
-	// 	"id": "valid-lang",
-	// 	"title": "`[lang]` 속성에 유효한 값이 있음",
-	// 	"scoreDisplayMode": "notApplicable"
-	// }
 
 	classification.forEach(criteria => {
 		let criteriaScore = 0;

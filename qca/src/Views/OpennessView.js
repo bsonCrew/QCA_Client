@@ -2,7 +2,7 @@ import * as React from "react";
 import Stat from "../Components/atom/Stat";
 import Score from "../Components/atom/Score";
 import { StatCards } from "../Components/atom/StatCards";
-import useLighthouse from "../hooks/useQualification";
+import useQualification from "../hooks/useQualification";
 import Card from "../Components/atom/Card";
 import config from "../config.json";
 
@@ -88,7 +88,6 @@ const SpecCard = ({ subClass, status }) => {
 
 export default function SpecificView({ data, status, criteriaClass }) {
 	const [solvedArr, setSolvedArr] = React.useState([]);
-	console.log(criteriaClass);
 	return (
 		<div className="my-10 pb-2 flex flex-col flex-wrap">
 			<div className="flex-3 flex flex-col rounded-2xl">
