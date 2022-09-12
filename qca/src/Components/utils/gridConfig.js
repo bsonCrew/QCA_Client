@@ -1,24 +1,8 @@
 const columns = [
 	{
-		field: "id",
-		headerName: "id",
-		width: 100,
-		editable: true,
-		groupable: false,
-		aggregable: false,
-	},
-	{
-		field: "id",
-		headerName: "tag",
-		width: 100,
-		editable: true,
-		groupable: false,
-		aggregable: false,
-	},
-	{
 		field: "title",
 		headerName: "title",
-		width: 200,
+		width: 300,
 		editable: true,
 		groupable: false,
 		aggregable: false,

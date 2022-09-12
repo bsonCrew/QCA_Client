@@ -66,19 +66,14 @@ export default function BarChart({
 		],
 	};
 	return (
-		<div className="min-w-[400px] w-full mt-4 px-4">
-			<span className="mt-8 text-2xl font-bold">
-				다른 사이트들은 이렇습니다
-			</span>
-			<div className="flex">
-				{status === "success" ? (
-					<div className="flex flex-row align-middle justify-center">
-						<Bar width={1000} height={500} options={options} data={data} />
-					</div>
-				) : (
-					<Skeleton sx={{ width: "100%", height: 400, marginTop: -6 }} />
-				)}
-			</div>
+		<div className="min-w-[400px] w-full px-4 flex">
+			{status === "success" ? (
+				<div className="flex flex-row align-middle justify-center">
+					<Bar width={1000} height={500} options={options} data={data} />
+				</div>
+			) : (
+				<Skeleton sx={{ width: "100%", height: 400, marginTop: -6 }} />
+			)}
 		</div>
 	);
 }

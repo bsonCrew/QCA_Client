@@ -94,10 +94,13 @@ const SubClassStepper = ({ subClass }) => {
 								<StepContent TransitionProps={{ unmountOnExit: false }}>
 									{spec !== "resultScore" && (
 										<div key={spec} className="w-full flex flex-col">
-											<span className="text-xl p-2">{val.title}</span>
+											<span className="text-2xl p-2 font-bold">
+												{val.title}
+											</span>
 											{val.items.map((item, idx) => (
 												<div key={idx} className="flex flex-row">
-													<span className=" w-full p-2">{item.title}</span>
+													{console.log(item)}
+													<span className="w-full p-2">- {item.title}</span>
 												</div>
 											))}
 										</div>

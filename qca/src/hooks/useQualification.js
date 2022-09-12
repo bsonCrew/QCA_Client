@@ -25,7 +25,7 @@ const useQualification = website => {
 				const localData = JSON.parse(localStorage.getItem(website));
 				setClassification(localData.classification);
 				setLighthouseData(localData.lighthouseData);
-				// return true;
+				return true;
 			}
 			return false;
 		};
@@ -87,17 +87,7 @@ const useQualification = website => {
 			setClassification(classified);
 
 			// Set lighthouseData to use in datagrid
-			setLighthouseData({
-				columns: columns,
-				rows: auditResults,
-				initialState: {
-					columns: {
-						columnVisibilityModel: {
-							id: false,
-						},
-					},
-				},
-			});
+			setLighthouseData(auditResults);
 			setStatus("success");
 		}
 	}, [status, website, rawData, classification]);

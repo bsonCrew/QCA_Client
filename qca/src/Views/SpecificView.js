@@ -82,7 +82,7 @@ const SubClassCard = ({ criteria, criteriaVal, status }) => {
 								<div className="my-2 flex items-center mt-8">
 									<div
 										className={
-											"text-xl ml-16 font-semibold rounded-md p-3 " +
+											" my-2 flex items-center mt-8 text-xl ml-16 font-semibold rounded-md p-3 " +
 											selectBackgroundColor(
 												subClassVal.resultScore,
 												subClassVal.totalScore
@@ -108,29 +108,42 @@ const SubClassCard = ({ criteria, criteriaVal, status }) => {
 };
 
 const SpecCard = ({ spec, status }) => {
-	return spec.items.map(item => (
-		<Card
-			score={item.score}
-			calcFunctionType={spec.calcFunctionType}
-			title={item.title}
-			totalScore={spec.totalScore}
-			resultScore={spec.resultScore}
-			subheader={item.description.split(". ")[0] + "."}
-			description={item.description}
-			key={item.id}
-			id={item.id}
-			status={status}
-		/>
-	));
+	return spec.items.length > 0 ? (
+		spec.items.map(item => (
+			<Card
+				item={item}
+				score={item.score}
+				calcFunctionType={spec.calcFunctionType}
+				title={item.title}
+				totalScore={spec.totalScore}
+				resultScore={spec.resultScore}
+				subheader={item.description.split(". ")[0] + "."}
+				description={item.description}
+				key={item.id}
+				id={item.id}
+				status={status}
+			/>
+		))
+	) : (
+		<div className="w-3/12 min-w-[200px] max-w-sm mx-6 my-6 grow transition-transform ease-in-out ">
+			<div
+				className={
+					"h-36 rounded-lg shadow-lg hover:shadow-2xl text-center flex flex-col justify-center p-4 py-7 px-8"
+				}
+			>
+				<span className="text-lg">자세히 보여 드릴 항목이 없어요.</span>
+				<span className="text-sm font-bold text-blue"></span>
+			</div>
+		</div>
+	);
 };
 
-export default function SpecificView({ status, criteriaClass }) {
-	console.log(criteriaClass);
+export default function SpecificView({ title, status, criteriaClass }) {
 	return (
 		<div className="my-10 pb-2 flex flex-col flex-wrap">
 			<div className="flex-3 flex flex-col rounded-2xl">
 				<div className="w-full h-9 mt-12 mb-16">
-					<span className="text-2xl font-bold">지금 누리집은</span>
+					<span className="text-2xl font-bold">지금 누리집의 {title}은 </span>
 				</div>
 				<Score status={status} score={criteriaClass?.resultScore} />
 			</div>

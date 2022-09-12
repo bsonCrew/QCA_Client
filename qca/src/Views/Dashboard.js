@@ -7,9 +7,6 @@ import useQualification from "../hooks/useQualification";
 import { Routes, Route, useParams, useLocation } from "react-router-dom";
 
 import SpecificView from "./SpecificView";
-import AccessibilityView from "./AccessibilityView";
-import ConnectivityView from "./ConnectivityView";
-import OpennessView from "./OpennessView";
 
 export default function Dashboard() {
 	const location = useLocation();
@@ -78,7 +75,6 @@ export default function Dashboard() {
 							path="/compatibility"
 							element={
 								<SpecificView
-									data={lighthouseData}
 									status={status}
 									criteriaClass={classification[0]}
 									title={config.evaluation[0]}
@@ -89,7 +85,6 @@ export default function Dashboard() {
 							path="/accessibility"
 							element={
 								<SpecificView
-									data={lighthouseData}
 									status={status}
 									criteriaClass={classification[1]}
 									title={config.evaluation[1]}
@@ -101,7 +96,6 @@ export default function Dashboard() {
 							path="/openness"
 							element={
 								<SpecificView
-									data={lighthouseData}
 									status={status}
 									criteriaClass={classification[2]}
 									title={config.evaluation[2]}
@@ -112,7 +106,6 @@ export default function Dashboard() {
 							path="/connectivity"
 							element={
 								<SpecificView
-									data={lighthouseData}
 									status={status}
 									criteriaClass={classification[3]}
 									title={config.evaluation[3]}

@@ -31,7 +31,9 @@ export default function ExplanationCard({
 	const Display = () => {
 		return (
 			<div className="w-full leading-4">
-				<span className="text-4xl font-semibold">{catchPhrase()}</span>
+				<span className="text-4xl font-semibold">
+					{catchPhrase(targetWebsiteScore[6])}
+				</span>
 				<br />
 				<br />
 				<span className="text-lg leading-8">{`${targetWebsite}의 총점은 ${Math.floor(
