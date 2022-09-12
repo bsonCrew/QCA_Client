@@ -35,14 +35,14 @@ export default function ExplanationCard({
 				<br />
 				<br />
 				<span className="text-lg leading-8">{`${targetWebsite}의 총점은 ${Math.floor(
-					targetWebsiteScore[0]
+					targetWebsiteScore[6]
 				)}점입니다.`}</span>
 				<br />
 				<span className="text-lg leading-8">
-					<b>{config.evaluation[0]}</b> 점수는 <b>{targetWebsiteScore[1]}점</b>,{" "}
-					<b>{config.evaluation[1]}</b> 점수는 <b>{targetWebsiteScore[2]}점</b>,{" "}
-					<b>{config.evaluation[2]}</b> 점수는 <b>{targetWebsiteScore[3]}점</b>,{" "}
-					<b>{config.evaluation[3]}</b> 점수는 <b>{targetWebsiteScore[4]}점</b>
+					<b>{config.evaluation[0]}</b> 점수는 <b>{targetWebsiteScore[0]}점</b>,{" "}
+					<b>{config.evaluation[1]}</b> 점수는 <b>{targetWebsiteScore[1]}점</b>,{" "}
+					<b>{config.evaluation[2]}</b> 점수는 <b>{targetWebsiteScore[2]}점</b>,{" "}
+					<b>{config.evaluation[3]}</b> 점수는 <b>{targetWebsiteScore[3]}점</b>
 					입니다.
 				</span>
 			</div>

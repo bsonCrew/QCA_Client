@@ -17,6 +17,14 @@
 		"main2": "#F2F2F2",
 		"hoverColor": "#ECECEC"
 	},
+	"bgcolors": {
+		"beige": "#6C6C6C",
+		"gray": "#8492a6",
+		"slightRed": "#ffb6b6",
+		"slightGreen": "#99DDCC",
+		"slightYellow": "#ffe6b2",
+		"slightBlue": "#b2d3e6"
+	},
 	"gradientcolor": ["#112B3C", "#205375"],
 	"warningcolors": [
 		"#13ce66",
@@ -38,6 +46,7 @@
 		"개선해봐요",
 		"경고합니다"
 	],
+
 	"iconInfo": [
 		"전체",
 		"호환성",

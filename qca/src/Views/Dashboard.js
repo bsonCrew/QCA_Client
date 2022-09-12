@@ -2,6 +2,7 @@ import * as React from "react";
 import SideBar from "../Components/layout/Sidebar";
 import Footer from "../Components/layout/Footer";
 import MainView from "./MainView";
+import config from "../config.json";
 import useQualification from "../hooks/useQualification";
 import { Routes, Route, useParams, useLocation } from "react-router-dom";
 
@@ -18,18 +19,16 @@ export default function Dashboard() {
 	const [targetWebsiteScore, settargetWebsiteScore] = React.useState([]);
 	let [status, lighthouseData, classification] =
 		useQualification(targetWebsite);
-	console.log(status);
-	// console.log(location.state.data);
 
 	React.useEffect(() => {
 		if (status === "success" && targetWebsiteScore.length === 0) {
 			const newTargetScore = classification.map(
 				criteria => criteria.resultScore
 			);
-			newTargetScore.unshift(
+			newTargetScore.push(
 				newTargetScore.reduce((acc, cur) => {
 					return acc + cur;
-				}, 0) / newTargetScore.length
+				}, 0) / 4
 			);
 			settargetWebsiteScore(newTargetScore);
 		}
@@ -53,6 +52,8 @@ export default function Dashboard() {
 		}
 	}, [targetWebsite]);
 
+	console.log(status);
+
 	const openView = "/dashboard/" + useParams()["*"];
 
 	return (
@@ -74,43 +75,47 @@ export default function Dashboard() {
 							}
 						/>
 						<Route
-							path="/accessibility"
-							element={
-								<SpecificView
-									data={lighthouseData}
-									status={status}
-									criteriaClass={classification[0]}
-								/>
-							}
-						/>
-						<Route
 							path="/compatibility"
 							element={
 								<SpecificView
 									data={lighthouseData}
 									status={status}
+									criteriaClass={classification[0]}
+									title={config.evaluation[0]}
+								/>
+							}
+						/>
+						<Route
+							path="/accessibility"
+							element={
+								<SpecificView
+									data={lighthouseData}
+									status={status}
 									criteriaClass={classification[1]}
+									title={config.evaluation[1]}
 								/>
 							}
 						/>
 
+						<Route
+							path="/openness"
+							element={
+								<SpecificView
+									data={lighthouseData}
+									status={status}
+									criteriaClass={classification[2]}
+									title={config.evaluation[2]}
+								/>
+							}
+						/>
 						<Route
 							path="/connectivity"
 							element={
 								<SpecificView
 									data={lighthouseData}
 									status={status}
-									criteriaClass={classification[2]}
-								/>
-							}
-						/>
-						<Route
-							path="/openness"
-							element={
-								<OpennessView
-									data={lighthouseData}
-									status={status}
 									criteriaClass={classification[3]}
+									title={config.evaluation[3]}
 								/>
 							}
 						/>

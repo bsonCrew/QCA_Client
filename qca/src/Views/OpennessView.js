@@ -86,7 +86,7 @@ const SpecCard = ({ subClass, status }) => {
 	));
 };
 
-export default function SpecificView({ data, status, criteriaClass }) {
+export default function OpennessView({ data, status, criteriaClass }) {
 	const [solvedArr, setSolvedArr] = React.useState([]);
 	return (
 		<div className="my-10 pb-2 flex flex-col flex-wrap">
