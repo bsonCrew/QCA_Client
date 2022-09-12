@@ -152,7 +152,7 @@
 				"cssStandard": {
 					"title": "CSS 표준 준수",
 					"totalScore": 20,
-					"calcFunctionType": 8
+					"calcFunctionType": 5
 				},
 				"htmlStandard": {
 					"title": "(X)HTML 표준 준수",
@@ -189,7 +189,7 @@
 				"robots-txt": {
 					"title": "웹 개방성",
 					"totalScore": 100,
-					"calcFunctionType": 4
+					"calcFunctionType": 8
 				}
 			}
 		},
@@ -578,6 +578,12 @@
 			"class": "accessibility",
 			"subClass": "견고성"
 		},
+		"noMarkUpError": {
+			"spec": "noMarkUpError",
+			"scoreType": null,
+			"class": "accessibility",
+			"subClass": "견고성"
+		},
 		"label": {
 			"spec": "hasLabel",
 			"scoreType": null,
@@ -614,6 +620,12 @@
 			"class": "compatibility",
 			"subClass": "웹 표준"
 		},
+		"ko-charset": {
+			"spec": "langStandard",
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "웹 표준"
+		},
 		"cssvalidator": {
 			"spec": "cssStandard",
 			"scoreType": null,
@@ -621,6 +633,12 @@
 			"subClass": "웹 표준"
 		},
 		"doctype": {
+			"spec": "htmlStandard",
+			"scoreType": null,
+			"class": "compatibility",
+			"subClass": "웹 표준"
+		},
+		"htmlStandard": {
 			"spec": "htmlStandard",
 			"scoreType": null,
 			"class": "compatibility",

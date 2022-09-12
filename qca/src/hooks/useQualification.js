@@ -1,54 +1,14 @@
 import React from "react";
 import config from "../config";
 import calculateAndClassify from "../Components/utils/calculate";
-
-const columns = [
-	{
-		field: "id",
-		headerName: "id",
-		width: 100,
-		editable: true,
-		groupable: false,
-		aggregable: false,
-	},
-	{
-		field: "id",
-		headerName: "tag",
-		width: 100,
-		editable: true,
-		groupable: false,
-		aggregable: false,
-	},
-	{
-		field: "title",
-		headerName: "title",
-		width: 200,
-		editable: true,
-		groupable: false,
-		aggregable: false,
-	},
-	{
-		field: "score",
-		headerName: "score",
-		width: 100,
-		editable: true,
-		groupable: false,
-		aggregable: false,
-	},
-	{
-		field: "description",
-		headerName: "description",
-		width: 900,
-		editable: true,
-		groupable: false,
-		aggregable: false,
-	},
-];
+import columns from "../Components/utils/gridConfig";
+import checkRobotTxt from "../Components/utils/checkRobotTxt";
+import calculateValidator from "../Components/utils/calculateValidator";
 
 /** Non-use attributes which are not displayed in the table*/
 const nonUseAttributes = config.nonUseAttributes;
 
-const useLighthouse = website => {
+const useQualification = website => {
 	const [status, setStatus] = React.useState("idle");
 	const [rawData, setRawData] = React.useState([]);
 	const [lighthouseData, setLighthouseData] = React.useState({});
@@ -58,6 +18,8 @@ const useLighthouse = website => {
 
 	React.useEffect(() => {
 		setStatus("loading");
+
+		// Checking localstorage and getting classification and lighthouseData
 		const checkLocalStorage = () => {
 			if (localStorage.getItem(website) !== null) {
 				const localData = JSON.parse(localStorage.getItem(website));
@@ -68,6 +30,7 @@ const useLighthouse = website => {
 			return false;
 		};
 
+		// Fetching from server
 		const fetchWithPost = async () => {
 			console.log("fetching");
 			setStatus("loading");
@@ -92,6 +55,7 @@ const useLighthouse = website => {
 			}
 		};
 
+		// localstorage hit or fetch from server
 		if (checkLocalStorage()) {
 			setStatus("success");
 		} else {
@@ -104,20 +68,27 @@ const useLighthouse = website => {
 	}, []);
 
 	React.useEffect(() => {
+		// Calculate only when fetched. Localstorage has calculated value.
 		if (status === "fetched" && rawData.length !== 0) {
 			let auditResults = [];
 			const robot = JSON.parse(rawData.robot);
 			const validator = JSON.parse(rawData.validator);
 
+			// Parse data
 			Object.entries(JSON.parse(rawData.audits)).forEach(([, rowValue]) => {
 				if (!nonUseAttributes.includes(rowValue.id)) {
 					auditResults.push(rowValue);
 				}
 			});
 
-			const res = calculateAndClassify(auditResults, robot, validator);
-			setClassification(res);
+			// Add robots.txt and validator API
+			auditResults.push(checkRobotTxt(robot));
+			calculateValidator(validator).forEach(val => auditResults.push(val));
 
+			const classified = calculateAndClassify(auditResults, robot, validator);
+			setClassification(classified);
+
+			// Set lighthouseData to use in datagrid
 			setLighthouseData({
 				columns: columns,
 				rows: auditResults,
@@ -136,4 +107,4 @@ const useLighthouse = website => {
 	return [status, lighthouseData, classification];
 };
 
-export default useLighthouse;
+export default useQualification;

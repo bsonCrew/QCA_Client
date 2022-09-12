@@ -49,7 +49,7 @@ const calcByFunctionType = spec => {
 			spec.resultScore = spec.totalScore;
 			return spec.resultScore;
 
-		//TODO: 9. 손명빈이 검사
+		//TODO: 9. 개별 검사
 		case 9:
 			spec.resultScore = spec.totalScore;
 			return spec.resultScore;
@@ -101,7 +101,7 @@ const calcByFunctionType = spec => {
 	}
 };
 
-const createClassifyMap = mapId => {
+const createClassifyObj = mapId => {
 	const criteriasObj = {};
 	try {
 		Object.keys(audits.auditMappings[mapId]);
@@ -128,20 +128,19 @@ const createClassifyMap = mapId => {
 	return criteriasObj;
 };
 
-const calculateAndClassify = (lighthouse, robot, validator) => {
+const calculateAndClassify = lighthouse => {
 	/** 0: accessibility, 1: compatibility, 2: connectivity, 3: openness, 4:enhancement, 5:warning */
-	const criterias = [
+	const classification = [
 		"accessibility",
 		"compatibility",
 		"connectivity",
 		"openness",
 		"enhancement",
 		"warning",
-	].map(criteria => createClassifyMap(criteria));
-
-	console.log(robot, validator);
+	].map(criteria => createClassifyObj(criteria));
 
 	lighthouse.forEach(l => {
+		console.log(l);
 		const spec =
 			audits.auditMappings[audits.audits[l.id].class][
 				audits.audits[l.id].subClass
@@ -154,7 +153,7 @@ const calculateAndClassify = (lighthouse, robot, validator) => {
 		}
 	});
 
-	criterias.forEach(criteria => {
+	classification.forEach(criteria => {
 		let criteriaScore = 0;
 		let criteriaTotalScore = 0;
 		Object.values(criteria).forEach(subClass => {
@@ -172,7 +171,7 @@ const calculateAndClassify = (lighthouse, robot, validator) => {
 		criteria.resultScore = criteriaScore;
 		criteria.totalScore = criteriaTotalScore;
 	});
-	return criterias;
+	return classification;
 };
 
 export default calculateAndClassify;

@@ -2,12 +2,11 @@ import * as React from "react";
 import Stat from "../Components/atom/Stat";
 import Score from "../Components/atom/Score";
 import { StatCards } from "../Components/atom/StatCards";
-import useLighthouse from "../hooks/useQualification";
+import useQualification from "../hooks/useQualification";
 import Card from "../Components/atom/Card";
 import config from "../config.json";
 
 const ScoreView = ({ name, score, totalScore }) => {
-	console.log(name, score, totalScore);
 	if (name === "개선해봐요" || name === "속도 향상 방안") {
 		return (
 			<div>
