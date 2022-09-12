@@ -130,7 +130,7 @@ const createClassifyMap = mapId => {
 
 const calculateAndClassify = (lighthouse, robot, validator) => {
 	/** 0: accessibility, 1: compatibility, 2: connectivity, 3: openness, 4:enhancement, 5:warning */
-	const criterias = [
+	const classification = [
 		"accessibility",
 		"compatibility",
 		"connectivity",
@@ -142,6 +142,7 @@ const calculateAndClassify = (lighthouse, robot, validator) => {
 	console.log(robot, validator);
 
 	lighthouse.forEach(l => {
+		// console.log(l);
 		const spec =
 			audits.auditMappings[audits.audits[l.id].class][
 				audits.audits[l.id].subClass
@@ -154,7 +155,17 @@ const calculateAndClassify = (lighthouse, robot, validator) => {
 		}
 	});
 
-	criterias.forEach(criteria => {
+	console.log(lighthouse);
+
+	// {
+	// 	"score": null,
+	// 	"description": "요소에 유효한 [BCP 47 언어](https://www.w3.org/International/questions/qa-choosing-language-tags#question)를 지정하면 스크린 리더에서 텍스트를 올바르게 읽는 데 도움이 됩니다. [자세히 알아보기](https://web.dev/valid-lang/)",
+	// 	"id": "valid-lang",
+	// 	"title": "`[lang]` 속성에 유효한 값이 있음",
+	// 	"scoreDisplayMode": "notApplicable"
+	// }
+
+	classification.forEach(criteria => {
 		let criteriaScore = 0;
 		let criteriaTotalScore = 0;
 		Object.values(criteria).forEach(subClass => {
@@ -172,7 +183,7 @@ const calculateAndClassify = (lighthouse, robot, validator) => {
 		criteria.resultScore = criteriaScore;
 		criteria.totalScore = criteriaTotalScore;
 	});
-	return criterias;
+	return classification;
 };
 
 export default calculateAndClassify;

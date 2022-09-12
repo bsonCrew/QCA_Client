@@ -189,7 +189,7 @@
 				"robots-txt": {
 					"title": "웹 개방성",
 					"totalScore": 100,
-					"calcFunctionType": 4
+					"calcFunctionType": 8
 				}
 			}
 		},

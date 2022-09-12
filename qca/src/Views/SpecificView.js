@@ -7,7 +7,6 @@ import Card from "../Components/atom/Card";
 import config from "../config.json";
 
 const ScoreView = ({ name, score, totalScore }) => {
-	console.log(name, score, totalScore);
 	if (name === "개선해봐요" || name === "속도 향상 방안") {
 		return (
 			<div>

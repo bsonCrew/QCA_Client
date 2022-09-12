@@ -105,7 +105,7 @@ export default function Dashboard() {
 						<Route
 							path="/openness"
 							element={
-								<SpecificView
+								<OpennessView
 									data={lighthouseData}
 									status={status}
 									criteriaClass={classification[3]}
