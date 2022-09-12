@@ -5,6 +5,7 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import config from "../../config.json";
+import { Link } from "react-router-dom";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
 	display: "flex",
@@ -53,7 +54,14 @@ export default function TopBar({ sideBarOpen, handleDrawer, targetWebsite }) {
 						<MenuIcon />
 					</IconButton>
 					<div className="ml-4">
-						<span className=" font-bold text-black">{targetWebsite}</span>
+						<a
+							className=" font-bold text-black hover:cursor-pointer hover:text-blue"
+							href={targetWebsite}
+							target="_blank"
+							rel="noreferrer"
+						>
+							{targetWebsite}
+						</a>
 					</div>
 				</DrawerHeader>
 			</div>

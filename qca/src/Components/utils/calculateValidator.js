@@ -15,11 +15,18 @@ const calculateValidator = validator => {
 
 	const htmlStandard = {
 		score: 30,
-		description: "웹페이지의 문법은 기술표준((X)HTML)을 준수하여야 함",
+		description:
+			"웹페이지의 문법은 기술표준((X)HTML)을 준수하여야 합니다. [자세히 알아보기](https://www.w3.org/TR/html5/)",
 		id: "htmlStandard",
-		title: "마크업 에러(HTML)이 발생요",
+		title: "마크업 에러(HTML)가 발생함",
 		scoreDisplayMode: "notApplicable",
-		items: [],
+		items: [
+			{
+				details: {
+					items: [],
+				},
+			},
+		],
 	};
 
 	const noMarkUpError = {
@@ -29,7 +36,13 @@ const calculateValidator = validator => {
 		id: "noMarkUpError",
 		title: "마크업 언어에 속성 선언에 오류",
 		scoreDisplayMode: "notApplicable",
-		items: [],
+		items: [
+			{
+				details: {
+					items: [],
+				},
+			},
+		],
 	};
 
 	validator
@@ -39,8 +52,8 @@ const calculateValidator = validator => {
 				charset.score = 0;
 				charset.items.push(el);
 			}
-			htmlStandard.items.push(el);
-			noMarkUpError.items.push(el);
+			htmlStandard.items[0].details.items.push(el);
+			noMarkUpError.items[0].details.items.push(el);
 			htmlStandard.score--;
 			noMarkUpError.score--;
 		});

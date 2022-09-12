@@ -110,7 +110,7 @@ const SideBarLink = ({ openView, sideBarOpen, index }) => {
 						minWidth: 0,
 						mr: sideBarOpen ? 3 : "auto",
 						justifyContent: "center",
-						color: isOpen ? config.colors.blue : config.colors.beige,
+						color: isOpen ? config.colors.blue : config.bgcolors.beige,
 					}}
 				>
 					{iconImage[index]}

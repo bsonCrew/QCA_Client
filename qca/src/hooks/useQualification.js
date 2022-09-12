@@ -32,7 +32,6 @@ const useQualification = website => {
 
 		// Fetching from server
 		const fetchWithPost = async () => {
-			console.log("fetching");
 			setStatus("loading");
 			try {
 				const response = await fetch(postQuery, {
@@ -49,7 +48,6 @@ const useQualification = website => {
 				setRawData(data.data);
 				return true;
 			} catch (error) {
-				console.info(error);
 				setStatus("error");
 				return false;
 			}

@@ -24,19 +24,21 @@ ChartJS.register(
 
 const labels = config.iconInfo.slice(0, 5);
 
-export default function VeticalChart({
+export default function BarChart({
 	status,
 	targetWebsite,
 	targetWebsiteScore,
 }) {
 	const options = {
+		maintainAspectRatio: false,
+		responsive: true,
+
 		indexAxis: "y",
 		elements: {
 			bar: {
 				borderWidth: 2,
 			},
 		},
-		responsive: true,
 		plugins: {
 			legend: {
 				position: "right",
@@ -71,7 +73,7 @@ export default function VeticalChart({
 			<div className="flex">
 				{status === "success" ? (
 					<div className="flex flex-row align-middle justify-center">
-						<Bar width={1100} height={500} options={options} data={data} />
+						<Bar width={1000} height={500} options={options} data={data} />
 					</div>
 				) : (
 					<Skeleton sx={{ width: "100%", height: 400, marginTop: -6 }} />

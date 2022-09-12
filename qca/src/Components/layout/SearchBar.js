@@ -15,7 +15,6 @@ export default function SearchBar({ setTargetWebsite }) {
 	const navigate = useNavigate();
 
 	const handleSubmit = e => {
-		console.info("submit");
 		value.homepage.includes("www.")
 			? setTargetWebsite(value.homepage)
 			: setTargetWebsite(value.label);

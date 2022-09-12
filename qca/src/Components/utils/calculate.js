@@ -21,18 +21,20 @@ const calcByFunctionType = spec => {
 
 		//4. null, 1 제외 총점 감점
 		case 4:
-			spec.resultScore = nullOneCount === 0 ? spec.totalScore : 0;
+			spec.resultScore =
+				nullOneCount === spec.scores.length ? spec.totalScore : 0;
 			return spec.resultScore;
 
 		//5. null, 1 제외 1점 감점
 		case 5:
 			spec.resultScore =
 				spec.totalScore > nullOneCount ? spec.totalScore - nullOneCount : 0;
+			console.log(nullOneCount);
 			return spec.resultScore;
 
 		//6. items 갯수당 1점 감점
 		case 6:
-			const detailErrorCount = spec.items[0].details.items.length;
+			const detailErrorCount = spec.items[0].details?.items.length;
 			spec.resultScore =
 				spec.totalScore > detailErrorCount
 					? spec.totalScore - detailErrorCount
@@ -105,9 +107,7 @@ const createClassifyObj = mapId => {
 	const criteriasObj = {};
 	try {
 		Object.keys(audits.auditMappings[mapId]);
-	} catch {
-		console.log(mapId);
-	}
+	} catch {}
 
 	Object.keys(audits.auditMappings[mapId])
 		.map(row => {
@@ -131,16 +131,15 @@ const createClassifyObj = mapId => {
 const calculateAndClassify = lighthouse => {
 	/** 0: accessibility, 1: compatibility, 2: connectivity, 3: openness, 4:enhancement, 5:warning */
 	const classification = [
-		"accessibility",
 		"compatibility",
-		"connectivity",
+		"accessibility",
 		"openness",
+		"connectivity",
 		"enhancement",
 		"warning",
 	].map(criteria => createClassifyObj(criteria));
 
 	lighthouse.forEach(l => {
-		console.log(l);
 		const spec =
 			audits.auditMappings[audits.audits[l.id].class][
 				audits.audits[l.id].subClass
@@ -156,6 +155,7 @@ const calculateAndClassify = lighthouse => {
 	classification.forEach(criteria => {
 		let criteriaScore = 0;
 		let criteriaTotalScore = 0;
+
 		Object.values(criteria).forEach(subClass => {
 			let score = 0;
 			let totalScore = 0;
@@ -165,9 +165,11 @@ const calculateAndClassify = lighthouse => {
 			});
 			subClass.resultScore = score;
 			subClass.totalScore = totalScore;
+
 			criteriaScore += score;
 			criteriaTotalScore += totalScore;
 		});
+
 		criteria.resultScore = criteriaScore;
 		criteria.totalScore = criteriaTotalScore;
 	});
