@@ -138,15 +138,41 @@ const SpecCard = ({ spec, status }) => {
 	);
 };
 
-export default function SpecificView({ title, status, criteriaClass }) {
+function SpecificView({ title, status, criteriaClass, robot }) {
+	const RobotCard = () => (
+		<>
+			<div className="w-full h-9 mt-24">
+				<span className="text-2xl font-bold">robots.txt가 발견됐어요</span>
+			</div>
+
+			<div className="bg-main w-full font-bold text-xl h-48 rounded-lg p-12 mt-12">
+				{robot?.map(r => {
+					return (
+						<React.Fragment key={r.type}>
+							<span>{r.type}</span>
+							<span>
+								: {r.value}
+								<br />
+							</span>
+						</React.Fragment>
+					);
+				})}
+			</div>
+		</>
+	);
 	return (
 		<div className="my-10 pb-2 flex flex-col flex-wrap">
 			<div className="flex-3 flex flex-col rounded-2xl">
-				<div className="w-full h-9 mt-12 mb-16">
+				<div className="w-full h-9 mt-12 ">
 					<span className="text-2xl font-bold">지금 누리집의 {title}은 </span>
 				</div>
+				<div className="mt-2 mb-16">
+					<span className="text-lg">평가하는 데 사용된 지표들이에요.</span>
+				</div>
+
 				<Score status={status} score={criteriaClass?.resultScore} />
 			</div>
+			<div>{robot ? <RobotCard /> : null}</div>
 			<div className="flex-4 mt-24 rounded-2xl">
 				{status === "success" ? (
 					<CriteriaCard status={status} criteriaClass={criteriaClass} />
@@ -155,3 +181,5 @@ export default function SpecificView({ title, status, criteriaClass }) {
 		</div>
 	);
 }
+
+export default React.memo(SpecificView);

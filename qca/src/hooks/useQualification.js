@@ -1,7 +1,6 @@
 import React from "react";
 import config from "../config";
 import calculateAndClassify from "../Components/utils/calculate";
-import columns from "../Components/utils/gridConfig";
 import checkRobotTxt from "../Components/utils/checkRobotTxt";
 import calculateValidator from "../Components/utils/calculateValidator";
 
@@ -13,6 +12,7 @@ const useQualification = website => {
 	const [rawData, setRawData] = React.useState([]);
 	const [lighthouseData, setLighthouseData] = React.useState({});
 	const [classification, setClassification] = React.useState({});
+	const [robot, setRobot] = React.useState([]);
 	const postQuery = "http://localhost:3001/lighthouse";
 	// const postQuery = "http://58.124.108.42:11209/api/control";
 
@@ -25,6 +25,7 @@ const useQualification = website => {
 				const localData = JSON.parse(localStorage.getItem(website));
 				setClassification(localData.classification);
 				setLighthouseData(localData.lighthouseData);
+				setRobot(localData.robot);
 				return true;
 			}
 			return false;
@@ -70,6 +71,8 @@ const useQualification = website => {
 		if (status === "fetched" && rawData.length !== 0) {
 			let auditResults = [];
 			const robot = JSON.parse(rawData.robot);
+			setRobot(robot);
+
 			const validator = JSON.parse(rawData.validator);
 
 			// Parse data
@@ -92,7 +95,7 @@ const useQualification = website => {
 		}
 	}, [status, website, rawData, classification]);
 
-	return [status, lighthouseData, classification];
+	return [status, lighthouseData, classification, robot];
 };
 
 export default useQualification;

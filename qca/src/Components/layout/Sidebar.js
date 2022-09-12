@@ -186,7 +186,10 @@ export default function SideBar({ targetWebsite, openView }) {
 	};
 
 	const printPage = () => {
-		window.print();
+		setSideBarOpen(false);
+		setTimeout(() => {
+			window.print();
+		}, [100]);
 	};
 
 	return (

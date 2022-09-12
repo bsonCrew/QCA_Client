@@ -14,8 +14,10 @@ export default function Dashboard() {
 		location.state?.targetWebsite || localStorage.getItem("targetWebsite") || ""
 	);
 	const [targetWebsiteScore, settargetWebsiteScore] = React.useState([]);
-	let [status, lighthouseData, classification] =
+	let [status, lighthouseData, classification, robot] =
 		useQualification(targetWebsite);
+
+	console.log(classification);
 
 	React.useEffect(() => {
 		if (status === "success" && targetWebsiteScore.length === 0) {
@@ -38,6 +40,7 @@ export default function Dashboard() {
 				JSON.stringify({
 					classification: classification,
 					lighthouseData: lighthouseData,
+					robot: robot,
 				})
 			);
 		}
@@ -63,6 +66,7 @@ export default function Dashboard() {
 							path="/"
 							element={
 								<MainView
+									id="main"
 									classification={classification}
 									data={lighthouseData}
 									status={status}
@@ -99,6 +103,7 @@ export default function Dashboard() {
 									status={status}
 									criteriaClass={classification[2]}
 									title={config.evaluation[2]}
+									robot={robot}
 								/>
 							}
 						/>
