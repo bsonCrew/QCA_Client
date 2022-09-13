@@ -139,6 +139,9 @@ const SpecCard = ({ spec, status }) => {
 };
 
 function SpecificView({ title, status, criteriaClass, robot }) {
+	React.useEffect(() => {
+		window.scrollTo(0, 0);
+	});
 	const RobotCard = () => {
 		return (
 			<>

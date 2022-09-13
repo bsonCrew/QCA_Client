@@ -68,6 +68,8 @@ function CardDialog(props) {
 
 export default function Card(props) {
 	const [iconIdx, setIconIdx] = React.useState(0);
+	const [clicked, setClicked] = React.useState(false);
+	const handleClose = () => setClicked(false);
 
 	React.useEffect(() => {
 		if (props.calcFunctionType === 1) {
@@ -90,9 +92,6 @@ export default function Card(props) {
 	];
 
 	const bgcolors = config.warningcolors;
-
-	const [clicked, setClicked] = React.useState(false);
-	const handleClose = () => setClicked(false);
 
 	return (
 		<div className="w-3/12 min-w-[200px] max-w-sm mx-6 my-6 grow transition-transform ease-in-out ">
