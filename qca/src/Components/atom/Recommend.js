@@ -15,7 +15,7 @@ const ShortCut = ({ label, homepage }) => {
 
 	const handleClick = () => {
 		navigate("/dashboard", {
-			// state: { targetWebsite: homepage, data: },
+			state: { targetWebsite: homepage },
 		});
 	};
 

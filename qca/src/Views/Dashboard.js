@@ -4,7 +4,13 @@ import Footer from "../Components/layout/Footer";
 import MainView from "./MainView";
 import config from "../config.json";
 import useQualification from "../hooks/useQualification";
-import { Routes, Route, useParams, useLocation } from "react-router-dom";
+import {
+	Routes,
+	Route,
+	useParams,
+	useLocation,
+	useNavigate,
+} from "react-router-dom";
 
 import SpecificView from "./SpecificView";
 
@@ -16,6 +22,8 @@ export default function Dashboard() {
 	const [targetWebsiteScore, settargetWebsiteScore] = React.useState([]);
 	let [status, lighthouseData, classification, robot] =
 		useQualification(targetWebsite);
+
+	const navigate = useNavigate();
 
 	console.log(classification);
 
@@ -30,6 +38,8 @@ export default function Dashboard() {
 				}, 0) / 4
 			);
 			settargetWebsiteScore(newTargetScore);
+		} else if (status === "error") {
+			navigate("/");
 		}
 	}, [status]);
 

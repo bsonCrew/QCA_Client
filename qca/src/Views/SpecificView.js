@@ -149,7 +149,7 @@ function SpecificView({ title, status, criteriaClass, robot }) {
 					<span className="text-2xl font-bold">robots.txt가 발견됐어요</span>
 				</div>
 
-				<div className="bg-main w-full font-bold text-xl h-48 rounded-lg p-12 mt-12">
+				<div className="bg-main w-full font-bold text-xl h-fit rounded-lg p-12 mt-12">
 					{robot?.map(r => {
 						const disallowColor = r.type.includes("disallow")
 							? "underline decoration-wavy text-red"

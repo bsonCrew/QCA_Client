@@ -47,7 +47,12 @@ const useQualification = website => {
 				});
 				const data = await response.json();
 				setRawData(data.data);
-				return true;
+				if (data.status === 200) {
+					return true;
+				} else {
+					setStatus("fetchedButFounderror");
+					return false;
+				}
 			} catch (error) {
 				setStatus("error");
 				return false;
@@ -58,11 +63,15 @@ const useQualification = website => {
 		if (checkLocalStorage()) {
 			setStatus("success");
 		} else {
-			fetchWithPost().then(res => {
-				if (res) {
-					setStatus("fetched");
-				}
-			});
+			try {
+				fetchWithPost().then(res => {
+					if (res) {
+						setStatus("fetched");
+					}
+				});
+			} catch (e) {
+				console.log(e);
+			}
 		}
 	}, []);
 

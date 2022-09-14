@@ -36,7 +36,9 @@ function Landing({ setTargetWebsite }) {
 				<LandingFooter />
 			</Dialog>
 			<div className="w-full flex justify-center mb-4">
-				<Button onClick={() => setClicked(!clicked)}>Copyrights</Button>
+				<Button onClick={() => setClicked(!clicked)}>
+					<b>Copyrights</b>
+				</Button>
 			</div>
 		</div>
 	);
