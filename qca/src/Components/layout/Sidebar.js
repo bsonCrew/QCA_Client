@@ -1,6 +1,6 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MuiDrawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
@@ -11,7 +11,7 @@ import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
 import DevicesIcon from "@mui/icons-material/Devices";
 import SmartButtonIcon from "@mui/icons-material/SmartButton";
 import BoltIcon from "@mui/icons-material/Bolt";
-import HelpIcon from "@mui/icons-material/Help";
+import DownloadIcon from "@mui/icons-material/Download";
 import SummarizeIcon from "@mui/icons-material/Summarize";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -80,7 +80,7 @@ const iconImage = [
 	<AccessibilityNewIcon />,
 	<SmartButtonIcon />,
 	<BoltIcon />,
-	<HelpIcon />,
+	<DownloadIcon />,
 	<PrintIcon />,
 	<HomeIcon />,
 ];
@@ -160,6 +160,7 @@ const SideBarFnc = ({ sideBarOpen, handleClick, index }) => {
 export default function SideBar({ targetWebsite, openView }) {
 	const [lock, setLock] = React.useState(false);
 	const [sideBarOpen, setSideBarOpen] = React.useState(false);
+	const navigate = useNavigate();
 
 	const handleDrawer = () => {
 		setSideBarOpen(!sideBarOpen);
@@ -174,6 +175,21 @@ export default function SideBar({ targetWebsite, openView }) {
 		if (!lock) {
 			setSideBarOpen(true);
 		}
+	};
+
+	const downLoadFile = () => {
+		const a = document.createElement("a");
+		a.href =
+			"https://www.mois.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_001113460aCr1K4&fileSn=0";
+
+		a.click();
+	};
+
+	const printPage = () => {
+		setSideBarOpen(false);
+		setTimeout(() => {
+			window.print();
+		}, [100]);
 	};
 
 	return (
@@ -207,16 +223,21 @@ export default function SideBar({ targetWebsite, openView }) {
 					<Divider />
 
 					<List>
-						{[5, 6, 7].map(idx => {
-							return (
-								<SideBarFnc
-									key={idx}
-									index={idx}
-									sideBarOpen={sideBarOpen}
-									handleClick={() => alert(idx)}
-								/>
-							);
-						})}
+						<SideBarFnc
+							sideBarOpen={sideBarOpen}
+							handleClick={downLoadFile}
+							index={5}
+						/>
+						<SideBarFnc
+							sideBarOpen={sideBarOpen}
+							handleClick={printPage}
+							index={6}
+						/>
+						<SideBarFnc
+							sideBarOpen={sideBarOpen}
+							handleClick={() => navigate("/")}
+							index={7}
+						/>
 					</List>
 				</div>
 			</Drawer>

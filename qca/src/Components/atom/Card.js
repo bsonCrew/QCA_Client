@@ -17,14 +17,27 @@ import audits from "../../audits.json";
 function CardDialog(props) {
 	let description = props.description?.replace(props.subheader, "");
 
-	const findAudit = auditName => {
-		const auditObj = audits.audits[auditName];
-		const specDesc =
-			audits.auditMappings[auditObj.class][auditObj.subClass][auditObj.spec]
-				.title;
-		console.log(auditObj.class, auditObj.subClass, specDesc);
+	const findAudit = auditId => {
+		const auditObj = audits.audits[auditId];
+		let className = "";
+		switch (auditObj.class) {
+			case "accessibility":
+				className = "접근성";
+				break;
+			case "connectivity":
+				className = "접속성";
+				break;
+			case "compatibility":
+				className = "호환성";
+				break;
+			case "openness":
+				className = "개방성";
+				break;
+			default:
+				className = "";
+		}
+		return [className, auditObj.subClass, auditObj.spec, props.id].join(" > ");
 	};
-	console.log(findAudit(props.id));
 
 	return (
 		<Dialog
@@ -37,15 +50,15 @@ function CardDialog(props) {
 		>
 			<div className="w-fit h-96 p-12">
 				<span className="text-3xl font-bold">{props.title}</span>
-				<br />
-				<span className="text-lg font-bold text-blue mt-1">id: {props.id}</span>
-				<br />
-				<br />
-				<span className="text-xl pt-4 leading-8">{props.subheader}</span>
-				<br />
-				<br />
-				{linkify(description, [])}
-				<br />
+				<div className="mt-1">
+					<span className="text-lg font-bold text-blue mt-1">
+						{findAudit(props.id)}
+					</span>
+				</div>
+				<div className="mt-4">
+					<span className="text-xl pt-4 leading-8">{props.subheader}</span>
+				</div>
+				<div className="mt-8">{linkify(description, [])}</div>
 
 				<p className="text-lg pt-4"></p>
 			</div>
@@ -55,9 +68,10 @@ function CardDialog(props) {
 
 export default function Card(props) {
 	const [iconIdx, setIconIdx] = React.useState(0);
+	const [clicked, setClicked] = React.useState(false);
+	const handleClose = () => setClicked(false);
 
 	React.useEffect(() => {
-		// console.log(props);
 		if (props.calcFunctionType === 1) {
 			setIconIdx(3);
 		} else if (props.calcFunctionType === 2) {
@@ -79,11 +93,8 @@ export default function Card(props) {
 
 	const bgcolors = config.warningcolors;
 
-	const [clicked, setClicked] = React.useState(false);
-	const handleClose = () => setClicked(false);
-
 	return (
-		<div className="w-3/12 max-w-sm mx-4 my-6 grow transition-transform ease-in-out ">
+		<div className="w-3/12 min-w-[200px] max-w-sm mx-6 my-6 grow transition-transform ease-in-out ">
 			<Tooltip
 				title={config.catchPhrase[iconIdx] || "No description"}
 				placement="left"

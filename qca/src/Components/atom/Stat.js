@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Snackbar from "@mui/material/Snackbar";
+import columns from "../utils/gridConfig";
 
 import Box from "@mui/material/Box";
 import Skeleton from "@mui/material/Skeleton";
@@ -17,9 +18,15 @@ const getHoverBackgroundColor = (color, mode) =>
 
 function StyledDatagrid({ data }) {
 	const formedData = {
-		columns: data["columns"],
-		rows: data["rows"],
-		initialState: data["initialState"],
+		columns: columns,
+		rows: data,
+		initialState: {
+			columns: {
+				columnVisibilityModel: {
+					id: false,
+				},
+			},
+		},
 	};
 
 	const [snackbarOpen, setSnackbarOpen] = React.useState(false);
@@ -57,7 +64,7 @@ function StyledDatagrid({ data }) {
 				open={snackbarOpen}
 				autoHideDuration={1000}
 				onClose={handleClose}
-				message="Note archived"
+				message="체크했어요!"
 				action={action}
 			/>
 			<Box
@@ -130,9 +137,6 @@ function StyledDatagrid({ data }) {
 export default function Stat({ data, status }) {
 	return (
 		<div className="w-full h-screen px-6 pb-24">
-			<div className="mt-12 mb-8 text-2xl font-bold">
-				<h1>세부사항을 보면요..</h1>
-			</div>
 			{status === "success" ? (
 				<StyledDatagrid data={data} />
 			) : (

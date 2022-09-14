@@ -2,6 +2,7 @@ import audits from "../../audits.json";
 
 const calcByFunctionType = spec => {
 	if (Number.isInteger(spec) || Number.isNaN(spec)) return 0;
+	console.log(spec);
 	const nullOneCount = spec.scores.filter(
 		score => score === 1 || score === null
 	).length;
@@ -29,7 +30,6 @@ const calcByFunctionType = spec => {
 		case 5:
 			spec.resultScore =
 				spec.totalScore > nullOneCount ? spec.totalScore - nullOneCount : 0;
-			console.log(nullOneCount);
 			return spec.resultScore;
 
 		//6. items 갯수당 1점 감점
@@ -46,9 +46,9 @@ const calcByFunctionType = spec => {
 			spec.resultScore = nullOneCount === 0 ? spec.totalScore : 0;
 			return spec.resultScore;
 
-		//TODO: 8. 서버에서 받기
+		//TODO: 8. robots.txt
 		case 8:
-			spec.resultScore = spec.totalScore;
+			spec.resultScore = spec.scores[0];
 			return spec.resultScore;
 
 		//TODO: 9. 개별 검사
@@ -113,7 +113,7 @@ const createClassifyObj = mapId => {
 		.map(row => {
 			const rowItem = audits.auditMappings[mapId][row];
 			Object.keys(rowItem).forEach(r => {
-				if (Number.isInteger(rowItem[r]) || Number.isNaN(rowItem[r]))
+				if (Number.isFinite(rowItem[r]) || Number.isNaN(rowItem[r]))
 					return criteriasObj;
 				rowItem[r].scores = [];
 				rowItem[r].items = [];

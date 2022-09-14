@@ -4,12 +4,15 @@ import Footer from "../Components/layout/Footer";
 import MainView from "./MainView";
 import config from "../config.json";
 import useQualification from "../hooks/useQualification";
-import { Routes, Route, useParams, useLocation } from "react-router-dom";
+import {
+	Routes,
+	Route,
+	useParams,
+	useLocation,
+	useNavigate,
+} from "react-router-dom";
 
 import SpecificView from "./SpecificView";
-import AccessibilityView from "./AccessibilityView";
-import ConnectivityView from "./ConnectivityView";
-import OpennessView from "./OpennessView";
 
 export default function Dashboard() {
 	const location = useLocation();
@@ -17,8 +20,12 @@ export default function Dashboard() {
 		location.state?.targetWebsite || localStorage.getItem("targetWebsite") || ""
 	);
 	const [targetWebsiteScore, settargetWebsiteScore] = React.useState([]);
-	let [status, lighthouseData, classification] =
+	let [status, lighthouseData, classification, robot] =
 		useQualification(targetWebsite);
+
+	const navigate = useNavigate();
+
+	console.log(classification);
 
 	React.useEffect(() => {
 		if (status === "success" && targetWebsiteScore.length === 0) {
@@ -31,6 +38,8 @@ export default function Dashboard() {
 				}, 0) / 4
 			);
 			settargetWebsiteScore(newTargetScore);
+		} else if (status === "error") {
+			navigate("/");
 		}
 	}, [status]);
 
@@ -41,6 +50,7 @@ export default function Dashboard() {
 				JSON.stringify({
 					classification: classification,
 					lighthouseData: lighthouseData,
+					robot: robot,
 				})
 			);
 		}
@@ -66,6 +76,7 @@ export default function Dashboard() {
 							path="/"
 							element={
 								<MainView
+									id="main"
 									classification={classification}
 									data={lighthouseData}
 									status={status}
@@ -78,7 +89,6 @@ export default function Dashboard() {
 							path="/compatibility"
 							element={
 								<SpecificView
-									data={lighthouseData}
 									status={status}
 									criteriaClass={classification[0]}
 									title={config.evaluation[0]}
@@ -89,7 +99,6 @@ export default function Dashboard() {
 							path="/accessibility"
 							element={
 								<SpecificView
-									data={lighthouseData}
 									status={status}
 									criteriaClass={classification[1]}
 									title={config.evaluation[1]}
@@ -101,10 +110,10 @@ export default function Dashboard() {
 							path="/openness"
 							element={
 								<SpecificView
-									data={lighthouseData}
 									status={status}
 									criteriaClass={classification[2]}
 									title={config.evaluation[2]}
+									robot={robot}
 								/>
 							}
 						/>
@@ -112,7 +121,6 @@ export default function Dashboard() {
 							path="/connectivity"
 							element={
 								<SpecificView
-									data={lighthouseData}
 									status={status}
 									criteriaClass={classification[3]}
 									title={config.evaluation[3]}
