@@ -134,14 +134,24 @@ function StyledDatagrid({ data }) {
 	);
 }
 
-export default function Stat({ data, status }) {
+const StatDataGridPhrase = (
+	<div className="w-full mt-32 mb-12">
+		<div className="text-2xl font-bold">전문적인 결과가 필요하다면..</div>
+		<div className="mt-2 text-lg">모든 검사 항목은 여기 있어요.</div>
+	</div>
+);
+
+export default function StatDataGrid({ data, status }) {
 	return (
-		<div className="w-full h-screen px-6 pb-24">
-			{status === "success" ? (
-				<StyledDatagrid data={data} />
-			) : (
-				<Skeleton sx={{ width: "100%", height: 800, marginTop: -22 }} />
-			)}
-		</div>
+		<>
+			{StatDataGridPhrase}
+			<div className="w-full h-screen px-6 pb-24">
+				{status === "success" ? (
+					<StyledDatagrid data={data} />
+				) : (
+					<Skeleton sx={{ width: "100%", height: 800, marginTop: -22 }} />
+				)}
+			</div>
+		</>
 	);
 }

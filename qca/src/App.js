@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Landing from "./Views/Landing";
 import NotFound from "./Views/NotFound";
 import Dashboard from "./Views/Dashboard";
-import MainView from "./Views/MainView";
 
 function App() {
 	const [targetWebsite, setTargetWebsite] = React.useState("");

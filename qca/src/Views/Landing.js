@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import SearchBar from "../Components/layout/SearchBar";
+import SearchBar from "../Components/search/SearchBar";
 import Header from "../Components/layout/Header";
-import Recommend from "../Components/atom/Recommend";
+import Recommend from "../Components/search/Recommend";
 import bkgImage from "../Themes/bkg.svg";
 import LandingFooter from "../Components/layout/LandingFooter";
 import { Button, Dialog } from "@mui/material";

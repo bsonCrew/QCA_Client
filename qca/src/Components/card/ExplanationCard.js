@@ -1,15 +1,9 @@
 import * as React from "react";
 
 import Skeleton from "@mui/material/Skeleton";
-import styled from "@emotion/styled";
+import ExplanationModal from "./ExplanationModal";
 import config from "../../config.json";
-import MainModal from "./MainModal";
-
-const BeautifulBar = styled(`div`)({
-	width: "100%",
-	height: "100%",
-	backgroundImage: `linear-gradient(143deg, ${config.gradientcolor[0]}, ${config.gradientcolor[1]} 71.71%)`,
-});
+import BeautifulBar from "../layout/BeautifulBar";
 
 export default function ExplanationCard({
 	targetWebsite,
@@ -54,7 +48,7 @@ export default function ExplanationCard({
 	return (
 		<div className="flex flex-col justify-center">
 			<div className="max-w-full pr-4">
-				<MainModal
+				<ExplanationModal
 					open={open}
 					handleClose={handleClose}
 					onClose={handleClose}
@@ -62,22 +56,18 @@ export default function ExplanationCard({
 					aria-describedby="modal-modal-description"
 					className="w-full h-full flex justify-center items-center"
 				/>
-				<div className="w-full h-8">
-					<BeautifulBar className="rounded-t-xl" />
-				</div>
-				<>
-					{status === "success" ? (
-						<div
-							role="button"
-							className="min-w-[280px] h-64 rounded-b-xl shadow-lg hover:shadow-2xl flex flex-col p-14 px-16 justify-center"
-							onClick={handleOpen}
-						>
-							<Display />
-						</div>
-					) : (
-						<Skeleton variant="rounded" height={270} />
-					)}
-				</>
+				<BeautifulBar height={3} flatBottom={true} />
+				{status === "success" ? (
+					<div
+						role="button"
+						className="h-64 rounded-b-xl shadow-lg hover:shadow-2xl flex flex-col p-14 px-16 justify-center"
+						onClick={handleOpen}
+					>
+						<Display />
+					</div>
+				) : (
+					<Skeleton variant="rounded" height={270} />
+				)}
 			</div>
 		</div>
 	);

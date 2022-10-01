@@ -24,6 +24,19 @@ ChartJS.register(
 
 const labels = config.iconInfo.slice(0, 5);
 
+const BarChartPhrase = (
+	<div className="w-full mt-32 mb-12">
+		<div>
+			<span className="text-2xl font-bold">비교해봅시다</span>
+		</div>
+		<div className="mt-2">
+			<span className="text-lg">
+				다른 누리집과 비교했을 때 어떤 점수를 받았는지 확인해보세요.
+			</span>
+		</div>
+	</div>
+);
+
 export default function BarChart({
 	status,
 	targetWebsite,
@@ -66,14 +79,17 @@ export default function BarChart({
 		],
 	};
 	return (
-		<div className="min-w-[400px] w-full px-4 flex">
-			{status === "success" ? (
-				<div className="flex flex-row align-middle justify-center">
-					<Bar width={1000} height={500} options={options} data={data} />
-				</div>
-			) : (
-				<Skeleton sx={{ width: "100%", height: 400, marginTop: -6 }} />
-			)}
-		</div>
+		<>
+			{BarChartPhrase}
+			<div className="min-w-[400px] w-full px-4 flex">
+				{status === "success" ? (
+					<div className="flex flex-row align-middle justify-center">
+						<Bar width={1000} height={500} options={options} data={data} />
+					</div>
+				) : (
+					<Skeleton sx={{ width: "100%", height: 400, marginTop: -6 }} />
+				)}
+			</div>
+		</>
 	);
 }

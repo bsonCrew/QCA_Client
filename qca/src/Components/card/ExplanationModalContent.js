@@ -2,7 +2,7 @@ import * as React from "react";
 import mapping from "../../assets/mapping.png";
 import crossBrowser from "../../assets/cross.jpeg";
 
-const MainExplanation = () => {
+const ExplanationModalContent = () => {
 	return (
 		<>
 			<div className="p-24">
@@ -157,4 +157,4 @@ const MainExplanation = () => {
 	);
 };
 
-export default MainExplanation;
+export default ExplanationModalContent;

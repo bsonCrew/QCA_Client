@@ -1,8 +1,6 @@
-import * as React from "react";
-import Fab from "@mui/material/Fab";
-import { useSpring, animated } from "react-spring";
-import useTop5 from "../../hooks/useTop5";
 import { useNavigate } from "react-router-dom";
+import { useSpring, animated } from "react-spring";
+import Fab from "@mui/material/Fab";
 
 const ShortCut = ({ label, homepage }) => {
 	const AnimatedFab = animated(Fab);
@@ -20,7 +18,7 @@ const ShortCut = ({ label, homepage }) => {
 	};
 
 	return (
-		<div className="items-center justify-center m-5 text-center">
+		<div className="items-center justify-center w-36 mt-5 text-center">
 			<AnimatedFab
 				color="kblue"
 				aria-label="add"
@@ -35,20 +33,4 @@ const ShortCut = ({ label, homepage }) => {
 	);
 };
 
-export default function Recommend() {
-	const [status, data] = useTop5();
-
-	return (
-		<div className="w-[max(40vw,20rem)] mt-4 flex-wrap flex items-center justify-center flex-row">
-			{status === "success"
-				? data.map(el => (
-						<ShortCut
-							key={el.homepage}
-							label={el.label}
-							homepage={el.homepage}
-						/>
-				  ))
-				: null}
-		</div>
-	);
-}
+export default ShortCut;
