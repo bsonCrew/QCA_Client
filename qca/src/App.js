@@ -2,7 +2,7 @@ import React from "react";
 import theme from "./Themes/MUIThemeOptions";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Landing from "./Views/Landing";
+import Landing from "./Views/landing/Landing";
 import NotFound from "./Views/NotFound";
 import Dashboard from "./Views/Dashboard";
 

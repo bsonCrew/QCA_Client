@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import Fab from "@mui/material/Fab";
 
@@ -9,25 +9,24 @@ const ShortCut = ({ label, homepage }) => {
 		from: { opacity: 0 },
 		velocity: 0.25,
 	});
-	const navigate = useNavigate();
-
-	const handleClick = () => {
-		navigate("/dashboard", {
-			state: { targetWebsite: homepage },
-		});
-	};
 
 	return (
 		<div className="items-center justify-center w-36 mt-5 text-center">
-			<AnimatedFab
-				color="kblue"
-				aria-label="add"
-				style={styles}
-				className="mx-16 font-bold"
-				onClick={handleClick}
+			<Link
+				to={{
+					pathname: "/dashboard",
+					state: { targetWebsite: homepage },
+				}}
 			>
-				{label.slice(0, 1)}
-			</AnimatedFab>
+				<AnimatedFab
+					color="kblue"
+					aria-label="add"
+					style={styles}
+					className="mx-16 font-bold"
+				>
+					{label.slice(0, 1)}
+				</AnimatedFab>
+			</Link>
 			<p className="mt-4">{label}</p>
 		</div>
 	);

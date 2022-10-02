@@ -1,20 +1,35 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import styled from "@emotion/styled";
+
+const HeaderWrapper = styled(`div`)({
+	width: "80vw",
+	paddingLeft: "10vw",
+	marginRight: "10vw",
+	display: "flex",
+	height: "6vh",
+	alignItems: "center",
+	justifyContent: "space-between",
+	fontSize: "1rem",
+});
+
+const LinkGroupWrapepr = styled(`div`)({
+	width: "30%",
+	display: "flex",
+	alignItems: "center",
+	justifyContent: "space-between",
+});
 
 export default function Header() {
 	const navigate = useNavigate();
 
-	const onLogoClick = () => {
-		navigate("/");
-	};
-
 	return (
-		<div className="h-16 mb-12 mt-48 flex flex-row space-x-4 drop-shadow-md">
-			<div
-				onClick={onLogoClick}
-				className="text-7xl font-semibold h-12 hover:cursor-pointer"
-			>
-				QCA
-			</div>
-		</div>
+		<HeaderWrapper>
+			<Link to={"/"}> QCA</Link>
+			<LinkGroupWrapepr>
+				<Link to={"#qca"}>QCA란</Link>
+				<Link to={"#howto"}>QCA 사용법</Link>
+				<Link to={"#search"}>검사하기</Link>
+			</LinkGroupWrapepr>
+		</HeaderWrapper>
 	);
 }

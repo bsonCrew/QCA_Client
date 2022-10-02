@@ -1,8 +1,6 @@
 import * as React from "react";
 
 import Button from "@mui/material/Button";
-import styled from "@emotion/styled";
-import config from "../../config.json";
 import ScoreCardModal from "./ScoreCardModal";
 import Skeleton from "@mui/material/Skeleton";
 
