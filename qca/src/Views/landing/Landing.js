@@ -3,15 +3,17 @@ import * as React from "react";
 import SearchBar from "../../Components/search/SearchBar";
 import Header from "../../Components/layout/Header";
 import Recommend from "../../Components/search/Recommend";
-import LandingFooter from "../../Components/layout/LandingFooter";
-import LandingExpl from "./LandingExpl";
-import Dialog from "@mui/material/Dialog";
-import Button from "@mui/material/Button";
+
 import styled from "@emotion/styled";
+
+import LandingExpl from "./LandingExpl";
+import LandingFooter from "../../Components/layout/LandingFooter";
 import Copyright from "../../Components/layout/Copyright";
+import Banner from "./Banner";
 
 function Landing({ setTargetWebsite }) {
-	const LandingCompWrapper = styled(`div`)({
+	const LandingWrapper = styled(`div`)({
+		top: "0",
 		width: "100%",
 		height: "100%",
 		display: "flex",
@@ -21,13 +23,15 @@ function Landing({ setTargetWebsite }) {
 	});
 
 	return (
-		<LandingCompWrapper>
+		<LandingWrapper>
 			<Header />
+			<Banner />
 			<LandingExpl />
-			{/* <SearchBar setTargetWebsite={setTargetWebsite} /> */}
+			<SearchBar setTargetWebsite={setTargetWebsite} />
 			<Recommend />
 			<Copyright />
-		</LandingCompWrapper>
+			<LandingFooter />
+		</LandingWrapper>
 	);
 }
 export default Landing;

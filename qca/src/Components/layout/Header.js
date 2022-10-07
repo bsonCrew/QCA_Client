@@ -1,18 +1,25 @@
 import { Link, useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
+import Button from "@mui/material/Button";
+import config from "../../config.json";
 
 const HeaderWrapper = styled(`div`)({
-	width: "80vw",
-	paddingLeft: "10vw",
-	marginRight: "10vw",
+	position: "sticky",
+	top: "0",
+	width: "100vw",
+	paddingLeft: "18vw",
+	paddingRight: "18vw",
 	display: "flex",
 	height: "6vh",
 	alignItems: "center",
 	justifyContent: "space-between",
 	fontSize: "1rem",
+	zIndex: "100",
+	borderBottom: "1px solid #e0e0e0",
+	backgroundColor: config.colors.main,
 });
 
-const LinkGroupWrapepr = styled(`div`)({
+const LinkGroupWrapper = styled(`div`)({
 	width: "30%",
 	display: "flex",
 	alignItems: "center",
@@ -20,16 +27,14 @@ const LinkGroupWrapepr = styled(`div`)({
 });
 
 export default function Header() {
-	const navigate = useNavigate();
-
 	return (
 		<HeaderWrapper>
-			<Link to={"/"}> QCA</Link>
-			<LinkGroupWrapepr>
-				<Link to={"#qca"}>QCA란</Link>
-				<Link to={"#howto"}>QCA 사용법</Link>
-				<Link to={"#search"}>검사하기</Link>
-			</LinkGroupWrapepr>
+			<Button href={"/"}>QCA</Button>
+			<LinkGroupWrapper>
+				<Button href={"#qca"}>QCA란</Button>
+				<Button href={"#howto"}>QCA 사용법</Button>
+				<Button href={"#search"}>검사하기</Button>
+			</LinkGroupWrapper>
 		</HeaderWrapper>
 	);
 }

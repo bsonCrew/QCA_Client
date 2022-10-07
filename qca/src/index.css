@@ -19,10 +19,6 @@ body > .MuiStepContent-root {
 	display: none;
 }
 
-#root {
-	overflow-y: hidden;
-}
-
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
