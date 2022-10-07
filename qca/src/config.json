@@ -1,21 +1,21 @@
 {
 	"colors": {
 		"main": "#F9FAFB",
-		"blue": "#1fb6ff",
+		"gray-dark": "#273444",
+		"black": "#000000",
+		"gray": "#6B7684",
+		"gray-light": "#d3dce6",
+		"beige": "#6C6C6C",
+		"main2": "#F2F2F2",
+		"hoverColor": "#ECECEC",
+		"blue": "#3D87F7",
 		"red": "#ff4949",
 		"mildRed": "#ffb6b6",
 		"green": "#13ce66",
 		"yellow": "#ffc82c",
 		"purple": "#7e5bef",
 		"pink": "#ff49db",
-		"orange": "#ff7849",
-		"gray-dark": "#273444",
-		"black": "#000000",
-		"gray": "#8492a6",
-		"gray-light": "#d3dce6",
-		"beige": "#6C6C6C",
-		"main2": "#F2F2F2",
-		"hoverColor": "#ECECEC"
+		"orange": "#ff7849"
 	},
 	"bgcolors": {
 		"beige": "#6C6C6C",

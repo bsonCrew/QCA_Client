@@ -33,12 +33,16 @@ const BannerText = styled(`div`)({
 
 const MainText = styled(`div`)({
 	width: "100%",
-	height: "94vh",
-	fontSize: "2.5rem",
+	height: "56vh",
+	fontSize: "min(2.5rem, 5vw)",
 	fontWeight: "bold",
 	paddingRight: "15vw",
 	paddingLeft: "15vw",
 	textAlign: "center",
+	display: "flex",
+	justifyContent: "center",
+	alignItems: "center",
+	lineHeight: "1.6",
 });
 
 const ButtonGroup = styled(`div`)({

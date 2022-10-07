@@ -7,8 +7,7 @@ const HeaderWrapper = styled(`div`)({
 	position: "sticky",
 	top: "0",
 	width: "100vw",
-	paddingLeft: "18vw",
-	paddingRight: "18vw",
+	padding: "0 18vw 0 18vw",
 	display: "flex",
 	height: "6vh",
 	alignItems: "center",
@@ -26,12 +25,14 @@ const LinkGroupWrapper = styled(`div`)({
 	justifyContent: "space-between",
 });
 
-export default function Header() {
+export default function Header({ links, executeScroll }) {
 	return (
 		<HeaderWrapper>
 			<Button href={"/"}>QCA</Button>
 			<LinkGroupWrapper>
-				<Button href={"#qca"}>QCA란</Button>
+				<Button onClick={() => executeScroll(links[0].current)} href={"#qca"}>
+					QCA란
+				</Button>
 				<Button href={"#howto"}>QCA 사용법</Button>
 				<Button href={"#search"}>검사하기</Button>
 			</LinkGroupWrapper>

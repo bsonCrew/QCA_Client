@@ -22,11 +22,17 @@ function Landing({ setTargetWebsite }) {
 		alignItems: "center",
 	});
 
+	const link1 = React.useRef(null);
+	const link2 = React.useRef(null);
+	const link3 = React.useRef(null);
+
+	const executeScroll = ref => ref.current.scrollIntoView();
+
 	return (
 		<LandingWrapper>
-			<Header />
+			<Header links={[link1, link2, link3]} executeScroll={executeScroll} />
 			<Banner />
-			<LandingExpl />
+			<LandingExpl ref={link1} />
 			<SearchBar setTargetWebsite={setTargetWebsite} />
 			<Recommend />
 			<Copyright />
