@@ -26,11 +26,12 @@ function Landing({ setTargetWebsite }) {
 	const link2 = React.useRef(null);
 	const link3 = React.useRef(null);
 
-	const executeScroll = ref => ref.current.scrollIntoView();
+	const executeScroll = ref =>
+		ref.current.scrollIntoView({ behavior: "smooth" });
 
 	return (
 		<LandingWrapper>
-			<Header links={[link1, link2, link3]} executeScroll={executeScroll} />
+			<Header link={link1} executeScroll={executeScroll} />
 			<Banner />
 			<LandingExpl ref={link1} />
 			<SearchBar setTargetWebsite={setTargetWebsite} />

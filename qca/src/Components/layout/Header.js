@@ -1,4 +1,3 @@
-import { Link, useNavigate } from "react-router-dom";
 import styled from "@emotion/styled";
 import Button from "@mui/material/Button";
 import config from "../../config.json";
@@ -25,12 +24,12 @@ const LinkGroupWrapper = styled(`div`)({
 	justifyContent: "space-between",
 });
 
-export default function Header({ links, executeScroll }) {
+export default function Header({ link, executeScroll }) {
 	return (
 		<HeaderWrapper>
 			<Button href={"/"}>QCA</Button>
 			<LinkGroupWrapper>
-				<Button onClick={() => executeScroll(links[0].current)} href={"#qca"}>
+				<Button onClick={() => executeScroll(link.current)} href={"#qca"}>
 					QCA란
 				</Button>
 				<Button href={"#howto"}>QCA 사용법</Button>
