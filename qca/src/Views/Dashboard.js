@@ -3,7 +3,7 @@ import SideBar from "../Components/layout/Sidebar";
 import Footer from "../Components/layout/Footer";
 import MainView from "./MainView";
 import config from "../config.json";
-import useQualification from "../hooks/useQualification";
+import useQualification from "../Hooks/useQualification";
 import {
 	Routes,
 	Route,

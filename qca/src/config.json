@@ -1,21 +1,22 @@
 {
 	"colors": {
-		"main": "#F6F6F6",
-		"blue": "#1fb6ff",
+		"main": "#F9FAFB",
+		"gray-dark": "#273444",
+		"black": "#000000",
+		"gray": "#6B7684",
+		"gray-light": "#d3dce6",
+		"beige": "#6C6C6C",
+		"main2": "#F2F2F2",
+		"hoverColor": "#ECECEC",
+		"white": "#ffffff",
+		"blue": "#3D87F7",
 		"red": "#ff4949",
 		"mildRed": "#ffb6b6",
 		"green": "#13ce66",
 		"yellow": "#ffc82c",
 		"purple": "#7e5bef",
 		"pink": "#ff49db",
-		"orange": "#ff7849",
-		"gray-dark": "#273444",
-		"black": "#000000",
-		"gray": "#8492a6",
-		"gray-light": "#d3dce6",
-		"beige": "#6C6C6C",
-		"main2": "#F2F2F2",
-		"hoverColor": "#ECECEC"
+		"orange": "#ff7849"
 	},
 	"bgcolors": {
 		"beige": "#6C6C6C",
@@ -58,7 +59,7 @@
 		"홈 화면"
 	],
 	"scorePhrase": [
-		"최고에요 😘 이 대로만 해 주세요",
+		"최고에요 😘 이대로만 해 주세요",
 		"좋아요!😀 쾌적한 환경이에요",
 		"괜찮아요🙂 사용하는 데 문제 없어요",
 		"개선점이 조금 있어요 🤒. 고쳐 볼까요?",

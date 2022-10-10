@@ -1,20 +1,40 @@
-import { useNavigate } from "react-router-dom";
+import styled from "@emotion/styled";
+import Button from "@mui/material/Button";
+import config from "../../config.json";
 
-export default function Header() {
-	const navigate = useNavigate();
+const HeaderWrapper = styled(`div`)({
+	position: "sticky",
+	top: "0",
+	width: "100vw",
+	padding: "0 18vw 0 18vw",
+	display: "flex",
+	height: "6vh",
+	alignItems: "center",
+	justifyContent: "space-between",
+	fontSize: "1rem",
+	zIndex: "100",
+	borderBottom: "1px solid #e0e0e0",
+	backgroundColor: config.colors.main,
+});
 
-	const onLogoClick = () => {
-		navigate("/");
-	};
+const LinkGroupWrapper = styled(`div`)({
+	width: "30%",
+	display: "flex",
+	alignItems: "center",
+	justifyContent: "space-between",
+});
 
+export default function Header({ link, executeScroll }) {
 	return (
-		<div className="h-16 mb-12 mt-48 flex flex-row space-x-4 drop-shadow-md">
-			<div
-				onClick={onLogoClick}
-				className="text-7xl font-semibold h-12 hover:cursor-pointer"
-			>
-				QCA
-			</div>
-		</div>
+		<HeaderWrapper>
+			<Button href={"/"}>QCA</Button>
+			<LinkGroupWrapper>
+				<Button onClick={() => executeScroll(link.current)} href={"#qca"}>
+					QCA란
+				</Button>
+				<Button href={"#howto"}>QCA 사용법</Button>
+				<Button href={"#search"}>검사하기</Button>
+			</LinkGroupWrapper>
+		</HeaderWrapper>
 	);
 }

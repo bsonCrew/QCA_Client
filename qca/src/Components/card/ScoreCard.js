@@ -1,25 +1,19 @@
 import * as React from "react";
 
 import Button from "@mui/material/Button";
-import styled from "@emotion/styled";
-import config from "../../config.json";
-import ScoreModal from "./ScoreModal";
+import ScoreCardModal from "./ScoreCardModal";
 import Skeleton from "@mui/material/Skeleton";
 
-const BeautifulBar = styled(`div`)({
-	width: "100%",
-	height: "100%",
-	backgroundImage: `linear-gradient(217deg, ${config.gradientcolor[0]}, ${config.gradientcolor[1]} 71.71%)`,
-});
+import BeautifulBar from "../layout/BeautifulBar";
 
-export default function Score({ score, status }) {
+export default function ScoreCard({ score, status }) {
 	const [open, setOpen] = React.useState(false);
 	const handleOpen = () => setOpen(true);
 	const handleClose = () => setOpen(false);
 
 	return (
 		<div className="max-w-full">
-			<ScoreModal
+			<ScoreCardModal
 				open={open}
 				handleClose={handleClose}
 				onClose={handleClose}
@@ -27,9 +21,7 @@ export default function Score({ score, status }) {
 				aria-describedby="modal-modal-description"
 				className="w-full h-full flex justify-center items-center"
 			/>
-			<div className="w-full h-8">
-				<BeautifulBar className="rounded-t-xl w-full h-8" />
-			</div>
+			<BeautifulBar height={3} flatBottom={true} reverse={true} />
 
 			{status === "success" ? (
 				<div

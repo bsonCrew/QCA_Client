@@ -1,6 +1,6 @@
 import React from "react";
 import config from "../config";
-import calculateAndClassify from "../Components/utils/calculate";
+import calculateAndClassify from "../Components/utils/classifyAndCalculate";
 import checkRobotTxt from "../Components/utils/checkRobotTxt";
 import calculateValidator from "../Components/utils/calculateValidator";
 
