@@ -6,10 +6,17 @@ import Recommend from "../../Components/search/Recommend";
 
 import styled from "@emotion/styled";
 
-import LandingExpl from "./LandingExpl";
+import WhyQCA from "./WhyQca";
 import LandingFooter from "../../Components/layout/LandingFooter";
 import Copyright from "../../Components/layout/Copyright";
 import Banner from "./Banner";
+import FeatureCards from "./FeatureCard";
+
+import config from "../../config.json";
+import DataCard from "../../Components/card/DataCard";
+import ScoreCard from "../../Components/card/ScoreCard";
+import ExplanationCard from "../../Components/card/ExplanationCard";
+import { HBlue, H2Black, H2Gray } from "../../Themes/CustomStyled";
 
 function Landing({ setTargetWebsite }) {
 	const LandingWrapper = styled(`div`)({
@@ -33,7 +40,34 @@ function Landing({ setTargetWebsite }) {
 		<LandingWrapper>
 			<Header link={link1} executeScroll={executeScroll} />
 			<Banner />
-			<LandingExpl ref={link1} />
+			<HBlue ref={link1}>QCA란?</HBlue>
+			<H2Gray>Quality Control Automation : 품질관리 자동화</H2Gray>
+			<WhyQCA />
+
+			<HBlue>왜 QCA를 써야 하죠?</HBlue>
+			<FeatureCards />
+
+			<HBlue>QCA 사용법</HBlue>
+			<H2Gray>
+				웹 사이트의 표를 올바르게 구성 것은 정확한 웹 페이지를 이해하기 위해 꼭
+				필요합니다.
+			</H2Gray>
+			<H2Black>총점을 한 눈에</H2Black>
+			<H2Gray>
+				웹 사이트를 검사하면 가장 먼저 웹 페이지의 총점을 알려 드려요
+			</H2Gray>
+			<ScoreCard status={"success"} score={"100"} />
+			<ExplanationCard
+				targetWebsite={"www.example.com"}
+				targetWebsiteScore={Array(7).fill(100)}
+				status={"success"}
+			/>
+			<DataCard status={"success"} title={"fish"} subheader={"fish"} />
+
+			<HBlue>알고리즘</HBlue>
+
+			<HBlue>검사하기</HBlue>
+
 			<SearchBar setTargetWebsite={setTargetWebsite} />
 			<Recommend />
 			<Copyright />

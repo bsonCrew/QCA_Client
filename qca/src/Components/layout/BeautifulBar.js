@@ -3,7 +3,7 @@ import config from "../../config.json";
 
 const BeautifulBar = styled(`div`)(props => {
 	return {
-		width: "100%",
+		width: props.width ? `${props.width}rem` : "100%",
 		height: `${0.5 * props.height}rem`,
 		backgroundImage: `linear-gradient(${props.reverse ? 143 : -143}deg, ${
 			config.gradientcolor[0]
