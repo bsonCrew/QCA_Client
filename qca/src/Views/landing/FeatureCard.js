@@ -21,6 +21,10 @@ const FeatureCardWrapper = styled(`div`)({
 	height: "50vh",
 	backgroundColor: config.colors.white,
 	boxShadow: `${config.colors["gray-light"]} 10px 10px 20px`,
+	"&:hover": {
+		boxShadow: `${config.colors["gray-light"]} 10px 10px 50px`,
+	},
+	
 	margin: "1vw",
 	padding: "3rem",
 	borderRadius: "2rem",

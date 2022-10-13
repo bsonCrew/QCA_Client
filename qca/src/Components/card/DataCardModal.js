@@ -31,6 +31,8 @@ export default function DataCardModal(props) {
 		);
 	};
 
+	console.log(props.title, props.subheader, props.description);
+
 	return (
 		<Dialog
 			open={props.open}

@@ -1,5 +1,6 @@
 import * as React from "react";
 import config from "../../config.json";
+import styled from "@emotion/styled";
 import Avatar from "@mui/material/Avatar";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DangerousIcon from "@mui/icons-material/Dangerous";
@@ -11,7 +12,32 @@ import Skeleton from "@mui/material/Skeleton";
 
 import DataCardModal from "./DataCardModal";
 
+const CardWrapper = styled(`div`)({
+	minWidth: "200px",
+	maxWidth: "320px",
+	margin: "2rem",
+	transition: "ease-in-out",
+	width: "25%",
+	borderRadius: "0 0 5px 5px",
+	boxShadow: `${config.colors["gray-light"]} 0px 0px 20px`,
+	"&:hover": {
+		boxShadow: `${config.colors["gray-light"]} 0px 0px 50px`,
+	},
+	display: "flex",
+	flexDirection: "column",
+});
+
+const CustomAvatar = styled(Avatar)(props => {
+	return {
+		margin: "-1rem 0 -1.2rem -1rem",
+		"&:hover": {
+			cursor: "pointer",
+		},
+	};
+});
+
 export default function DataCard(props) {
+	console.log(props);
 	const [iconIdx, setIconIdx] = React.useState(0);
 	const [clicked, setClicked] = React.useState(false);
 	const handleClose = () => setClicked(false);
@@ -44,23 +70,22 @@ export default function DataCard(props) {
 	const bgcolors = config.warningcolors;
 
 	return (
-		<div className="w-3/12 min-w-[200px] max-w-sm mx-6 my-6 grow transition-transform ease-in-out">
+		<CardWrapper>
 			<Tooltip
 				title={config.catchPhrase[iconIdx] || "No description"}
 				placement="left"
 				arrow
 			>
-				<Avatar
+				<CustomAvatar
 					sx={{
 						width: 36,
 						height: 36,
 						zIndex: 2,
 						bgcolor: bgcolors[iconIdx],
 					}}
-					className="-ml-4 -mr-8 z-2 -mb-6 hover:cursor-pointer"
 				>
 					{icons[iconIdx]}
-				</Avatar>
+				</CustomAvatar>
 			</Tooltip>
 			<DataCardModal
 				{...props}
@@ -92,6 +117,6 @@ export default function DataCard(props) {
 					variant="rounded"
 				/>
 			)}
-		</div>
+		</CardWrapper>
 	);
 }

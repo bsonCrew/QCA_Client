@@ -9,8 +9,8 @@ const BeautifulBar = styled(`div`)(props => {
 			config.gradientcolor[0]
 		}, ${config.gradientcolor[1]} 71.71%)`,
 		borderRadius: "5px",
-		marginTop: "0.5rem",
-		marginBottom: "0.5rem",
+		// marginTop: "0.5rem",
+		// marginBottom: "0.5rem",
 		borderBottomLeftRadius: `${props.flatBottom ? "0px" : "5px"}`,
 		borderBottomRightRadius: `${props.flatBottom ? "0px" : "5px"}`,
 	};
