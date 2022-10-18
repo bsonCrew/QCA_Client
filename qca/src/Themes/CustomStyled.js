@@ -9,6 +9,14 @@ const HBlue = styled(`span`)({
 	color: config.colors.blue,
 });
 
+const HWhite = styled(`span`)({
+	margin: "0 0 20vh 4vw",
+	width: "100%",
+	fontWeight: 500,
+	fontSize: "1rem",
+	color: config.colors.white,
+});
+
 const HBlack = styled(`span`)({
 	margin: "0 0 2vh 4vw",
 	width: "100%",
@@ -40,4 +48,4 @@ const RedText = styled(`span`)({
 	color: config.colors.redText,
 });
 
-export { HBlue, HBlack as H2Black, BlueText, RedText, H2Gray, H3Gray };
+export { HBlue, HBlack as H2Black, BlueText, HWhite, RedText, H2Gray, H3Gray };

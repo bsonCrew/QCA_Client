@@ -2,6 +2,13 @@ import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import Fab from "@mui/material/Fab";
 
+import styled from "@emotion/styled";
+
+const LabelLink = styled(`div`)({
+	marginTop: "2vh",
+	color: "white",
+});
+
 const ShortCut = ({ label, homepage }) => {
 	const AnimatedFab = animated(Fab);
 	const styles = useSpring({
@@ -27,7 +34,7 @@ const ShortCut = ({ label, homepage }) => {
 					{label.slice(0, 1)}
 				</AnimatedFab>
 			</Link>
-			<p className="mt-4">{label}</p>
+			<LabelLink>{label}</LabelLink>
 		</div>
 	);
 };

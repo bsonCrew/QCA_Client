@@ -5,6 +5,7 @@ import config from "../../config.json";
 import Button from "@mui/material/Button";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import Video from "../landing/Video";
 
 const BannerWrapper = styled(`div`)(props => {
 	return {
@@ -71,35 +72,25 @@ const BannerContent1 = (
 		</BannerText>
 	</BannerWrapper>
 );
-const BannerContent2 = (
-	<BannerWrapper bannerImg={bannerImg1}>
-		<BannerText>
-			anj
-			<br /> 한 번에 끝내 드릴게요
-		</BannerText>
-	</BannerWrapper>
-);
+const BannerContent2 = <Video />;
 
-const Banner = ({ children }) => {
+const bannerContents = [BannerContent1, BannerContent2];
+
+const Banner = () => {
 	const [activeIndex, setActiveIndex] = React.useState(0);
 
 	const updateIndex = newIndex => {
 		if (newIndex < 0) {
-			newIndex = React.Children.count(children) - 1;
-		} else if (newIndex >= React.Children.count(children)) {
+			return;
+		} else if (newIndex >= bannerContents.length) {
 			newIndex = 0;
 		}
-
 		setActiveIndex(newIndex);
 	};
 
-	const bannerContents = [BannerContent1, BannerContent2];
-
 	return (
 		<>
-			{/* <div style={{ transform: `translateX(-${activeIndex * 100}%)` }}> */}
 			{bannerContents[activeIndex]}
-			{activeIndex}
 			<ButtonGroup>
 				<ChevronButton
 					onClick={() => {
