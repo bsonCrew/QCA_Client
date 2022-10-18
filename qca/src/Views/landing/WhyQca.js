@@ -9,7 +9,7 @@ import FeatureCards from "./FeatureCard";
 const ExplWrapper = styled(`div`)({
 	width: "100%",
 	display: "flex",
-	padding: "0 18vw 0 18vw",
+	// padding: "0 18vw 0 18vw",
 	flexDirection: "column",
 });
 
@@ -23,8 +23,7 @@ const Expl = styled(`div`)({
 });
 
 const ExplImg = styled(`div`)({
-	flex: "3",
-	padding: "2vw",
+	margin: "2vw 2vw 2vw 2vw",
 	minWidth: "280px",
 	objectFit: "contain",
 });

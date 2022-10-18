@@ -7,24 +7,18 @@ import SquareFootIcon from "@mui/icons-material/SquareFoot";
 import AutoModeIcon from "@mui/icons-material/AutoMode";
 
 const CardsWrapper = styled(`div`)({
+	width: "100%",
 	display: "flex",
 	flexDirection: "row",
 	justifyContent: "center",
 	flexWrap: "wrap",
-	padding: "0 3vw 0 3vw",
+	// padding: "0 3vw 0 3vw",
 });
 
 const FeatureCardWrapper = styled(`div`)({
 	width: "26%",
-	minWidth: "280px",
-	// flexGrow: "1",
+	minWidth: "min(280px,60vw)",
 	height: "50vh",
-	backgroundColor: config.colors.white,
-	boxShadow: `${config.colors["gray-light"]} 10px 10px 20px`,
-	"&:hover": {
-		boxShadow: `${config.colors["gray-light"]} 10px 10px 50px`,
-	},
-	
 	margin: "1vw",
 	padding: "3rem",
 	borderRadius: "2rem",
@@ -33,6 +27,12 @@ const FeatureCardWrapper = styled(`div`)({
 	alignItems: "center",
 	textAlign: "center",
 	justifyContent: "center",
+
+	backgroundColor: config.colors.white,
+	boxShadow: `${config.colors["gray-light"]} 10px 10px 20px`,
+	"&:hover": {
+		boxShadow: `${config.colors["gray-light"]} 10px 10px 50px`,
+	},
 });
 
 const FeatureCardIconWrapper = styled(`div`)({

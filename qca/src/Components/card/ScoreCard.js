@@ -9,7 +9,7 @@ import styled from "@emotion/styled";
 import config from "../../config.json";
 
 const CardWrapper = styled(`div`)({
-	width: "360px",
+	margin: "2vh 2vw 2vh 2vw",
 	borderRadius: "0 0 5px 5px",
 	boxShadow: `${config.colors["gray-light"]} 10px 10px 20px`,
 	"&:hover": {
@@ -32,7 +32,7 @@ const ScoreButtonCard = styled(`div`)({
 	height: "100%",
 	minWidth: "280px",
 	backgroundColor: config.colors.white,
-	padding: "3rem",
+	padding: "1rem 2rem 2rem 2rem",
 
 	borderRadius: "0 0 5px 5px",
 	display: "flex",
@@ -43,10 +43,11 @@ const ScoreButtonCard = styled(`div`)({
 });
 
 const ScoreText = styled(`span`)({
-	fontSize: "2rem",
+	fontSize: "1.2rem",
 });
 const Score = styled(`span`)({
-	fontSize: "4rem",
+	textAlign: "center",
+	fontSize: "min(3rem,8vw)",
 });
 
 export default function ScoreCard({ score, status }) {

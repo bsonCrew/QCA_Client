@@ -10,14 +10,13 @@ import styled from "@emotion/styled";
 
 const HeaderText = styled(`span`)({
 	margin: "0 0 0 0",
-	// width: "60%",
 	fontWeight: 700,
 	fontSize: "min(1.8rem, 5vw)",
 	color: config.colors.blue,
 });
 
 const CardWrapper = styled(`div`)({
-	width: "560px",
+	margin: "2vh 2vw 2vh 2vw",
 	borderRadius: "0 0 5px 5px",
 	boxShadow: `${config.colors["gray-light"]} 0px 0px 20px`,
 	"&:hover": {

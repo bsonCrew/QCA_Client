@@ -14,11 +14,11 @@ import DataCardModal from "./DataCardModal";
 
 const CardWrapper = styled(`div`)({
 	minWidth: "200px",
-	maxWidth: "320px",
+	maxWidth: "480px",
 	margin: "2rem",
 	transition: "ease-in-out",
-	width: "25%",
 	borderRadius: "0 0 5px 5px",
+	// padding: "2rem",
 	boxShadow: `${config.colors["gray-light"]} 0px 0px 20px`,
 	"&:hover": {
 		boxShadow: `${config.colors["gray-light"]} 0px 0px 50px`,
@@ -37,7 +37,6 @@ const CustomAvatar = styled(Avatar)(props => {
 });
 
 export default function DataCard(props) {
-	console.log(props);
 	const [iconIdx, setIconIdx] = React.useState(0);
 	const [clicked, setClicked] = React.useState(false);
 	const handleClose = () => setClicked(false);
@@ -92,25 +91,20 @@ export default function DataCard(props) {
 				open={clicked}
 				handleClose={handleClose}
 				onClose={handleClose}
-			>
-				<div className="w-80 h-96"></div>
-			</DataCardModal>
+			></DataCardModal>
 			{props.status === "success" ? (
-				<>
-					<div
-						role="button"
-						className={
-							"h-36 rounded-lg shadow-lg hover:shadow-2xl text-center flex flex-col justify-center p-4 py-7 px-8" +
-							(clicked ? "bg-mildRed " : " bg-white")
-						}
-						onClick={() => setClicked(!clicked)}
-					>
-						<span className="text-lg">{props.title}</span>
-						<span className="text-sm font-bold text-blue">
-							{props.subheader.slice(0, 18) + " ..."}
-						</span>
-					</div>
-				</>
+				<div
+					role="button"
+					className={
+						"rounded-lg shadow-lg hover:shadow-2xl text-center flex flex-col justify-center py-7 px-8"
+					}
+					onClick={() => setClicked(!clicked)}
+				>
+					<span className="text-lg">{props.title}</span>
+					<span className="text-sm font-bold text-blue">
+						{props.subheader.slice(0, 18) + " ..."}
+					</span>
+				</div>
 			) : (
 				<Skeleton
 					sx={{ width: "100%", height: 128, bgcolor: "grey.300" }}

@@ -55,6 +55,7 @@ const useQualification = website => {
 				}
 			} catch (error) {
 				setStatus("error");
+				console.log("error occured")
 				return false;
 			}
 		};
@@ -73,6 +74,8 @@ const useQualification = website => {
 				console.log(e);
 			}
 		}
+
+		console.log("fish");
 	}, []);
 
 	React.useEffect(() => {

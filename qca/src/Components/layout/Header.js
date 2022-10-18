@@ -5,10 +5,10 @@ import config from "../../config.json";
 const HeaderWrapper = styled(`div`)({
 	position: "sticky",
 	top: "0",
-	width: "100vw",
-	padding: "0 18vw 0 18vw",
+	width: "100%",
+	padding: "0 max(16vw,20px) 0 max(16vw,20px)",
 	display: "flex",
-	height: "6vh",
+	height: "max(6vh,60px)",
 	alignItems: "center",
 	justifyContent: "space-between",
 	fontSize: "1rem",
@@ -17,10 +17,9 @@ const HeaderWrapper = styled(`div`)({
 	backgroundColor: config.colors.main,
 });
 
-const LinkGroupWrapper = styled(`div`)({
-	width: "30%",
+const ButtonGroup = styled(`div`)({
 	display: "flex",
-	alignItems: "center",
+	flexDirection: "row",
 	justifyContent: "space-between",
 });
 
@@ -28,13 +27,13 @@ export default function Header({ link, executeScroll }) {
 	return (
 		<HeaderWrapper>
 			<Button href={"/"}>QCA</Button>
-			<LinkGroupWrapper>
+			<ButtonGroup>
 				<Button onClick={() => executeScroll(link.current)} href={"#qca"}>
 					QCA란
 				</Button>
-				<Button href={"#howto"}>QCA 사용법</Button>
-				<Button href={"#search"}>검사하기</Button>
-			</LinkGroupWrapper>
+				<Button href={"#howto"}>사용법</Button>
+				<Button href={"#search"}>검사</Button>
+			</ButtonGroup>
 		</HeaderWrapper>
 	);
 }
