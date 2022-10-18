@@ -16,9 +16,7 @@ export default function ExplanationModal(props) {
 			sx={{
 				"& .MuiDialog-container": {
 					"& .MuiPaper-root": {
-						width: "100%",
 						maxWidth: "lg",
-						height: "100%",
 						marginBottom: -10,
 						marginTop: -10,
 					},

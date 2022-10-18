@@ -1,8 +1,20 @@
 import Dialog from "@mui/material/Dialog";
 
+import styled from "@emotion/styled";
+
+const FooterWrapper = styled(`div`)({
+	width: "100%",
+	display: "flex",
+	justifyContent: "center",
+	flexDirection: "column",
+	padding: "12vh 8vw 12vh 8vw",
+	zIndex: "2",
+	fontSize: "1.6",
+});
+
 export default function LandingFooter() {
 	return (
-		<div className="flex flex-col px-24 py-32 z-2 w-full justify-center text-md">
+		<FooterWrapper>
 			<div className="mb-2">
 				<b>W3C Validator</b>
 				<br />
@@ -32,21 +44,19 @@ export default function LandingFooter() {
 				</a>
 			</div>
 			<div className="mt-12">
-				<span>
-					Project contributor:
-					<b>
-						<a
-							href="https://github.com/bsonCrew"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="mx-1 decoration-[#50d71e]"
-						>
-							bson crew.
-						</a>
-					</b>
-					All rights reserved © 2022 - {new Date().getFullYear()}
-				</span>
+				Project contributor:
+				<b>
+					<a
+						href="https://github.com/bsonCrew"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="mx-1 decoration-[#50d71e]"
+					>
+						bson crew.
+					</a>
+				</b>
+				All rights reserved © 2022 - {new Date().getFullYear()}
 			</div>
-		</div>
+		</FooterWrapper>
 	);
 }

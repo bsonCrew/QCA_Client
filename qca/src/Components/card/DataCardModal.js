@@ -40,8 +40,8 @@ export default function DataCardModal(props) {
 			fullWidth
 			maxWidth="lg"
 		>
-			<div className="w-fit h-96 p-12">
-				<span className="text-3xl font-bold">{props.title}</span>
+			<div className="w-fit h-100 p-12">
+				<span className="text-xl font-bold">{props.title}</span>
 				<AuditLabel auditId={props.id} />
 				<div className="mt-4">
 					<span className="text-xl pt-4 leading-8">{props.subheader}</span>

@@ -6,34 +6,33 @@ import config from "../../config.json";
 import BeautifulBar from "../layout/BeautifulBar";
 import styled from "@emotion/styled";
 
-import { H3Gray, H2Black, H2Gray } from "../../Themes/CustomStyled";
-import Button from "@mui/material/Button";
+// import { H3Gray, H2Black } from "../../Themes/CustomStyled";
+
+const HeaderText = styled(`span`)({
+	margin: "0 0 0 0",
+	fontWeight: 700,
+	fontSize: "min(1.8rem, 5vw)",
+	color: config.colors.blue,
+});
 
 const CardWrapper = styled(`div`)({
+	margin: "2vh 2vw 2vh 2vw",
+	borderRadius: "0 0 5px 5px",
+	boxShadow: `${config.colors["gray-light"]} 0px 0px 20px`,
+	"&:hover": {
+		boxShadow: `${config.colors["gray-light"]} 0px 0px 50px`,
+	},
 	display: "flex",
 	flexDirection: "column",
-	justifyContent: "center",
 });
 
-const DisplayWrapper = styled(`div`)({
+const ExplCardButton = styled(`button`)({
 	width: "100%",
-	fontSize: "min(1.8rem, 5vw)",
-});
-
-const DisplayButton = styled(Button)({
-	boxShadow: "",
-});
-
-const FeatureCardWrapper = styled(`button`)({
-	width: "26%",
+	height: "100%",
 	minWidth: "280px",
-	// flexGrow: "1",
-	height: "50vh",
 	backgroundColor: config.colors.white,
-	boxShadow: `${config.colors["gray-light"]} 10px 10px 20px`,
-	margin: "1vw",
-	padding: "3rem",
-	borderRadius: "2rem",
+	padding: "2rem",
+	borderRadius: "0 0 5px 5px",
 	display: "flex",
 	flexDirection: "column",
 	alignItems: "center",
@@ -69,27 +68,21 @@ export default function ExplanationCard({
 			/>
 			<BeautifulBar height={3} flatBottom={true} />
 			{status === "success" ? (
-				<FeatureCardWrapper
-					// role="button"
-					// className="h-64 rounded-b-xl shadow-lg hover:shadow-2xl flex flex-col p-14 px-16 justify-center"
-					onClick={handleOpen}
-				>
-					<DisplayWrapper>
-						{catchPhrase(targetWebsiteScore[6])}
-						<br />
-						<H2Black>{`${targetWebsite}의 총점은 ${Math.floor(
-							targetWebsiteScore[6]
-						)}점입니다.`}</H2Black>
-						<br />
-						<H3Gray>
-							{config.evaluation[0]} 점수는 <b>{targetWebsiteScore[0]}점</b>,{" "}
-							{config.evaluation[1]} 점수는 <b>{targetWebsiteScore[1]}점</b>,{" "}
-							{config.evaluation[2]} 점수는 <b>{targetWebsiteScore[2]}점</b>,{" "}
-							{config.evaluation[3]} 점수는 <b>{targetWebsiteScore[3]}점</b>
-							입니다.
-						</H3Gray>
-					</DisplayWrapper>
-				</FeatureCardWrapper>
+				<ExplCardButton onClick={handleOpen}>
+					<HeaderText>{catchPhrase(targetWebsiteScore[6])}</HeaderText>
+					<br />
+					<span>{`${targetWebsite}의 총점은 ${Math.floor(
+						targetWebsiteScore[6]
+					)}점입니다.`}</span>
+					<br />
+					<span>
+						{config.evaluation[0]} 점수는 <b>{targetWebsiteScore[0]}점</b>,{" "}
+						{config.evaluation[1]} 점수는 <b>{targetWebsiteScore[1]}점</b>,{" "}
+						{config.evaluation[2]} 점수는 <b>{targetWebsiteScore[2]}점</b>,{" "}
+						{config.evaluation[3]} 점수는 <b>{targetWebsiteScore[3]}점</b>
+						입니다.
+					</span>
+				</ExplCardButton>
 			) : (
 				<Skeleton variant="rounded" height={270} />
 			)}

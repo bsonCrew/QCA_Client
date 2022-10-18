@@ -19,9 +19,11 @@ const useTop5 = () => {
 					setStatus("success");
 					setData(data);
 				} else {
+					console.log(data.status);
 					setStatus("fetchedButFounderror");
 				}
 			} catch (error) {
+				console.log(error);
 				setStatus("error");
 			}
 		};

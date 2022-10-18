@@ -1,5 +1,6 @@
 import * as React from "react";
 import config from "../../config.json";
+import styled from "@emotion/styled";
 import Avatar from "@mui/material/Avatar";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import DangerousIcon from "@mui/icons-material/Dangerous";
@@ -10,6 +11,52 @@ import Tooltip from "@mui/material/Tooltip";
 import Skeleton from "@mui/material/Skeleton";
 
 import DataCardModal from "./DataCardModal";
+
+const CardWrapper = styled(`div`)({
+	minWidth: "200px",
+	maxWidth: "480px",
+	margin: "2rem",
+	height: "max(16vh,200px)",
+	transition: "ease-in-out",
+	borderRadius: "0 0 5px 5px",
+	// padding: "2rem",
+	boxShadow: `${config.colors["gray-light"]} 0px 0px 20px`,
+	"&:hover": {
+		boxShadow: `${config.colors["gray-light"]} 0px 0px 50px`,
+	},
+	display: "flex",
+	flexDirection: "column",
+});
+
+const CustomAvatar = styled(Avatar)(props => {
+	return {
+		margin: "-1rem 0 -1.2rem -1rem",
+		"&:hover": {
+			cursor: "pointer",
+		},
+	};
+});
+
+const DataCardButton = styled(`button`)({
+	height: "100%",
+	borderRadius: "5px",
+	display: "flex",
+	flexDirection: "column",
+	justifyContent: "center",
+	textAlign: "left",
+	padding: "2vh max(2vw,18px) 2vh max(2vw,18px)",
+	backgroundColor: config.colors.white,
+});
+
+const DataCardTitle = styled(`span`)({
+	fontSize: "1.1rem",
+	margin: "0 0 1vh 0",
+});
+
+const DataCardExpl = styled(`span`)({
+	fontSize: "0.9rem",
+	color: config.colors.lightBlue,
+});
 
 export default function DataCard(props) {
 	const [iconIdx, setIconIdx] = React.useState(0);
@@ -44,54 +91,42 @@ export default function DataCard(props) {
 	const bgcolors = config.warningcolors;
 
 	return (
-		<div className="w-3/12 min-w-[200px] max-w-sm mx-6 my-6 grow transition-transform ease-in-out">
+		<CardWrapper>
 			<Tooltip
 				title={config.catchPhrase[iconIdx] || "No description"}
 				placement="left"
 				arrow
 			>
-				<Avatar
+				<CustomAvatar
 					sx={{
 						width: 36,
 						height: 36,
 						zIndex: 2,
 						bgcolor: bgcolors[iconIdx],
 					}}
-					className="-ml-4 -mr-8 z-2 -mb-6 hover:cursor-pointer"
 				>
 					{icons[iconIdx]}
-				</Avatar>
+				</CustomAvatar>
 			</Tooltip>
 			<DataCardModal
 				{...props}
 				open={clicked}
 				handleClose={handleClose}
 				onClose={handleClose}
-			>
-				<div className="w-80 h-96"></div>
-			</DataCardModal>
+			></DataCardModal>
 			{props.status === "success" ? (
-				<>
-					<div
-						role="button"
-						className={
-							"h-36 rounded-lg shadow-lg hover:shadow-2xl text-center flex flex-col justify-center p-4 py-7 px-8" +
-							(clicked ? "bg-mildRed " : " bg-white")
-						}
-						onClick={() => setClicked(!clicked)}
-					>
-						<span className="text-lg">{props.title}</span>
-						<span className="text-sm font-bold text-blue">
-							{props.subheader.slice(0, 18) + " ..."}
-						</span>
-					</div>
-				</>
+				<DataCardButton onClick={() => setClicked(!clicked)}>
+					<DataCardTitle>{props.title}</DataCardTitle>
+					<DataCardExpl className="text-sm font-bold text-blue">
+						{props.subheader.split(". ")[0]}
+					</DataCardExpl>
+				</DataCardButton>
 			) : (
 				<Skeleton
 					sx={{ width: "100%", height: 128, bgcolor: "grey.300" }}
 					variant="rounded"
 				/>
 			)}
-		</div>
+		</CardWrapper>
 	);
 }
