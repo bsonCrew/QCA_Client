@@ -1,6 +1,6 @@
 import * as React from "react";
-import Score from "../Components/atom/Score";
-import Card from "../Components/atom/Card";
+import ScoreCard from "../Components/card/ScoreCard";
+import DataCard from "../Components/card/DataCard";
 
 const ScoreView = ({ name, score, totalScore }) => {
 	if (name === "개선해봐요" || name === "속도 향상 방안") {
@@ -108,9 +108,10 @@ const SubClassCard = ({ criteria, criteriaVal, status }) => {
 };
 
 const SpecCard = ({ spec, status }) => {
+	console.log(spec, status);
 	return spec.items.length > 0 ? (
 		spec.items.map(item => (
-			<Card
+			<DataCard
 				item={item}
 				score={item.score}
 				calcFunctionType={spec.calcFunctionType}
@@ -179,7 +180,7 @@ function SpecificView({ title, status, criteriaClass, robot }) {
 					<span className="text-lg">평가하는 데 사용된 지표들이에요.</span>
 				</div>
 
-				<Score status={status} score={criteriaClass?.resultScore} />
+				<ScoreCard status={status} score={criteriaClass?.resultScore} />
 			</div>
 			<div>{robot ? <RobotCard /> : null}</div>
 			<div className="flex-4 mt-24 rounded-2xl">
@@ -192,3 +193,4 @@ function SpecificView({ title, status, criteriaClass, robot }) {
 }
 
 export default React.memo(SpecificView);
+export { SpecCard };

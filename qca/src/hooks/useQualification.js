@@ -1,6 +1,6 @@
 import React from "react";
 import config from "../config";
-import calculateAndClassify from "../Components/utils/calculate";
+import calculateAndClassify from "../Components/utils/classifyAndCalculate";
 import checkRobotTxt from "../Components/utils/checkRobotTxt";
 import calculateValidator from "../Components/utils/calculateValidator";
 
@@ -55,6 +55,7 @@ const useQualification = website => {
 				}
 			} catch (error) {
 				setStatus("error");
+				console.log("error occured")
 				return false;
 			}
 		};
@@ -73,6 +74,8 @@ const useQualification = website => {
 				console.log(e);
 			}
 		}
+
+		console.log("fish");
 	}, []);
 
 	React.useEffect(() => {

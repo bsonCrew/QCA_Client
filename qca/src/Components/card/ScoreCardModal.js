@@ -1,10 +1,9 @@
 import Dialog from "@mui/material/Dialog";
 import Button from "@mui/material/Button";
 import config from "../../config.json";
-import MarkDown from "./Markdown";
+import ScoreCardModalContent from "./ScoreCardModalContent";
 
-export default function ScoreModal(props) {
-	const description = config.scoreDescription.description2;
+export default function ScoreCardModal(props) {
 	return (
 		<Dialog
 			open={props.open}
@@ -59,7 +58,7 @@ export default function ScoreModal(props) {
 				<br />
 				<hr />
 				<div id="markdown" className="h-full ">
-					<MarkDown />
+					<ScoreCardModalContent />
 				</div>
 			</div>
 		</Dialog>

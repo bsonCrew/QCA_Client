@@ -1,9 +1,9 @@
 import Dialog from "@mui/material/Dialog";
 import Button from "@mui/material/Button";
 import config from "../../config.json";
-import MainExplanation from "../explanation/MainExplanation";
+import ExplanationModalContent from "../card/ExplanationModalContent";
 
-export default function MainModal(props) {
+export default function ExplanationModal(props) {
 	return (
 		<Dialog
 			open={props.open}
@@ -16,9 +16,7 @@ export default function MainModal(props) {
 			sx={{
 				"& .MuiDialog-container": {
 					"& .MuiPaper-root": {
-						width: "100%",
 						maxWidth: "lg",
-						height: "100%",
 						marginBottom: -10,
 						marginTop: -10,
 					},
@@ -44,7 +42,7 @@ export default function MainModal(props) {
 				<p className="font-bold text-md">이해했어요</p>
 			</Button>
 			<div className="w-fit">
-				<MainExplanation className="-mt-12" />
+				<ExplanationModalContent className="-mt-12" />
 			</div>
 		</Dialog>
 	);

@@ -71,7 +71,7 @@ export default function SearchBar({ setTargetWebsite }) {
 					}}
 					{...params}
 					label="기관명"
-					autoFocus={true}
+					// autoFocus={true}
 				/>
 			)}
 		/>
