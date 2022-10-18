@@ -16,6 +16,7 @@ const CardWrapper = styled(`div`)({
 	minWidth: "200px",
 	maxWidth: "480px",
 	margin: "2rem",
+	height: "max(16vh,200px)",
 	transition: "ease-in-out",
 	borderRadius: "0 0 5px 5px",
 	// padding: "2rem",
@@ -34,6 +35,27 @@ const CustomAvatar = styled(Avatar)(props => {
 			cursor: "pointer",
 		},
 	};
+});
+
+const DataCardButton = styled(`button`)({
+	height: "100%",
+	borderRadius: "5px",
+	display: "flex",
+	flexDirection: "column",
+	justifyContent: "center",
+	textAlign: "left",
+	padding: "2vh max(2vw,18px) 2vh max(2vw,18px)",
+	backgroundColor: config.colors.white,
+});
+
+const DataCardTitle = styled(`span`)({
+	fontSize: "1.1rem",
+	margin: "0 0 1vh 0",
+});
+
+const DataCardExpl = styled(`span`)({
+	fontSize: "0.9rem",
+	color: config.colors.lightBlue,
 });
 
 export default function DataCard(props) {
@@ -93,18 +115,12 @@ export default function DataCard(props) {
 				onClose={handleClose}
 			></DataCardModal>
 			{props.status === "success" ? (
-				<div
-					role="button"
-					className={
-						"rounded-lg shadow-lg hover:shadow-2xl text-center flex flex-col justify-center py-7 px-8"
-					}
-					onClick={() => setClicked(!clicked)}
-				>
-					<span className="text-lg">{props.title}</span>
-					<span className="text-sm font-bold text-blue">
-						{props.subheader.slice(0, 18) + " ..."}
-					</span>
-				</div>
+				<DataCardButton onClick={() => setClicked(!clicked)}>
+					<DataCardTitle>{props.title}</DataCardTitle>
+					<DataCardExpl className="text-sm font-bold text-blue">
+						{props.subheader.split(". ")[0]}
+					</DataCardExpl>
+				</DataCardButton>
 			) : (
 				<Skeleton
 					sx={{ width: "100%", height: 128, bgcolor: "grey.300" }}

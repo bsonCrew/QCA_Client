@@ -33,4 +33,11 @@ const H3Gray = styled(`span`)({
 	color: config.colors.gray,
 });
 
-export { HBlue, HBlack as H2Black, H2Gray, H3Gray };
+const BlueText = styled(`span`)({
+	color: config.colors.blue,
+});
+const RedText = styled(`span`)({
+	color: config.colors.redText,
+});
+
+export { HBlue, HBlack as H2Black, BlueText, RedText, H2Gray, H3Gray };

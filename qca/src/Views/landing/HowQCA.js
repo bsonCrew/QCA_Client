@@ -45,10 +45,6 @@ const DataCardsWrapper = styled(`div`)({
 	justifyContent: "flex-start",
 });
 
-const data1 = config.sampleSpecificData1;
-const data2 = config.sampleSpecificData2;
-const data3 = config.sampleSpecificData3;
-
 const HowQca = () => {
 	return (
 		<HowWrapper>
@@ -64,18 +60,18 @@ const HowQca = () => {
 				<DataCardsWrapper>
 					<DataCard
 						status={"success"}
-						subheader={data1.description}
-						{...data1}
+						subheader={config.sampleSpecificData1.description}
+						{...config.sampleSpecificData1}
 					/>
 					<DataCard
 						status={"success"}
-						subheader={data2.description}
-						{...data2}
+						subheader={config.sampleSpecificData2.description}
+						{...config.sampleSpecificData2}
 					/>
 					<DataCard
 						status={"success"}
-						subheader={data3.description}
-						{...data3}
+						subheader={config.sampleSpecificData3.description}
+						{...config.sampleSpecificData3}
 						calcFunctionType={1}
 					/>
 				</DataCardsWrapper>
@@ -83,30 +79,6 @@ const HowQca = () => {
 					<H2Black>한 눈에 보는 항목</H2Black>
 					<H2Gray>세부 지표들을 한 번에 확인하세요</H2Gray>
 				</ExplText>
-			</ExplWrapper>
-			<ExplWrapper>
-				<ExplText>
-					<H2Black>한 눈에 보는 항목</H2Black>
-					<H2Gray>세부 지표들을 한 번에 확인하세요</H2Gray>
-				</ExplText>
-				<DataCardsWrapper>
-					<DataCard
-						status={"success"}
-						subheader={data1.description}
-						{...data1}
-					/>
-					<DataCard
-						status={"success"}
-						subheader={data2.description}
-						{...data2}
-					/>
-					<DataCard
-						status={"success"}
-						subheader={data3.description}
-						{...data3}
-						calcFunctionType={1}
-					/>
-				</DataCardsWrapper>
 			</ExplWrapper>
 		</HowWrapper>
 	);

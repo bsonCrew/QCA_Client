@@ -25,9 +25,8 @@ export default function Dashboard() {
 
 	const navigate = useNavigate();
 
-	console.log(classification);
-
 	React.useEffect(() => {
+		console.log(classification);
 		if (status === "success" && targetWebsiteScore.length === 0) {
 			const newTargetScore = classification.map(
 				criteria => criteria.resultScore

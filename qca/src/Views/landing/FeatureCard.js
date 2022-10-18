@@ -18,7 +18,7 @@ const CardsWrapper = styled(`div`)({
 const FeatureCardWrapper = styled(`div`)({
 	width: "26%",
 	minWidth: "min(280px,60vw)",
-	height: "50vh",
+	minHeight: "50vh",
 	margin: "1vw",
 	padding: "3rem",
 	borderRadius: "2rem",
@@ -36,9 +36,10 @@ const FeatureCardWrapper = styled(`div`)({
 });
 
 const FeatureCardIconWrapper = styled(`div`)({
+	padding: "4px",
 	borderRadius: "50%",
-	width: "120px",
-	height: "120px",
+	minWidth: "120px",
+	minHeight: "120px",
 	backgroundColor: config.colors["gray-light"],
 	display: "flex",
 	alignItems: "center",
@@ -48,8 +49,7 @@ const FeatureCardIconWrapper = styled(`div`)({
 const FeatureCardTitle = styled(`div`)({
 	fontSize: "1.5rem",
 	fontWeight: "700",
-	marginTop: "3rem",
-	margin: "3rem 0 1rem 0",
+	margin: "3vh 0 1rem 0",
 });
 const FeatureCardExpl = styled(`div`)({
 	fontSize: "0.9rem",
@@ -78,7 +78,7 @@ const landingCardsInfo = [
 	},
 	{
 		title: "정확성",
-		expl: "정량적인 검사로 검사 결과의 정확성을 확보합니다",
+		expl: `정량적인 검사로 검사 결과의 정확성을 확보합니다`,
 	},
 	{
 		title: "공정성",

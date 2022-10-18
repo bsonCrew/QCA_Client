@@ -15,6 +15,7 @@ import Banner from "./Banner";
 import FeatureCards from "./FeatureCard";
 
 import { HBlue, H2Black, H2Gray } from "../../Themes/CustomStyled";
+import ShowAlgorithm from "./ShowAlgorithm";
 
 function Landing({ setTargetWebsite }) {
 	const LandingWrapper = styled(`div`)({
@@ -68,6 +69,7 @@ function Landing({ setTargetWebsite }) {
 				<HowQca />
 
 				<HBlue>알고리즘</HBlue>
+				<ShowAlgorithm />
 
 				<HBlue>검사하기</HBlue>
 			</BodyWrapper>

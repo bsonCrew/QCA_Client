@@ -5,6 +5,7 @@ import config from "../../config.json";
 import BeautifulBar from "../../Components/layout/BeautifulBar";
 import Button from "@mui/material/Button";
 import FeatureCards from "./FeatureCard";
+import { BlueText } from "../../Themes/CustomStyled";
 
 const ExplWrapper = styled(`div`)({
 	width: "100%",
@@ -41,10 +42,6 @@ const H1 = styled(`div`)({
 	fontWeight: "bold",
 	marginBottom: "3vh",
 	color: config.colors.black,
-});
-
-const BlueText = styled(`span`)({
-	color: config.colors.blue,
 });
 
 export default function WhyQCA() {

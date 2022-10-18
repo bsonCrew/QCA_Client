@@ -108,6 +108,7 @@ const SubClassCard = ({ criteria, criteriaVal, status }) => {
 };
 
 const SpecCard = ({ spec, status }) => {
+	console.log(spec, status);
 	return spec.items.length > 0 ? (
 		spec.items.map(item => (
 			<DataCard
@@ -192,3 +193,4 @@ function SpecificView({ title, status, criteriaClass, robot }) {
 }
 
 export default React.memo(SpecificView);
+export { SpecCard };
