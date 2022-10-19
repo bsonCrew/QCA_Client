@@ -31,7 +31,7 @@ const ShortCut = ({ label, homepage }) => {
 					style={styles}
 					className="mx-16 font-bold"
 				>
-					{label.slice(0, 1)}
+					{label?.slice(0, 1)}
 				</AnimatedFab>
 			</Link>
 			<LabelLink>{label}</LabelLink>
