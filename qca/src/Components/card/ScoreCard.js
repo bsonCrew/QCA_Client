@@ -1,6 +1,5 @@
 import * as React from "react";
 
-import Button from "@mui/material/Button";
 import ScoreCardModal from "./ScoreCardModal";
 import Skeleton from "@mui/material/Skeleton";
 

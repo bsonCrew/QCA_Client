@@ -7,9 +7,11 @@ const FooterWrapper = styled(`div`)({
 	display: "flex",
 	justifyContent: "center",
 	flexDirection: "column",
-	padding: "12vh 8vw 12vh 8vw",
+	padding: "6vh 20vw 6vh 20vw",
 	zIndex: "2",
 	fontSize: "1.6",
+	color: "white",
+	marginTop: "30vh",
 });
 
 export default function LandingFooter() {

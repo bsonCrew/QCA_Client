@@ -23,16 +23,31 @@ const ButtonGroup = styled(`div`)({
 	justifyContent: "space-between",
 });
 
-export default function Header({ link, executeScroll }) {
+export default function Header({ scrollRefs }) {
+	const executeScroll = ref =>
+		ref.current.scrollIntoView({ behavior: "smooth" });
+
+	const hrefs = ["#qca", "#howto", "#algorithm", "#search"];
+	const nameSpace = ["QCA란", "사용법", "알고리즘", "검사"];
+
 	return (
 		<HeaderWrapper>
 			<Button href={"/"}>QCA</Button>
 			<ButtonGroup>
-				<Button onClick={() => executeScroll(link.current)} href={"#qca"}>
-					QCA란
-				</Button>
-				<Button href={"#howto"}>사용법</Button>
-				<Button href={"#search"}>검사</Button>
+				{scrollRefs.map((ref, idx) => {
+					return (
+						<Button
+							key={idx}
+							onClick={() => executeScroll(ref)}
+							href={hrefs[idx]}
+						>
+							{nameSpace[idx]}
+						</Button>
+					);
+				})}
+
+				{/* <Button href={"#howto"}>사용법</Button>
+				<Button href={"#search"}>검사</Button> */}
 			</ButtonGroup>
 		</HeaderWrapper>
 	);

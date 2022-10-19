@@ -43,10 +43,12 @@ export default function DataCardModal(props) {
 			<div className="w-fit h-100 p-12">
 				<span className="text-xl font-bold">{props.title}</span>
 				<AuditLabel auditId={props.id} />
-				<div className="mt-4">
-					<span className="text-xl pt-4 leading-8">{props.subheader}</span>
+				<div className="mt-4 py-6 text-lg pt-4 leading-8">
+					{props.subheader}
+					<br />
+					{linkify(description, [])}
 				</div>
-				<div className="mt-8">{linkify(description, [])}</div>
+				<div className="mt-8"></div>
 			</div>
 		</Dialog>
 	);
