@@ -20,7 +20,7 @@ export default function Dashboard() {
 		location.state?.targetWebsite || localStorage.getItem("targetWebsite") || ""
 	);
 	const [targetWebsiteScore, settargetWebsiteScore] = React.useState([]);
-	
+
 	let [status, lighthouseData, classification, robot] =
 		useQualification(targetWebsite);
 

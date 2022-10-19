@@ -3,14 +3,21 @@ import { useSpring, animated } from "react-spring";
 import Fab from "@mui/material/Fab";
 
 import styled from "@emotion/styled";
+import config from "../../config.json";
 
 const LabelLink = styled(`div`)({
 	marginTop: "2vh",
 	color: "white",
+	fontWeight:"bold"
+});
+
+const StyledFab = styled(Fab)({
+	backgroundColor: config.colors.white,
+	fontWeight:"bold"
 });
 
 const ShortCut = ({ label, homepage }) => {
-	const AnimatedFab = animated(Fab);
+	const AnimatedFab = animated(StyledFab);
 	const styles = useSpring({
 		opacity: 1,
 		from: { opacity: 0 },

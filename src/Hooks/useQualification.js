@@ -13,9 +13,9 @@ const useQualification = website => {
 	const [lighthouseData, setLighthouseData] = React.useState({});
 	const [classification, setClassification] = React.useState({});
 	const [robot, setRobot] = React.useState([]);
-	// const postQuery = "http://localhost:3001/lighthouse";
+	const postQuery = "http://localhost:3001/lighthouse";
 	// const postQuery = "http://52.79.54.151:8080/api/control";
-	const postQuery = "/api/control";
+	// const postQuery = "/api/control";
 
 	React.useEffect(() => {
 		setStatus("loading");
@@ -63,6 +63,7 @@ const useQualification = website => {
 
 		// localstorage hit or fetch from server
 		if (checkLocalStorage()) {
+			console.log("localStorage hit");
 			setStatus("success");
 		} else {
 			try {

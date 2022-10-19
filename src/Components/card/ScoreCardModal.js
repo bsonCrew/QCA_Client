@@ -2,6 +2,7 @@ import Dialog from "@mui/material/Dialog";
 import Button from "@mui/material/Button";
 import config from "../../config.json";
 import ScoreCardModalContent from "./ScoreCardModalContent";
+import ExplanationModal from "./ExplanationModal";
 
 export default function ScoreCardModal({ open, handleClose, onClose }) {
 	return (

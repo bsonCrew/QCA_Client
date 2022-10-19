@@ -1,24 +1,16 @@
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
+
 import { styled } from "@mui/material/styles";
-import { Link, useNavigate } from "react-router-dom";
 import MuiDrawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import HomeIcon from "@mui/icons-material/Home";
-import PrintIcon from "@mui/icons-material/Print";
-import AccessibilityNewIcon from "@mui/icons-material/AccessibilityNew";
-import DevicesIcon from "@mui/icons-material/Devices";
-import SmartButtonIcon from "@mui/icons-material/SmartButton";
-import BoltIcon from "@mui/icons-material/Bolt";
-import DownloadIcon from "@mui/icons-material/Download";
-import SummarizeIcon from "@mui/icons-material/Summarize";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+
+import { SideBarFnc, SideBarLink } from "./SideBarFnc";
+import TopBar from "./TopBar";
+import PrintModal from "../card/PrintModal";
 
 import config from "../../config.json";
-import TopBar from "./TopBar";
 
 const drawerWidth = 240;
 
@@ -73,93 +65,15 @@ const Drawer = styled(MuiDrawer, {
 	}),
 }));
 
-const iconInfo = config.iconInfo;
-const iconImage = [
-	<SummarizeIcon />,
-	<DevicesIcon />,
-	<AccessibilityNewIcon />,
-	<SmartButtonIcon />,
-	<BoltIcon />,
-	<DownloadIcon />,
-	<PrintIcon />,
-	<HomeIcon />,
-];
-
-const SideBarLink = ({ openView, sideBarOpen, index }) => {
-	const isOpen = config.links[index] === openView;
-	return (
-		<Link to={config.links[index]}>
-			<ListItem
-				sx={{
-					borderTopRightRadius: index === 0 ? 10 : 0,
-					px: 2.5,
-					justifyContent: sideBarOpen ? "initial" : "center",
-					color: isOpen ? config.colors.blue : config.colors.black,
-					backgroundColor: isOpen ? config.colors["gray-light"] : "transparent",
-					"&:hover": {
-						color: isOpen ? config.colors.blue : "inherit",
-						backgroundColor: isOpen
-							? config.colors["gray-light"]
-							: config.colors.hoverColor,
-					},
-				}}
-				id={index}
-			>
-				<ListItemIcon
-					sx={{
-						minWidth: 0,
-						mr: sideBarOpen ? 3 : "auto",
-						justifyContent: "center",
-						color: isOpen ? config.colors.blue : config.bgcolors.beige,
-					}}
-				>
-					{iconImage[index]}
-				</ListItemIcon>
-				<ListItemText
-					primary={iconInfo[index]}
-					sx={{
-						opacity: sideBarOpen ? 1 : 0,
-						color: isOpen ? config.colors.blue : "inherit",
-					}}
-				/>
-			</ListItem>
-		</Link>
-	);
-};
-
-const SideBarFnc = ({ sideBarOpen, handleClick, index }) => {
-	return (
-		<ListItem disablePadding>
-			<ListItemButton
-				sx={{
-					justifyContent: sideBarOpen ? "initial" : "center",
-					px: 2.5,
-					// backgroundColor:
-				}}
-				onClick={() => handleClick(index)}
-				id={index}
-			>
-				<ListItemIcon
-					sx={{
-						minWidth: 0,
-						mr: sideBarOpen ? 3 : "auto",
-						justifyContent: "center",
-					}}
-				>
-					{iconImage[index]}
-				</ListItemIcon>
-				<ListItemText
-					primary={iconInfo[index]}
-					sx={{ opacity: sideBarOpen ? 1 : 0 }}
-				/>
-			</ListItemButton>
-		</ListItem>
-	);
-};
-
-export default function SideBar({ targetWebsite, openView }) {
+function SideBar({ targetWebsite, openView }) {
 	const [lock, setLock] = React.useState(false);
 	const [sideBarOpen, setSideBarOpen] = React.useState(false);
+
+	const [modalOpen, setModalOpen] = React.useState(false);
+	const handleModalOpen = () => {
+		setModalOpen(true);
+	};
+
 	const navigate = useNavigate();
 
 	const handleDrawer = () => {
@@ -175,14 +89,6 @@ export default function SideBar({ targetWebsite, openView }) {
 		if (!lock) {
 			setSideBarOpen(true);
 		}
-	};
-
-	const downLoadFile = () => {
-		const a = document.createElement("a");
-		a.href =
-			"https://www.mois.go.kr/cmm/fms/FileDown.do?atchFileId=FILE_001113460aCr1K4&fileSn=0";
-
-		a.click();
 	};
 
 	const printPage = () => {
@@ -221,13 +127,12 @@ export default function SideBar({ targetWebsite, openView }) {
 						})}
 					</List>
 					<Divider />
-
 					<List>
 						<SideBarFnc
 							sideBarOpen={sideBarOpen}
-							handleClick={downLoadFile}
+							handleClick={handleModalOpen}
 							index={5}
-						/>
+						></SideBarFnc>
 						<SideBarFnc
 							sideBarOpen={sideBarOpen}
 							handleClick={printPage}
@@ -240,7 +145,15 @@ export default function SideBar({ targetWebsite, openView }) {
 						/>
 					</List>
 				</div>
+				<PrintModal
+					open={modalOpen}
+					handleClose={() => setModalOpen(false)}
+					onClose={() => setModalOpen(false)}
+					targetWebsite={targetWebsite}
+				/>
 			</Drawer>
 		</>
 	);
 }
+
+export default React.memo(SideBar);
