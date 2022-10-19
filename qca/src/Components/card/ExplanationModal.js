@@ -3,11 +3,11 @@ import Button from "@mui/material/Button";
 import config from "../../config.json";
 import ExplanationModalContent from "../card/ExplanationModalContent";
 
-export default function ExplanationModal(props) {
+export default function ExplanationModal({ open, handleClose, onClose }) {
 	return (
 		<Dialog
-			open={props.open}
-			onClose={props.handleClose}
+			open={open}
+			onClose={handleClose}
 			aria-labelledby="modal-modal-title"
 			aria-describedby="modal-modal-description"
 			disableAutoFocus={true}
@@ -24,7 +24,7 @@ export default function ExplanationModal(props) {
 			}}
 		>
 			<Button
-				onClick={props.handleClose}
+				onClick={handleClose}
 				color="primary"
 				autoFocus
 				sx={{

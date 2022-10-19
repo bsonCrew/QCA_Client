@@ -52,6 +52,20 @@ function Landing({ setTargetWebsite }) {
 		padding: "0vh 16vw 10vh 16vw",
 	});
 
+	const MainText = styled.div({
+		width: "100%",
+		height: "56vh",
+		fontSize: "min(2.5rem, 5vw)",
+		fontWeight: "bold",
+		paddingRight: "15vw",
+		paddingLeft: "15vw",
+		textAlign: "center",
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+		lineHeight: "1.6",
+	});
+
 	const link1 = React.useRef(null);
 	const link2 = React.useRef(null);
 	const link3 = React.useRef(null);
@@ -61,6 +75,12 @@ function Landing({ setTargetWebsite }) {
 		<LandingWrapper>
 			<Header scrollRefs={[link1, link2, link3, link4]} />
 			<Banner />
+			<MainText>
+				접근성, 호환성, 접속성, 개방성 평가
+				<br /> 정부 기준에 맞게 검사하고 서류 작성까지 저희가 다 알아서 할게요.
+				<br />
+				정부 웹사이트 품질관리를 한 번에 해결하세요.
+			</MainText>
 			<BodyWrapper ref={link1}>
 				<HBlue>QCA란?</HBlue>
 				<H2Gray>Quality Control Automation : 품질관리 자동화</H2Gray>
@@ -91,7 +111,8 @@ function Landing({ setTargetWebsite }) {
 					QCA는 모든 평가항목을 이런 알고리즘을 통과하고, 결과값을 도출합니다.
 					<br />
 					<br />
-					이제 사용자가 읽을 준비가 됐어요! <br />
+					이제 사용자가 읽을 준비가 됐어요! 🎉
+					<br />
 					<br />
 				</H2Gray>
 			</BodyWrapper>
@@ -99,7 +120,7 @@ function Landing({ setTargetWebsite }) {
 			<BottomWrapper>
 				<SearchWrapper ref={link4}>
 					<HBlue>검사하기</HBlue>
-					<HWhite>자, 이제 검사해볼까요?</HWhite>
+					<HWhite>그럼, 이제 검사해볼까요?</HWhite>
 					<SearchBar setTargetWebsite={setTargetWebsite} />
 					<Recommend />
 				</SearchWrapper>

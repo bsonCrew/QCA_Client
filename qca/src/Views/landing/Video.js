@@ -28,7 +28,7 @@ const BackgroundImageWrapper = styled.div({
 
 const BackgroundVideo = styled.iframe({
 	width: "100%",
-	height: "100%",
+	height: "100vh",
 });
 
 function Video() {
@@ -55,20 +55,13 @@ function Video() {
 	return (
 		<BackgroundWrapper>
 			<LoadingSvg display={videoPlay ? "none" : "flex"} />
-			<BackgroundVideo
-				src="https://www.youtube.com/embed/NU6ynXp7uUE?autoplay=1&playlist=NU6ynXp7uUE&loop=1&controls=0&mute=1&modestbranding=1&showinfo=0&start=5&enablejsapi=1&&widgetid=3"
-				frameBorder="0"
-				// allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowFullScreen
-				title="Hello world youtube video"
-			/>
 			{windowWidth > 768 ? (
 				<BackgroundVideo
-					src="https://www.youtube.com/embed/NU6ynXp7uUE?autoplay=1&playlist=NU6ynXp7uUE&loop=1&controls=0&mute=1&modestbranding=1&showinfo=0&start=5&enablejsapi=1&&widgetid=3"
+					src="https://www.youtube.com/embed/O8D-3jw06hc?autoplay=1&playlist=O8D-3jw06hc&loop=1&controls=0&mute=1&modestbranding=1&showinfo=0&start=0&enablejsapi=1&&widgetid=3"
 					frameBorder="0"
 					// allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowFullScreen
-					title="Hello world youtube video"
+					title="QCA Demo Video"
 				/>
 			) : (
 				<BackgroundImageWrapper>

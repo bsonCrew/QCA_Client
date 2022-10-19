@@ -139,37 +139,39 @@ const SpecCard = ({ spec, status }) => {
 	);
 };
 
+const RobotCard = ({ robot }) => {
+	console.log(robot);
+	return (
+		<>
+			<div className="w-full h-9 mt-12">
+				<span className="text-2xl font-bold">robots.txt가 발견됐어요</span>
+			</div>
+			<div className="bg-main w-full font-bold text-xl h-fit rounded-lg p-12 mt-12">
+				{robot?.map(r => {
+					const disallowColor = r.type.includes("disallow")
+						? "underline decoration-wavy text-red"
+						: "";
+
+					return (
+						<React.Fragment key={r.type}>
+							<span className={disallowColor}>{r.type}</span>
+							<span>
+								: {r.value}
+								<br />
+							</span>
+						</React.Fragment>
+					);
+				})}
+			</div>
+		</>
+	);
+};
+
 function SpecificView({ title, status, criteriaClass, robot }) {
 	React.useEffect(() => {
 		window.scrollTo(0, 0);
 	});
-	const RobotCard = () => {
-		return (
-			<>
-				<div className="w-full h-9 mt-24">
-					<span className="text-2xl font-bold">robots.txt가 발견됐어요</span>
-				</div>
 
-				<div className="bg-main w-full font-bold text-xl h-fit rounded-lg p-12 mt-12">
-					{robot?.map(r => {
-						const disallowColor = r.type.includes("disallow")
-							? "underline decoration-wavy text-red"
-							: "";
-
-						return (
-							<React.Fragment key={r.type}>
-								<span className={disallowColor}>{r.type}</span>
-								<span>
-									: {r.value}
-									<br />
-								</span>
-							</React.Fragment>
-						);
-					})}
-				</div>
-			</>
-		);
-	};
 	return (
 		<div className="my-10 pb-2 flex flex-col flex-wrap">
 			<div className="flex-3 flex flex-col rounded-2xl">
@@ -182,7 +184,7 @@ function SpecificView({ title, status, criteriaClass, robot }) {
 
 				<ScoreCard status={status} score={criteriaClass?.resultScore} />
 			</div>
-			<div>{robot ? <RobotCard /> : null}</div>
+			<div>{robot ? <RobotCard robot={robot} /> : null}</div>
 			<div className="flex-4 mt-24 rounded-2xl">
 				{status === "success" ? (
 					<CriteriaCard status={status} criteriaClass={criteriaClass} />
@@ -193,4 +195,4 @@ function SpecificView({ title, status, criteriaClass, robot }) {
 }
 
 export default React.memo(SpecificView);
-export { SpecCard };
+export { SpecCard, RobotCard };
