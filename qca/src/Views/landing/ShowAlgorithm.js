@@ -2,7 +2,7 @@ import DataCard from "../../Components/card/DataCard";
 import { SpecCard } from "../SpecificView";
 
 import styled from "@emotion/styled";
-import { RedText, H2Gray, BlueText } from "../../Themes/CustomStyled";
+import { RedText, H2Gray, BlueText, H2Black } from "../../Themes/CustomStyled";
 import Expl1 from "../../assets/Algorithm/Expl1.svg";
 import Expl2 from "../../assets/Algorithm/Expl2.svg";
 import Expl3 from "../../assets/Algorithm/Expl3.svg";
@@ -19,7 +19,7 @@ const ShowAlgorithmWrapper = styled(`div`)({
 const ExplImage = styled(`img`)({
 	width: "100%",
 	margin: "6vh 0 6vh 0",
-    scale:"110%"
+	scale: "110%",
 });
 
 const SpecCardsWrapper = styled(`div`)({
@@ -72,7 +72,13 @@ const ExplText = (
 		/>
 		🎉웹 사이트가 테스트를 모두 통과했습니다.
 		<br />
-		<br /> 알고리즘을 통과한 점수는 이렇게 표시됩니다.
+		<br />
+		이제 최종 결과를 볼까요?
+		<br />
+		<br />
+		<H2Black>
+			<br /> 알고리즘을 통과한 점수는 이렇게 표시됩니다.
+		</H2Black>
 	</H2Gray>
 );
 

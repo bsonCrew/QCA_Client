@@ -259,5 +259,19 @@
 			}
 		],
 		"resultScore": 10
-	}
+	},
+	"robot": [
+		{
+			"type": "User-agent",
+			"value": "*"
+		},
+		{
+			"type": "Allow",
+			"value": "/"
+		},
+		{
+			"type": "disallow",
+			"value": "/artsdb"
+		}
+	]
 }

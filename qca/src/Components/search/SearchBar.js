@@ -1,8 +1,24 @@
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import data from "../../file.json";
 import { useNavigate } from "react-router-dom";
+
+import styled from "@emotion/styled";
+
+import data from "../../file.json";
+import config from "../../config.json";
+
+const SearchWrapper = styled(`div`)({
+	margin: "10vh 0 0 0",
+	width: "100%",
+	display: "flex",
+	justifyContent: "center",
+});
+
+const SearchWithAutoComplete = styled(Autocomplete)({
+	width: "60%",
+	minWidth: "320px",
+});
 
 export default function SearchBar({ setTargetWebsite }) {
 	React.useEffect(() => {
@@ -39,42 +55,46 @@ export default function SearchBar({ setTargetWebsite }) {
 	};
 
 	return (
-		<Autocomplete
-			value={value}
-			// inputValue={inputValue}
-			onChange={(e, newValue) => {
-				setValue(newValue);
-			}}
-			disablePortal
-			autoHighlight
-			id="search-bar"
-			options={websites}
-			className="w-[max(40vw,20rem)] mt-4"
-			autoSelect={true}
-			renderOption={(props, option) => (
-				<div component="li" {...props}>
-					<div className="mr-2 w-full flex justify-between">
-						<div>{option.label}</div>
-						<div>{option.homepage}</div>
+		<SearchWrapper>
+			<SearchWithAutoComplete
+				value={value}
+				// inputValue={inputValue}
+				onChange={(e, newValue) => {
+					setValue(newValue);
+				}}
+				disablePortal
+				autoHighlight
+				id="search-bar"
+				options={websites}
+				autoSelect={true}
+				renderOption={(props, option) => (
+					<div component="li" {...props}>
+						<div className="mr-2 w-full flex justify-between">
+							<div>{option.label}</div>
+							<div>{option.homepage}</div>
+						</div>
 					</div>
-				</div>
-			)}
-			renderInput={params => (
-				<TextField
-					sx={{
-						"& label": { paddingLeft: theme => theme.spacing(2) },
-						"& input": { paddingLeft: theme => theme.spacing(3.5) },
-						"& fieldset": {
-							paddingLeft: theme => theme.spacing(2.5),
-							borderRadius: "20px",
-						},
-					}}
-					{...params}
-					label="기관명"
-					// autoFocus={true}
-				/>
-			)}
-		/>
+				)}
+				renderInput={params => (
+					<TextField
+						sx={{
+							color: "red",
+							"& label": { paddingLeft: theme => theme.spacing(2) },
+							"& input": { paddingLeft: theme => theme.spacing(3.5) },
+							"& fieldset": {
+								paddingLeft: theme => theme.spacing(2.5),
+								borderRadius: "20px",
+								backgroundColor: config.colors.white,
+								color: "red",
+							},
+						}}
+						{...params}
+						label="기관명"
+						// autoFocus={true}
+					/>
+				)}
+			/>
+		</SearchWrapper>
 	);
 }
 

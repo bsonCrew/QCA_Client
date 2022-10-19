@@ -3,11 +3,11 @@ import Button from "@mui/material/Button";
 import config from "../../config.json";
 import ScoreCardModalContent from "./ScoreCardModalContent";
 
-export default function ScoreCardModal(props) {
+export default function ScoreCardModal({ open, handleClose, onClose }) {
 	return (
 		<Dialog
-			open={props.open}
-			onClose={props.handleClose}
+			open={open}
+			onClose={handleClose}
 			aria-labelledby="modal-modal-title"
 			aria-describedby="modal-modal-description"
 			disableAutoFocus={true}
@@ -23,7 +23,7 @@ export default function ScoreCardModal(props) {
 			}}
 		>
 			<Button
-				onClick={props.handleClose}
+				onClick={handleClose}
 				color="primary"
 				autoFocus
 				sx={{
