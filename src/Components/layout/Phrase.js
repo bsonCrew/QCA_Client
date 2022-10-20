@@ -1,8 +1,10 @@
+import { HBlue, H3Gray } from "../../Themes/CustomStyled";
+
 const Phrase = ({ title, subtitle }) => {
 	return (
-		<div className="w-full my-12">
-			<div className="text-2xl font-bold">{title}</div>
-			<div className="mt-2 text-lg">{subtitle}</div>
+		<div className="w-full flex flex-col">
+			<HBlue>{title}</HBlue>
+			<H3Gray>{subtitle}</H3Gray>
 		</div>
 	);
 };

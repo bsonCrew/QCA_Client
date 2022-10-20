@@ -62,9 +62,9 @@ export default function Dashboard() {
 		}
 	}, [targetWebsite]);
 
-	console.log(status);
-
 	const openView = "/dashboard/" + useParams()["*"];
+
+	
 
 	return (
 		<div className="flex flex-row flex-wrap h-full w-screen bg-main">

@@ -8,13 +8,13 @@ import styled from "@emotion/styled";
 import config from "../../config.json";
 
 const CardWrapper = styled(`div`)({
+	height: "85%",
 	margin: "2vh 2vw 2vh 2vw",
 	borderRadius: "0 0 5px 5px",
 	boxShadow: `${config.colors["gray-light"]} 10px 10px 20px`,
 	"&:hover": {
 		boxShadow: `${config.colors["gray-light"]} 10px 10px 50px`,
 	},
-
 	minWidth: "280px",
 	// flexGrow: "1",
 	backgroundColor: config.colors.white,
@@ -31,7 +31,7 @@ const ScoreButtonCard = styled(`div`)({
 	height: "100%",
 	minWidth: "280px",
 	backgroundColor: config.colors.white,
-	padding: "1rem 2rem 2rem 2rem",
+	padding: "2.4rem 2rem 4rem 2rem",
 
 	borderRadius: "0 0 5px 5px",
 	display: "flex",

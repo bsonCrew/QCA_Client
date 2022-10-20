@@ -39,6 +39,7 @@ const calcByFunctionType = spec => {
 				spec.totalScore > detailErrorCount
 					? spec.totalScore - detailErrorCount
 					: 0;
+
 			return spec.resultScore;
 
 		//7.평가항목 없음.

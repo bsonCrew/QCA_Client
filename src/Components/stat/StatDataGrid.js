@@ -5,7 +5,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import Snackbar from "@mui/material/Snackbar";
-import columns from "../utils/gridConfig";
+import { displayColumnConfig } from "../utils/gridConfig";
 
 import Box from "@mui/material/Box";
 import Skeleton from "@mui/material/Skeleton";
@@ -17,8 +17,9 @@ const getHoverBackgroundColor = (color, mode) =>
 	mode === "dark" ? darken(color, 0.5) : lighten(color, 0.5);
 
 function StyledDatagrid({ data }) {
+	console.log(displayColumnConfig, data);
 	const formedData = {
-		columns: columns,
+		columns: displayColumnConfig,
 		rows: data,
 		initialState: {
 			columns: {
