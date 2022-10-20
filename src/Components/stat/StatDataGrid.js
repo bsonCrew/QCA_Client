@@ -17,7 +17,6 @@ const getHoverBackgroundColor = (color, mode) =>
 	mode === "dark" ? darken(color, 0.5) : lighten(color, 0.5);
 
 function StyledDatagrid({ data }) {
-	console.log(displayColumnConfig, data);
 	const formedData = {
 		columns: displayColumnConfig,
 		rows: data,

@@ -91,11 +91,8 @@ function SideBar({ targetWebsite, openView }) {
 		}
 	};
 
-	const printPage = () => {
-		setSideBarOpen(false);
-		setTimeout(() => {
-			window.print();
-		}, [100]);
+	const DownloadSheet = () => {
+		window.open(config.moisURL, "_blank");
 	};
 
 	return (
@@ -130,12 +127,12 @@ function SideBar({ targetWebsite, openView }) {
 					<List>
 						<SideBarFnc
 							sideBarOpen={sideBarOpen}
-							handleClick={handleModalOpen}
+							handleClick={DownloadSheet}
 							index={5}
 						></SideBarFnc>
 						<SideBarFnc
 							sideBarOpen={sideBarOpen}
-							handleClick={printPage}
+							handleClick={handleModalOpen}
 							index={6}
 						/>
 						<SideBarFnc

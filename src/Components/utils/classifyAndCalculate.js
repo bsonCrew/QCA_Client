@@ -1,6 +1,6 @@
 import audits from "../../audits.json";
 
-const calcByFunctionType = spec => {
+const calcByFncType = spec => {
 	if (Number.isInteger(spec) || Number.isNaN(spec)) return 0;
 	console.log(spec);
 	const nullOneCount = spec.scores.filter(
@@ -104,7 +104,7 @@ const calcByFunctionType = spec => {
 	}
 };
 
-const createClassifyObj = mapId => {
+const createCriteriaObj = mapId => {
 	const criteriasObj = {};
 	try {
 		Object.keys(audits.auditMappings[mapId]);
@@ -138,7 +138,7 @@ const calculateAndClassify = lighthouse => {
 		"connectivity",
 		"enhancement",
 		"warning",
-	].map(criteria => createClassifyObj(criteria));
+	].map(criteria => createCriteriaObj(criteria));
 
 	lighthouse.forEach(l => {
 		const spec =
@@ -161,7 +161,7 @@ const calculateAndClassify = lighthouse => {
 			let score = 0;
 			let totalScore = 0;
 			Object.values(subClass).forEach(spec => {
-				score += calcByFunctionType(spec);
+				score += calcByFncType(spec);
 				totalScore += spec.totalScore;
 			});
 			subClass.resultScore = score;

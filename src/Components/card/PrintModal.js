@@ -2,13 +2,14 @@ import Dialog from "@mui/material/Dialog";
 import React from "react";
 import { CSVLink } from "react-csv";
 import useQualification from "../../Hooks/useQualification";
+import Button from "@mui/material/Button";
 import { DataGrid } from "@mui/x-data-grid";
 import { printColumnConfig } from "../utils/gridConfig.js";
 
 import styled from "@emotion/styled";
-import { HBlue } from "../../Themes/CustomStyled";
 
 import config from "../../config.json";
+import BeautifulBar from "../layout/BeautifulBar";
 
 const SpecStatWrapper = styled.div({
 	display: "flex",
@@ -26,6 +27,13 @@ const StyledDialog = styled(Dialog)({
 	alignItems: "center",
 });
 
+const DownloadButton = styled(Button)({
+	fontSize: "min(1.3vw, 1.2em)",
+	height: "min(8vh, 45px)",
+	backgroundColor: config.colors.main2,
+	margin: "1vh 0 1vh 0",
+});
+
 export function DownloadCSV({ csvData, filename }) {
 	const data = csvData;
 
@@ -35,11 +43,11 @@ export function DownloadCSV({ csvData, filename }) {
 	}));
 
 	return (
-		<HBlue>
+		<DownloadButton>
 			<CSVLink filename={filename} data={data} headers={headers}>
-				미리보기
+				여기를 눌러 다운로드하세요
 			</CSVLink>
-		</HBlue>
+		</DownloadButton>
 	);
 }
 
@@ -52,7 +60,7 @@ const StyledDatagrid = styled(DataGrid)({
 		fontSize: "12px",
 	},
 	width: "80vw",
-	height: "80vh",
+	height: "75vh",
 });
 
 const traverseData = data => {
@@ -79,8 +87,8 @@ const traverseData = data => {
 							resultScore: specVal.resultScore,
 							percentage:
 								specVal.totalScore !== 0
-									? (specVal.resultScore / specVal.totalScore) * 100 + "%"
-									: "100%",
+									? (specVal.resultScore / specVal.totalScore) * 100
+									: 100,
 						});
 					});
 			});
@@ -121,10 +129,8 @@ export default function PrintModal({ data, open, handleClose, targetWebsite }) {
 			maxWidth="xl"
 		>
 			<div className="w-fit h-100 p-12">
-				<DownloadCSV
-					csvData={formedData.rows}
-					filename={"QCA 결과파일"}
-				></DownloadCSV>
+				<DownloadCSV csvData={formedData.rows} filename={"QCA 결과파일"} />
+				<BeautifulBar height={1} />
 				<StyledDatagrid
 					{...formedData}
 					// getRowClassName={params => `super-app-theme--${params.row.status}`}
