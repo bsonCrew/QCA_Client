@@ -16,57 +16,9 @@ const getBackgroundColor = (color, mode) =>
 const getHoverBackgroundColor = (color, mode) =>
 	mode === "dark" ? darken(color, 0.5) : lighten(color, 0.5);
 
-function StyledDatagrid({ data }) {
-	const formedData = {
-		columns: displayColumnConfig,
-		rows: data,
-		initialState: {
-			columns: {
-				columnVisibilityModel: {
-					id: false,
-				},
-			},
-		},
-	};
-
-	const [snackbarOpen, setSnackbarOpen] = React.useState(false);
-
-	const handleClick = item => {
-		setSnackbarOpen(true);
-	};
-
-	const handleClose = (e, reason) => {
-		if (reason === "clickaway") {
-			return;
-		}
-		setSnackbarOpen(false);
-	};
-
-	const action = (
-		<React.Fragment>
-			<Button color="secondary" size="small" onClick={handleClose}>
-				UNDO
-			</Button>
-			<IconButton
-				size="small"
-				aria-label="close"
-				color="inherit"
-				onClick={handleClose}
-			>
-				<CloseIcon fontSize="small" />
-			</IconButton>
-		</React.Fragment>
-	);
-
+function StyledDatagrid({ targetWebsite }) {
 	return (
 		<>
-			<Snackbar
-				open={snackbarOpen}
-				autoHideDuration={1000}
-				onClose={handleClose}
-				message="체크했어요!"
-				action={action}
-			/>
 			<Box
 				sx={{
 					height: "100%",
@@ -123,12 +75,11 @@ function StyledDatagrid({ data }) {
 					},
 				}}
 			>
-				<DataGrid
+				{/* <DataGrid
 					{...formedData}
 					getRowClassName={params => `super-app-theme--${params.row.status}`}
 					checkboxSelection
-					onSelectionModelChange={item => handleClick(item)}
-				/>
+				/> */}
 			</Box>
 		</>
 	);
@@ -141,17 +92,17 @@ const StatDataGridPhrase = (
 	</div>
 );
 
-export default function StatDataGrid({ data, status }) {
-	return (
-		<>
-			{StatDataGridPhrase}
-			<div className="w-full h-screen px-6 pb-24">
-				{status === "success" ? (
-					<StyledDatagrid data={data} />
-				) : (
-					<Skeleton sx={{ width: "100%", height: 800, marginTop: -22 }} />
-				)}
-			</div>
-		</>
-	);
-}
+// export default function StatDataGrid({ data, status }) {
+// 	return (
+// 		<>
+// 			{StatDataGridPhrase}
+// 			<div className="w-full h-screen px-6 pb-24">
+// 				{status === "success" ? (
+// 					<AuditsDataGrid targetWebsite={targetWebsite} />
+// 				) : (
+// 					<Skeleton sx={{ width: "100%", height: 800, marginTop: -22 }} />
+// 				)}
+// 			</div>
+// 		</>
+// 	);
+// }

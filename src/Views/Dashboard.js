@@ -21,13 +21,11 @@ export default function Dashboard() {
 	);
 	const [targetWebsiteScore, settargetWebsiteScore] = React.useState([]);
 
-	let [status, lighthouseData, classification, robot] =
-		useQualification(targetWebsite);
+	let [status, classification, robot] = useQualification(targetWebsite);
 
 	const navigate = useNavigate();
 
 	React.useEffect(() => {
-		console.log(classification);
 		if (status === "success" && targetWebsiteScore.length === 0) {
 			const newTargetScore = classification.map(
 				criteria => criteria.resultScore
@@ -49,7 +47,6 @@ export default function Dashboard() {
 				targetWebsite,
 				JSON.stringify({
 					classification: classification,
-					lighthouseData: lighthouseData,
 					robot: robot,
 				})
 			);
@@ -64,8 +61,6 @@ export default function Dashboard() {
 
 	const openView = "/dashboard/" + useParams()["*"];
 
-	
-
 	return (
 		<div className="flex flex-row flex-wrap h-full w-screen bg-main">
 			<SideBar targetWebsite={targetWebsite} openView={openView} />
@@ -78,7 +73,6 @@ export default function Dashboard() {
 								<MainView
 									id="main"
 									classification={classification}
-									data={lighthouseData}
 									status={status}
 									targetWebsite={targetWebsite}
 									targetWebsiteScore={targetWebsiteScore}

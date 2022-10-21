@@ -10,7 +10,6 @@ const nonUseAttributes = config.nonUseAttributes;
 const useQualification = website => {
 	const [status, setStatus] = React.useState("idle");
 	const [rawData, setRawData] = React.useState([]);
-	const [lighthouseData, setLighthouseData] = React.useState({});
 	const [classification, setClassification] = React.useState({});
 	const [robot, setRobot] = React.useState([]);
 	const postQuery = "http://localhost:3001/lighthouse";
@@ -20,12 +19,11 @@ const useQualification = website => {
 	React.useEffect(() => {
 		setStatus("loading");
 
-		// Checking localstorage and getting classification and lighthouseData
+		// Checking localstorage and getting classification
 		const checkLocalStorage = () => {
 			if (localStorage.getItem(website) !== null) {
 				const localData = JSON.parse(localStorage.getItem(website));
 				setClassification(localData.classification);
-				setLighthouseData(localData.lighthouseData);
 				setRobot(localData.robot);
 				return true;
 			}
@@ -56,7 +54,6 @@ const useQualification = website => {
 				}
 			} catch (error) {
 				setStatus("error");
-				console.log("error occured");
 				return false;
 			}
 		};
@@ -76,8 +73,6 @@ const useQualification = website => {
 				console.log(e);
 			}
 		}
-
-		console.log("fish");
 	}, []);
 
 	React.useEffect(() => {
@@ -100,16 +95,20 @@ const useQualification = website => {
 			auditResults.push(checkRobotTxt(robot));
 			calculateValidator(validator).forEach(val => auditResults.push(val));
 
-			const classified = calculateAndClassify(auditResults, robot, validator);
-			setClassification(classified);
+			const classifiedAuditResults = calculateAndClassify(auditResults);
+			setClassification(classifiedAuditResults);
 
 			// Set lighthouseData to use in datagrid
-			setLighthouseData(auditResults);
 			setStatus("success");
 		}
 	}, [status, website, rawData, classification]);
 
-	return [status, lighthouseData, classification, robot];
+	// return memoized value
+	return React.useMemo(() => {
+		return [status, classification, robot];
+	}, [status, classification, robot]);
+
+	// return [status, classification, robot];
 };
 
 export default useQualification;

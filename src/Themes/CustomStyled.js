@@ -29,7 +29,7 @@ const H2Gray = styled(`span`)({
 	padding: "0 0 6vh 2vw",
 	width: "100%",
 	fontWeight: 600,
-	fontSize: "min(1rem, 3vw)",
+	fontSize: "min(1.1rem, 3.2vw)",
 	color: config.colors.gray,
 });
 
@@ -48,4 +48,24 @@ const RedText = styled(`span`)({
 	color: config.colors.redText,
 });
 
-export { HBlue, HBlack as H2Black, BlueText, HWhite, RedText, H2Gray, H3Gray };
+const CardsWrapper = styled(`div`)({
+	backgroundColor: config.colors.main,
+	display: "flex",
+	alignItems: "center",
+	padding: "1vw",
+	flexDirection: "row",
+	flexWrap: "wrap",
+	width: "100%",
+	borderRadius: "20px",
+});
+
+export {
+	HBlue,
+	HBlack as H2Black,
+	CardsWrapper,
+	BlueText,
+	HWhite,
+	RedText,
+	H2Gray,
+	H3Gray,
+};

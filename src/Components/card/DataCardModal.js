@@ -46,7 +46,7 @@ export default function DataCardModal(props) {
 				<div className="mt-4 py-6 text-lg pt-4 leading-8">
 					{props.subheader}
 					<br />
-					{linkify(description, [])}
+					{linkify(description)}
 				</div>
 				<div className="mt-8"></div>
 			</div>

@@ -94,7 +94,6 @@ const SubClassStepper = ({ subClass }) => {
 											</span>
 											{val.items.map((item, idx) => (
 												<div key={idx} className="flex flex-row">
-													{/* {console.log(item)} */}
 													<span className="w-full p-2">- {item.title}</span>
 												</div>
 											))}

@@ -7,6 +7,7 @@ import Expl1 from "../../assets/Algorithm/Expl1.svg";
 import Expl2 from "../../assets/Algorithm/Expl2.svg";
 import Expl3 from "../../assets/Algorithm/Expl3.svg";
 import config from "../../config.json";
+import { CardsWrapper } from "../../Themes/CustomStyled";
 
 const ShowAlgorithmWrapper = styled(`div`)({
 	width: "100%",
@@ -20,17 +21,6 @@ const ExplImage = styled(`img`)({
 	width: "100%",
 	margin: "6vh 0 6vh 0",
 	scale: "110%",
-});
-
-const SpecCardsWrapper = styled(`div`)({
-	backgroundColor: config.colors.main,
-	display: "flex",
-	alignItems: "center",
-	padding: "1vw",
-	flexDirection: "row",
-	flexWrap: "wrap",
-	width: "100%",
-	borderRadius: "20px",
 });
 
 const ExplText = (
@@ -86,9 +76,9 @@ export default function ShowAlgorithm() {
 	return (
 		<ShowAlgorithmWrapper>
 			{ExplText}
-			<SpecCardsWrapper>
+			<CardsWrapper>
 				<SpecCard status={"success"} spec={config.hasAltText} />
-			</SpecCardsWrapper>
+			</CardsWrapper>
 		</ShowAlgorithmWrapper>
 	);
 }

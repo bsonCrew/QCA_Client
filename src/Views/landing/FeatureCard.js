@@ -1,10 +1,11 @@
-import styled from "@emotion/styled";
-import config from "../../config.json";
-import Button from "@mui/material/Button";
 import BeautifulBar from "../../Components/layout/BeautifulBar";
+import Button from "@mui/material/Button";
 import BalanceIcon from "@mui/icons-material/Balance";
 import SquareFootIcon from "@mui/icons-material/SquareFoot";
 import AutoModeIcon from "@mui/icons-material/AutoMode";
+
+import config from "../../config.json";
+import styled from "@emotion/styled";
 
 const CardsWrapper = styled(`div`)({
 	width: "100%",
@@ -12,7 +13,6 @@ const CardsWrapper = styled(`div`)({
 	flexDirection: "row",
 	justifyContent: "center",
 	flexWrap: "wrap",
-	// padding: "0 3vw 0 3vw",
 });
 
 const FeatureCardWrapper = styled(`div`)({
@@ -93,7 +93,7 @@ export const FeatureCard = ({ title, expl, idx }) => {
 			<FeatureCardTitle>{title}</FeatureCardTitle>
 			<FeatureCardExpl>{expl}</FeatureCardExpl>
 			<BeautifulBar height={0.5} width={10} />
-			<LearnMore>자세히 알아보기</LearnMore>
+			{/* <LearnMore>자세히 알아보기</LearnMore> */}
 		</FeatureCardWrapper>
 	);
 };

@@ -15,16 +15,13 @@ const useTop5 = () => {
 			try {
 				const response = await fetch(getQuery);
 				const data = await response.json();
-				console.log(data);
 				if (data.status === 200) {
 					setStatus("success");
 					setData(data);
 				} else {
-					console.log(data.status);
 					setStatus("fetchedButFounderror");
 				}
 			} catch (error) {
-				console.log(error);
 				setStatus("error");
 			}
 		};

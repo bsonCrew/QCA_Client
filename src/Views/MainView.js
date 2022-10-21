@@ -6,6 +6,14 @@ import StatDataStepper from "../Components/stat/StatDataStepper";
 import React from "react";
 
 import Phrase from "../Components/layout/Phrase";
+import AuditsDataGrid from "../Components/chart/AuditsDataGrid";
+
+const StatDataGridPhrase = (
+	<div className="w-full mt-32 mb-12">
+		<div className="text-2xl font-bold">모든 결과가 필요하다면..</div>
+		<div className="mt-2 text-lg">모든 검사 항목을 여기 정리했어요.</div>
+	</div>
+);
 
 function MainView({
 	classification,
@@ -49,7 +57,10 @@ function MainView({
 				targetWebsiteScore={targetWebsiteScore}
 				className="my-10 flex flex-wrap"
 			/>
-			<StatDataGrid status={status} data={data} />
+			<div className="w-full">
+				{StatDataGridPhrase}
+				<AuditsDataGrid targetWebsite={targetWebsite} status={status} />
+			</div>
 		</div>
 	);
 }

@@ -22,6 +22,8 @@ const CardsWrapper = styled(`div`)({
 	flexDirection: "row",
 	justifyContent: "space-between",
 	flexWrap: "wrap",
+	backgroundColor:config.colors.main,
+	borderRadius: "5px",
 });
 
 const ExplWrapper = styled(`div`)({
@@ -44,6 +46,8 @@ const DataCardsWrapper = styled(`div`)({
 	display: "flex",
 	flexDirection: "column",
 	justifyContent: "flex-start",
+	backgroundColor:config.colors.main,
+	borderRadius: "5px",
 });
 
 const RobotCardWrapper = styled(`div`)({
@@ -70,16 +74,19 @@ const HowQca = () => {
 					<DataCard
 						status={"success"}
 						subheader={config.sampleSpecificData1.description}
+						description={config.sampleSpecificData1.description}
 						{...config.sampleSpecificData1}
 					/>
 					<DataCard
 						status={"success"}
 						subheader={config.sampleSpecificData2.description}
+						description={config.sampleSpecificData2.description}
 						{...config.sampleSpecificData2}
 					/>
 					<DataCard
 						status={"success"}
 						subheader={config.sampleSpecificData3.description}
+						description={config.sampleSpecificData3.description}
 						{...config.sampleSpecificData3}
 						calcFunctionType={1}
 					/>

@@ -3,21 +3,15 @@ import React from "react";
 import { CSVLink } from "react-csv";
 import useQualification from "../../Hooks/useQualification";
 import Button from "@mui/material/Button";
+import AuditsDataGrid from "../chart/AuditsDataGrid";
 import { DataGrid } from "@mui/x-data-grid";
 import { printColumnConfig } from "../utils/gridConfig.js";
+import useFormedAudits from "../../Hooks/useFormedAudits";
 
 import styled from "@emotion/styled";
 
 import config from "../../config.json";
 import BeautifulBar from "../layout/BeautifulBar";
-
-const SpecStatWrapper = styled.div({
-	display: "flex",
-	width: "100%",
-	height: "100%",
-	flexDirection: "column",
-	justifyContent: "space-between",
-});
 
 const StyledDialog = styled(Dialog)({
 	width: "100%",
@@ -63,61 +57,13 @@ const StyledDatagrid = styled(DataGrid)({
 	height: "75vh",
 });
 
-const traverseData = data => {
-	const stack = [];
-	const evaluation = config.evaluation;
-
-	for (let i = 0; i < data.length; i++) {
-		Object.entries(data[i])
-			.filter(x => x[0] !== "resultScore" && x[0] !== "totalScore")
-			.forEach(([subClassKey, subClassVal]) => {
-				Object.entries(subClassVal)
-					.filter(x => x[0] !== "resultScore" && x[0] !== "totalScore")
-					.forEach(([specKey, specVal], idx) => {
-						const items = specVal.items.map(item => {
-							return item;
-						});
-						stack.push({
-							class: evaluation[i],
-							subClass: subClassKey,
-							spec: specKey,
-							id: specVal.title,
-							itemNum: specVal.items.length,
-							totalScore: specVal.totalScore,
-							resultScore: specVal.resultScore,
-							percentage:
-								specVal.totalScore !== 0
-									? (specVal.resultScore / specVal.totalScore) * 100
-									: 100,
-						});
-					});
-			});
-	}
-
-	const res = {
-		columns: printColumnConfig,
-		rows: stack,
-		initialState: {
-			columns: {
-				columnVisibilityModel: {
-					id: false,
-				},
-			},
-		},
-	};
-
-	return res;
-};
-
-export default function PrintModal({ data, open, handleClose, targetWebsite }) {
-	let [status, lighthouseData, classification, robot] =
-		useQualification(targetWebsite);
-
-	const [formedData, setFormedData] = React.useState([]);
-
-	React.useEffect(() => {
-		if (classification.length) setFormedData(traverseData(classification));
-	}, [classification]);
+export default function PrintModal({
+	status,
+	open,
+	handleClose,
+	targetWebsite,
+}) {
+	const formedData = useFormedAudits(targetWebsite);
 
 	return (
 		<StyledDialog
@@ -129,13 +75,12 @@ export default function PrintModal({ data, open, handleClose, targetWebsite }) {
 			maxWidth="xl"
 		>
 			<div className="w-fit h-100 p-12">
-				<DownloadCSV csvData={formedData.rows} filename={"QCA 결과파일"} />
-				<BeautifulBar height={1} />
-				<StyledDatagrid
-					{...formedData}
-					// getRowClassName={params => `super-app-theme--${params.row.status}`}
-					checkboxSelection
+				<DownloadCSV
+					csvData={formedData.rows}
+					filename={`QCA 테스트 결과 ${targetWebsite}`}
 				/>
+				<BeautifulBar height={1} />
+				<AuditsDataGrid targetWebsite={targetWebsite} status={"success"} />
 			</div>
 		</StyledDialog>
 	);

@@ -108,7 +108,6 @@ const SubClassCard = ({ criteria, criteriaVal, status }) => {
 };
 
 const SpecCard = ({ spec, status }) => {
-	console.log(spec, status);
 	return spec.items.length > 0 ? (
 		spec.items.map(item => (
 			<DataCard
@@ -140,7 +139,6 @@ const SpecCard = ({ spec, status }) => {
 };
 
 const RobotCard = ({ robot }) => {
-	console.log(robot);
 	return (
 		<>
 			<div className="w-full h-9 mt-12">

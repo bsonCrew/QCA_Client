@@ -6,7 +6,7 @@ import Recommend from "../Components/search/Recommend";
 
 import styled from "@emotion/styled";
 
-import WhatisQCA from "./landing/WhyQca";
+import WhatisQCA from "./landing/WhatisQCA";
 import HowQca from "./landing/HowQCA";
 
 import LandingFooter from "../Components/layout/LandingFooter";
@@ -15,6 +15,7 @@ import Banner from "./landing/Banner";
 import FeatureCards from "./landing/FeatureCard";
 
 import { HBlue, H2Black, H2Gray, HWhite } from "../Themes/CustomStyled";
+
 import ShowAlgorithm from "./landing/ShowAlgorithm";
 import config from "../config.json";
 
