@@ -2,7 +2,7 @@ import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { useNavigate } from "react-router-dom";
-import { HBlue } from "../../Themes/CustomStyled";
+import Checkbox from "@mui/material/Checkbox";
 
 import styled from "@emotion/styled";
 
@@ -40,6 +40,22 @@ const SearchWrapper = styled(`div`)({
 	alignItems: "center",
 });
 
+const RequestNewDataWrapper = styled.div({
+	display: "flex",
+	flexDirection: "row",
+	justifyContent: "center",
+	alignItems: "center",
+	marginTop: "1rem",
+});
+
+const RequestNewDataLabel = styled.div({
+	color: "white",
+});
+
+const RequestNewDataCheckBox = styled(Checkbox)({
+	color: "white",
+});
+
 export default function SearchBar({ targetWebsite, setTargetWebsite }) {
 	React.useEffect(() => {
 		document.addEventListener("keydown", keyDownHandler);
@@ -48,17 +64,29 @@ export default function SearchBar({ targetWebsite, setTargetWebsite }) {
 		};
 	});
 	const [value, setValue] = React.useState(data.websites[0]);
+	const [requestNewVal, setRequestNewVal] = React.useState(false);
+	const [validValue, setValidValue] = React.useState(true);
+
 	const navigate = useNavigate();
 	const homepageList = data.websites.map(website => website.name);
+
+	const deleteTargetCache = () => {
+		localStorage.removeItem(targetWebsite);
+	};
+
+	const websiteCheckRegex = new RegExp("^(http|https)://", "i");
 
 	const handleSubmit = e => {
 		value.homepage.includes("www.")
 			? setTargetWebsite(value.homepage)
 			: setTargetWebsite(value.label);
 		// if (homepageList.includes(targetWebsite))
-			navigate("/dashboard", {
-				state: { targetWebsite: value.homepage },
-			});
+		if (!websiteCheckRegex.exec(targetWebsite))
+			if (requestNewVal) deleteTargetCache();
+
+		navigate("/dashboard", {
+			state: { targetWebsite: value.homepage, requestNewVal: requestNewVal },
+		});
 	};
 
 	const handleChangeTab = () => {};
@@ -110,10 +138,18 @@ export default function SearchBar({ targetWebsite, setTargetWebsite }) {
 						}}
 						{...params}
 						label="기관명"
-						autoFocus={true}
+						// autoFocus={true}
 					/>
 				)}
 			/>
+			<RequestNewDataWrapper>
+				<RequestNewDataLabel>정보를 다시 요청합니다</RequestNewDataLabel>
+				<RequestNewDataCheckBox
+					checked={requestNewVal}
+					onClick={() => setRequestNewVal(!requestNewVal)}
+					defaultChecked
+				/>
+			</RequestNewDataWrapper>
 		</SearchWrapper>
 	);
 }
