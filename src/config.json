@@ -1,4 +1,6 @@
 {
+	"postQuery": "http://qcauto.me/api/control",
+	"getQuery": "http://qcauto.me/api/list",
 	"colors": {
 		"main": "#F9FAFB",
 		"gray-dark": "#273444",
@@ -80,6 +82,7 @@
 		"/dashboard/openness",
 		"/dashboard/connectivity"
 	],
+
 	"scoreDescription": {
 		"title": "총점",
 		"description": "총점 계산 알고리즘은 아래와 같습니다.",

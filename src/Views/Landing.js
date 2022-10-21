@@ -19,54 +19,54 @@ import { HBlue, H2Black, H2Gray, HWhite } from "../Themes/CustomStyled";
 import ShowAlgorithm from "./landing/ShowAlgorithm";
 import config from "../config.json";
 
-function Landing({ setTargetWebsite }) {
-	const LandingWrapper = styled(`div`)({
-		top: "0",
-		width: "100%",
-		height: "100%",
-		display: "flex",
-		flexDirection: "column",
-		justifyItems: "center",
-		alignItems: "center",
-	});
+const LandingWrapper = styled(`div`)({
+	top: "0",
+	width: "100%",
+	height: "100%",
+	display: "flex",
+	flexDirection: "column",
+	justifyItems: "center",
+	alignItems: "center",
+});
 
-	const BodyWrapper = styled(`div`)({
-		display: "flex",
-		flexDirection: "column",
-		justifyItems: "center",
-		alignItems: "center",
-		margin: "0 16vw 0 16vw",
-	});
+const BodyWrapper = styled(`div`)({
+	display: "flex",
+	flexDirection: "column",
+	justifyItems: "center",
+	alignItems: "center",
+	margin: "0 16vw 0 16vw",
+});
 
-	const BottomWrapper = styled(`div`)({
-		width: "100%",
-		display: "flex",
-		flexDirection: "column",
-		alignItems: "center",
-		backgroundColor: config.colors.black,
-	});
+const BottomWrapper = styled(`div`)({
+	width: "100%",
+	display: "flex",
+	flexDirection: "column",
+	alignItems: "center",
+	backgroundColor: config.colors.black,
+});
 
-	const SearchWrapper = styled(`div`)({
-		display: "flex",
-		flexDirection: "column",
-		width: "100%",
-		padding: "0vh 16vw 10vh 16vw",
-	});
+const SearchWrapper = styled(`div`)({
+	display: "flex",
+	flexDirection: "column",
+	width: "100%",
+	padding: "0vh 16vw 10vh 16vw",
+});
 
-	const MainText = styled.div({
-		width: "100%",
-		height: "56vh",
-		fontSize: "min(2.5rem, 5vw)",
-		fontWeight: "bold",
-		paddingRight: "15vw",
-		paddingLeft: "15vw",
-		textAlign: "center",
-		display: "flex",
-		justifyContent: "center",
-		alignItems: "center",
-		lineHeight: "1.6",
-	});
+const MainText = styled.div({
+	width: "100%",
+	height: "56vh",
+	fontSize: "min(2.5rem, 5vw)",
+	fontWeight: "bold",
+	paddingRight: "15vw",
+	paddingLeft: "15vw",
+	textAlign: "center",
+	display: "flex",
+	justifyContent: "center",
+	alignItems: "center",
+	lineHeight: "1.6",
+});
 
+function Landing({ targetWebsite, setTargetWebsite }) {
 	const link1 = React.useRef(null);
 	const link2 = React.useRef(null);
 	const link3 = React.useRef(null);
@@ -122,7 +122,10 @@ function Landing({ setTargetWebsite }) {
 				<SearchWrapper ref={link4}>
 					<HBlue>검사하기</HBlue>
 					<HWhite>그럼, 이제 검사해볼까요?</HWhite>
-					<SearchBar setTargetWebsite={setTargetWebsite} />
+					<SearchBar
+						targetWebsite={targetWebsite}
+						setTargetWebsite={setTargetWebsite}
+					/>
 					<Recommend />
 				</SearchWrapper>
 				<LandingFooter />

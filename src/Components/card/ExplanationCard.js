@@ -51,10 +51,10 @@ export default function ExplanationCard({
 	const handleClose = () => setOpen(false);
 
 	const catchPhrase = score => {
-		if (score > 80) return config.scorePhrase[0];
-		else if (score > 60) return config.scorePhrase[1];
-		else if (score > 40) return config.scorePhrase[2];
-		else if (score > 20) return config.scorePhrase[3];
+		if (score > 90) return config.scorePhrase[0];
+		else if (score > 70) return config.scorePhrase[1];
+		else if (score > 50) return config.scorePhrase[2];
+		else if (score > 30) return config.scorePhrase[3];
 		else return config.scorePhrase[4];
 	};
 
@@ -73,7 +73,7 @@ export default function ExplanationCard({
 					<HeaderText>{catchPhrase(targetWebsiteScore[6])}</HeaderText>
 					<br />
 					<span>{`${targetWebsite}의 총점은 ${Math.floor(
-						targetWebsiteScore[6]
+						targetWebsiteScore[6]?.toFixed(1)
 					)}점입니다.`}</span>
 					<br />
 					<span>

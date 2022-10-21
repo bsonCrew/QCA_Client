@@ -40,7 +40,7 @@ const SearchWrapper = styled(`div`)({
 	alignItems: "center",
 });
 
-export default function SearchBar({ setTargetWebsite }) {
+export default function SearchBar({ targetWebsite, setTargetWebsite }) {
 	React.useEffect(() => {
 		document.addEventListener("keydown", keyDownHandler);
 		return () => {
@@ -49,20 +49,22 @@ export default function SearchBar({ setTargetWebsite }) {
 	});
 	const [value, setValue] = React.useState(data.websites[0]);
 	const navigate = useNavigate();
+	const homepageList = data.websites.map(website => website.name);
 
 	const handleSubmit = e => {
 		value.homepage.includes("www.")
 			? setTargetWebsite(value.homepage)
 			: setTargetWebsite(value.label);
-		navigate("/dashboard", {
-			state: { targetWebsite: value.homepage },
-		});
+		// if (homepageList.includes(targetWebsite))
+			navigate("/dashboard", {
+				state: { targetWebsite: value.homepage },
+			});
 	};
 
 	const handleChangeTab = () => {};
 
 	const keyDownHandler = e => {
-		console.info("User pressed: ", e.key);
+		// console.info("User pressed: ", e.key);
 
 		if (e.key === "Enter") {
 			e.preventDefault();

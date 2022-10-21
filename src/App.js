@@ -15,7 +15,12 @@ function App() {
 				<Routes>
 					<Route
 						path="/"
-						element={<Landing setTargetWebsite={setTargetWebsite} />}
+						element={
+							<Landing
+								targetWebsite={targetWebsite}
+								setTargetWebsite={setTargetWebsite}
+							/>
+						}
 					/>
 					<Route
 						path="/dashboard/*"

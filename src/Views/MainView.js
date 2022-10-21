@@ -41,7 +41,7 @@ function MainView({
 				<div className="min-w-[240px]">
 					<ScoreCard
 						status={status}
-						score={Math.round(targetWebsiteScore[6])}
+						score={targetWebsiteScore[6]?.toFixed(1)}
 					/>
 				</div>
 			</div>

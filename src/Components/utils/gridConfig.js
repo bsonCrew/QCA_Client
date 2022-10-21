@@ -60,7 +60,7 @@ const printColumnConfig = [
 	},
 	{
 		field: "resultScore",
-		headerName: "최종 점수",
+		headerName: "결과 점수",
 		width: 100,
 		editable: false,
 		groupable: false,
@@ -68,7 +68,7 @@ const printColumnConfig = [
 	},
 	{
 		field: "percentage",
-		headerName: "달성률",
+		headerName: "달성률 (%)",
 		width: 150,
 		editable: false,
 		groupable: false,

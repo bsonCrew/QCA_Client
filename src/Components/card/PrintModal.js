@@ -77,7 +77,7 @@ export default function PrintModal({
 			<div className="w-fit h-100 p-12">
 				<DownloadCSV
 					csvData={formedData.rows}
-					filename={`QCA 테스트 결과 ${targetWebsite}`}
+					filename={`QCA 테스트 결과`}
 				/>
 				<BeautifulBar height={1} />
 				<AuditsDataGrid targetWebsite={targetWebsite} status={"success"} />

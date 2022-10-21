@@ -63,6 +63,7 @@ export default function BarChart({
 		},
 	};
 
+	console.log(targetWebsiteScore);
 	const data = {
 		labels,
 		datasets: [
@@ -73,7 +74,7 @@ export default function BarChart({
 			},
 			{
 				label: targetWebsite,
-				data: targetWebsiteScore,
+				data: [targetWebsiteScore[6], targetWebsiteScore.slice(0, 4)],
 				backgroundColor: config.bargraphcolor[1],
 			},
 		],

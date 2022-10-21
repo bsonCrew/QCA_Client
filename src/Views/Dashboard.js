@@ -4,6 +4,7 @@ import Footer from "../Components/layout/Footer";
 import MainView from "./MainView";
 import config from "../config.json";
 import useQualification from "../Hooks/useQualification";
+import NotFound from "./NotFound";
 import {
 	Routes,
 	Route,
@@ -37,7 +38,7 @@ export default function Dashboard() {
 			);
 			settargetWebsiteScore(newTargetScore);
 		} else if (status === "error") {
-			navigate("/");
+			// navigate("/");
 		}
 	}, [status]);
 
@@ -121,6 +122,7 @@ export default function Dashboard() {
 								/>
 							}
 						/>
+						<Route path="/*" element={<NotFound />} />
 					</Routes>
 				</div>
 			</div>
