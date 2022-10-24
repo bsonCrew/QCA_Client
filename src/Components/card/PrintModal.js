@@ -1,7 +1,6 @@
 import Dialog from "@mui/material/Dialog";
 import React from "react";
 import { CSVLink } from "react-csv";
-import useQualification from "../../Hooks/useQualification";
 import Button from "@mui/material/Button";
 import AuditsDataGrid from "../chart/AuditsDataGrid";
 import { DataGrid } from "@mui/x-data-grid";
@@ -63,25 +62,21 @@ export default function PrintModal({
 	handleClose,
 	targetWebsite,
 }) {
-	const formedData = useFormedAudits(targetWebsite);
-
-	return (
-		<StyledDialog
-			open={open}
-			onClose={handleClose}
-			aria-labelledby="modal-modal-title"
-			aria-describedby="modal-modal-description"
-			fullWidth
-			maxWidth="xl"
-		>
-			<div className="w-fit h-100 p-12">
-				<DownloadCSV
-					csvData={formedData.rows}
-					filename={`QCA 테스트 결과`}
-				/>
-				<BeautifulBar height={1} />
-				<AuditsDataGrid targetWebsite={targetWebsite} status={"success"} />
-			</div>
-		</StyledDialog>
-	);
+	// const formedData = useFormedAudits(targetWebsite);
+	// return (
+	// 	<StyledDialog
+	// 		open={open}
+	// 		onClose={handleClose}
+	// 		aria-labelledby="modal-modal-title"
+	// 		aria-describedby="modal-modal-description"
+	// 		fullWidth
+	// 		maxWidth="xl"
+	// 	>
+	// 		<div className="w-fit h-100 p-12">
+	// 			<DownloadCSV csvData={formedData.rows} filename={`QCA 테스트 결과`} />
+	// 			<BeautifulBar height={1} />
+	// 			<AuditsDataGrid targetWebsite={targetWebsite} status={"success"} />
+	// 		</div>
+	// 	</StyledDialog>
+	// );
 }

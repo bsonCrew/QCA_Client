@@ -30,7 +30,7 @@ const useTop5 = () => {
 		fetchWithGet();
 	}, [getQuery]);
 
-	return [status, data.data];
+	return [status, data.data];	
 };
 
 export default useTop5;

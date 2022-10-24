@@ -8,7 +8,6 @@ import Dashboard from "./Views/Dashboard";
 
 function App() {
 	const [targetWebsite, setTargetWebsite] = React.useState("");
-
 	return (
 		<ThemeProvider theme={theme}>
 			<BrowserRouter>

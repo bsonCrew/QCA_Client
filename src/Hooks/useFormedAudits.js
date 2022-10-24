@@ -3,7 +3,7 @@ import config from "../config.json";
 import React from "react";
 import useQualification from "./useQualification.js";
 
-const useFormedAudits = targetWebsite => {
+const useFormedAudits = (targetWebsite) => {
 	let [, classification] = useQualification(targetWebsite);
 	const stack = [];
 	const evaluation = config.evaluation;

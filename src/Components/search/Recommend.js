@@ -15,6 +15,7 @@ const RecommentWrapper = styled(`div`)({
 });
 export default function Recommend() {
 	const [status, data] = useTop5();
+	
 	return (
 		<RecommentWrapper>
 			{status === "success"
