@@ -2,34 +2,41 @@ import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import { useNavigate } from "react-router-dom";
-import { HBlue } from "../../Themes/CustomStyled";
+
+import Alert from "@mui/material/Alert";
+import IconButton from "@mui/material/IconButton";
+import Collapse from "@mui/material/Collapse";
+import CloseIcon from "@mui/icons-material/Close";
 
 import styled from "@emotion/styled";
 
 import data from "../../file.json";
 
-const StyledAutocomplete = styled(Autocomplete)({
-	"& .MuiInputLabel-outlined:not(.MuiInputLabel-shrink)": {
-		color: "white",
-		transform: "translate(34px, 20px) scale(1);",
-	},
-	"& .MuiAutocomplete-inputRoot": {
-		color: "white",
+const StyledAutocomplete = styled(Autocomplete)(props => {
+	return {
+		"& .MuiInputLabel-outlined:not(.MuiInputLabel-shrink)": {
+			color: "white",
+			transform: "translate(34px, 20px) scale(1);",
+		},
+		"& .MuiAutocomplete-inputRoot": {
+			color: "white",
 
-		'&[class*="MuiOutlinedInput-root"] .MuiAutocomplete-input:first-of-kind': {
-			// Default left padding is 6px
-			paddingLeft: 26,
+			'&[class*="MuiOutlinedInput-root"] .MuiAutocomplete-input:first-of-kind':
+				{
+					// Default left padding is 6px
+					paddingLeft: 26,
+				},
+			"& .MuiOutlinedInput-notchedOutline": {
+				borderColor: "white",
+			},
+			"&:hover .MuiOutlinedInput-notchedOutline": {
+				borderColor: "red",
+			},
+			"&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+				borderColor: props.format ? "green" : "red",
+			},
 		},
-		"& .MuiOutlinedInput-notchedOutline": {
-			borderColor: "white",
-		},
-		"&:hover .MuiOutlinedInput-notchedOutline": {
-			borderColor: "red",
-		},
-		"&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-			borderColor: "green",
-		},
-	},
+	};
 });
 
 const SearchWrapper = styled(`div`)({
@@ -40,88 +47,144 @@ const SearchWrapper = styled(`div`)({
 	alignItems: "center",
 });
 
+const AlertWrapper = styled.div({
+	width: "100%",
+	height: "6vh",
+	display: "flex",
+	justifyContent: "center",
+	alignItems: "center",
+});
+
+const AlertWithCollapse = ({ alertOpen, setAlertOpen }) => {
+	React.useEffect(() => {
+		// step. 2
+		let timer = setTimeout(() => setAlertOpen(false), 2000);
+		console.log(alertOpen);
+
+		return () => {
+			if (alertOpen) setAlertOpen(false);
+			clearTimeout(timer);
+		};
+	}, [setAlertOpen, alertOpen]);
+
+	return (
+		<AlertWrapper>
+			<Collapse in={alertOpen}>
+				<Alert
+					action={
+						<IconButton
+							aria-label="close"
+							color="inherit"
+							size="small"
+							onClick={() => {
+								setAlertOpen(false);
+							}}
+						>
+							<CloseIcon fontSize="inherit" />
+						</IconButton>
+					}
+					sx={{ mb: 2 }}
+				>
+					http:// 또는 https:// 를 포함해주세요.
+				</Alert>
+			</Collapse>
+		</AlertWrapper>
+	);
+};
+
 export default function SearchBar({ setTargetWebsite }) {
 	React.useEffect(() => {
 		document.addEventListener("keydown", keyDownHandler);
-		return () => {
-			document.removeEventListener("keydown", keyDownHandler);
-		};
+		return () => document.removeEventListener("keydown", keyDownHandler);
 	});
 
-	const [searchValue, setSearchValue] = React.useState(data.websites[0][0]);
+	const [input, setInput] = React.useState(" ");
+	const [alertOpen, setAlertOpen] = React.useState(false);
+
 	const navigate = useNavigate();
-	const websites = data.websites;
 
-	const checkisValueRightFormat = value => {
-		let regex =
+	const AutoCompleteOptions = [
+		...data.websites,
+		...data.websites.map(websiteObj => {
+			return {
+				label: websiteObj.homepage,
+				homepage: websiteObj.label,
+			};
+		}),
+	];
+
+	const checkIsInputRightFormat = url => {
+		const regex =
 			/(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-
-		// User did not use autocomplete
-		console.log(typeof value, value);
-
-		if (value === null) return;
-
-		if (typeof value === "string") {
-			if (regex.test(value)) {
-				return value;
-			} else {
-				return false;
-			}
-		}
-
-		// User used autocomplete
-		if (regex.test(value.homepage)) {
-			console.log(value.homepage);
-			return value.homepage;
-		} else if (regex.test(value.url)) {
-			console.log(value.url);
-			return value.label;
+		if (regex.test(url)) {
+			return url;
 		} else {
-			return false;
+			const targetWebsiteHomepage = data.websites.find(
+				websiteObj => websiteObj.label === url
+			);
+			if (targetWebsiteHomepage) return targetWebsiteHomepage.homepage;
+			else return false;
 		}
 	};
 
-	const handleInputChange = (e, value) => {
-		setSearchValue(value);
-		console.log(value);
+	const adjustTargetWebsite = url => {
+		while (url.at(-1) === "/") url = url.slice(0, -1);
+		return url;
+	};
+
+	const handleInputChange = (e, inputVal) => {
+		console.log(inputVal);
+
+		data.websites.find(websiteObj => {
+			if (websiteObj.homepage === inputVal) {
+				return setTargetWebsite(websiteObj.homepage);
+			} else if (websiteObj.label === inputVal) {
+				return websiteObj.label;
+			} else return false;
+		});
+
+		setInput(inputVal);
 	};
 
 	const handleSubmit = () => {
-		const targetWebsite = checkisValueRightFormat(searchValue);
-		console.log(targetWebsite);
+		let targetWebsite = checkIsInputRightFormat(input);
+
 		if (targetWebsite) {
 			navigate("/dashboard", {
-				state: { targetWebsite: searchValue.homepage },
+				state: { targetWebsite: adjustTargetWebsite(targetWebsite) },
 			});
 		} else {
-			alert("Please enter a valid URL");
+			// alert("Please enter a valid URL");
+			setAlertOpen(true);
 		}
 	};
 
-	const handleChangeTab = () => {};
+	const handleTabCompletion = () => {};
 
 	const keyDownHandler = e => {
 		// console.info("User pressed: ", e.key);
-
 		if (e.key === "Enter") {
 			e.preventDefault();
 			handleSubmit();
 		}
 		if (e.key === "Tab") {
 			e.preventDefault();
-			handleChangeTab();
+			handleTabCompletion();
 		}
 	};
 
 	return (
 		<SearchWrapper>
+			<AlertWithCollapse alertOpen={alertOpen} setAlertOpen={setAlertOpen} />
+
 			<StyledAutocomplete
-				inputValue={searchValue}
+				inputValue={input}
 				onInputChange={(e, value) => handleInputChange(e, value)}
+				noOptionsText="입력한 링크로 검사를 수행합니다."
 				disablePortal
 				autoHighlight
 				id="search-bar"
-				options={websites}
+				options={AutoCompleteOptions}
 				className="w-[max(40vw,20rem)] mt-4"
 				autoSelect={true}
 				size="large"
