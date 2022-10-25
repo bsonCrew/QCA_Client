@@ -65,7 +65,7 @@ const Drawer = styled(MuiDrawer, {
 	}),
 }));
 
-function SideBar({ targetWebsite, openView }) {
+function SideBar({ targetWebsite, classification, openView }) {
 	const [lock, setLock] = React.useState(false);
 	const [sideBarOpen, setSideBarOpen] = React.useState(false);
 
@@ -146,6 +146,7 @@ function SideBar({ targetWebsite, openView }) {
 					open={modalOpen}
 					handleClose={() => setModalOpen(false)}
 					onClose={() => setModalOpen(false)}
+					classification={classification}
 					targetWebsite={targetWebsite}
 				/>
 			</Drawer>

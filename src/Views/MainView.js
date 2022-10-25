@@ -5,6 +5,8 @@ import ExplanationCard from "../Components/card/ExplanationCard";
 import StatDataStepper from "../Components/stat/StatDataStepper";
 import React from "react";
 
+import useFormedAudits from "../Hooks/useFormedAudits";
+
 import Phrase from "../Components/layout/Phrase";
 import AuditsDataGrid from "../Components/chart/AuditsDataGrid";
 
@@ -22,6 +24,8 @@ function MainView({
 	targetWebsite,
 	targetWebsiteScore,
 }) {
+	const formedAudits = useFormedAudits(classification);
+
 	return (
 		<div className="flex flex-col py-10">
 			<Phrase
@@ -59,7 +63,7 @@ function MainView({
 			/>
 			<div className="w-full">
 				{StatDataGridPhrase}
-				<AuditsDataGrid targetWebsite={targetWebsite} status={status} />
+				<AuditsDataGrid formedAudits={formedAudits} status={status} />
 			</div>
 		</div>
 	);

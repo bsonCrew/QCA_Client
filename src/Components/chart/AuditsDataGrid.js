@@ -1,5 +1,4 @@
 import React from "react";
-import useFormedAudits from "../../Hooks/useFormedAudits";
 import { DataGrid } from "@mui/x-data-grid";
 
 import styled from "@emotion/styled";
@@ -17,17 +16,14 @@ const StyledDatagrid = styled(DataGrid)({
 	height: "75vh",
 });
 
-export default function AuditsDataGrid({ targetWebsite, status }) {
-	// const formedAudits = useFormedAudits(targetWebsite, status);
-	// console.log(status);
-
-	// return (
-	// 	<>
-	// 		{status === "success" ? (
-	// 			<StyledDatagrid {...formedAudits} checkboxSelection />
-	// 		) : (
-	// 			<Skeleton sx={{ width: "100%", height: 800, marginTop: -22 }} />
-	// 		)}
-	// 	</>
-	// );
+export default function AuditsDataGrid({ formedAudits, status }) {
+	return (
+		<>
+			{status === "success" ? (
+				<StyledDatagrid {...formedAudits} checkboxSelection />
+			) : (
+				<Skeleton sx={{ width: "100%", height: 800, marginTop: -22 }} />
+			)}
+		</>
+	);
 }

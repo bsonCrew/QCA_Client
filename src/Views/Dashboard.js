@@ -21,7 +21,6 @@ export default function Dashboard() {
 		location.state?.targetWebsite || localStorage.getItem("targetWebsite") || ""
 	);
 	const [targetWebsiteScore, settargetWebsiteScore] = React.useState([]);
-
 	let [status, classification, robot] = useQualification(targetWebsite);
 
 	const navigate = useNavigate();
@@ -64,7 +63,11 @@ export default function Dashboard() {
 
 	return (
 		<div className="flex flex-row flex-wrap h-full w-screen bg-main">
-			<SideBar targetWebsite={targetWebsite} openView={openView} />
+			<SideBar
+				targetWebsite={targetWebsite}
+				classification={classification}
+				openView={openView}
+			/>
 			<div className="flex-12 flex-col flex-wrap pt-8 bg-main">
 				<div className="bg-white rounded-2xl px-24">
 					<Routes>

@@ -3,7 +3,6 @@ import React from "react";
 import { CSVLink } from "react-csv";
 import Button from "@mui/material/Button";
 import AuditsDataGrid from "../chart/AuditsDataGrid";
-import { DataGrid } from "@mui/x-data-grid";
 import { printColumnConfig } from "../utils/gridConfig.js";
 import useFormedAudits from "../../Hooks/useFormedAudits";
 
@@ -44,39 +43,29 @@ export function DownloadCSV({ csvData, filename }) {
 	);
 }
 
-const StyledDatagrid = styled(DataGrid)({
-	"& .MuiDataGrid-root": {
-		fontSize: "10px",
-		color: "black",
-	},
-	"& .MuiTablePagination-select": {
-		fontSize: "12px",
-	},
-	width: "80vw",
-	height: "75vh",
-});
-
 export default function PrintModal({
 	status,
 	open,
 	handleClose,
+	classification,
 	targetWebsite,
 }) {
-	// const formedData = useFormedAudits(targetWebsite);
-	// return (
-	// 	<StyledDialog
-	// 		open={open}
-	// 		onClose={handleClose}
-	// 		aria-labelledby="modal-modal-title"
-	// 		aria-describedby="modal-modal-description"
-	// 		fullWidth
-	// 		maxWidth="xl"
-	// 	>
-	// 		<div className="w-fit h-100 p-12">
-	// 			<DownloadCSV csvData={formedData.rows} filename={`QCA 테스트 결과`} />
-	// 			<BeautifulBar height={1} />
-	// 			<AuditsDataGrid targetWebsite={targetWebsite} status={"success"} />
-	// 		</div>
-	// 	</StyledDialog>
-	// );
+	const formedAudits = useFormedAudits(classification);
+
+	return (
+		<StyledDialog
+			open={open}
+			onClose={handleClose}
+			aria-labelledby="modal-modal-title"
+			aria-describedby="modal-modal-description"
+			fullWidth
+			maxWidth="xl"
+		>
+			<div className="w-fit h-100 p-12">
+				<DownloadCSV csvData={formedAudits.rows} filename={`QCA 테스트 결과`} />
+				<BeautifulBar height={1} />
+				<AuditsDataGrid formedAudits={formedAudits} status={"success"} />
+			</div>
+		</StyledDialog>
+	);
 }

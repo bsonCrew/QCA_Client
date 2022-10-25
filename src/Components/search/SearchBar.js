@@ -40,25 +40,62 @@ const SearchWrapper = styled(`div`)({
 	alignItems: "center",
 });
 
-export default function SearchBar({ targetWebsite, setTargetWebsite }) {
+export default function SearchBar({ setTargetWebsite }) {
 	React.useEffect(() => {
 		document.addEventListener("keydown", keyDownHandler);
 		return () => {
 			document.removeEventListener("keydown", keyDownHandler);
 		};
 	});
-	const [value, setValue] = React.useState(data.websites[0]);
-	const navigate = useNavigate();
-	const homepageList = data.websites.map(website => website.name);
 
-	const handleSubmit = e => {
-		value.homepage.includes("www.")
-			? setTargetWebsite(value.homepage)
-			: setTargetWebsite(value.label);
-		// if (homepageList.includes(targetWebsite))
+	const [searchValue, setSearchValue] = React.useState(data.websites[0][0]);
+	const navigate = useNavigate();
+	const websites = data.websites;
+
+	const checkisValueRightFormat = value => {
+		let regex =
+			/(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+
+		// User did not use autocomplete
+		console.log(typeof value, value);
+
+		if (value === null) return;
+
+		if (typeof value === "string") {
+			if (regex.test(value)) {
+				return value;
+			} else {
+				return false;
+			}
+		}
+
+		// User used autocomplete
+		if (regex.test(value.homepage)) {
+			console.log(value.homepage);
+			return value.homepage;
+		} else if (regex.test(value.url)) {
+			console.log(value.url);
+			return value.label;
+		} else {
+			return false;
+		}
+	};
+
+	const handleInputChange = (e, value) => {
+		setSearchValue(value);
+		console.log(value);
+	};
+
+	const handleSubmit = () => {
+		const targetWebsite = checkisValueRightFormat(searchValue);
+		console.log(targetWebsite);
+		if (targetWebsite) {
 			navigate("/dashboard", {
-				state: { targetWebsite: value.homepage },
+				state: { targetWebsite: searchValue.homepage },
 			});
+		} else {
+			alert("Please enter a valid URL");
+		}
 	};
 
 	const handleChangeTab = () => {};
@@ -79,17 +116,15 @@ export default function SearchBar({ targetWebsite, setTargetWebsite }) {
 	return (
 		<SearchWrapper>
 			<StyledAutocomplete
-				value={value}
-				// inputValue={inputValue}
-				onChange={(e, newValue) => {
-					setValue(newValue);
-				}}
+				inputValue={searchValue}
+				onInputChange={(e, value) => handleInputChange(e, value)}
 				disablePortal
 				autoHighlight
 				id="search-bar"
 				options={websites}
 				className="w-[max(40vw,20rem)] mt-4"
 				autoSelect={true}
+				size="large"
 				renderOption={(props, option) => (
 					<div component="li" {...props}>
 						<div className="mr-2 w-full flex justify-between">
@@ -117,5 +152,3 @@ export default function SearchBar({ targetWebsite, setTargetWebsite }) {
 		</SearchWrapper>
 	);
 }
-
-const websites = data.websites;

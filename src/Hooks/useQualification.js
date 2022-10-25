@@ -12,10 +12,8 @@ const useQualification = website => {
 	const [rawData, setRawData] = React.useState([]);
 	const [classification, setClassification] = React.useState({});
 	const [robot, setRobot] = React.useState([]);
-	const postQuery = config.postQuery;
-	// const postQuery = "http://localhost:3001/list";
-	// const postQuery = "http://52.79.54.151:8080/api/control";
-	// const postQuery = "/api/control";
+	// const postQuery = config.postQuery;
+	const postQuery = "http://localhost:3001/list";
 
 	React.useEffect(() => {
 		setStatus("loading");

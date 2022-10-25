@@ -10,7 +10,6 @@ import WhatisQCA from "./landing/WhatisQCA";
 import HowQca from "./landing/HowQCA";
 
 import LandingFooter from "../Components/layout/LandingFooter";
-import Copyright from "../Components/layout/Copyright";
 import Banner from "./landing/Banner";
 import FeatureCards from "./landing/FeatureCard";
 
