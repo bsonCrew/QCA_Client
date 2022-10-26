@@ -1,5 +1,4 @@
 import React from "react";
-import useFormedAudits from "../../Hooks/useFormedAudits";
 import { DataGrid } from "@mui/x-data-grid";
 
 import styled from "@emotion/styled";
@@ -17,10 +16,7 @@ const StyledDatagrid = styled(DataGrid)({
 	height: "75vh",
 });
 
-export default function AuditsDataGrid({ targetWebsite, status }) {
-	const formedAudits = useFormedAudits(targetWebsite);
-	console.log(status);
-
+export default function AuditsDataGrid({ formedAudits, status }) {
 	return (
 		<>
 			{status === "success" ? (

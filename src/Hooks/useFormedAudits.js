@@ -1,10 +1,7 @@
 import { printColumnConfig } from "../Components/utils/gridConfig";
 import config from "../config.json";
-import React from "react";
-import useQualification from "./useQualification.js";
 
-const useFormedAudits = targetWebsite => {
-	let [, classification] = useQualification(targetWebsite);
+const useFormedAudits = classification => {
 	const stack = [];
 	const evaluation = config.evaluation;
 
@@ -17,9 +14,6 @@ const useFormedAudits = targetWebsite => {
 				Object.entries(subClassVal)
 					.filter(x => isScoreValue(x))
 					.forEach(([specKey, specVal], idx) => {
-						// const items = specVal.items.map(item => {
-						// 	return item;
-						// });
 						stack.push({
 							class: evaluation[i],
 							subClass: subClassKey,

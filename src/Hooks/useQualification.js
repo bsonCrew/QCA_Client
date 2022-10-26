@@ -7,15 +7,13 @@ import calculateValidator from "../Components/utils/calculateValidator";
 /** Non-use attributes which are not displayed in the table*/
 const nonUseAttributes = config.nonUseAttributes;
 
-const useQualification = website => {
+const useQualification = (website, requestNewVal) => {
 	const [status, setStatus] = React.useState("idle");
 	const [rawData, setRawData] = React.useState([]);
 	const [classification, setClassification] = React.useState({});
 	const [robot, setRobot] = React.useState([]);
-	const postQuery = config.postQuery;
-	// const postQuery = "http://localhost:3001/list";
-	// const postQuery = "http://52.79.54.151:8080/api/control";
-	// const postQuery = "/api/control";
+	// const postQuery = config.postQuery;
+	const postQuery = "http://localhost:3001/list";
 
 	React.useEffect(() => {
 		setStatus("loading");
@@ -43,6 +41,7 @@ const useQualification = website => {
 					body: JSON.stringify({
 						url: website,
 						requestedDate: new Date().toISOString(),
+						requestNewVal: requestNewVal,
 					}),
 				});
 				const data = await response.json();
@@ -60,7 +59,7 @@ const useQualification = website => {
 		};
 
 		// localstorage hit or fetch from server
-		if (checkLocalStorage()) {
+		if (checkLocalStorage() && !requestNewVal) {
 			// console.log("localStorage hit");
 			setStatus("success");
 		} else {

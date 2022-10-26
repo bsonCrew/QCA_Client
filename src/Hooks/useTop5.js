@@ -4,9 +4,8 @@ import config from "../config.json";
 const useTop5 = () => {
 	const [status, setStatus] = React.useState("idle");
 	const [data, setData] = React.useState([]);
-	const getQuery = config.getQuery;
-	// const getQuery = "http://localhost:3001/top5";
-	// const getQuery = "/api/list";
+	// const getQuery = config.getQuery;
+	const getQuery = "http://localhost:3001/top5";
 
 	React.useEffect(() => {
 		if (!getQuery) return;
@@ -30,7 +29,7 @@ const useTop5 = () => {
 		fetchWithGet();
 	}, [getQuery]);
 
-	return [status, data.data];
+	return [status, data?.data];
 };
 
 export default useTop5;

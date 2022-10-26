@@ -16,7 +16,7 @@ const HeaderText = styled(`span`)({
 });
 
 const CardWrapper = styled(`div`)({
-	height: "100%",
+	// height: "100%",
 	margin: "2vh 2vw 2vh 2vw",
 	borderRadius: "0 0 5px 5px",
 	boxShadow: `${config.colors["gray-light"]} 0px 0px 20px`,
