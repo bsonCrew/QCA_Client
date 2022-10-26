@@ -20,8 +20,14 @@ export default function Dashboard() {
 	const [targetWebsite, setTargetWebsite] = React.useState(
 		location.state?.targetWebsite || localStorage.getItem("targetWebsite") || ""
 	);
+	const [requestNewVal, setRequestNewVal] = React.useState(
+		location.state?.requestNewVal || false
+	);
 	const [targetWebsiteScore, settargetWebsiteScore] = React.useState([]);
-	let [status, classification, robot] = useQualification(targetWebsite);
+	let [status, classification, robot] = useQualification(
+		targetWebsite,
+		requestNewVal
+	);
 
 	const navigate = useNavigate();
 

@@ -7,7 +7,7 @@ import calculateValidator from "../Components/utils/calculateValidator";
 /** Non-use attributes which are not displayed in the table*/
 const nonUseAttributes = config.nonUseAttributes;
 
-const useQualification = website => {
+const useQualification = (website, requestNewVal) => {
 	const [status, setStatus] = React.useState("idle");
 	const [rawData, setRawData] = React.useState([]);
 	const [classification, setClassification] = React.useState({});
@@ -41,6 +41,7 @@ const useQualification = website => {
 					body: JSON.stringify({
 						url: website,
 						requestedDate: new Date().toISOString(),
+						requestNewVal: requestNewVal,
 					}),
 				});
 				const data = await response.json();
@@ -58,7 +59,7 @@ const useQualification = website => {
 		};
 
 		// localstorage hit or fetch from server
-		if (checkLocalStorage()) {
+		if (checkLocalStorage() && !requestNewVal) {
 			// console.log("localStorage hit");
 			setStatus("success");
 		} else {

@@ -7,6 +7,7 @@ import Alert from "@mui/material/Alert";
 import IconButton from "@mui/material/IconButton";
 import Collapse from "@mui/material/Collapse";
 import CloseIcon from "@mui/icons-material/Close";
+import Checkbox from "@mui/material/Checkbox";
 
 import styled from "@emotion/styled";
 
@@ -35,16 +36,31 @@ const StyledAutocomplete = styled(Autocomplete)(props => {
 			"&.Mui-focused .MuiOutlinedInput-notchedOutline": {
 				borderColor: props.format ? "green" : "red",
 			},
+			width: "max(40vw,20rem)",
+			marginTop: "2px",
 		},
 	};
 });
 
 const SearchWrapper = styled(`div`)({
-	margin: "10vh 0 0 0",
+	// margin: "10vh 0 0 0",
 	display: "flex",
+	width: "100%",
 	flexDirection: "column",
 	justifyContent: "center",
 	alignItems: "center",
+	flexWrap: "wrap",
+});
+
+const CheckBoxWrapper = styled.div({
+	display: "flex",
+	width: "20%",
+	minWidth: "320px",
+	padding: "4px 12px 4px 4px",
+	borderRadius: "20px",
+	alignItems: "center",
+	justifyContent: "center",
+	color: "white",
 });
 
 const AlertWrapper = styled.div({
@@ -55,11 +71,16 @@ const AlertWrapper = styled.div({
 	alignItems: "center",
 });
 
+const StyledCheckBox = styled(Checkbox)({
+	color: "white",
+	"&.Mui-checked": {
+		color: "red",
+	},
+});
+
 const AlertWithCollapse = ({ alertOpen, setAlertOpen }) => {
 	React.useEffect(() => {
-		// step. 2
-		let timer = setTimeout(() => setAlertOpen(false), 2000);
-		console.log(alertOpen);
+		let timer = setTimeout(() => setAlertOpen(false), 5000);
 
 		return () => {
 			if (alertOpen) setAlertOpen(false);
@@ -71,6 +92,7 @@ const AlertWithCollapse = ({ alertOpen, setAlertOpen }) => {
 		<AlertWrapper>
 			<Collapse in={alertOpen}>
 				<Alert
+					severity="error"
 					action={
 						<IconButton
 							aria-label="close"
@@ -85,7 +107,8 @@ const AlertWithCollapse = ({ alertOpen, setAlertOpen }) => {
 					}
 					sx={{ mb: 2 }}
 				>
-					http:// 또는 https:// 를 포함해주세요.
+					주소 형식은 올바른 주소 형식을 포함해야 합니다. (http:// 또는 https://
+					를 포함)
 				</Alert>
 			</Collapse>
 		</AlertWrapper>
@@ -100,6 +123,9 @@ export default function SearchBar({ setTargetWebsite }) {
 
 	const [input, setInput] = React.useState(" ");
 	const [alertOpen, setAlertOpen] = React.useState(false);
+	const [requestNewVal, setRequestNewVal] = React.useState(false);
+
+	console.log(requestNewVal);
 
 	const navigate = useNavigate();
 
@@ -133,8 +159,6 @@ export default function SearchBar({ setTargetWebsite }) {
 	};
 
 	const handleInputChange = (e, inputVal) => {
-		console.log(inputVal);
-
 		data.websites.find(websiteObj => {
 			if (websiteObj.homepage === inputVal) {
 				return setTargetWebsite(websiteObj.homepage);
@@ -151,7 +175,10 @@ export default function SearchBar({ setTargetWebsite }) {
 
 		if (targetWebsite) {
 			navigate("/dashboard", {
-				state: { targetWebsite: adjustTargetWebsite(targetWebsite) },
+				state: {
+					targetWebsite: adjustTargetWebsite(targetWebsite),
+					requestNewVal: requestNewVal,
+				},
 			});
 		} else {
 			// alert("Please enter a valid URL");
@@ -172,46 +199,56 @@ export default function SearchBar({ setTargetWebsite }) {
 			handleTabCompletion();
 		}
 	};
+	const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 	return (
-		<SearchWrapper>
+		<>
 			<AlertWithCollapse alertOpen={alertOpen} setAlertOpen={setAlertOpen} />
-
-			<StyledAutocomplete
-				inputValue={input}
-				onInputChange={(e, value) => handleInputChange(e, value)}
-				noOptionsText="입력한 링크로 검사를 수행합니다."
-				disablePortal
-				autoHighlight
-				id="search-bar"
-				options={AutoCompleteOptions}
-				className="w-[max(40vw,20rem)] mt-4"
-				autoSelect={true}
-				size="large"
-				renderOption={(props, option) => (
-					<div component="li" {...props}>
-						<div className="mr-2 w-full flex justify-between">
-							<div>{option.label}</div>
-							<div>{option.homepage}</div>
+			<SearchWrapper>
+				<StyledAutocomplete
+					inputValue={input}
+					onInputChange={(e, value) => handleInputChange(e, value)}
+					noOptionsText="입력한 링크로 검사를 수행합니다."
+					isOptionEqualToValue={(option, value) => option !== null}
+					disablePortal
+					autoHighlight
+					id="search-bar"
+					options={AutoCompleteOptions}
+					autoSelect={true}
+					size="large"
+					renderOption={(props, option) => (
+						<div component="li" {...props}>
+							<div className="mr-2 w-full flex justify-between">
+								<div>{option.label}</div>
+								<div>{option.homepage}</div>
+							</div>
 						</div>
-					</div>
-				)}
-				renderInput={params => (
-					<TextField
-						sx={{
-							"& label": { paddingLeft: theme => theme.spacing(2) },
-							"& input": { paddingLeft: theme => theme.spacing(3.5) },
-							"& fieldset": {
-								paddingLeft: theme => theme.spacing(2.5),
-								borderRadius: "20px",
-							},
-						}}
-						{...params}
-						label="기관명"
-						autoFocus={true}
+					)}
+					renderInput={params => (
+						<TextField
+							sx={{
+								"& label": { paddingLeft: theme => theme.spacing(2) },
+								"& input": { paddingLeft: theme => theme.spacing(3.5) },
+								"& fieldset": {
+									paddingLeft: theme => theme.spacing(2.5),
+									borderRadius: "20px",
+								},
+							}}
+							{...params}
+							label="기관명"
+							autoFocus={true}
+						/>
+					)}
+				/>
+				<CheckBoxWrapper>
+					<StyledCheckBox
+						checked={requestNewVal}
+						onChange={() => setRequestNewVal(!requestNewVal)}
+						{...label}
 					/>
-				)}
-			/>
-		</SearchWrapper>
+					검사를 새로 수행합니다.
+				</CheckBoxWrapper>
+			</SearchWrapper>
+		</>
 	);
 }
