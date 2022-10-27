@@ -199,6 +199,7 @@ export default function SearchBar({ setTargetWebsite }) {
       handleTabCompletion();
     }
   };
+
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
   return (

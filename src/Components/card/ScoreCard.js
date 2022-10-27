@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import ScoreCardModal from './ScoreCardModal';
+import ScoreCardModal from '../modal/ScoreCardModal';
 import Skeleton from '@mui/material/Skeleton';
 
-import BeautifulBar from '../layout/BeautifulBar';
+import BeautifulBar from '../atom/BeautifulBar';
 import styled from '@emotion/styled';
 import config from '../../config.json';
 

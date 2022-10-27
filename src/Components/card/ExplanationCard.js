@@ -1,9 +1,9 @@
 import * as React from 'react';
 
 import Skeleton from '@mui/material/Skeleton';
-import ExplanationModal from './ExplanationModal';
+import ExplanationModal from '../modal/ExplanationModal';
 import config from '../../config.json';
-import BeautifulBar from '../layout/BeautifulBar';
+import BeautifulBar from '../atom/BeautifulBar';
 import styled from '@emotion/styled';
 
 // import { H3Gray, H2Black } from "../../Themes/CustomStyled";

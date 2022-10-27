@@ -10,7 +10,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import Tooltip from '@mui/material/Tooltip';
 import Skeleton from '@mui/material/Skeleton';
 
-import DataCardModal from './DataCardModal';
+import DataCardModal from '../modal/DataCardModal';
 
 const CardWrapper = styled(`div`)({
   minWidth: '200px',

@@ -1,20 +1,20 @@
 import * as React from 'react';
 
 import SearchBar from '../Components/search/SearchBar';
-import Header from '../Components/layout/Header';
 import Recommend from '../Components/search/Recommend';
 
+import Header from '../Views/landing/Header';
 import WhatisQCA from './landing/WhatisQCA';
 import HowQca from './landing/HowQCA';
-import LandingFooter from '../Components/layout/LandingFooter';
 import Banner from './landing/Banner';
-import FeatureCards from './landing/FeatureCard';
+import FeatureCards from './landing/FeatureCards';
 
 import styled from '@emotion/styled';
 import { HBlue, H2Black, H2Gray, HWhite } from '../Themes/CustomStyled';
 
 import ShowAlgorithm from './landing/ShowAlgorithm';
 import config from '../config.json';
+import Copyright from '../Components/atom/Copyright';
 
 const LandingWrapper = styled(`div`)({
   top: '0',
@@ -125,7 +125,7 @@ function Landing({ targetWebsite, setTargetWebsite }) {
           />
           <Recommend />
         </SearchWrapper>
-        <LandingFooter />
+        <Copyright />
       </BottomWrapper>
     </LandingWrapper>
   );

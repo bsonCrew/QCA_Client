@@ -9,9 +9,9 @@ import Portal from "@mui/material/Portal";
 
 import config from "../../config.json";
 
-import Phrase from "../layout/Phrase";
+import Phrase from "../atom/Phrase";
 
-import BeautifulBar from "../layout/BeautifulBar";
+import BeautifulBar from "../atom/BeautifulBar";
 
 const ClassStepper = ({ criteriaClass }) => {
 	const [activeStep, setActiveStep] = React.useState(0);

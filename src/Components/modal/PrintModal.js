@@ -9,7 +9,7 @@ import useFormedAudits from '../../Hooks/useFormedAudits';
 import styled from '@emotion/styled';
 
 import config from '../../config.json';
-import BeautifulBar from '../layout/BeautifulBar';
+import BeautifulBar from '../atom/BeautifulBar';
 
 const StyledDialog = styled(Dialog)({
   width: '100%',

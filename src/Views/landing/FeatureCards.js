@@ -1,4 +1,4 @@
-import BeautifulBar from '../../Components/layout/BeautifulBar';
+import BeautifulBar from '../../Components/atom/BeautifulBar';
 import Button from '@mui/material/Button';
 import BalanceIcon from '@mui/icons-material/Balance';
 import SquareFootIcon from '@mui/icons-material/SquareFoot';

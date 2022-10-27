@@ -1,8 +1,7 @@
 import Dialog from '@mui/material/Dialog';
 import Button from '@mui/material/Button';
 import config from '../../config.json';
-import ScoreCardModalContent from './ScoreCardModalContent';
-import ExplanationModal from './ExplanationModal';
+import ScoreCardModalContent from '../modalContent/ScoreCardModalContent';
 
 import algorithmDesc from '../../assets/algorithmDesc.png';
 
@@ -44,7 +43,7 @@ export default function ScoreCardModal({ open, handleClose, onClose }) {
         <p className='font-bold text-md'>이해했어요</p>
       </Button>
       <div className='w-fit h-[95vh] p-16 overflow-y-scroll'>
-        <img src={algorithmDesc} />
+        <img alt='매핑 알고리즘을 도식화한 이미지' src={algorithmDesc} />
         <p id='modal-modal-title' className='text-6xl pb-4 font-bold'>
           총점
         </p>

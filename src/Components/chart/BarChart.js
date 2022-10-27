@@ -58,23 +58,24 @@ export default function BarChart({
       },
       title: {
         display: true,
-        text: `비교군 vs ${targetWebsite}`,
+        text: `비교군(www.gov.kr) vs ${targetWebsite}`,
       },
     },
   };
 
-  console.log(targetWebsiteScore);
+  console.log(targetWebsiteScore.slice(0, 4));
+
   const data = {
     labels,
     datasets: [
       {
-        label: '비교군',
+        label: '비교군(www.gov.kr)',
         data: config.sampleLargeData,
         backgroundColor: config.bargraphcolor[0],
       },
       {
         label: targetWebsite,
-        data: [targetWebsiteScore[6], targetWebsiteScore.slice(0, 4)],
+        data: [targetWebsiteScore[6], ...targetWebsiteScore?.slice(0, 4)],
         backgroundColor: config.bargraphcolor[1],
       },
     ],

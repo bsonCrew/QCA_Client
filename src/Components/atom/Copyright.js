@@ -2,14 +2,27 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 
-import LandingFooter from './LandingFooter';
+import LandingFooter from './FooterContent';
+import styled from '@emotion/styled';
+import config from '../../config.json';
+
+const CopyrightWrapper = styled.div({
+  marginTop: '10vh',
+});
+
+const CopyrightBtnWrapper = styled.div({
+  display: 'flex',
+  flexDirection: 'center',
+  marginBottom: '4vh',
+  color: config.colors.beige,
+});
 
 export default function Copyright() {
   const [clicked, setClicked] = React.useState(false);
   const handleClose = () => setClicked(false);
 
   return (
-    <>
+    <CopyrightWrapper>
       <Dialog
         open={clicked}
         onClose={handleClose}
@@ -20,11 +33,11 @@ export default function Copyright() {
       >
         <LandingFooter />
       </Dialog>
-      <div className='w-full flex justify-center mb-4'>
+      <CopyrightBtnWrapper>
         <Button onClick={() => setClicked(!clicked)}>
           <b>Copyrights</b>
         </Button>
-      </div>
-    </>
+      </CopyrightBtnWrapper>
+    </CopyrightWrapper>
   );
 }

@@ -2,16 +2,15 @@ import Dialog from '@mui/material/Dialog';
 
 import styled from '@emotion/styled';
 
-const FooterWrapper = styled(`div`)({
+const ContentWrapper = styled(`div`)({
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
   flexDirection: 'column',
-  padding: '6vh 20vw 6vh 20vw',
+  padding: '10vh 10vw 10vh 10vw',
   zIndex: '2',
   fontSize: '1.6',
-  color: 'white',
-  marginTop: '30vh',
+  color: 'black',
 });
 
 const CopyrightHeaderText = styled.div({
@@ -22,7 +21,7 @@ const CopyrightHeaderText = styled.div({
 
 export default function LandingFooter() {
   return (
-    <FooterWrapper>
+    <ContentWrapper>
       <CopyrightHeaderText>Material-UI / MUI</CopyrightHeaderText>
       Copyright ⓒ [2014] [Material-UI / MUI] The MIT License (MIT) Copyright (c)
       2014 Call-Em-All Permission is hereby granted, free of charge, to any
@@ -89,6 +88,6 @@ export default function LandingFooter() {
         </b>
         All rights reserved © 2022 - {new Date().getFullYear()}
       </div>
-    </FooterWrapper>
+    </ContentWrapper>
   );
 }

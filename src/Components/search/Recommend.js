@@ -6,6 +6,7 @@ import styled from '@emotion/styled';
 
 const RecommentWrapper = styled(`div`)({
   width: '100%',
+  height: '10vh',
   margin: '2vh 0 0 0',
   display: 'flex',
   flexWrap: 'wrap',

@@ -1,4 +1,3 @@
-import StatDataGrid from '../Components/stat/StatDataGrid';
 import ScoreCard from '../Components/card/ScoreCard';
 import BarChart from '../Components/chart/BarChart';
 import ExplanationCard from '../Components/card/ExplanationCard';
@@ -7,7 +6,7 @@ import React from 'react';
 
 import useFormedAudits from '../Hooks/useFormedAudits';
 
-import Phrase from '../Components/layout/Phrase';
+import Phrase from '../Components/atom/Phrase';
 import AuditsDataGrid from '../Components/chart/AuditsDataGrid';
 
 const StatDataGridPhrase = (

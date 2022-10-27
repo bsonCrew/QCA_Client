@@ -3,8 +3,7 @@ import ExplImage from '../../assets/ExplImage.png';
 import styled from '@emotion/styled';
 import config from '../../config.json';
 import { BlueText } from '../../Themes/CustomStyled';
-import ExplanationModal from '../../Components/card/ExplanationModal';
-import { Link } from 'react-router-dom';
+import ExplanationModal from '../../Components/modal/ExplanationModal';
 
 const moisURL = config.moisURL;
 

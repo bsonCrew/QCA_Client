@@ -44,8 +44,6 @@ const CriteriaCard = ({ criteriaClass, status }) => {
 };
 
 const SubClassCard = ({ criteria, criteriaVal, status }) => {
-  const [backgroundColor, setBackgroundColor] = React.useState('bg-main');
-
   const selectBackgroundColor = (score, totalScore) => {
     if (totalScore === 0) {
       return 'bg-blue';
@@ -75,10 +73,7 @@ const SubClassCard = ({ criteria, criteriaVal, status }) => {
           )
           .map(([subClass, subClassVal]) => {
             return (
-              <div
-                key={subClass}
-                className={'flex flex-col p-4 ' + backgroundColor}
-              >
+              <div key={subClass} className={'flex flex-col p-4 bg-main'}>
                 <div className='my-2 flex items-center mt-8'>
                   <div
                     className={

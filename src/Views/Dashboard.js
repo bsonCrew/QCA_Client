@@ -1,17 +1,18 @@
 import * as React from 'react';
-import SideBar from '../Components/layout/Sidebar';
-import Footer from '../Components/layout/Footer';
-import MainView from './MainView';
-import config from '../config.json';
-import useQualification from '../Hooks/useQualification';
-import NotFound from './NotFound';
+import { Suspense } from 'react';
 import { Routes, Route, useParams, useLocation } from 'react-router-dom';
+import useQualification from '../Hooks/useQualification';
+import Footer from '../Components/atom/Footer';
+import SideBar from '../Components/sidebar/Sidebar';
 
+import config from '../config.json';
+
+import MainView from './MainView';
+import NotFound from '../Views/NotFound';
 import SpecificView from './SpecificView';
 
 export default function Dashboard() {
   const location = useLocation();
-  console.log(location.state);
 
   const [targetWebsite, setTargetWebsite] = React.useState(
     location.state?.targetWebsite || localStorage.getItem('targetWebsite') || ''
