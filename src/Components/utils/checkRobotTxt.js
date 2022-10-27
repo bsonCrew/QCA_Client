@@ -1,6 +1,6 @@
 const checkRobotTxt = robot => {
 	let score = 100;
-	if (robot !== undefined && robot.length !== 0) {
+	if (robot !== undefined && robot !== null && robot.length !== 0) {
 		for (const el of robot) {
 			if (el.type.toLowerCase().includes("disallow")) {
 				score = 0;
@@ -8,7 +8,7 @@ const checkRobotTxt = robot => {
 			}
 		}
 	}
-
+	
 	return {
 		score: score,
 		description:

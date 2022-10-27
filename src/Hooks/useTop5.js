@@ -12,7 +12,7 @@ const useTop5 = () => {
 
 		const fetchWithGet = async () => {
 			setStatus("loading");
-			try {
+			try {	
 				const response = await fetch(getQuery);
 				const data = await response.json();
 				if (data.status === 200) {

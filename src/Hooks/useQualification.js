@@ -12,8 +12,13 @@ const useQualification = (website, requestNewVal) => {
 	const [rawData, setRawData] = React.useState([]);
 	const [classification, setClassification] = React.useState({});
 	const [robot, setRobot] = React.useState([]);
+	const [recentRequestedDate, setRecentRequestedDate] = React.useState(
+		new Date().toISOString()
+	);
+
 	// const postQuery = config.postQuery;
 	const postQuery = "http://localhost:3001/list";
+	// console.log("requestNewVal: ", requestNewVal);
 
 	React.useEffect(() => {
 		setStatus("loading");
@@ -40,12 +45,14 @@ const useQualification = (website, requestNewVal) => {
 					},
 					body: JSON.stringify({
 						url: website,
-						requestedDate: new Date().toISOString(),
-						requestNewVal: requestNewVal,
+						requestedDate: recentRequestedDate,
+						requestNewVal: requestNewVal || false,
 					}),
 				});
+
 				const data = await response.json();
 				setRawData(data.data);
+
 				if (data.status === 200) {
 					return true;
 				} else {
@@ -97,7 +104,9 @@ const useQualification = (website, requestNewVal) => {
 
 			const classifiedAuditResults = calculateAndClassify(auditResults);
 			setClassification(classifiedAuditResults);
-
+			setRecentRequestedDate(
+				rawData.recentRequestedDate || new Date().toISOString()
+			);
 			// Set lighthouseData to use in datagrid
 			setStatus("success");
 		}
@@ -105,8 +114,8 @@ const useQualification = (website, requestNewVal) => {
 
 	// return memoized value
 	return React.useMemo(() => {
-		return [status, classification, robot];
-	}, [status, classification, robot]);
+		return [status, classification, robot, recentRequestedDate];
+	}, [status, classification, robot, recentRequestedDate]);
 
 	// return [status, classification, robot];
 };

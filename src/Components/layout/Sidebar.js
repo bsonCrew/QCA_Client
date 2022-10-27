@@ -65,7 +65,12 @@ const Drawer = styled(MuiDrawer, {
 	}),
 }));
 
-function SideBar({ targetWebsite, classification, openView }) {
+function SideBar({
+	targetWebsite,
+	classification,
+	openView,
+	recentRequestedDate,
+}) {
 	const [lock, setLock] = React.useState(false);
 	const [sideBarOpen, setSideBarOpen] = React.useState(false);
 
@@ -101,6 +106,7 @@ function SideBar({ targetWebsite, classification, openView }) {
 				open={sideBarOpen}
 				handleDrawer={handleDrawer}
 				targetWebsite={targetWebsite}
+				recentRequestedDate={recentRequestedDate}
 			/>
 			<Drawer
 				variant="permanent"

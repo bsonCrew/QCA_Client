@@ -41,7 +41,7 @@ export default function Header({ scrollRefs }) {
 							onClick={() => executeScroll(ref)}
 							href={hrefs[idx]}
 						>
-							{nameSpace[idx]}
+							{nameSpace[idx]} 
 						</Button>
 					);
 				})}

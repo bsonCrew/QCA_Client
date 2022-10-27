@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import Fab from "@mui/material/Fab";
+import Button from "@mui/material/Button";
 
 import styled from "@emotion/styled";
 import config from "../../config.json";
@@ -8,12 +9,12 @@ import config from "../../config.json";
 const LabelLink = styled(`div`)({
 	marginTop: "2vh",
 	color: "white",
-	fontWeight:"bold"
+	fontWeight: "bold",
 });
 
 const StyledFab = styled(Fab)({
 	backgroundColor: config.colors.white,
-	fontWeight:"bold"
+	fontWeight: "bold",
 });
 
 const ShortCut = ({ label, homepage }) => {
@@ -24,12 +25,18 @@ const ShortCut = ({ label, homepage }) => {
 		velocity: 0.25,
 	});
 
+	console.log(homepage);
+
 	return (
 		<div className="items-center justify-center w-36 mt-5 text-center">
 			<Link
 				to={{
 					pathname: "/dashboard",
-					state: { targetWebsite: homepage },
+				}}
+				state={{ targetWebsite: homepage }}
+				
+				onClick={() => {
+					console.log(homepage);
 				}}
 			>
 				<AnimatedFab
