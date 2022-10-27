@@ -48,7 +48,7 @@ const calculateValidator = (validator) => {
   validator
     .filter((el) => el.type === 'error')
     .forEach((el) => {
-      if (el.description.includes('charset')) {
+      if (el.description?.includes('charset')) {
         charset.score = 0;
         charset.items.push(el);
       }

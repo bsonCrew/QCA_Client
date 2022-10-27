@@ -16,8 +16,8 @@ const useQualification = (website, requestNewVal) => {
     new Date().toISOString()
   );
 
-  //   const postQuery = config.postQuery;
-  const postQuery = 'http://localhost:3001/list';
+//   const postQuery = config.postQuery;
+    const postQuery = 'http://localhost:3001/list';
   // console.log("requestNewVal: ", requestNewVal);
 
   React.useEffect(() => {

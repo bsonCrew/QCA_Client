@@ -1,10 +1,13 @@
 import React from 'react';
+import config from '../config.json';
 
 const useTop5 = () => {
   const [status, setStatus] = React.useState('idle');
   const [data, setData] = React.useState([]);
-  //   const getQuery = config.getQuery;
-  const getQuery = 'http://localhost:3001/top5';
+  // const getQuery = config.getQuery;
+    const getQuery = 'http://localhost:3001/top5';
+
+  console.log(data);
 
   React.useEffect(() => {
     if (!getQuery) return;
@@ -14,6 +17,7 @@ const useTop5 = () => {
       try {
         const response = await fetch(getQuery);
         const data = await response.json();
+        console.log(data);
         if (data.status === 200) {
           setStatus('success');
           setData(data);
