@@ -7,7 +7,7 @@ import calculateValidator from '../Components/utils/calculateValidator';
 /** Non-use attributes which are not displayed in the table*/
 const nonUseAttributes = config.nonUseAttributes;
 
-const useQualification = (website, requestNewVal) => {
+const useQualification = (website, requestNewVal, setRequestNewVal) => {
   var d = new Date();
   const [status, setStatus] = React.useState('idle');
   const [rawData, setRawData] = React.useState([]);
@@ -73,6 +73,7 @@ const useQualification = (website, requestNewVal) => {
     } else {
       try {
         fetchWithPost().then((res) => {
+          setRequestNewVal(false);
           if (res) {
             setStatus('fetched');
           }

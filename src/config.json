@@ -1,281 +1,266 @@
 {
-	"postQuery": "http://localhost:8080/api/control",
-	"getQuery": "http://localhost:8080/api/list",
-	"colors": {
-		"main": "#F9FAFB",
-		"gray-dark": "#273444",
-		"black": "#000000",
-		"gray": "#6B7684",
-		"gray-light": "#d3dce6",
-		"beige": "#6C6C6C",
-		"main2": "#F6F6F6",
-		"hoverColor": "#ECECEC",
-		"white": "#ffffff",
-		"blue": "#3D87F7",
-		"red": "#ff4949",
-		"mildRed": "#ffb6b6",
-		"green": "#13ce66",
-		"yellow": "#ffc82c",
-		"purple": "#7e5bef",
-		"pink": "#ff49db",
-		"orange": "#ff7849",
-		"redText": "#D77B7B",
-		"lightBlue": "#1fb6ff"
-	},
-	"bgcolors": {
-		"beige": "#6C6C6C",
-		"gray": "#8492a6",
-		"slightRed": "#ffb6b6",
-		"slightGreen": "#99DDCC",
-		"slightYellow": "#ffe6b2",
-		"slightBlue": "#b2d3e6"
-	},
-	"gradientcolor": ["#112B3C", "#205375"],
-	"warningcolors": [
-		"#13ce66",
-		"#ff4949",
-		"#ffc82c",
-		"#1fb6ff",
-		"#8492a6",
-		"#d3dce6",
-		"#FFEFEF"
-	],
-	"polargraphcolor": ["#3DB2FF", "#FFEDDA", "#FFB830", "#E8F9FD", "#B6C1D9"],
-	"bargraphcolor": ["#3DB2FF", "#FFB830"],
-	"catchPhrase": ["잘했어요", "위험해요", "경고합니다", "개선해봐요"],
-	"evaluation": [
-		"호환성",
-		"접근성",
-		"개방성",
-		"접속성",
-		"개선해봐요",
-		"경고합니다"
-	],
+  "postQuery": "http://localhost:8080/api/control",
+  "getQuery": "http://localhost:8080/api/list",
+  "colors": {
+    "main": "#F9FAFB",
+    "gray-dark": "#273444",
+    "black": "#000000",
+    "gray": "#6B7684",
+    "gray-light": "#d3dce6",
+    "beige": "#6C6C6C",
+    "main2": "#F6F6F6",
+    "hoverColor": "#ECECEC",
+    "white": "#ffffff",
+    "blue": "#3D87F7",
+    "red": "#ff4949",
+    "mildRed": "#ffb6b6",
+    "green": "#13ce66",
+    "yellow": "#ffc82c",
+    "purple": "#7e5bef",
+    "pink": "#ff49db",
+    "orange": "#ff7849",
+    "redText": "#D77B7B",
+    "lightBlue": "#1fb6ff"
+  },
+  "bgcolors": {
+    "beige": "#6C6C6C",
+    "gray": "#8492a6",
+    "slightRed": "#ffb6b6",
+    "slightGreen": "#99DDCC",
+    "slightYellow": "#ffe6b2",
+    "slightBlue": "#b2d3e6"
+  },
+  "gradientcolor": ["#112B3C", "#205375"],
+  "warningcolors": ["#13ce66", "#ff4949", "#ffc82c", "#1fb6ff", "#8492a6", "#d3dce6", "#FFEFEF"],
+  "polargraphcolor": ["#3DB2FF", "#FFEDDA", "#FFB830", "#E8F9FD", "#B6C1D9"],
+  "bargraphcolor": ["#3DB2FF", "#FFB830"],
+  "catchPhrase": ["잘했어요", "위험해요", "경고합니다", "개선해봐요"],
+  "evaluation": ["호환성", "접근성", "개방성", "접속성", "개선해봐요", "경고합니다"],
 
-	"iconInfo": [
-		"전체",
-		"호환성",
-		"접근성",
-		"개방성",
-		"접속성",
-		"평가 양식 다운로드",
-		"결과 내보내기",
-		"홈 화면"
-	],
-	"scorePhrase": [
-		"최고에요 😘 이대로만 해 주세요",
-		"좋아요!😀 쾌적한 환경이에요",
-		"괜찮아요🙂 사용하는 데 문제 없어요",
-		"개선점이 조금 있어요 🤒. 고쳐 볼까요?",
-		"개선할 여지가 많아요 😢. 고쳐 볼까요?"
-	],
-	"subheaderPhrase": [
-		"참 잘 하셨어요",
-		"위험한 상황입니다",
-		"잠재적 위험 요소가 있어요",
-		"더 좋은 누리집을 만들어요"
-	],
-	"links": [
-		"/dashboard/",
-		"/dashboard/compatibility",
-		"/dashboard/accessibility",
-		"/dashboard/openness",
-		"/dashboard/connectivity"
-	],
+  "iconInfo": [
+    "전체",
+    "호환성",
+    "접근성",
+    "개방성",
+    "접속성",
+    "평가 양식 다운로드",
+    "결과 내보내기",
+    "홈 화면"
+  ],
+  "scorePhrase": [
+    "최고에요 😘 이대로만 해 주세요",
+    "좋아요!😀 쾌적한 환경이에요",
+    "괜찮아요🙂 사용하는 데 문제 없어요",
+    "개선점이 조금 있어요 🤒. 고쳐 볼까요?",
+    "개선할 여지가 많아요 😢. 고쳐 볼까요?"
+  ],
+  "subheaderPhrase": [
+    "참 잘 하셨어요",
+    "위험한 상황입니다",
+    "잠재적 위험 요소가 있어요",
+    "더 좋은 누리집을 만들어요"
+  ],
+  "links": [
+    "/dashboard/",
+    "/dashboard/compatibility",
+    "/dashboard/accessibility",
+    "/dashboard/openness",
+    "/dashboard/connectivity"
+  ],
 
-	"scoreDescription": {
-		"title": "총점",
-		"description": "총점 계산 알고리즘은 아래와 같습니다.",
-		"description2": [
-			"총점은 전체 성능 점수와 성능 점수의 비율을 계산합니다.",
-			"전체 성능 점수는 성능 점수의 합계입니다."
-		]
-	},
-	"nonUseAttributes": [
-		"robots-txt",
-		"full-page-screenshot",
-		"apple-touch-icon",
-		"installable-manifest",
-		"pwa-cross-browser",
-		"pwa-each-page-has-url",
-		"pwa-page-transitions",
-		"maskable-icon",
-		"metrics",
-		"oopif-iframe-test-audit",
-		"screenshot-thumbnails",
-		"service-worker",
-		"themed-omnibox",
-		"valid-source-maps",
-		"work-during-interaction",
-		"final-screenshot",
-		"inspector-issues",
-		"largest-contentful-paint-element"
-	],
+  "scoreDescription": {
+    "title": "총점",
+    "description": "총점 계산 알고리즘은 아래와 같습니다.",
+    "description2": [
+      "총점은 전체 성능 점수와 성능 점수의 비율을 계산합니다.",
+      "전체 성능 점수는 성능 점수의 합계입니다."
+    ]
+  },
+  "nonUseAttributes": [
+    "robots-txt",
+    "full-page-screenshot",
+    "apple-touch-icon",
+    "installable-manifest",
+    "pwa-cross-browser",
+    "pwa-each-page-has-url",
+    "pwa-page-transitions",
+    "maskable-icon",
+    "metrics",
+    "oopif-iframe-test-audit",
+    "screenshot-thumbnails",
+    "service-worker",
+    "themed-omnibox",
+    "valid-source-maps",
+    "work-during-interaction",
+    "final-screenshot",
+    "inspector-issues",
+    "largest-contentful-paint-element"
+  ],
 
-	"sampleData": [15, 19, 13, 6, 12],
-	"sampleLargeData": [40, 19, 59, 71, 40],
-	"sampleLargeData2": [90, 12, 30, 60, 35],
-	"sampleSpecificData1": {
-		"score": 1,
-		"description": "스크린 리더에서 목록 항목(`<li>`)을 올바르게 읽으려면 목록 항목이 상위 `<ul>` 또는 `<ol>`에 포함되어 있어야 합니다. [자세히 알아보기](https://web.dev/listitem/)",
-		"details": {
-			"headings": [],
-			"type": "table",
-			"items": []
-		},
-		"id": "listitem",
-		"title": "목록 항목(`<li>`)이 `<ul>` 또는 `<ol>` 상위 요소 내에 포함되어 있음",
-		"scoreDisplayMode": "binary"
-	},
-	"sampleSpecificData2": {
-		"displayValue": "타사 코드가 390 ms 동안 기본 스레드를 차단했습니다.",
-		"score": 0,
-		"description": "타사 코드는 로드 성능에 크게 영향을 미칠 수 있습니다. 페이지에서 먼저 로딩을 끝낸 후 중복되는 타사 공급업체의 수를 제한하고 타사 코드를 로드해 보세요. [자세히 알아보기](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)",
-		"details": {
-			"summary": {
-				"wastedMs": 389.084,
-				"wastedBytes": 20611
-			},
-			"headings": [
-				{
-					"subItemsHeading": {
-						"itemType": "url",
-						"key": "url"
-					},
-					"itemType": "link",
-					"text": "타사",
-					"key": "entity"
-				},
-				{
-					"subItemsHeading": {
-						"key": "transferSize"
-					},
-					"itemType": "bytes",
-					"granularity": 1,
-					"text": "전송 크기",
-					"key": "transferSize"
-				},
-				{
-					"subItemsHeading": {
-						"key": "blockingTime"
-					},
-					"itemType": "ms",
-					"granularity": 1,
-					"text": "기본 스레드 차단 시간",
-					"key": "blockingTime"
-				}
-			],
-			"type": "table",
-			"items": [
-				{
-					"transferSize": 20611,
-					"blockingTime": 389.084,
-					"mainThreadTime": 454.9400000000001,
-					"subItems": {
-						"type": "subitems",
-						"items": [
-							{
-								"transferSize": 20403,
-								"blockingTime": 389.084,
-								"mainThreadTime": 454.9400000000001,
-								"url": "https://www.google-analytics.com/analytics.js"
-							}
-						]
-					},
-					"entity": {
-						"text": "Google Analytics",
-						"type": "link",
-						"url": "https://marketingplatform.google.com/about/analytics/"
-					}
-				}
-			]
-		},
-		"id": "third-party-summary",
-		"title": "타사 코드의 영향을 줄임",
-		"scoreDisplayMode": "binary"
-	},
+  "sampleData": [15, 19, 13, 6, 12],
+  "sampleLargeData": [67.3, 68, 76, 100, 25],
+  "sampleLargeData2": [90, 12, 30, 60, 35],
+  "sampleSpecificData1": {
+    "score": 1,
+    "description": "스크린 리더에서 목록 항목(`<li>`)을 올바르게 읽으려면 목록 항목이 상위 `<ul>` 또는 `<ol>`에 포함되어 있어야 합니다. [자세히 알아보기](https://web.dev/listitem/)",
+    "details": {
+      "headings": [],
+      "type": "table",
+      "items": []
+    },
+    "id": "listitem",
+    "title": "목록 항목(`<li>`)이 `<ul>` 또는 `<ol>` 상위 요소 내에 포함되어 있음",
+    "scoreDisplayMode": "binary"
+  },
+  "sampleSpecificData2": {
+    "displayValue": "타사 코드가 390 ms 동안 기본 스레드를 차단했습니다.",
+    "score": 0,
+    "description": "타사 코드는 로드 성능에 크게 영향을 미칠 수 있습니다. 페이지에서 먼저 로딩을 끝낸 후 중복되는 타사 공급업체의 수를 제한하고 타사 코드를 로드해 보세요. [자세히 알아보기](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/loading-third-party-javascript/)",
+    "details": {
+      "summary": {
+        "wastedMs": 389.084,
+        "wastedBytes": 20611
+      },
+      "headings": [
+        {
+          "subItemsHeading": {
+            "itemType": "url",
+            "key": "url"
+          },
+          "itemType": "link",
+          "text": "타사",
+          "key": "entity"
+        },
+        {
+          "subItemsHeading": {
+            "key": "transferSize"
+          },
+          "itemType": "bytes",
+          "granularity": 1,
+          "text": "전송 크기",
+          "key": "transferSize"
+        },
+        {
+          "subItemsHeading": {
+            "key": "blockingTime"
+          },
+          "itemType": "ms",
+          "granularity": 1,
+          "text": "기본 스레드 차단 시간",
+          "key": "blockingTime"
+        }
+      ],
+      "type": "table",
+      "items": [
+        {
+          "transferSize": 20611,
+          "blockingTime": 389.084,
+          "mainThreadTime": 454.9400000000001,
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "transferSize": 20403,
+                "blockingTime": 389.084,
+                "mainThreadTime": 454.9400000000001,
+                "url": "https://www.google-analytics.com/analytics.js"
+              }
+            ]
+          },
+          "entity": {
+            "text": "Google Analytics",
+            "type": "link",
+            "url": "https://marketingplatform.google.com/about/analytics/"
+          }
+        }
+      ]
+    },
+    "id": "third-party-summary",
+    "title": "타사 코드의 영향을 줄임",
+    "scoreDisplayMode": "binary"
+  },
 
-	"sampleSpecificData3": {
-		"score": 0,
-		"description": "많은 사용자가 저대비 텍스트를 읽는 데 어려움을 겪거나 전혀 읽지 못합니다. [자세히 알아보기](https://web.dev/color-contrast/)",
-		"details": {
-			"headings": [
-				{
-					"subItemsHeading": {
-						"itemType": "node",
-						"key": "relatedNode"
-					},
-					"itemType": "node",
-					"text": "통과하지 못한 요소",
-					"key": "node"
-				}
-			],
-			"debugData": {
-				"impact": "serious",
-				"type": "debugdata",
-				"tags": ["cat.color", "wcag2aa", "wcag143"]
-			},
-			"type": "table"
-		},
-		"id": "color-contrast",
-		"title": "백그라운드 및 포그라운드 색상의 대비율이 충분하지 않습니다",
-		"scoreDisplayMode": "binary"
-	},
-	"hasAltText": {
-		"title": "적절한 대체 텍스트 제공",
-		"totalScore": 10,
-		"calcFunctionType": 3,
-		"scores": [null, null, null, 1],
-		"items": [
-			{
-				"score": null,
-				"description": "버튼에 접근 가능한 이름이 없는 경우 스크린 리더에서 '버튼'으로만 읽기 때문에 스크린 리더에 의존하는 사용자에게는 해당 버튼이 유용하지 않게 됩니다. [자세히 알아보기](https://web.dev/button-name/)",
-				"id": "button-name",
-				"title": "버튼에 접근 가능한 이름이 있습니다",
-				"scoreDisplayMode": "notApplicable"
-			},
-			{
-				"score": null,
-				"description": "이미지가 `<input>` 버튼으로 사용되는 경우 대체 텍스트를 제공하면 스크린 리더 사용자가 버튼의 목적을 쉽게 이해하는 데 도움이 됩니다. [자세히 알아보기](https://web.dev/input-image-alt/)",
-				"id": "input-image-alt",
-				"title": "`<input type=\"image\">` 요소에 `[alt]` 텍스트가 있음",
-				"scoreDisplayMode": "notApplicable"
-			},
-			{
-				"score": null,
-				"description": "스크린 리더는 텍스트가 아닌 콘텐츠를 번역할 수 없습니다. `<object>` 요소에 대체 텍스트를 추가하면 스크린 리더에서 사용자에게 텍스트의 의미를 전달하는 데 도움이 됩니다. [자세히 알아보기](https://web.dev/object-alt/)",
-				"id": "object-alt",
-				"title": "`<object>` 요소에 대체 텍스트가 있음",
-				"scoreDisplayMode": "notApplicable"
-			},
-			{
-				"score": 1,
-				"description": "정보 요소는 짧아야 하며 설명을 제공하는 대체 텍스트를 목표로 해야 합니다. 장식 요소는 Alt 속성이 비어 있는 경우 무시될 수 있습니다. [자세히 알아보기](https://web.dev/image-alt/)",
-				"details": {
-					"headings": [],
-					"type": "table",
-					"items": []
-				},
-				"id": "image-alt",
-				"title": "이미지 요소에 `[alt]` 속성이 있음",
-				"scoreDisplayMode": "binary"
-			}
-		],
-		"resultScore": 10
-	},
-	"robot": [
-		{
-			"type": "User-agent",
-			"value": "*"
-		},
-		{
-			"type": "Allow",
-			"value": "/"
-		},
-		{
-			"type": "disallow",
-			"value": "/artsdb"
-		}
-	],
-	"moisURL": "https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000045&nttId=93478"
+  "sampleSpecificData3": {
+    "score": 0,
+    "description": "많은 사용자가 저대비 텍스트를 읽는 데 어려움을 겪거나 전혀 읽지 못합니다. [자세히 알아보기](https://web.dev/color-contrast/)",
+    "details": {
+      "headings": [
+        {
+          "subItemsHeading": {
+            "itemType": "node",
+            "key": "relatedNode"
+          },
+          "itemType": "node",
+          "text": "통과하지 못한 요소",
+          "key": "node"
+        }
+      ],
+      "debugData": {
+        "impact": "serious",
+        "type": "debugdata",
+        "tags": ["cat.color", "wcag2aa", "wcag143"]
+      },
+      "type": "table"
+    },
+    "id": "color-contrast",
+    "title": "백그라운드 및 포그라운드 색상의 대비율이 충분하지 않습니다",
+    "scoreDisplayMode": "binary"
+  },
+  "hasAltText": {
+    "title": "적절한 대체 텍스트 제공",
+    "totalScore": 10,
+    "calcFunctionType": 3,
+    "scores": [null, null, null, 1],
+    "items": [
+      {
+        "score": null,
+        "description": "버튼에 접근 가능한 이름이 없는 경우 스크린 리더에서 '버튼'으로만 읽기 때문에 스크린 리더에 의존하는 사용자에게는 해당 버튼이 유용하지 않게 됩니다. [자세히 알아보기](https://web.dev/button-name/)",
+        "id": "button-name",
+        "title": "버튼에 접근 가능한 이름이 있습니다",
+        "scoreDisplayMode": "notApplicable"
+      },
+      {
+        "score": null,
+        "description": "이미지가 `<input>` 버튼으로 사용되는 경우 대체 텍스트를 제공하면 스크린 리더 사용자가 버튼의 목적을 쉽게 이해하는 데 도움이 됩니다. [자세히 알아보기](https://web.dev/input-image-alt/)",
+        "id": "input-image-alt",
+        "title": "`<input type=\"image\">` 요소에 `[alt]` 텍스트가 있음",
+        "scoreDisplayMode": "notApplicable"
+      },
+      {
+        "score": null,
+        "description": "스크린 리더는 텍스트가 아닌 콘텐츠를 번역할 수 없습니다. `<object>` 요소에 대체 텍스트를 추가하면 스크린 리더에서 사용자에게 텍스트의 의미를 전달하는 데 도움이 됩니다. [자세히 알아보기](https://web.dev/object-alt/)",
+        "id": "object-alt",
+        "title": "`<object>` 요소에 대체 텍스트가 있음",
+        "scoreDisplayMode": "notApplicable"
+      },
+      {
+        "score": 1,
+        "description": "정보 요소는 짧아야 하며 설명을 제공하는 대체 텍스트를 목표로 해야 합니다. 장식 요소는 Alt 속성이 비어 있는 경우 무시될 수 있습니다. [자세히 알아보기](https://web.dev/image-alt/)",
+        "details": {
+          "headings": [],
+          "type": "table",
+          "items": []
+        },
+        "id": "image-alt",
+        "title": "이미지 요소에 `[alt]` 속성이 있음",
+        "scoreDisplayMode": "binary"
+      }
+    ],
+    "resultScore": 10
+  },
+  "robot": [
+    {
+      "type": "User-agent",
+      "value": "*"
+    },
+    {
+      "type": "Allow",
+      "value": "/"
+    },
+    {
+      "type": "disallow",
+      "value": "/artsdb"
+    }
+  ],
+  "moisURL": "https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000045&nttId=93478"
 }

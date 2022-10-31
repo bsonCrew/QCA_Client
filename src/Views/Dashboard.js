@@ -25,7 +25,8 @@ export default function Dashboard() {
 
   let [status, classification, robot, recentRequestedDate] = useQualification(
     targetWebsite,
-    requestNewVal
+    requestNewVal,
+    setRequestNewVal
   );
 
   React.useEffect(() => {
