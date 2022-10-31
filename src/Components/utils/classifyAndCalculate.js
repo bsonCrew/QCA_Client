@@ -47,12 +47,12 @@ const calculateAndClassify = (auditResults) => {
             criteria.totalScore += spec.totalScore;
             criteria.resultScore += specScore;
 
-            if (Number.isNaN(subClass.totalScore)
-              || Number.isNaN(subClass.resultScore)
-              || Number.isNaN(criteria.totalScore)
-              || Number.isNaN(criteria.resultScore)) {
-              console.log("NaN", criteria, subClass, spec);
-            }
+            // if (Number.isNaN(subClass.totalScore)
+            //   || Number.isNaN(subClass.resultScore)
+            //   || Number.isNaN(criteria.totalScore)
+            //   || Number.isNaN(criteria.resultScore)) {
+            //   console.log("NaN", criteria, subClass, spec);
+            // }
           });
 
 

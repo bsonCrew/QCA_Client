@@ -63,8 +63,6 @@ export default function BarChart({
     },
   };
 
-  console.log(targetWebsiteScore.slice(0, 4));
-
   const data = {
     labels,
     datasets: [

@@ -25,8 +25,6 @@ const ShortCut = ({ label, homepage }) => {
 		velocity: 0.25,
 	});
 
-	console.log(homepage);
-
 	return (
 		<div className="items-center justify-center w-36 mt-5 text-center">
 			<Link
@@ -34,10 +32,10 @@ const ShortCut = ({ label, homepage }) => {
 					pathname: "/dashboard",
 				}}
 				state={{ targetWebsite: homepage }}
-				
-				onClick={() => {
-					console.log(homepage);
-				}}
+
+				// onClick={() => {
+				// 	console.log(homepage);
+				// }}
 			>
 				<AnimatedFab
 					color="kblue"

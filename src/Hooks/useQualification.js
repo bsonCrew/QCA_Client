@@ -19,7 +19,7 @@ const useQualification = (website, requestNewVal) => {
 
   //   const postQuery = config.postQuery;
   const postQuery = 'http://localhost:3001/list';
-  console.log("recentRequestedDate: ", recentRequestedDate);
+  // console.log("recentRequestedDate: ", recentRequestedDate);
 
   React.useEffect(() => {
     setStatus('loading');
@@ -78,7 +78,7 @@ const useQualification = (website, requestNewVal) => {
           }
         });
       } catch (e) {
-        console.log(e);
+        // console.log(e);
       }
     }
   }, []);

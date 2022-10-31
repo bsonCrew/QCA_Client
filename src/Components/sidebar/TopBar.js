@@ -45,7 +45,7 @@ const DrawerContentWrapper = styled('div')({
   padding: '0 8vw 0 0vw',
 });
 
-const DrawerContentLink = styled('div')({
+const DrawerContentLink = styled(`a`)({
   marginLeft: '2vw',
   fontWeight: 'bold',
   color: config.colors.blue,

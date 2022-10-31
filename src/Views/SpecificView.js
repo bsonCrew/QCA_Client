@@ -21,7 +21,7 @@ const ScoreView = ({ name, score, totalScore }) => {
 };
 
 const CriteriaCard = ({ criteriaClass, status }) => {
-  console.log(criteriaClass);
+  // console.log(criteriaClass);
   return (
     <div>
       {Object.entries(criteriaClass)
@@ -104,7 +104,7 @@ const SubClassCard = ({ criteria, criteriaVal, status }) => {
 };
 
 const SpecCard = ({ spec, status }) => {
-  console.log("spec", spec);
+  // console.log("spec", spec);
   return spec.items.length > 0 ? (
     spec.items.map((item) => (
       <DataCard

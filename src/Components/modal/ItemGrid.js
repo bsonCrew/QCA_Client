@@ -35,10 +35,6 @@ const ItemGrid = ({ headings, items }) => {
         ...item,
     }));
 
-    console.log("rowKey: ", rowKey);
-    console.log("rows: ", rows);
-    console.log("headings: ", headings);
-
     return (<div>
         {rows.length > 0 && <StyledDatagrid rows={rows} columns={columns} />}
     </div>)

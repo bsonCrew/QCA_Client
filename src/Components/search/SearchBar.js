@@ -125,8 +125,6 @@ export default function SearchBar({ setTargetWebsite }) {
   const [alertOpen, setAlertOpen] = React.useState(false);
   const [requestNewVal, setRequestNewVal] = React.useState(false);
 
-  console.log(requestNewVal);
-
   const navigate = useNavigate();
 
   const AutoCompleteOptions = [
