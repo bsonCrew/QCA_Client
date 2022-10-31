@@ -8,17 +8,18 @@ import calculateValidator from '../Components/utils/calculateValidator';
 const nonUseAttributes = config.nonUseAttributes;
 
 const useQualification = (website, requestNewVal) => {
+  var d = new Date();
   const [status, setStatus] = React.useState('idle');
   const [rawData, setRawData] = React.useState([]);
   const [classification, setClassification] = React.useState({});
   const [robot, setRobot] = React.useState([]);
   const [recentRequestedDate, setRecentRequestedDate] = React.useState(
-    new Date().toISOString()
+    new Date(d.getTime() - (d.getTimezoneOffset() * 60000)).toISOString()
   );
 
-//   const postQuery = config.postQuery;
-    const postQuery = 'http://localhost:3001/list';
-  // console.log("requestNewVal: ", requestNewVal);
+  //   const postQuery = config.postQuery;
+  const postQuery = 'http://localhost:3001/list';
+  console.log("recentRequestedDate: ", recentRequestedDate);
 
   React.useEffect(() => {
     setStatus('loading');

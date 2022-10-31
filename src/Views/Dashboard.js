@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Suspense } from 'react';
 import { Routes, Route, useParams, useLocation } from 'react-router-dom';
 import useQualification from '../Hooks/useQualification';
 import Footer from '../Components/atom/Footer';
