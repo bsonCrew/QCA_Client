@@ -64,14 +64,15 @@ const MainText = styled.div({
 });
 
 function Landing({ targetWebsite, setTargetWebsite }) {
+  const link0 = React.useRef(null);
   const link1 = React.useRef(null);
   const link2 = React.useRef(null);
   const link3 = React.useRef(null);
   const link4 = React.useRef(null);
 
   return (
-    <LandingWrapper>
-      <Header scrollRefs={[link1, link2, link3, link4]} />
+    <LandingWrapper ref={link0} >
+      <Header scrollRefs={[link0, link1, link2, link3, link4]} />
       <Banner />
       <MainText>
         접근성, 호환성, 접속성, 개방성 평가
@@ -91,7 +92,7 @@ function Landing({ targetWebsite, setTargetWebsite }) {
         <div ref={link2} />
         <HBlue>QCA 사용법</HBlue>
         <H2Gray>
-          웹 사이트의 표를 올바르게 구성 것은 정확한 웹 페이지를 이해하기 위해
+          웹 사이트의 표를 올바르게 구성하는 것은 정확한 웹 페이지를 이해하기 위해
           꼭 필요합니다.
         </H2Gray>
 

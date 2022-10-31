@@ -39,7 +39,7 @@ const calculateAndClassify = (auditResults) => {
         Object.values(subClass)
           .filter((x) => !Number.isFinite(x) && !Number.isNaN(x))
           .forEach((spec) => {
-            let specScore = calcByFncType(spec);
+            let specScore = calcByFncType(spec).toFixed(1);
 
             spec.resultScore = specScore;
             subClass.totalScore += spec.totalScore;

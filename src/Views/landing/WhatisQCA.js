@@ -44,23 +44,32 @@ const H1 = styled(`div`)({
   color: config.colors.black,
 });
 
+const BlueTextWithUnderLine = styled(BlueText)({
+  textDecoration: 'underline',
+});
+
+
 const LearnMoreModalButton = () => {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [modalOpen, setModalOpen] = React.useState(false);
+  const handleOpen = () => setModalOpen(true);
+  const handleClose = () => {
+    setModalOpen(false);
+    console.log('close');
+    console.log(modalOpen);
+  };
 
   return (
-    <button>
-      <BlueText onClick={handleOpen}>
-        바로가기
+    <button onClick={handleOpen}>
+      <BlueTextWithUnderLine >
+        접근성, 호환성, 접속성, 개방성
         <ExplanationModal
-          open={open}
+          open={modalOpen}
           handleClose={handleClose}
           onClose={handleClose}
           aria-labelledby='modal-modal-title'
           aria-describedby='modal-modal-description'
-        />
-      </BlueText>
+        ></ExplanationModal>
+      </BlueTextWithUnderLine>
     </button>
   );
 };
@@ -76,14 +85,13 @@ export default function WhyQCA() {
           <H1>저희가 대신 할게요</H1>
           QCA는{' '}
           <a href={moisURL} target='_blank' rel='noopener noreferrer'>
-            <BlueText>전자정부 웹사이트 품질관리 가이드</BlueText>
+            <BlueTextWithUnderLine>전자정부 웹사이트 품질관리 가이드</BlueTextWithUnderLine>
           </a>
           를 기술적으로 구현합니다.
           <br />
-          <br /> 접근성, 호환성, 접속성, 개방성까지 모두 한 곳에서 관리하세요
+          <br /> <LearnMoreModalButton />까지 모두 한 곳에서 관리하세요
           <br />
-          <br /> 전자정부 웹사이트 품질관리 가이드 바로가기 접근성, 호환성,
-          접속성, 개방성 설명 <LearnMoreModalButton />
+
         </ExplText>
       </Expl>
     </ExplWrapper>

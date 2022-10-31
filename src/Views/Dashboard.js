@@ -29,6 +29,10 @@ export default function Dashboard() {
   );
 
   React.useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
+  React.useEffect(() => {
     if (status === 'success' && targetWebsiteScore.length === 0) {
       const newTargetScore = classification.map(
         (criteria) => criteria.resultScore

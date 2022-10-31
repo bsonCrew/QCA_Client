@@ -77,7 +77,6 @@ export default function DataCardModal(props) {
       aria-describedby='modal-modal-description'
       fullWidth
       maxWidth='lg'
-
     >
       <div>
         <ModalHeader>{props.title}</ModalHeader>

@@ -26,10 +26,10 @@ const DialogBtn = styled(Button)({
 	top: "2%",
 });
 
-export default function ExplanationModal({ open, handleClose, onClose }) {
+export default function ExplanationModal(props) {
 	return (
-		<StyledDialog open={open} onClose={handleClose} disableAutoFocus={true}>
-			<DialogBtn onClick={handleClose} autoFocus>
+		<StyledDialog onClose={props.handleClose} open={props.open} disableAutoFocus={true}>
+			<DialogBtn onClick={props.handleClose} autoFocus>
 				<p className="font-bold text-md">이해했어요</p>
 			</DialogBtn>
 			<ExplanationModalContent className="-mt-12" />

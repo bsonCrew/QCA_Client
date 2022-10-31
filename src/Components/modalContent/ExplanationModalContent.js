@@ -13,8 +13,8 @@ const ExplanationModalContent = () => {
           이해해 봅시다.
         </p>
         <div className='pb-36'>
-          <p id='modal-modal-description' className='text-xl pb-6'>
-            <p className='font-bold text-4xl'>접근성</p>
+          <span id='modal-modal-description' className='text-xl pb-6'>
+            <span className='font-bold text-4xl'>접근성</span>
             <div className='flex justify-center flex-col items-center italic my-16 text-center'>
               <div
                 className='hover:cursor-pointer'
@@ -36,31 +36,31 @@ const ExplanationModalContent = () => {
                 <b>- MDN web docs</b>
               </div>
             </div>{' '}
-            <p>
-              {' '}
-              <b>웹 접근성</b>은 어떠한 사용자(장애인, 노인 등), 어떠한
-              기술환경에서도 사용자가{' '}
-              <b>
-                전문적인 능력 없이 웹 사이트에서 제공하는 모든 정보에 접근할 수
-                있도록 하는 것
-              </b>
-              입니다. 위 정의에 따르면 웹 접근성은 특정 대상에 한정되지 않고
-              모든 사용자를 대상으로 합니다. <br />
-              <br /> 접근성은 소수의 사용자만을 위한 것이 아니기 때문에 우리
-              모두의 문제로 보아야 합니다. 정보통신접근성(Web Accessibility)은
-              「지능정보화기본법」에 따라{' '}
-              <b>
-                장애인이나 고령자분들이 웹 사이트에서 제공하는 정보를 비장애인과
-                동등하게 접근하고 이용
-              </b>
-              할 수 있도록 보장하는 것으로,{' '}
-              <b>웹 접근성 준수는 법적 의무사항</b> 입니다.
-            </p>
-          </p>
+
+            {' '}
+            <b>웹 접근성</b>은 어떠한 사용자(장애인, 노인 등), 어떠한
+            기술환경에서도 사용자가{' '}
+            <b>
+              전문적인 능력 없이 웹 사이트에서 제공하는 모든 정보에 접근할 수
+              있도록 하는 것
+            </b>
+            입니다. 위 정의에 따르면 웹 접근성은 특정 대상에 한정되지 않고
+            모든 사용자를 대상으로 합니다. <br />
+            <br /> 접근성은 소수의 사용자만을 위한 것이 아니기 때문에 우리
+            모두의 문제로 보아야 합니다. 정보통신접근성(Web Accessibility)은
+            「지능정보화기본법」에 따라{' '}
+            <b>
+              장애인이나 고령자분들이 웹 사이트에서 제공하는 정보를 비장애인과
+              동등하게 접근하고 이용
+            </b>
+            할 수 있도록 보장하는 것으로,{' '}
+            <b>웹 접근성 준수는 법적 의무사항</b> 입니다.
+
+          </span>
         </div>
 
         <div className='pb-36'>
-          <p id='modal-modal-description' className='text-xl pb-6'>
+          <span id='modal-modal-description' className='text-xl pb-6'>
             <p className='font-bold text-2xl'>호환성</p>
             <div className='flex justify-center flex-col items-center my-16 text-center'>
               <img
@@ -87,10 +87,10 @@ const ExplanationModalContent = () => {
               및 브라우저 간 <b>동일한 결과가 나오도록</b> 의미하는 웹
               상호운용성의 개념에 웹 표준의 준수를 포함하는 개념입니다.
             </p>
-          </p>
+          </span>
         </div>
         <div className='pb-36'>
-          <p id='modal-modal-description' className='text-xl pb-6'>
+          <div id='modal-modal-description' className='text-xl pb-6'>
             <p className='font-bold text-2xl'>개방성</p>
             <br />
             웹사이트는 로봇 배제 표준에 따른{' '}
@@ -104,10 +104,10 @@ const ExplanationModalContent = () => {
               웹 개방성은 웹 페이지 내 robots.txt를 확인하여 웹 페이지의
               개방성을 측정할 수 있습니다.
             </p>
-          </p>
+          </div>
         </div>
         <div className='pb-36'>
-          <p id='modal-modal-description' className='text-xl pb-6'>
+          <div id='modal-modal-description' className='text-xl pb-6'>
             <p className='font-bold text-2xl'>접속성</p>
             <br />
             웹사이트 메인 페이지의 <b>용량과 속도</b>에 따라 접속이 가능한
@@ -116,10 +116,10 @@ const ExplanationModalContent = () => {
               지표 신설에 따른 웹사이트 내 적용 기간을 고려하여 '22년 품질진단
               시 시범 진단을 실시할 예정입니다.(향후 정식 지표 적용예정)
             </p>
-          </p>
+          </div>
         </div>
         <div>
-          <p id='modal-modal-description' className='text-xl pb-6'>
+          <div id='modal-modal-description' className='text-xl pb-6'>
             <p className='font-bold text-2xl leading-relaxed '>현재,</p>
             <br />
             행정안전부는 전자정부 웹사이트의 품질관리를 위해{' '}
@@ -140,7 +140,7 @@ const ExplanationModalContent = () => {
             <br />
             <b>QCA</b>는 이러한 항목들을 자동으로 검사한 후, 결과를
             도출해냅니다.
-          </p>
+          </div>
         </div>
       </div>
 

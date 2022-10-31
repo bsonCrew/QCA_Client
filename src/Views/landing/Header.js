@@ -32,16 +32,16 @@ export default function Header({ scrollRefs }) {
 
 	return (
 		<HeaderWrapper>
-			<Button href={"/"}>QCA</Button>
+			<Button onClick={() => executeScroll(scrollRefs[0])}>QCA</Button>
 			<ButtonGroup>
-				{scrollRefs.map((ref, idx) => {
+				{scrollRefs.slice(1, 5).map((ref, idx) => {
 					return (
 						<Button
 							key={idx}
 							onClick={() => executeScroll(ref)}
 							href={hrefs[idx]}
 						>
-							{nameSpace[idx]} 
+							{nameSpace[idx]}
 						</Button>
 					);
 				})}

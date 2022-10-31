@@ -1,6 +1,10 @@
 {
   "websites": [
     {
+      "label": "정부24",
+      "homepage": "https://www.gov.kr/"
+    },
+    {
       "label": "청와대",
       "homepage": "https://www.president.go.kr/"
     },
@@ -382,7 +386,7 @@
     },
     {
       "label": "제주대학교병원",
-      "homepage": "https://www.jejunuh.co.kr/index.do"
+      "homepage": "https://www.jejunuh.co.kr/"
     },
     {
       "label": "충남대학교병원",
@@ -710,7 +714,7 @@
     },
     {
       "label": "한국재정정보원",
-      "homepage": "https://www.fis.kr/ko"
+      "homepage": "https://www.fis.kr"
     },
     {
       "label": "한국조폐공사",
@@ -782,7 +786,7 @@
     },
     {
       "label": "문화재청",
-      "homepage": "https://www.cha.go.kr/main.html"
+      "homepage": "https://www.cha.go.kr"
     },
     {
       "label": "한국문화재재단",
@@ -1058,7 +1062,7 @@
     },
     {
       "label": "한국사회보장정보원",
-      "homepage": "http://www.ssis.or.kr/index.do"
+      "homepage": "http://www.ssis.or.kr/"
     },
     {
       "label": "한국사회복지협의회",
@@ -1514,7 +1518,7 @@
     },
     {
       "label": "(재)일제강제동원피해자지원재단",
-      "homepage": "https://www.fomo.or.kr/kor"
+      "homepage": "https://www.fomo.or.kr"
     },
     {
       "label": "행정안전부",
