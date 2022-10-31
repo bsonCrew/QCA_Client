@@ -5,7 +5,7 @@ const useTop5 = () => {
   const [status, setStatus] = React.useState('idle');
   const [data, setData] = React.useState([]);
   // const getQuery = config.getQuery;
-    const getQuery = 'http://localhost:3001/top5';
+    const getQuery = 'http://localhost:8080/top5';
 
   // console.log(data);
 

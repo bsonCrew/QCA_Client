@@ -88,6 +88,7 @@ function SideBar({
 
   const closeDrawer = () => {
     if (!lock && sideBarOpen) setSideBarOpen(false);
+    setLock(false);
   };
 
   const openDrawer = () => {

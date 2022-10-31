@@ -8,7 +8,7 @@ const checkRobotTxt = robot => {
 			}
 		}
 	}
-	
+
 	return {
 		score: score,
 		description:
@@ -16,8 +16,8 @@ const checkRobotTxt = robot => {
 		id: "robots-txt",
 		title:
 			score !== 0
-				? "robots.txt에 검색 로봇이 접근이 불가능한(Disallow) 항목이 존재함"
-				: "robots.txt에 검색 로봇이 접근이 불가능한(Disallow) 항목이 존재하지 않음",
+				? "robots.txt에 검색 로봇이 접근이 불가능한(Disallow) 항목이 존재하지 않음"
+				: "robots.txt에 검색 로봇이 접근이 불가능한(Disallow) 항목이 존재함",
 		scoreDisplayMode: "notApplicable",
 	};
 };

@@ -17,6 +17,17 @@ const StyledDialog = styled(Dialog)({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  "& .MuiDialog-container": {
+    "& .MuiPaper-root": {
+      // padding: "4vh 3vw 4vh 3vw",
+      width: "80vw",
+      marginBottom: -10,
+      marginTop: -10,
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+    },
+  },
 });
 
 const DownloadButton = styled(Button)({
@@ -61,7 +72,7 @@ export default function PrintModal({
       fullWidth
       maxWidth='xl'
     >
-      <div className='w-fit h-100 p-12'>
+      <div className='w-full h-100 p-12'>
         <DownloadCSV csvData={formedAudits.rows} filename={`QCA 테스트 결과`} />
         <BeautifulBar height={1} />
         <AuditsDataGrid formedAudits={formedAudits} status={'success'} />

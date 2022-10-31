@@ -141,7 +141,7 @@ const RobotCard = ({ robot }) => {
       <div className='w-full h-9 mt-12'>
         <span className='text-2xl font-bold'>robots.txt가 발견됐어요</span>
       </div>
-      <div className='bg-main w-full font-bold text-xl h-fit rounded-lg p-12 mt-12'>
+      <div className='bg-main w-full font-bold text-xl h-fit rounded-lg p-12 mt-12 flex-col'>
         {robot?.map((r, index) => {
 
           const disallowColor = r.type.includes('disallow')
@@ -151,10 +151,8 @@ const RobotCard = ({ robot }) => {
           return (
             <React.Fragment key={index}>
               <span className={disallowColor}>{r.type}</span>
-              <span>
-                : {r.value}
-                <br />
-              </span>
+              : {r.value}
+              <br />
             </React.Fragment>
           );
         })}

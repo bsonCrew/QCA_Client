@@ -12,7 +12,8 @@ const StyledDatagrid = styled(DataGrid)({
   '& .MuiTablePagination-select': {
     fontSize: '12px',
   },
-  width: '80vw',
+  // marginLeft: "min(5vw, 50px)",
+  width: '100%',
   height: '75vh',
 });
 

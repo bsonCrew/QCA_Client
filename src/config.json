@@ -95,7 +95,11 @@
     "final-screenshot",
     "inspector-issues",
     "largest-contentful-paint-element",
-    "interactive"
+    "interactive",
+    "script-treemap-data",
+    "diagnostics",
+    "network-requests",
+    "main-thread-tasks"
   ],
 
   "sampleData": [15, 19, 13, 6, 12],

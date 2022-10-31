@@ -22,9 +22,7 @@ const calcByFncType = (spec) => {
 
     //5. null, 1 제외 1점 감점
     case 5:
-      return spec.totalScore > nullOneCount
-        ? spec.totalScore - nullOneCount
-        : 0;
+      return Math.max(0, spec.totalScore - (spec.scores.length - nullOneCount));
 
     //6. items 갯수당 1점 감점
     case 6:

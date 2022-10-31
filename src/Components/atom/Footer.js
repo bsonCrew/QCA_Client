@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <div className='flex flex-col px-24 z-2 py-24 w-screen h-24 bg-main justify-center'>
+    <div className='flex flex-col px-24 z-2 py-12 w-screen h-24 bg-main justify-center'>
       <div className=''>
         <span className='text-center font-bold flex align-middle justify-center '>
           Project contributor:
