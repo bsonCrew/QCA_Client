@@ -31,7 +31,7 @@ const calcByFncType = (spec) => {
     case 6:
       return Math.max(
         spec.totalScore -
-          spec.items.reduce((acc, cur) => (acc += cur.score), 0),
+        spec.items.reduce((acc, cur) => (acc += cur.score), 0),
         0
       );
 

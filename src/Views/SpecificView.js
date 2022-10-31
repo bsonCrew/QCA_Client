@@ -21,6 +21,7 @@ const ScoreView = ({ name, score, totalScore }) => {
 };
 
 const CriteriaCard = ({ criteriaClass, status }) => {
+  console.log(criteriaClass);
   return (
     <div>
       {Object.entries(criteriaClass)
@@ -103,6 +104,7 @@ const SubClassCard = ({ criteria, criteriaVal, status }) => {
 };
 
 const SpecCard = ({ spec, status }) => {
+  console.log(spec);
   return spec.items.length > 0 ? (
     spec.items.map((item) => (
       <DataCard
@@ -123,7 +125,7 @@ const SpecCard = ({ spec, status }) => {
     <div className='w-3/12 min-w-[200px] max-w-sm mx-6 my-6 grow transition-transform ease-in-out '>
       <div
         className={
-          'h-36 rounded-lg shadow-lg hover:shadow-2xl text-center flex flex-col justify-center p-4 py-7 px-8'
+          'h-36 rounded-lg shadow-lg hover:shadow-2xl text-center flex flex-col justify-center p-4 py-7 px-8 bg-white'
         }
       >
         <span className='text-lg'>자세히 보여 드릴 항목이 없어요.</span>

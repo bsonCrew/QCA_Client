@@ -30,7 +30,7 @@ const useFormedAudits = (classification) => {
           });
       });
   }
-
+  
   return {
     columns: printColumnConfig,
     rows: stack,

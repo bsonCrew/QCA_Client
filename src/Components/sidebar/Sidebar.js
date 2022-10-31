@@ -100,8 +100,6 @@ function SideBar({
     window.open(config.moisURL, '_blank');
   };
 
-  console.log(sideBarOpen);
-
   return (
     <>
       <TopBar

@@ -16,7 +16,7 @@ const calculateAndClassify = (auditResults) => {
   auditResults.forEach((auditResult) => {
     const spec =
       audits.auditMappings[audits.audits[auditResult.id].class][
-        audits.audits[auditResult.id].subClass
+      audits.audits[auditResult.id].subClass
       ][audits.audits[auditResult.id].spec];
     try {
       spec.scores.push(auditResult.score);
@@ -33,18 +33,21 @@ const calculateAndClassify = (auditResults) => {
     Object.values(criteria)
       .filter((x) => !Number.isFinite(x))
       .forEach((subClass) => {
-        let score = 0;
+        let specScore = 0;
         let totalScore = 0;
         Object.values(subClass)
           .filter((x) => !Number.isFinite(x))
           .forEach((spec) => {
-            score += calcByFncType(spec);
+            specScore += calcByFncType(spec);
+            console.log("calcByFncType", spec, spec.totalScore, specScore);
+
             totalScore += spec.totalScore;
           });
-        subClass.resultScore = score;
+
+        subClass.resultScore = specScore;
         subClass.totalScore = totalScore;
 
-        criteriaScore += score;
+        criteriaScore += specScore;
         criteriaTotalScore += totalScore;
       });
 

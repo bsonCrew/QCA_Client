@@ -104,6 +104,7 @@ const useQualification = (website, requestNewVal) => {
 
       const classifiedAuditResults = calculateAndClassify(auditResults);
       setClassification(classifiedAuditResults);
+
       setRecentRequestedDate(
         rawData.recentRequestedDate || new Date().toISOString()
       );
