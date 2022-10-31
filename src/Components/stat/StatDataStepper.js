@@ -8,10 +8,17 @@ import Box from "@mui/material/Box";
 import Portal from "@mui/material/Portal";
 
 import config from "../../config.json";
-
 import Phrase from "../atom/Phrase";
-
 import BeautifulBar from "../atom/BeautifulBar";
+import styled from "@emotion/styled"
+
+const SpecItemChip = styled.div({
+	// width: "100%",
+	backgroundColor: config.bgcolors.slightBlue,
+	padding: "0.5rem",
+	margin: "0.5rem",
+	borderRadius: "0.5rem",
+})
 
 const ClassStepper = ({ criteriaClass }) => {
 	const [activeStep, setActiveStep] = React.useState(0);
@@ -37,7 +44,7 @@ const ClassStepper = ({ criteriaClass }) => {
 					.map(([subClass, val], idx) => (
 						<Step key={idx}>
 							<StepLabel onClick={() => handleActiveStep(idx)}>
-								<span className="text-lg">
+								<span className="text-lg font-bold">
 									{subClass} : {val.resultScore}점
 								</span>
 							</StepLabel>
@@ -57,6 +64,7 @@ const ClassStepper = ({ criteriaClass }) => {
 		</div>
 	);
 };
+
 const SubClassStepper = ({ subClass }) => {
 	const [activeStep, setActiveStep] = React.useState(0);
 	const specElContainer = React.useRef(null);
@@ -81,7 +89,7 @@ const SubClassStepper = ({ subClass }) => {
 					.map(([spec, val], idx) => (
 						<Step key={idx}>
 							<StepLabel onClick={() => handleActiveStep(idx)}>
-								<span className="text-lg">
+								<span className="text-lg font-bold">
 									{spec}: {val.resultScore}점
 								</span>
 							</StepLabel>
@@ -93,9 +101,9 @@ const SubClassStepper = ({ subClass }) => {
 												{val.title}
 											</span>
 											{val.items.map((item, idx) => (
-												<div key={idx} className="flex flex-row">
-													<span className="w-full p-2">- {item.title}</span>
-												</div>
+												<SpecItemChip key={idx}>
+													<b>{idx + 1}</b> : {item.title}
+												</SpecItemChip>
 											))}
 										</div>
 									)}
@@ -146,7 +154,7 @@ export default function StatDataStepper({ classification, data, status }) {
 														},
 													}}
 												>
-													<span className="text-lg">
+													<span className="text-lg font-bold">
 														{config.evaluation[idx]}:{" "}
 														{classification.resultScore} 점
 													</span>

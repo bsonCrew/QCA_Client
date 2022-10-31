@@ -94,7 +94,8 @@
     "work-during-interaction",
     "final-screenshot",
     "inspector-issues",
-    "largest-contentful-paint-element"
+    "largest-contentful-paint-element",
+    "interactive"
   ],
 
   "sampleData": [15, 19, 13, 6, 12],
