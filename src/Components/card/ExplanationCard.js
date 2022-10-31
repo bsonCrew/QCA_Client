@@ -72,9 +72,8 @@ export default function ExplanationCard({
         <ExplCardButton onClick={handleOpen}>
           <HeaderText>{catchPhrase(targetWebsiteScore[6])}</HeaderText>
           <br />
-          <span>{`${targetWebsite}의 총점은 ${Math.floor(
-            targetWebsiteScore[6]?.toFixed(1)
-          )}점입니다.`}</span>
+          <span>{`${targetWebsite}의 총점은 ${+targetWebsiteScore[6]?.toFixed(1)
+            }점입니다.`}</span>
           <br />
           <span>
             {config.evaluation[0]} 점수는 <b>{targetWebsiteScore[0]}점</b>,{' '}
