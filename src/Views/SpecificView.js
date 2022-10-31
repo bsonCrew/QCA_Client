@@ -104,7 +104,7 @@ const SubClassCard = ({ criteria, criteriaVal, status }) => {
 };
 
 const SpecCard = ({ spec, status }) => {
-  console.log(spec);
+  console.log("spec", spec);
   return spec.items.length > 0 ? (
     spec.items.map((item) => (
       <DataCard
@@ -142,13 +142,14 @@ const RobotCard = ({ robot }) => {
         <span className='text-2xl font-bold'>robots.txt가 발견됐어요</span>
       </div>
       <div className='bg-main w-full font-bold text-xl h-fit rounded-lg p-12 mt-12'>
-        {robot?.map((r) => {
+        {robot?.map((r, index) => {
+
           const disallowColor = r.type.includes('disallow')
             ? 'underline decoration-wavy text-red'
             : '';
 
           return (
-            <React.Fragment key={r.type}>
+            <React.Fragment key={index}>
               <span className={disallowColor}>{r.type}</span>
               <span>
                 : {r.value}

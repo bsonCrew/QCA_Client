@@ -68,9 +68,12 @@ export default function DataCard(props) {
       setIconIdx(3);
     } else if (props.calcFunctionType === 2) {
       setIconIdx(1);
+    }else if (props.calcFunctionType === 6 && props.resultScore > 0) {
+      setIconIdx(2);
     } else if (props.resultScore > props.totalScore / 2 || props.score === 1) {
       setIconIdx(0);
-    } else {
+    }
+    else {
       setIconIdx(2);
     }
   }, [

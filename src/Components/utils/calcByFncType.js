@@ -14,8 +14,7 @@ const calcByFncType = (spec) => {
 
     //3. null, 1 제외 총점/갯수 감점
     case 3:
-      spec.resultScore = nullOneCount * (spec.totalScore / spec.scores.length);
-      return spec.resultScore;
+      return nullOneCount * (spec.totalScore / spec.scores.length).toFixed(1);
 
     //4. null, 1 제외 총점 감점
     case 4:
@@ -86,7 +85,7 @@ const calcByFncType = (spec) => {
     //14. 에러 발생
     default:
       spec.resultScore =
-        spec.scores.reduce((a, b) => a + b, 0) / spec.scores.length;
+        (spec.scores.reduce((a, b) => a + b, 0) / spec.scores.length).toFixed(1);
       return 0;
   }
 };

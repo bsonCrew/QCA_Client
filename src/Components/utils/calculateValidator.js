@@ -54,8 +54,8 @@ const calculateValidator = (validator) => {
       }
       htmlStandard.items[0].details.items.push(el);
       noMarkUpError.items[0].details.items.push(el);
-      htmlStandard.score--;
-      noMarkUpError.score--;
+      if (htmlStandard > 1) htmlStandard.score--;
+      if (noMarkUpError > 1) noMarkUpError.score--;
     });
 
   return [charset, htmlStandard, noMarkUpError];
