@@ -52,7 +52,7 @@ const ExplText = (
       src={Expl2}
       alt={'image-alt, input-image-alt, object-alt, button-name'}
     />
-    4개의 <RedText>세부 지표</RedText>결과값은 검사 결과 종합 알고리즘을
+    4개의 <RedText>세부 지표</RedText> 결과값은 검사 결과 종합 알고리즘을
     통과합니다.
     <br />
     <br /> QCA는 지표의 종류에 따라 13개의 점수 종합 알고리즘을 사용해요.
@@ -60,7 +60,7 @@ const ExplText = (
       src={Expl3}
       alt={'점수 종합 알고리즘을 통과한 후 적절한 대체 텍스트 점수 나누기 10'}
     />
-    🎉웹 사이트가 테스트를 모두 통과했습니다.
+    🎉 웹 사이트가 테스트를 모두 통과했습니다.
     <br />
     <br />
     이제 최종 결과를 볼까요?

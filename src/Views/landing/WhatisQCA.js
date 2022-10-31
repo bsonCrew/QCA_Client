@@ -51,7 +51,7 @@ const BlueTextWithUnderLine = styled(BlueText)({
 
 const LearnMoreModalButton = () => {
   const [modalOpen, setModalOpen] = React.useState(false);
-  const handleOpen = () => setModalOpen(true);
+  const handleOpen = () => setModalOpen(!modalOpen);
   const handleClose = () => {
     setModalOpen(false);
     console.log('close');
