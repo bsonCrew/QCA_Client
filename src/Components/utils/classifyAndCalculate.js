@@ -27,32 +27,41 @@ const calculateAndClassify = (auditResults) => {
   });
 
   classification.forEach((criteria) => {
-    let criteriaScore = 0;
-    let criteriaTotalScore = 0;
+    criteria.totalScore = 0;
+    criteria.resultScore = 0;
 
     Object.values(criteria)
-      .filter((x) => !Number.isFinite(x))
+      .filter((x) => !Number.isFinite(x) && !Number.isNaN(x))
       .forEach((subClass) => {
-        let specScore = 0;
-        let totalScore = 0;
-        Object.values(subClass)
-          .filter((x) => !Number.isFinite(x))
-          .forEach((spec) => {
-            specScore += calcByFncType(spec);
-            console.log("calcByFncType", spec, spec.totalScore, specScore);
+        subClass.totalScore = 0;
+        subClass.resultScore = 0;
 
-            totalScore += spec.totalScore;
+        Object.values(subClass)
+          .filter((x) => !Number.isFinite(x) && !Number.isNaN(x))
+          .forEach((spec) => {
+            let specScore = calcByFncType(spec);
+
+            spec.resultScore = specScore;
+            subClass.totalScore += spec.totalScore;
+            subClass.resultScore += specScore;
+            criteria.totalScore += spec.totalScore;
+            criteria.resultScore += specScore;
+
+            if (Number.isNaN(subClass.totalScore)
+              || Number.isNaN(subClass.resultScore)
+              || Number.isNaN(criteria.totalScore)
+              || Number.isNaN(criteria.resultScore)) {
+              console.log("NaN", criteria, subClass, spec);
+            }
           });
 
-        subClass.resultScore = specScore;
-        subClass.totalScore = totalScore;
 
-        criteriaScore += specScore;
-        criteriaTotalScore += totalScore;
+        // criteriaScore += specScore;
+        // criteriaTotalScore += totalScore;
       });
 
-    criteria.resultScore = criteriaScore;
-    criteria.totalScore = criteriaTotalScore;
+    // criteria.resultScore = criteriaScore;
+    // criteria.totalScore = criteriaTotalScore;
   });
 
   return classification;
