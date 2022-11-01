@@ -24,7 +24,7 @@ const useFormedAudits = (classification) => {
               resultScore: specVal.resultScore,
               percentage:
                 specVal.totalScore !== 0
-                  ? Math.floor(specVal.resultScore / specVal.totalScore) * 100
+                  ? Math.floor(specVal.resultScore / specVal.totalScore * 100)
                   : 100,
             });
           });
