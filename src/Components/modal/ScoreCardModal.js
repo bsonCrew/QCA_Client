@@ -44,21 +44,6 @@ export default function ScoreCardModal({ open, handleClose, onClose }) {
       </Button>
       <div className='w-fit h-[95vh] p-16 overflow-y-scroll'>
         <img alt='매핑 알고리즘을 도식화한 이미지' src={algorithmDesc} />
-        <p id='modal-modal-title' className='text-6xl pb-4 font-bold'>
-          총점
-        </p>
-
-        <p id='modal-modal-description' className='text-xl font-semibold pb-6'>
-          총점 계산 알고리즘은 아래와 같습니다.
-        </p>
-
-        <p className='text-lg pb-1'>
-          <ol>
-            <li>총점은 전체 성능 점수와 성능 점수의 비율을 계산합니다.</li>
-            <li>전체 성능 점수는 성능 점수의 합계입니다.</li>
-          </ol>
-        </p>
-        <br />
         <hr />
         <div id='markdown' className='h-full '>
           <ScoreCardModalContent />

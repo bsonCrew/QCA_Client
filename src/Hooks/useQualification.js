@@ -18,7 +18,7 @@ const useQualification = (website, requestNewVal, setRequestNewVal) => {
   );
 
   //   const postQuery = config.postQuery;
-  const postQuery = 'http://localhost:8080/list';
+  const postQuery = 'http://localhost:8080/api/control';
   // console.log("recentRequestedDate: ", recentRequestedDate);
 
   React.useEffect(() => {
