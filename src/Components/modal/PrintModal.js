@@ -4,7 +4,7 @@ import { CSVLink } from 'react-csv';
 import Button from '@mui/material/Button';
 import AuditsDataGrid from '../chart/AuditsDataGrid';
 import { printColumnConfig } from '../utils/gridConfig.js';
-import useFormedAudits from '../../Hooks/useFormedAudits';
+import useFormedAudits from '../../hooks/useFormedAudits';
 
 import styled from '@emotion/styled';
 

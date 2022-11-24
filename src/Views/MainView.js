@@ -4,7 +4,7 @@ import ExplanationCard from '../Components/card/ExplanationCard';
 import StatDataStepper from '../Components/stat/StatDataStepper';
 import React from 'react';
 
-import useFormedAudits from '../Hooks/useFormedAudits';
+import useFormedAudits from '../hooks/useFormedAudits';
 
 import Phrase from '../Components/atom/Phrase';
 import AuditsDataGrid from '../Components/chart/AuditsDataGrid';
