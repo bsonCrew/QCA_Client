@@ -1,19 +1,18 @@
-import { printColumnConfig } from '../Components/utils/gridConfig';
-import config from '../config.json';
+import { printColumnConfig } from "../Components/utils/gridConfig";
+import config from "../config.json";
 
-const useFormedAudits = (classification) => {
+const useFormedAudits = classification => {
   const stack = [];
   const evaluation = config.evaluation;
-
-  const isScoreValue = (x) => x[0] !== 'resultScore' && x[0] !== 'totalScore';
+  const isScoreValue = x => x[0] !== "resultScore" && x[0] !== "totalScore";
 
   for (let i = 0; i < classification.length; i++) {
     Object.entries(classification[i])
-      .filter((x) => isScoreValue(x))
+      .filter(isScoreValue)
       .forEach(([subClassKey, subClassVal]) => {
         Object.entries(subClassVal)
-          .filter((x) => isScoreValue(x))
-          .forEach(([specKey, specVal], idx) => {
+          .filter(isScoreValue)
+          .forEach(([specKey, specVal]) => {
             stack.push({
               class: evaluation[i],
               subClass: subClassKey,
@@ -24,7 +23,7 @@ const useFormedAudits = (classification) => {
               resultScore: specVal.resultScore,
               percentage:
                 specVal.totalScore !== 0
-                  ? Math.floor(specVal.resultScore / specVal.totalScore * 100)
+                  ? Math.floor((specVal.resultScore / specVal.totalScore) * 100)
                   : 100,
             });
           });
