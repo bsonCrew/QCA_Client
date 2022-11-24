@@ -1,50 +1,24 @@
-import Dialog from '@mui/material/Dialog';
-import linkify from '../utils/linkify';
-import audits from '../../audits.json';
+import Dialog from "@mui/material/Dialog";
+import linkify from "../utils/linkify";
+import audits from "../../audits.json";
 
-import styled from '@emotion/styled';
-import config from '../../config.json';
-import ItemGrid from './ItemGrid';
+import styled from "@emotion/styled";
+import config from "../../config.json";
+import AuditLabel from "./AuditLabel";
 
 const AuditValueWrapper = styled.div({
   backgroundColor: config.colors.blue,
   color: config.colors.white,
-  fontSize: '1.2rem',
-  fontWeight: 'bold',
-  maxHeight: '3rem',
+  fontSize: "1.2rem",
+  fontWeight: "bold",
+  maxHeight: "3rem",
   maxWidth: "20vw",
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  borderRadius: '10px',
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "10px",
   padding: "1rem",
 });
-
-const AuditLabel = ({ auditId }) => {
-  const auditObj = audits.audits[auditId];
-  let className = '';
-  switch (auditObj.class) {
-    case 'accessibility':
-      className = '접근성';
-      break;
-    case 'connectivity':
-      className = '접속성';
-      break;
-    case 'compatibility':
-      className = '호환성';
-      break;
-    case 'openness':
-      className = '개방성';
-      break;
-    default:
-      className = '';
-  }
-  return (
-    <div className='text-lg font-bold text-blue'>
-      {[className, auditObj.subClass, auditObj.spec, auditId].join(' > ')}
-    </div>
-  );
-};
 
 const ModalHeader = styled.div({
   fontSize: "1.5rem",
@@ -67,7 +41,7 @@ const StyledDialog = styled(Dialog)({
 });
 
 export default function DataCardModal(props) {
-  let description = props.description?.replace(props.subheader, '');
+  let description = props.description?.replace(props.subheader, "");
 
   return (
     <StyledDialog
@@ -88,14 +62,8 @@ export default function DataCardModal(props) {
         </div>
       </div>
       {props.item?.displayValue ? (
-        <AuditValueWrapper>
-          {props.item.displayValue}
-        </AuditValueWrapper>
+        <AuditValueWrapper>{props.item.displayValue}</AuditValueWrapper>
       ) : null}
-      {/* {props.item?.details?.items ? (
-        <ItemGrid headings={props.item?.details?.headings} items={props.item?.details?.items} />
-      ) : null} */}
-
     </StyledDialog>
   );
 }
