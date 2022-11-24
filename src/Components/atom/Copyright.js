@@ -1,19 +1,19 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
 
-import LandingFooter from './FooterContent';
-import styled from '@emotion/styled';
-import config from '../../config.json';
+import LandingFooter from "./FooterContent";
+import styled from "@emotion/styled";
+import config from "../../config.json";
 
 const CopyrightWrapper = styled.div({
-  marginTop: '10vh',
+  marginTop: "10vh",
 });
 
 const CopyrightBtnWrapper = styled.div({
-  display: 'flex',
-  flexDirection: 'center',
-  marginBottom: '4vh',
+  display: "flex",
+  flexDirection: "center",
+  marginBottom: "4vh",
   color: config.colors.beige,
 });
 
