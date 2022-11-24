@@ -1,22 +1,22 @@
-import Dialog from '@mui/material/Dialog';
-import React from 'react';
-import { CSVLink } from 'react-csv';
-import Button from '@mui/material/Button';
-import AuditsDataGrid from '../chart/AuditsDataGrid';
-import { printColumnConfig } from '../utils/gridConfig.js';
-import useFormedAudits from '../../Hooks/useFormedAudits';
+import Dialog from "@mui/material/Dialog";
+import React from "react";
+import { CSVLink } from "react-csv";
+import Button from "@mui/material/Button";
+import AuditsDataGrid from "../chart/AuditsDataGrid";
+import { printColumnConfig } from "../../utils/gridConfig.js";
+import useFormedAudits from "../../../hooks/useFormedAudits";
 
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
-import config from '../../config.json';
-import BeautifulBar from '../atom/BeautifulBar';
+import config from "../../../config.json";
+import BeautifulBar from "../../atom/BeautifulBar";
 
 const StyledDialog = styled(Dialog)({
-  width: '100%',
-  minHeight: '600px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
+  width: "100%",
+  minHeight: "600px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
   "& .MuiDialog-container": {
     "& .MuiPaper-root": {
       // padding: "4vh 3vw 4vh 3vw",
@@ -31,16 +31,16 @@ const StyledDialog = styled(Dialog)({
 });
 
 const DownloadButton = styled(Button)({
-  fontSize: 'min(1.3vw, 1.2em)',
-  height: 'min(8vh, 45px)',
+  fontSize: "min(1.3vw, 1.2em)",
+  height: "min(8vh, 45px)",
   backgroundColor: config.colors.main2,
-  margin: '1vh 0 1vh 0',
+  margin: "1vh 0 1vh 0",
 });
 
 export function DownloadCSV({ csvData, filename }) {
   const data = csvData;
 
-  const headers = printColumnConfig.map((x) => ({
+  const headers = printColumnConfig.map(x => ({
     label: x.headerName,
     key: x.field,
   }));
@@ -54,13 +54,7 @@ export function DownloadCSV({ csvData, filename }) {
   );
 }
 
-export default function PrintModal({
-  status,
-  open,
-  handleClose,
-  classification,
-  targetWebsite,
-}) {
+export default function PrintModal({ status, open, handleClose, classification, targetWebsite }) {
   const formedAudits = useFormedAudits(classification);
 
   return (
@@ -75,7 +69,7 @@ export default function PrintModal({
       <div className='w-full h-100 p-12'>
         <DownloadCSV csvData={formedAudits.rows} filename={`QCA 테스트 결과`} />
         <BeautifulBar height={1} />
-        <AuditsDataGrid formedAudits={formedAudits} status={'success'} />
+        <AuditsDataGrid formedAudits={formedAudits} status={"success"} />
       </div>
     </StyledDialog>
   );

@@ -3,6 +3,7 @@ const calcByFncType = (spec) => {
   const nullOneCount = spec.scores.filter(
     (score) => score === 1 || score === null
   ).length;
+  
   switch (spec.calcFunctionType) {
     //1. 개선에 넣기
     case 1:

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import ScoreCard from '../Components/card/ScoreCard';
-import DataCard from '../Components/card/DataCard';
+import ScoreCard from '../Components/molecules/card/ScoreCard';
+import DataCard from '../Components/molecules/card/DataCard';
 
 const ScoreView = ({ name, score, totalScore }) => {
   if (name === '개선해봐요' || name === '속도 향상 방안') {

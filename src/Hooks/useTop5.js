@@ -1,11 +1,11 @@
-import React from 'react';
-import config from '../config.json';
+import React from "react";
+import config from "../config.json";
 
 const useTop5 = () => {
-  const [status, setStatus] = React.useState('idle');
+  const [status, setStatus] = React.useState("idle");
   const [data, setData] = React.useState([]);
   // const getQuery = config.getQuery;
-    const getQuery = 'http://localhost:8080/api/list';
+  const getQuery = "http://localhost:8080/api/list";
 
   // console.log(data);
 
@@ -13,19 +13,19 @@ const useTop5 = () => {
     if (!getQuery) return;
 
     const fetchWithGet = async () => {
-      setStatus('loading');
+      setStatus("loading");
       try {
         const response = await fetch(getQuery);
         const data = await response.json();
         // console.log(data);
         if (data.status === 200) {
-          setStatus('success');
+          setStatus("success");
           setData(data);
         } else {
-          setStatus('fetchedButFounderror');
+          setStatus("fetchedButFounderror");
         }
       } catch (error) {
-        setStatus('error');
+        setStatus("error");
       }
     };
 

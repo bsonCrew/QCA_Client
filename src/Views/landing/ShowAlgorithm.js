@@ -1,4 +1,4 @@
-import DataCard from '../../Components/card/DataCard';
+import DataCard from '../../Components/molecules/card/DataCard';
 import { SpecCard } from '../SpecificView';
 
 import styled from '@emotion/styled';

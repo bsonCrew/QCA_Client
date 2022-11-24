@@ -1,25 +1,23 @@
-import * as React from 'react';
-import { Routes, Route, useParams, useLocation } from 'react-router-dom';
-import useQualification from '../Hooks/useQualification';
-import Footer from '../Components/atom/Footer';
-import SideBar from '../Components/sidebar/Sidebar';
+/* eslint-disable react-hooks/exhaustive-deps */
+import * as React from "react";
+import { Routes, Route, useParams, useLocation } from "react-router-dom";
+import useQualification from "../hooks/useQualification";
+import Footer from "../Components/atom/Footer";
+import SideBar from "../Components/molecules/sidebar/Sidebar";
+import MainView from "./MainView";
+import NotFound from "../Views/NotFound";
+import SpecificView from "./SpecificView";
 
-import config from '../config.json';
-
-import MainView from './MainView';
-import NotFound from '../Views/NotFound';
-import SpecificView from './SpecificView';
+import config from "../config.json";
 
 export default function Dashboard() {
   const location = useLocation();
 
   const [targetWebsite, setTargetWebsite] = React.useState(
-    location.state?.targetWebsite || localStorage.getItem('targetWebsite') || ''
+    location.state?.targetWebsite || localStorage.getItem("targetWebsite") || ""
   );
 
-  const [requestNewVal, setRequestNewVal] = React.useState(
-    location.state?.requestNewVal || false
-  );
+  const [requestNewVal, setRequestNewVal] = React.useState(location.state?.requestNewVal || false);
 
   const [targetWebsiteScore, setTargetWebsiteScore] = React.useState([]);
 
@@ -34,23 +32,21 @@ export default function Dashboard() {
   });
 
   React.useEffect(() => {
-    if (status === 'success' && targetWebsiteScore.length === 0) {
-      const newTargetScore = classification.map(
-        (criteria) => criteria.resultScore
-      );
+    if (status === "success" && targetWebsiteScore.length === 0) {
+      const newTargetScore = classification.map(criteria => criteria.resultScore);
       newTargetScore.push(
         newTargetScore.reduce((acc, cur) => {
           return acc + cur;
         }, 0) / 4
       );
       setTargetWebsiteScore(newTargetScore);
-    } else if (status === 'error') {
+    } else if (status === "error") {
       // navigate("/");
     }
   }, [status]);
 
   React.useEffect(() => {
-    if (status === 'success') {
+    if (status === "success") {
       localStorage.setItem(
         targetWebsite,
         JSON.stringify({
@@ -62,12 +58,12 @@ export default function Dashboard() {
   }, [status, classification]);
 
   React.useEffect(() => {
-    if (targetWebsite !== '') {
-      localStorage.setItem('targetWebsite', targetWebsite);
+    if (targetWebsite !== "") {
+      localStorage.setItem("targetWebsite", targetWebsite);
     }
   }, [targetWebsite]);
 
-  const openView = '/dashboard/' + useParams()['*'];
+  const openView = "/dashboard/" + useParams()["*"];
 
   return (
     <div className='flex flex-row flex-wrap h-full w-screen bg-main'>

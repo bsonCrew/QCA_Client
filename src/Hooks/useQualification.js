@@ -1,28 +1,29 @@
-import React from 'react';
-import config from '../config';
-import calculateAndClassify from '../Components/utils/classifyAndCalculate';
-import checkRobotTxt from '../Components/utils/checkRobotTxt';
-import calculateValidator from '../Components/utils/calculateValidator';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React from "react";
+import config from "../config";
+import calculateAndClassify from "../Components/utils/classifyAndCalculate";
+import checkRobotTxt from "../Components/utils/checkRobotTxt";
+import calculateValidator from "../Components/utils/calculateValidator";
 
 /** Non-use attributes which are not displayed in the table*/
 const nonUseAttributes = config.nonUseAttributes;
 
 const useQualification = (website, requestNewVal, setRequestNewVal) => {
   var d = new Date();
-  const [status, setStatus] = React.useState('idle');
+  const [status, setStatus] = React.useState("idle");
   const [rawData, setRawData] = React.useState([]);
   const [classification, setClassification] = React.useState({});
   const [robot, setRobot] = React.useState([]);
   const [recentRequestedDate, setRecentRequestedDate] = React.useState(
-    new Date(d.getTime() - (d.getTimezoneOffset() * 60000)).toISOString()
+    new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString()
   );
 
   //   const postQuery = config.postQuery;
-  const postQuery = 'http://localhost:8080/api/control';
+  const postQuery = "http://localhost:8080/api/control";
   // console.log("recentRequestedDate: ", recentRequestedDate);
 
   React.useEffect(() => {
-    setStatus('loading');
+    setStatus("loading");
 
     // Checking localstorage and getting classification
     const checkLocalStorage = () => {
@@ -37,12 +38,12 @@ const useQualification = (website, requestNewVal, setRequestNewVal) => {
 
     // Fetching from server
     const fetchWithPost = async () => {
-      setStatus('loading');
+      setStatus("loading");
       try {
         const response = await fetch(postQuery, {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({
             url: website,
@@ -57,11 +58,11 @@ const useQualification = (website, requestNewVal, setRequestNewVal) => {
         if (data.status === 200) {
           return true;
         } else {
-          setStatus('fetchedButFounderror');
+          setStatus("fetchedButFounderror");
           return false;
         }
       } catch (error) {
-        setStatus('error');
+        setStatus("error");
         return false;
       }
     };
@@ -69,13 +70,13 @@ const useQualification = (website, requestNewVal, setRequestNewVal) => {
     // localstorage hit or fetch from server
     if (checkLocalStorage() && !requestNewVal) {
       // console.log("localStorage hit");
-      setStatus('success');
+      setStatus("success");
     } else {
       try {
-        fetchWithPost().then((res) => {
+        fetchWithPost().then(res => {
           setRequestNewVal(false);
           if (res) {
-            setStatus('fetched');
+            setStatus("fetched");
           }
         });
       } catch (e) {
@@ -86,7 +87,7 @@ const useQualification = (website, requestNewVal, setRequestNewVal) => {
 
   React.useEffect(() => {
     // Calculate only when fetched. Localstorage has calculated value.
-    if (status === 'fetched' && rawData.length !== 0) {
+    if (status === "fetched" && rawData.length !== 0) {
       let auditResults = [];
       const robot = JSON.parse(rawData.robot);
       setRobot(robot);
@@ -102,16 +103,14 @@ const useQualification = (website, requestNewVal, setRequestNewVal) => {
 
       // Add robots.txt and validator API
       auditResults.push(checkRobotTxt(robot));
-      calculateValidator(validator).forEach((val) => auditResults.push(val));
+      calculateValidator(validator).forEach(val => auditResults.push(val));
 
       const classifiedAuditResults = calculateAndClassify(auditResults);
       setClassification(classifiedAuditResults);
 
-      setRecentRequestedDate(
-        rawData.recentRequestedDate || new Date().toISOString()
-      );
+      setRecentRequestedDate(rawData.recentRequestedDate || new Date().toISOString());
       // Set lighthouseData to use in datagrid
-      setStatus('success');
+      setStatus("success");
     }
   }, [status, website, rawData, classification]);
 
@@ -120,7 +119,6 @@ const useQualification = (website, requestNewVal, setRequestNewVal) => {
     return [status, classification, robot, recentRequestedDate];
   }, [status, classification, robot, recentRequestedDate]);
 
-  // return [status, classification, robot];
 };
 
 export default useQualification;

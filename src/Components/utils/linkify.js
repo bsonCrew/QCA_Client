@@ -1,5 +1,5 @@
-import * as React from 'react';
-import config from '../../config.json';
+import * as React from "react";
+import config from "../../config.json";
 
 const RE_LEARNMORE = /\[[ㄱ-ㅎ|ㅏ-ㅣ|가-힣|\s]+\]|\[[a-zA-Z\s]+\]/g;
 const RE_URL =
@@ -7,21 +7,15 @@ const RE_URL =
 
 export default function linkify(str) {
   let results = [];
-  str?.split('. ').forEach((spl) => {
+  str?.split(". ").forEach(spl => {
     const matchesLearnmore = [...spl.matchAll(RE_LEARNMORE)][0];
     const matchesURL = [...spl.matchAll(RE_URL)][0];
 
     if (matchesLearnmore !== undefined && matchesURL !== undefined) {
-      const beforeLink = matchesLearnmore.input.slice(0, spl.indexOf('['));
-      const afterLink = matchesLearnmore.input.slice(
-        spl.indexOf(')') + 1,
-        spl.length
-      );
+      const beforeLink = matchesLearnmore.input.slice(0, spl.indexOf("["));
+      const afterLink = matchesLearnmore.input.slice(spl.indexOf(")") + 1, spl.length);
 
-      const URL = matchesURL[0].slice(
-        matchesURL[0].indexOf('(') + 1,
-        matchesURL[0].indexOf(')')
-      );
+      const URL = matchesURL[0].slice(matchesURL[0].indexOf("(") + 1, matchesURL[0].indexOf(")"));
       results.push(
         <React.Fragment key={spl.length}>
           {beforeLink}
@@ -37,7 +31,7 @@ export default function linkify(str) {
             {matchesLearnmore[0]}
           </a>
           {afterLink}
-          {afterLink.length > 0 ? '. ' : ''}
+          {afterLink.length > 0 ? ". " : ""}
         </React.Fragment>
       );
     } else results.push(<span key={spl.length}>{spl}.&nbsp;</span>);

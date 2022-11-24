@@ -1,76 +1,71 @@
-import * as React from 'react';
-import { useNavigate } from 'react-router-dom';
+import * as React from "react";
+import { useNavigate } from "react-router-dom";
 
-import { styled } from '@mui/material/styles';
-import MuiDrawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
+import { styled } from "@mui/material/styles";
+import MuiDrawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
 
-import { SideBarFnc, SideBarLink } from './SideBarFnc';
-import TopBar from './TopBar';
-import PrintModal from '../modal/PrintModal';
+import { SideBarFnc, SideBarLink } from "./SideBarFnc";
+import TopBar from "./TopBar";
+import PrintModal from "../modal/PrintModal";
 
-import config from '../../config.json';
+import config from "../../../config.json";
 
 const drawerWidth = 240;
 
 const openedMixin = (theme, lock) => ({
   width: drawerWidth,
-  transition: theme.transitions.create('width', {
+  transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
-    duration: '0.1s',
+    duration: "0.1s",
   }),
   backgroundColor: config.colors.main,
-  border: 'none',
+  border: "none",
 
   borderRadius: 10,
-  boxShadow: lock === 'true' ? 'none' : '3px 6rem 40px rgba(0, 0, 0, 0.3)',
+  boxShadow: lock === "true" ? "none" : "3px 6rem 40px rgba(0, 0, 0, 0.3)",
 
-  overflowX: 'hidden',
+  overflowX: "hidden",
 });
 
-const closedMixin = (theme) => ({
-  transition: theme.transitions.create('width', {
+const closedMixin = theme => ({
+  transition: theme.transitions.create("width", {
     easing: theme.transitions.easing.sharp,
-    duration: '0.1s',
+    duration: "0.1s",
   }),
-  overflowX: 'hidden',
+  overflowX: "hidden",
   width: `calc(${theme.spacing(7)})`,
   backgroundColor: config.colors.main,
   borderRadius: 10,
-  border: 'none',
+  border: "none",
 
-  [theme.breakpoints.up('sm')]: {
+  [theme.breakpoints.up("sm")]: {
     width: `calc(${theme.spacing(8)})`,
   },
 });
 
 const Drawer = styled(MuiDrawer, {
-  shouldForwardProp: (prop) => prop !== 'open',
+  shouldForwardProp: prop => prop !== "open",
 })(({ theme, open, lock }) => ({
   backgroundColor: config.colors.main,
   width: drawerWidth,
   flexShrink: 0,
-  whiteSpace: 'nowrap',
-  boxSizing: 'border-box',
+  whiteSpace: "nowrap",
+  boxSizing: "border-box",
   borderRadius: 10,
 
   ...(open && {
     ...openedMixin(theme, lock),
-    '& .MuiDrawer-paper': openedMixin(theme, lock),
+    "& .MuiDrawer-paper": openedMixin(theme, lock),
   }),
   ...(!open && {
     ...closedMixin(theme),
-    '& .MuiDrawer-paper': closedMixin(theme),
+    "& .MuiDrawer-paper": closedMixin(theme),
   }),
 }));
 
-function SideBar({
-  targetWebsite,
-  classification,
-  openView,
-  recentRequestedDate,
-}) {
+function SideBar({ targetWebsite, classification, openView, recentRequestedDate }) {
   const [lock, setLock] = React.useState(false);
   const [sideBarOpen, setSideBarOpen] = React.useState(false);
 
@@ -98,7 +93,7 @@ function SideBar({
   };
 
   const DownloadSheet = () => {
-    window.open(config.moisURL, '_blank');
+    window.open(config.moisURL, "_blank");
   };
 
   return (
@@ -120,18 +115,13 @@ function SideBar({
         <div className='mt-16 h-full rounded-tr-6xl bg-main'>
           <List
             sx={{
-              paddingTop: '0',
-              borderRadius: '20px',
+              paddingTop: "0",
+              borderRadius: "20px",
             }}
           >
-            {[0, 1, 2, 3, 4].map((idx) => {
+            {[0, 1, 2, 3, 4].map(idx => {
               return (
-                <SideBarLink
-                  key={idx}
-                  index={idx}
-                  sideBarOpen={sideBarOpen}
-                  openView={openView}
-                />
+                <SideBarLink key={idx} index={idx} sideBarOpen={sideBarOpen} openView={openView} />
               );
             })}
           </List>
@@ -142,16 +132,8 @@ function SideBar({
               handleClick={DownloadSheet}
               index={5}
             ></SideBarFnc>
-            <SideBarFnc
-              sideBarOpen={sideBarOpen}
-              handleClick={handleModalOpen}
-              index={6}
-            />
-            <SideBarFnc
-              sideBarOpen={sideBarOpen}
-              handleClick={() => navigate('/')}
-              index={7}
-            />
+            <SideBarFnc sideBarOpen={sideBarOpen} handleClick={handleModalOpen} index={6} />
+            <SideBarFnc sideBarOpen={sideBarOpen} handleClick={() => navigate("/")} index={7} />
           </List>
         </div>
         <PrintModal

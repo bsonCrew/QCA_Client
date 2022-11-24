@@ -1,10 +1,9 @@
-import React from 'react';
+import React from "react";
 
-const useGithub = (website) => {
-  const [status, setStatus] = React.useState('idle');
+const useGithub = website => {
+  const [status, setStatus] = React.useState("idle");
   const [data, setData] = React.useState([]);
-  const getQuery =
-    'https://raw.githubusercontent.com/bsonCrew/QCA_Client/main/README.md';
+  const getQuery = "https://raw.githubusercontent.com/bsonCrew/QCA_Client/main/README.md";
 
   async function fetchFromGithb() {
     const response = await fetch(getQuery);
@@ -20,14 +19,14 @@ const useGithub = (website) => {
     if (!getQuery) return;
 
     const fetchWithPost = async () => {
-      setStatus('loading');
+      setStatus("loading");
       try {
         const response = await fetch(getQuery);
         const data = await response.json();
-        setStatus('success');
+        setStatus("success");
         setData(data);
       } catch (error) {
-        setStatus('error');
+        setStatus("error");
       }
     };
 
