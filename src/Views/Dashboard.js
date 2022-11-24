@@ -3,7 +3,7 @@ import * as React from "react";
 import { Routes, Route, useParams, useLocation } from "react-router-dom";
 import useQualification from "../hooks/useQualification";
 import Footer from "../Components/atom/Footer";
-import SideBar from "../Components/sidebar/Sidebar";
+import SideBar from "../Components/molecules/sidebar/Sidebar";
 import MainView from "./MainView";
 import NotFound from "../Views/NotFound";
 import SpecificView from "./SpecificView";

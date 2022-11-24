@@ -1,5 +1,4 @@
 import * as React from "react";
-import config from "../../config.json";
 import styled from "@emotion/styled";
 import Avatar from "@mui/material/Avatar";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
@@ -9,8 +8,8 @@ import ConstructionIcon from "@mui/icons-material/Construction";
 import CheckIcon from "@mui/icons-material/Check";
 import Tooltip from "@mui/material/Tooltip";
 import Skeleton from "@mui/material/Skeleton";
-
 import DataCardModal from "../modal/DataCardModal";
+import config from "../../../config.json";
 
 const CardWrapper = styled(`div`)({
   minWidth: "200px",

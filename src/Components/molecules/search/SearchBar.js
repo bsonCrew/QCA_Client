@@ -11,7 +11,7 @@ import Checkbox from '@mui/material/Checkbox';
 
 import styled from '@emotion/styled';
 
-import data from '../../file.json';
+import data from '../../../file.json';
 
 const StyledAutocomplete = styled(Autocomplete)((props) => {
   return {

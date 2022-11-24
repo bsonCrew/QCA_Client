@@ -1,6 +1,6 @@
 import * as React from "react";
-import mapping from "../../assets/mapping.png";
-import crossBrowser from "../../assets/cross.jpeg";
+import mapping from "../../../assets/mapping.png";
+import crossBrowser from "../../../assets/cross.jpeg";
 
 const ExplanationModalContent = () => {
   return (

@@ -1,4 +1,4 @@
-import audits from "../../audits.json";
+import audits from "../../../audits.json";
 
 const AuditLabel = ({ auditId }) => {
   const auditObj = audits.audits[auditId];

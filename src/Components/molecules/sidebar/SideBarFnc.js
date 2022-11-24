@@ -13,7 +13,7 @@ import ListItemText from "@mui/material/ListItemText";
 
 import { Link } from "react-router-dom";
 
-import config from "../../config.json";
+import config from "../../../config.json";
 
 const iconInfo = config.iconInfo;
 const iconImage = [

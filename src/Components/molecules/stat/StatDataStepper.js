@@ -7,9 +7,9 @@ import Skeleton from "@mui/material/Skeleton";
 import Box from "@mui/material/Box";
 import Portal from "@mui/material/Portal";
 
-import config from "../../config.json";
-import Phrase from "../atom/Phrase";
-import BeautifulBar from "../atom/BeautifulBar";
+import config from "../../../config.json";
+import Phrase from "../../atom/Phrase";
+import BeautifulBar from "../../atom/BeautifulBar";
 import styled from "@emotion/styled";
 
 const SpecItemChip = styled.div({

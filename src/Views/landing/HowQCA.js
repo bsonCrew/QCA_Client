@@ -1,6 +1,6 @@
-import ScoreCard from '../../Components/card/ScoreCard';
-import ExplanationCard from '../../Components/card/ExplanationCard';
-import DataCard from '../../Components/card/DataCard';
+import ScoreCard from '../../Components/molecules/card/ScoreCard';
+import ExplanationCard from '../../Components/molecules/card/ExplanationCard';
+import DataCard from '../../Components/molecules/card/DataCard';
 import { H2Black, H2Gray } from '../../Themes/CustomStyled';
 import styled from '@emotion/styled';
 

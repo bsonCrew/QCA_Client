@@ -11,7 +11,7 @@ import {
 import { Bar } from "react-chartjs-2";
 import Skeleton from "@mui/material/Skeleton";
 
-import config from "../../config.json";
+import config from "../../../config.json";
 import styled from "@emotion/styled";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);

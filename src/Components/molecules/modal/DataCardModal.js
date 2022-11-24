@@ -1,9 +1,8 @@
 import Dialog from "@mui/material/Dialog";
-import linkify from "../utils/linkify";
-import audits from "../../audits.json";
+import linkify from "../../utils/linkify";
 
 import styled from "@emotion/styled";
-import config from "../../config.json";
+import config from "../../../config.json";
 import AuditLabel from "./AuditLabel";
 
 const AuditValueWrapper = styled.div({

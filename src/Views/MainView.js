@@ -1,13 +1,13 @@
-import ScoreCard from '../Components/card/ScoreCard';
-import BarChart from '../Components/chart/BarChart';
-import ExplanationCard from '../Components/card/ExplanationCard';
-import StatDataStepper from '../Components/stat/StatDataStepper';
-import React from 'react';
+import ScoreCard from "../Components/molecules/card/ScoreCard";
+import BarChart from "../Components/molecules/chart/BarChart";
+import ExplanationCard from "../Components/molecules/card/ExplanationCard";
+import StatDataStepper from "../Components/molecules/stat/StatDataStepper";
+import React from "react";
 
-import useFormedAudits from '../hooks/useFormedAudits';
+import useFormedAudits from "../hooks/useFormedAudits";
 
-import Phrase from '../Components/atom/Phrase';
-import AuditsDataGrid from '../Components/chart/AuditsDataGrid';
+import Phrase from "../Components/atom/Phrase";
+import AuditsDataGrid from "../Components/molecules/chart/AuditsDataGrid";
 
 const StatDataGridPhrase = (
   <div className='w-full mt-32 mb-12'>
@@ -16,22 +16,14 @@ const StatDataGridPhrase = (
   </div>
 );
 
-function MainView({
-  classification,
-  data,
-  status,
-  targetWebsite,
-  targetWebsiteScore,
-}) {
+function MainView({ classification, data, status, targetWebsite, targetWebsiteScore }) {
   const formedAudits = useFormedAudits(classification);
 
   return (
     <div className='flex flex-col py-10'>
       <Phrase
-        title={'지금 누리집은'}
-        subtitle={
-          '진단은 저희가 할게요! 이제 누리집을 더 편리하게 평가할 수 있어요.'
-        }
+        title={"지금 누리집은"}
+        subtitle={"진단은 저희가 할게요! 이제 누리집을 더 편리하게 평가할 수 있어요."}
       />
       <div className='flex flex-row flex-wrap'>
         <div className='grow'>
@@ -42,17 +34,10 @@ function MainView({
           />
         </div>
         <div className='min-w-[240px]'>
-          <ScoreCard
-            status={status}
-            score={+targetWebsiteScore[6]?.toFixed(1)}
-          />
+          <ScoreCard status={status} score={+targetWebsiteScore[6]?.toFixed(1)} />
         </div>
       </div>
-      <StatDataStepper
-        classification={classification}
-        data={data}
-        status={status}
-      />
+      <StatDataStepper classification={classification} data={data} status={status} />
 
       <BarChart
         status={status}

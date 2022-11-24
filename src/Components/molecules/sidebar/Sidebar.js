@@ -10,7 +10,7 @@ import { SideBarFnc, SideBarLink } from "./SideBarFnc";
 import TopBar from "./TopBar";
 import PrintModal from "../modal/PrintModal";
 
-import config from "../../config.json";
+import config from "../../../config.json";
 
 const drawerWidth = 240;
 

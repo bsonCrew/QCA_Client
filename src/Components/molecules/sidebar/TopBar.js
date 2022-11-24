@@ -2,7 +2,7 @@ import MuiAppBar from "@mui/material/AppBar";
 import styled from "@mui/material/styles/styled";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import config from "../../config.json";
+import config from "../../../config.json";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   width: "100%",

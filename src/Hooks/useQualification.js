@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import config from "../config";
 import calculateAndClassify from "../Components/utils/classifyAndCalculate";
@@ -118,7 +119,6 @@ const useQualification = (website, requestNewVal, setRequestNewVal) => {
     return [status, classification, robot, recentRequestedDate];
   }, [status, classification, robot, recentRequestedDate]);
 
-  // return [status, classification, robot];
 };
 
 export default useQualification;

@@ -1,6 +1,6 @@
 import Dialog from "@mui/material/Dialog";
 import Button from "@mui/material/Button";
-import config from "../../config.json";
+import config from "../../../config.json";
 import ExplanationModalContent from "../modalContent/ExplanationModalContent";
 import styled from "@emotion/styled";
 

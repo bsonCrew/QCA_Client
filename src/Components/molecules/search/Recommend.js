@@ -1,6 +1,6 @@
 import * as React from "react";
-import useTop5 from "../../hooks/useTop5";
-import ShortCut from "./RecommendShortcut";
+import useTop5 from "../../../hooks/useTop5";
+import ShortCut from "./Shortcut";
 
 import styled from "@emotion/styled";
 

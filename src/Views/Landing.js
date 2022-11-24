@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import SearchBar from '../Components/search/SearchBar';
-import Recommend from '../Components/search/Recommend';
+import SearchBar from '../Components/molecules/search/SearchBar';
+import Recommend from '../Components/molecules/search/Recommend';
 
 import Header from '../Views/landing/Header';
 import WhatisQCA from './landing/WhatisQCA';

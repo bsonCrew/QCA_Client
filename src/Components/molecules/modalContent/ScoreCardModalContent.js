@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import a11yDark from 'react-syntax-highlighter/dist/esm/styles/prism/a11y-dark';
 import remarkGfm from 'remark-gfm';
-import useGithub from '../../hooks/useGithub';
+import useGithub from '../../../hooks/useGithub';
 
 export default function ScoreCardModalContent() {
   const [status, data] = useGithub();
