@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useSpring, animated } from "react-spring";
 import Fab from "@mui/material/Fab";
 import Button from "@mui/material/Button";
 
@@ -18,13 +17,6 @@ const StyledFab = styled(Fab)({
 });
 
 const ShortCut = ({ label, homepage }) => {
-  const AnimatedFab = animated(StyledFab);
-  const styles = useSpring({
-    opacity: 1,
-    from: { opacity: 0 },
-    velocity: 0.25,
-  });
-
   return (
     <div className='items-center justify-center w-36 mt-5 text-center'>
       <Link
@@ -37,9 +29,9 @@ const ShortCut = ({ label, homepage }) => {
         // 	console.log(homepage);
         // }}
       >
-        <AnimatedFab color='kblue' aria-label='add' style={styles} className='mx-16 font-bold'>
+        <StyledFab color='kblue' aria-label='add' className='mx-16 font-bold'>
           {label?.slice(0, 1)}
-        </AnimatedFab>
+        </StyledFab>
       </Link>
       <LabelLink>{label}</LabelLink>
     </div>
